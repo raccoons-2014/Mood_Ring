@@ -1,12 +1,3 @@
-//   $(document).ready(function() {
-
-//   SC.stream("/tracks/293", function(sound){
-//     sound.play();
-//   });
-
-// })
-
-
 $(document).ready(function(){
   n = new MusicPlayer('https://api.soundcloud.com/tracks/182163764/stream')
   n.play('#play');
