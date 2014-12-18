@@ -28,6 +28,6 @@ MusicPlayer.prototype.play = function(button){
 MusicPlayer.prototype.stop = function(button){
     $(button).on('click', function(){
       console.log("hello");
-      soundManager.stopAll();
+      soundManager.pauseAll();
     })
 }
