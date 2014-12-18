@@ -17,6 +17,7 @@ MusicPlayer = function(music) {
   this.music = music;
 }
 
+//To refactor
 MusicPlayer.prototype.play = function(button){
   SC.stream(this.music, function(sound){
     $(button).on('click', function(){
@@ -26,8 +27,9 @@ MusicPlayer.prototype.play = function(button){
 }
 
 MusicPlayer.prototype.stop = function(button){
-    $(button).on('click', function(){
-      console.log("hello");
-      soundManager.pauseAll();
-    })
+  $(button).on('click', function(){
+    soundManager.pauseAll();
+  })
 }
+
+
