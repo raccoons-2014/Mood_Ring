@@ -24,6 +24,7 @@
   background-image: -o-linear-gradient(top, #1dd3e0, #2edb96);
   background-image: linear-gradient(to bottom, #1dd3e0, #2edb96);
   text-decoration: none;
+  cursor: pointer;
 }
 
 .btn:focus {
