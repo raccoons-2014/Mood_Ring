@@ -26,9 +26,8 @@ MusicPlayer.prototype.play = function(button){
 }
 
 MusicPlayer.prototype.stop = function(button){
-  SC.stream(this.music, function(sound){
     $(button).on('click', function(){
-      sound.stop();
+      console.log("hello");
+      soundManager.stopAll();
     })
-  })
 }
