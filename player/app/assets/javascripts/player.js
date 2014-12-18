@@ -9,7 +9,8 @@
 
 $(document).ready(function(){
   n = new MusicPlayer('/tracks/293')
-  n.play('#play')
+  n.play('#play');
+  n.stop('#stop');
 })
 
 MusicPlayer = function(music) {
@@ -22,4 +23,12 @@ MusicPlayer.prototype.play = function(button){
       sound.play();
     });
   });
+}
+
+MusicPlayer.prototype.stop = function(button){
+  SC.stream(this.music, function(sound){
+    $(button).on('click', function(){
+      sound.stop();
+    })
+  })
 }
