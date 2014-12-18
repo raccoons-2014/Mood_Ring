@@ -1,14 +1,11 @@
 <h1>What genre of music do you want to listen to?</h1>
 
-<%= form_tag(controller: "welcome", method: "get") do %>
+<%= form_tag( root_path, method: "get") do %>
   <%= label_tag(:genre, "I want to hear..") %>
   <%= text_field_tag(:genre) %>
   <%= submit_tag("Listen") %>
 <% end %>
 
-<div>
-  <% @tracks.each do |track| %>
-    <%= track["permalink_url"] %>
-    <%= track["id"] %>
-  <% end %>
+<div id="playlist">
+  <%= render partial: 'playlist', locals: {genre: params[:genre]} %>
 </div>
