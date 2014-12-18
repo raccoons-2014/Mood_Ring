@@ -10,7 +10,7 @@
 $(document).ready(function(){
   n = new MusicPlayer('/tracks/293')
   n.play('#play');
-  n.stop('#stop');
+  n.stop('#pause');
 })
 
 MusicPlayer = function(music) {
