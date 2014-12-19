@@ -1,17 +1,43 @@
 
 $(document).ready(function(){
-  $('form').submit(function(e){
+  $('#happy').click(function(e){
     e.preventDefault();
-    tagPlaylist = new PlayerWidget(landing_genre);
+    if (typeof(soundManager) != "undefined") {
+      soundManager.stopAll();
+    };
+    tagPlaylist = new PlayerWidget(this.id);
+    setTimeout(function(){tagPlaylist.streamSong()},100);
+  });
+
+
+  $('#sad').click(function(e){
+    if (typeof(soundManager) != "undefined") {
+      soundManager.stopAll();
+    };
+    e.preventDefault();
+    tagPlaylist = new PlayerWidget(this.id);
+    setTimeout(function(){tagPlaylist.streamSong()},100);
 
   });
+
+
+    $('#angry').click(function(e){
+      if (typeof(soundManager) != "undefined") {
+      soundManager.stopAll();
+    };
+    e.preventDefault();
+    tagPlaylist = new PlayerWidget(this.id);
+    setTimeout(function(){tagPlaylist.streamSong()},100);
+  });
+
+
 })
 
 function PlayerWidget(sourceSelector) {
   this.sourceSelector = sourceSelector;
   this.trackUrls = [];
   this.trackTitles = [];
-  this.populateTrackInfo(this.getTagName());
+  this.populateTrackInfo(this.sourceSelector);
 
 }
 
@@ -32,8 +58,7 @@ PlayerWidget.prototype.populateTrackInfo= function(params) {
 
     this.current_track_title = this.trackTitles[0];
     this.current_track = this.trackUrls[0];
-    this.streamSong();
-    $("#playlist").html(" <h1> Now playing: <br> " + this.current_track_title + " </h1>");
+        $("#playlist").html(" <h1> Now playing: <br> " + this.current_track_title + " </h1>");
   }.bind(this));
 
 }
@@ -49,8 +74,9 @@ this.current_track= this.trackUrls[0];
 PlayerWidget.prototype.streamSong = function() {
   //general play functions ... add next button
   SC.stream(this.current_track, function(sound){
+    sound.play();
   $('#play').click(function(event) {
-    sound.play({
+    sound.resume({
       onfinish: function(){
         soundManager
         this.resetCurrentTrack();
