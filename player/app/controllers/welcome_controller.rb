@@ -1,11 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-    @tracks = CLIENT.get('/tracks', limit: 10, tags: params[:genre])
+    query_soundcloud(params[:landing_genre])
     render :index
   end
-
-  def play
-
-  end
-
 end
