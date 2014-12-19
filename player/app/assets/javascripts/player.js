@@ -11,20 +11,21 @@ var getTracks= function() {
   });
 }
 
-function PlayerWidget(sourceSeletor) {
-  this.sourceSelctor = sourceSelctor;
+function PlayerWidget(sourceSelector) {
+  this.sourceSelector = sourceSelector;
   this.trackUrls = [];
   this.populateTrackUrls(this.getTagName());
 }
 
 // find params through input field
 PlayerWidget.prototype.getTagName= function() {
-  return document.getElementById(this.sourceSelctor).value
+  return this.sourceSelector.value;
 }
 
 //get song array
 PlayerWidget.prototype.populateTrackUrls= function(params) {
-  SC.get('/tracks', { tags: params }, function(tracks) {
+  SC.get('/tracks', { tags: params.toLowerCase() }, function(tracks) {
+    console.log(params)
     for (i=0; i <tracks.length; i++) {
       this.trackUrls.push(tracks[i].stream_url);
     };
@@ -38,7 +39,7 @@ PlayerWidget.prototype.setCurrentTrack = function() {
 
 PlayerWidget.prototype.streamSong = function() {
   //general play functions ... add next button
-  SC.stream(current_track, function(sound){
+  SC.stream(this.current_track, function(sound){
   $('#play').click(function(event) {
     sound.play();
   }),

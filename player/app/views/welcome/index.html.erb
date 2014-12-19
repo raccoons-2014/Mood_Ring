@@ -4,7 +4,6 @@
 <%= form_tag( root_path, remote: true, method: "get") do %>
   <%= label_tag(:landing_genre, "I want to hear..") %>
   <%= text_field_tag(:landing_genre) %>
-  <%= p params[:landing_genre] %>
   <%= submit_tag("Listen") %>
 <% end %>
 </div>
