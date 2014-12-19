@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require page
+//= require player
 //= require_tree .
