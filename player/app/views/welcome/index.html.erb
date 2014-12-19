@@ -1,6 +1,6 @@
 <h1>What genre of music do you want to listen to?</h1>
 
-<div id="genre_form">
+<div id="genre_form", class = "search">
 <%= form_tag( root_path, remote: true, method: "get") do %>
   <%= label_tag(:landing_genre, "I want to hear..") %>
   <%= text_field_tag(:landing_genre) %>
