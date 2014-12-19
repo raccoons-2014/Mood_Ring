@@ -1,7 +1,7 @@
 <h1>What genre of music do you want to listen to?</h1>
 
-<div class = 'search'>
-<%= form_tag( root_path, method: "get") do %>
+<div id="genre_form", class ="search">
+<%= form_tag( root_path, remote: true, method: "get") do %>
   <%= label_tag(:landing_genre, "I want to hear..") %>
   <%= text_field_tag(:landing_genre) %>
   <%= p params[:landing_genre] %>
@@ -10,9 +10,7 @@
 </div>
 
 <div id="playlist">
-  <% if params[:landing_genre] %>
-    <%= render partial: 'playlist', locals: {landing_genre: params[:landing_genre]} %>
-  <% end %>
+
 </div>
 
 <div class="container">
