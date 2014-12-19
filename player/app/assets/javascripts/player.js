@@ -11,7 +11,6 @@ var getTracks= function() {
 }
 
 var streamSongs =  function(){
-  console.log('I"m getting here first!')
   SC.stream(current_track, function(sound){
     $('#play').click(function(event) {
       sound.play();
