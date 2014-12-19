@@ -1,17 +1,5 @@
 <h1>What mood are you in?</h1>
 
-<div id="genre_form", class = "search">
-<%= form_tag( root_path, remote: true, method: "get") do %>
-  <%= label_tag(:landing_genre, "I'm feeling..") %>
-  <%= text_field_tag(:landing_genre) %>
-  <%= submit_tag("Listen") %>
-<% end %>
-</div>
-
-<div id="playlist">
-  <h1>Choose a mood</h1>
-</div>
-
 <div class="container">
   <button class='btn' id = "play">play</button>
   <button class='btn' id = "pause">pause</button><br>
