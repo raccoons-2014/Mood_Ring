@@ -14,36 +14,3 @@ $(document).ready(function(){
   })
 
 })
-
-
-  // n.play('#play');
-  // n.stop('#pause')
-// $('#play').click(function(event) {
-//   n.play();
-// })
-
-// MusicPlayer = function() {
-//   this.songID = null;
-//   this.url = '';
-// }
-
-// //To refactor
-// MusicPlayer.prototype.play = function(){
-//   SC.stream('https://api.soundcloud.com/tracks/182163764/stream', function(sound){
-//     sound.play();
-//   });
-// }
-
-// MusicPlayer.prototype.stop = function(button){
-//   $(button).on('click', function(){
-//     soundManager.pauseAll();
-//   })
-// }
-
-// MusicPlayer.prototype.updateSongID = function(ID) {
-//   this.songID = ID;
-// }
-
-// MusicPlayer.prototype.updateUrl = function() {
-//   this.url = 'https://api.soundcloud.com/tracks/' + this.songID + '/stream';
-// }
