@@ -1,26 +1,22 @@
 $(document).ready(function(){
-  n = new MusicPlayer('https://api.soundcloud.com/tracks/182163764/stream')
-  n.play('#play');
-  n.stop('#pause');
+  getTracks();
 })
 
-MusicPlayer = function(music) {
-  this.music = music;
-}
-
-//To refactor
-MusicPlayer.prototype.play = function(button){
-  SC.stream(this.music, function(sound){
-    $(button).on('click', function(){
-      sound.play();
-    });
+var getTracks= function() {
+ SC.get('/tracks', { q: 'buskers', license: 'cc-by-sa' }, function(tracks) {
+    var ID = tracks[Math.floor(Math.random()*tracks.length)].id;
+    current_track = 'https://api.soundcloud.com/tracks/' + ID + '/stream'
+    streamSongs();
   });
 }
 
-MusicPlayer.prototype.stop = function(button){
-  $(button).on('click', function(){
-    soundManager.pauseAll();
-  })
+var streamSongs =  function(){
+  SC.stream(current_track, function(sound){
+    $('#play').click(function(event) {
+      sound.play();
+    }),
+    $('#pause').click(function(event){
+      sound.pause();
+    });
+  });
 }
-
-
