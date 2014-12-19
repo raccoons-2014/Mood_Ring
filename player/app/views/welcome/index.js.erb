@@ -1,0 +1,5 @@
+$('#genre_form').submit(function(e){
+  e.preventDefault();
+  $("#playlist").html("<%= escape_javascript(render partial: 'playlist', locals: {landing_genre: params[:landing_genre]})  %>");
+})
+
