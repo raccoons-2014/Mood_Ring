@@ -1,0 +1,44 @@
+html{
+  background: url('http://www.strangebeaver.com/wp-content/uploads/2013/02/wpw26/9.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1{
+  text-align: center;
+  margin: 0 auto;
+  font-family: 'Telex', sans-serif;
+  color: white;
+}
+
+.form{
+  margin-left: 50px;
+  margin: 0 auto;
+}
+
+.label{
+  background-color: white;
+  border-radius: 15%;
+  text-align: center;
+  width: auto;
+  display: block;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  text-align: center;
+}
+
+#playlist{
+  background-image: url('http://www.gadgetmac.com/picture/ipad_air_wallpaper_retina_background_b.jpg%3FpictureId%3D18906287');
+  width:600px;
+  height:auto;
+  margin:50px auto 0;
+  padding:50px;
+}
+
+p{
+  font-family: 'Telex', sans-serif;
+}
