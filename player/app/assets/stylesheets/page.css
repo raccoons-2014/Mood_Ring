@@ -17,3 +17,26 @@ h1{
   width: auto;
   display: block;
 }
+
+.search{
+  width:350px;
+height:auto;
+margin:50px auto 0;
+padding:50px;
+background-image: url('http://l.rgbimg.com/cache1vN87k/users/z/ze/zela/600/ooMqVlY.jpg');
+color:#333;
+border-radius:40px 0 40px 0;
+font-family: 'Telex', sans-serif;
+}
+
+input#submit{
+background-color:#cc7a66;
+border-radius:5px;
+border:none;
+padding:10px 25px;
+color:#FFF;
+text-shadow:1px 1px 1px #949494;
+margin-left:120px
+}
+
+
