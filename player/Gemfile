@@ -38,6 +38,7 @@ end
 group :development, :test do
   gem 'jasmine'
 end
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
