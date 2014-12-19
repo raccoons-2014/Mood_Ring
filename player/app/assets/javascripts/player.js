@@ -1,26 +1,24 @@
 $(document).ready(function(){
+  getTracks();
+})
 
-  n = new MusicPlayer()
-    // find all sounds of buskers licensed under 'creative commons share alike'
-  songID = SC.get('/tracks', { bpm:{from: 120} }, function(tracks) {
-    console.log(tracks[Math.floor(Math.random()*tracks.length)].id);
-    return tracks[Math.floor(Math.random()*tracks.length)].id;
+var getTracks= function() {
+ SC.get('/tracks', { q: 'buskers', license: 'cc-by-sa' }, function(tracks) {
+    var ID = tracks[Math.floor(Math.random()*tracks.length)].id;
+    current_track = 'https://api.soundcloud.com/tracks/' + ID + '/stream'
+    streamSongs();
   });
-
-  SC.stream("/tracks/" + songID, function(sound){
-    sound.play();
-  MusicPlayer.prototype.fetchSong = function() {
-    SC.get('/tracks', { q: 'buskers', license: 'cc-by-sa' }, function(tracks) {
-      var url = tracks[Math.floor(Math.random()*tracks.length)].stream_url;
-      n.updateStreamUrl(url);
-    });
-  }
 }
 
-  $('#play').click(function(event) {
-    SC.stream(current_track, function(sound){
+var streamSongs =  function(){
+  console.log('I"m getting here first!')
+  SC.stream(current_track, function(sound){
+    $('#play').click(function(event) {
       sound.play();
+    }),
+    $('#pause').click(function(event){
+      sound.pause();
     });
-  })
+  });
+}
 
-})
