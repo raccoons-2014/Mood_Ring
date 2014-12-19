@@ -1,22 +1,29 @@
 $(document).ready(function(){
+
+  n = new MusicPlayer()
+
   SC.initialize ({
     client_id: '5b91135eafaf701ea414c5fe6b86fdf3'
   });
 
-  n = new MusicPlayer()
-  n.fetchSong();
+  // SC.get('/tracks', { q: 'buskers', license: 'cc-by-sa' }, function(tracks) {
+  //   var ID = tracks[Math.floor(Math.random()*tracks.length)].id;
+  //   n.updateSongID(ID);
+  //   n.updateUrl();
+  // });
+  // n.play('#play');
+  // n.stop('#pause')
+})
 
-  n.play('#play');
-  n.stop('#pause');
+$('#play').click(function(event) {
+  n.play();
 })
 
 MusicPlayer = function() {
-  this.stream_url = "";
+  this.songID = null;
+  this.url = '';
 }
 
-  SC.initialize({
-    client_id: '5b91135eafaf701ea414c5fe6b86fdf3'
-  });
     // find all sounds of buskers licensed under 'creative commons share alike'
   songID = SC.get('/tracks', { bpm:{from: 120} }, function(tracks) {
     console.log(tracks[Math.floor(Math.random()*tracks.length)].id);
@@ -31,16 +38,5 @@ MusicPlayer = function() {
       n.updateStreamUrl(url);
     });
   }
-}
-
-MusicPlayer.prototype.stop = function(button){
-  $(button).on('click', function(){
-    soundManager.pauseAll();
-  })
-}
-
-
-MusicPlayer.prototype.updateStreamUrl = function(url) {
-  this.streamUrl = url;
 }
 
