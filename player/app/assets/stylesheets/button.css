@@ -1,7 +1,4 @@
-html{
-  background: url('http://www.strangebeaver.com/wp-content/uploads/2013/02/wpw26/9.jpg');
-  background-repeat: repeat;
-}
+
 
 .btn {
   background:#f7c956;
@@ -38,9 +35,13 @@ html{
   outline:none;
 }
 
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  width: 60%;
-  text-align: center;
+.search input[type=submit] {
+  padding:10px 15px;
+  margin: 7px;
+  background:#ccddc7;
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
 }
+
