@@ -1,3 +1,7 @@
+html{
+  background: url('/assets/cubes.jpg');
+}
+
 .btn {
   background: #3ceffc;
   background-image: -webkit-linear-gradient(top, #3ceffc, #36ffaf);
@@ -14,7 +18,7 @@
   padding: 10px 20px 10px 20px;
   text-decoration: none;
   border: none !important;
-  margin: 15px;
+  margin: 150px 15px;
 }
 
 .btn:hover {

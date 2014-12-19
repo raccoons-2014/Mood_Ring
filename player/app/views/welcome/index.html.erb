@@ -1,12 +1,3 @@
-<div id = "#viewpoint">
-  <div id = "#world">
-    <div class="container">
-    <button class='btn' id = "play">play</button>
-    <button class='btn' id = "pause">pause</button>
-    </div>
-  </div>
-</div>
-
 <h1>What genre of music do you want to listen to?</h1>
 
 <%= form_tag( root_path, method: "get") do %>
@@ -20,4 +11,9 @@
   <% if params[:landing_genre] %>
     <%= render partial: 'playlist', locals: {landing_genre: params[:landing_genre]} %>
   <% end %>
+</div>
+
+<div class="container">
+  <button class='btn' id = "play">play</button>
+  <button class='btn' id = "pause">pause</button>
 </div>
