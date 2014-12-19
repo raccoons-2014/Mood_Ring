@@ -1,33 +1,35 @@
 html{
-  background: url('/assets/cubes.jpg');
+  background: url('http://www.strangebeaver.com/wp-content/uploads/2013/02/wpw26/9.jpg');
+  background-repeat: repeat;
 }
 
 .btn {
-  background: #3ceffc;
-  background-image: -webkit-linear-gradient(top, #3ceffc, #36ffaf);
-  background-image: -moz-linear-gradient(top, #3ceffc, #36ffaf);
-  background-image: -ms-linear-gradient(top, #3ceffc, #36ffaf);
-  background-image: -o-linear-gradient(top, #3ceffc, #36ffaf);
-  background-image: linear-gradient(to bottom, #3ceffc, #36ffaf);
-  -webkit-border-radius: 10;
-  -moz-border-radius: 10;
-  border-radius: 10px;
-  font-family: Telex;
-  color: #ffffff;
-  font-size: 30px;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
-  border: none !important;
-  margin: 150px 15px;
+  background:#f7c956;
+  background:-moz-linear-gradient(top,#f7c956 0%,#e8b551 100%);
+  background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#f7c956),color-stop(100%,#e8b551));
+  background:-webkit-linear-gradient(top,#f7c956 0%,#e8b551 100%);
+  background:-o-linear-gradient(top,#f7c956 0%,#e8b551 100%);
+  background:-ms-linear-gradient(top,#f7c956 0%,#e8b551 100%);
+  background:linear-gradient(top,#f7c956 0%,#e8b551 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#f7c956', endColorstr='#e8b551',GradientType=0);
+  padding:10px 15px;
+  color:#fff;
+  font-family:'Helvetica Neue',sans-serif;
+  font-size:16px;
+  border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  border:1px solid #e8b551;
+  margin: 15px;
 }
 
 .btn:hover {
-  background: #1dd3e0;
-  background-image: -webkit-linear-gradient(top, #1dd3e0, #2edb96);
-  background-image: -moz-linear-gradient(top, #1dd3e0, #2edb96);
-  background-image: -ms-linear-gradient(top, #1dd3e0, #2edb96);
-  background-image: -o-linear-gradient(top, #1dd3e0, #2edb96);
-  background-image: linear-gradient(to bottom, #1dd3e0, #2edb96);
+  background: #f2bd00;
+  background-image: -webkit-linear-gradient(top, #f2bd00, #f2bd00);
+  background-image: -moz-linear-gradient(top, #f2bd00, #f2bd00);
+  background-image: -ms-linear-gradient(top, #f2bd00, #f2bd00);
+  background-image: -o-linear-gradient(top, #f2bd00, #f2bd00);
+  background-image: linear-gradient(to bottom, #f2bd00, #f2bd00);
   text-decoration: none;
   cursor: pointer;
 }
