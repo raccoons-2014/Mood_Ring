@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require player
+//= require user_oath
 //= require_tree .
