@@ -1,17 +1,4 @@
-<h1>What genre of music do you want to listen to?</h1>
-
-<div id="genre_form", class = "search">
-<%= form_tag( root_path, remote: true, method: "get") do %>
-  <%= label_tag(:landing_genre, "I want to hear..") %>
-  <%= text_field_tag(:landing_genre) %>
-  <%= p params[:landing_genre] %>
-  <%= submit_tag("Listen") %>
-<% end %>
-</div>
-
-<div id="playlist">
-
-</div>
+<h1>What mood of music are you feeling?</h1>
 
 <div class="container">
   <button class='btn' id = "play">play</button>
@@ -20,3 +7,5 @@
   <button class="emotion" id="sad">Sad</button>
   <button class="emotion" id="angry">Angry</button>
 </div>
+
+
