@@ -8,7 +8,6 @@ $(document).ready(function(){
     setTimeout(function(){tagPlaylist.streamSong()},100);
   });
 
-
   $('#sad').click(function(e){
     if (typeof(soundManager) != "undefined") {
       soundManager.stopAll();
@@ -19,8 +18,7 @@ $(document).ready(function(){
 
   });
 
-
-    $('#angry').click(function(e){
+  $('#angry').click(function(e){
       if (typeof(soundManager) != "undefined") {
       soundManager.stopAll();
     };
@@ -29,7 +27,14 @@ $(document).ready(function(){
     setTimeout(function(){tagPlaylist.streamSong()},100);
   });
 
-
+  $('#genre_form').submit(function(e){
+    if (typeof(soundManager) != "undefined") {
+      soundManager.stopAll();
+    };
+    e.preventDefault();
+    tagPlaylist = new PlayerWidget(landing_genre.value);
+    setTimeout(function(){tagPlaylist.streamSong()},100);
+  });
 })
 
 function PlayerWidget(sourceSelector) {
