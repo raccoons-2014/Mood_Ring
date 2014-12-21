@@ -8,3 +8,4 @@ describe WelcomeController, :type => :controller do
     end
   end
 end
+
