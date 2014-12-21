@@ -33,7 +33,8 @@ describe('player', function() {
 
   describe('streamSong', function(){
   	it('plays a song', function(){
-  		expect(sad_player.streamSong())
+  		sad_player.streamSong();
+  		expect(sound.play()).toHaveBeenCalled;
   	})
   })
 });
