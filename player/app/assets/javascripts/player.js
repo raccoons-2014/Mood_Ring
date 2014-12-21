@@ -3,7 +3,6 @@ function PlayerWidget(sourceSelector) {
   this.trackUrls = [];
   this.trackTitles = [];
   this.populateTrackInfo(this.sourceSelector);
-
 }
 
 // find params through input field
@@ -50,6 +49,7 @@ PlayerWidget.prototype.streamSong = function() {
   }),
   $('#pause').click(function(event){
     sound.pause();
+    
   });
 });
 }
