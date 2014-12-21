@@ -30,7 +30,7 @@ $(document).ready(function(){
   });
 
   $('#connect').on('click', function(){
-	  alert('Hello maggie')
+	  var new_user = new UserConnect('me')
 	})
 
 

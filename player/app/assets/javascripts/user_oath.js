@@ -1,8 +1,7 @@
-$('#connect').on('click', function(){
-	alert('Hello maggie')
-  // SC.connect(function() {
-  // 	SC.get('/me', function(me) { 
-  //  	  alert('Hello, ' + me.username); 
-  // 	});
-  // });
-})
+function UserConnect(user) {
+	this.user = user;
+}
+
+UserConnect.prototype.getUser = function() {
+	return this.user;
+}
