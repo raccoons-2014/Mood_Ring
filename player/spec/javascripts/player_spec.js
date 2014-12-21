@@ -15,6 +15,7 @@ describe('player', function() {
 	})
 
   it("selects the id of sad", function() {
+  	console.log(this.player)
     expect(player.sourceSelector).toBe('sad')
   });
 });
