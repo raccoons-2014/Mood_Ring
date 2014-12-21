@@ -1,13 +1,13 @@
 describe('player', function() {
-	var player;
+	var sad_player;
 
-	beforeEach(function(){
-		player = new PlayerWidget('sad');
-		console.log(player)
-	})
+  beforeEach(function(){
+	sad_player = new PlayerWidget('sad');
+  })
 
-  it("selects the id of sad", function() {
-  	console.log(this.player)
-    expect(player.sourceSelector).toBe('sad')
-  });
+  describe('sourceSelector', function(){
+  	it("selects the id of sad", function() {
+      expect(sad_player.sourceSelector).toBe('sad')
+  	});
+  })
 });

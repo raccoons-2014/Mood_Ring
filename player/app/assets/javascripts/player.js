@@ -53,6 +53,7 @@ PlayerWidget.prototype.getTagName= function() {
 //get song array
 PlayerWidget.prototype.populateTrackInfo= function(params) {
   SC.get('/tracks', { tags: params.toLowerCase() }, function(tracks) {
+    debugger
     console.log(params)
 
     for (i=0; i <tracks.length; i++) {
