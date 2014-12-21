@@ -1,6 +1,11 @@
 describe('player', function() {
-	var orange = 'orange';
-  it("does something", function() {
-    expect(orange).toBe('grape');
+	var player;
+
+	beforeEach(function(){
+		player = new PlayerWidget('sad');
+	})
+
+  it("selects the id of sad", function() {
+    expect(player.sourceSelector).toBe('sad')
   });
 });
