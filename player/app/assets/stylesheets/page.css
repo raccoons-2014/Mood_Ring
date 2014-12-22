@@ -39,6 +39,14 @@ h1{
   padding:50px;
 }
 
+.playlist{
+  background-image: url('http://www.gadgetmac.com/picture/ipad_air_wallpaper_retina_background_b.jpg%3FpictureId%3D18906287');
+  width:600px;
+  height:auto;
+  margin:50px auto 0;
+  padding:50px;
+}
+
 p{
   font-family: 'Telex', sans-serif;
 }
