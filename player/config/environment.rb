@@ -7,6 +7,6 @@ Rails.application.initialize!
 CLIENT = SoundCloud.new({
   :client_id     => ENV['SOUNDCLOUD_API'],
   :client_secret => ENV['SOUNDCLOUD_SECRET']
-  # :refresh_token  =>
+  redirect_to client.authorize_url()
 })
 
