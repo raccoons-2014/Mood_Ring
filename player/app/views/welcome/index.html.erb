@@ -1,11 +1,6 @@
 <h1>What mood of music are you feeling?</h1>
-<div id = "connect">
-  <% if current_user %>
-  <button class = 'btn'>Sign in</button>
-  <% else %>
-  <button class = 'btn'>sign out</button>
-  <%end%>
-</div>
+
+ <button id = 'connect'>Connect</button>
 
 <div id="genre_form", class = "search">
   <%= form_tag( root_path, remote: true, method: "get") do %>
