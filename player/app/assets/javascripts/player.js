@@ -1,9 +1,9 @@
-function PlayerWidget(sourceSelector) {
+function PlayerWidget(sourceSelector, genre) {
   this.sourceSelector = sourceSelector;
+  this.genre = genre;
   this.trackUrls = [];
   this.trackTitles = [];
-  this.populateTrackInfo(this.sourceSelector);
-
+  this.populateTrackInfo(this.sourceSelector, this.genre);
 }
 
 // find params through input field
@@ -12,9 +12,10 @@ PlayerWidget.prototype.getTagName= function() {
 }
 
 //get song array
-PlayerWidget.prototype.populateTrackInfo= function(params) {
-  SC.get('/tracks', { q: params.toLowerCase(), genres: "spanish" }, function(tracks) {
-    console.log(params)
+PlayerWidget.prototype.populateTrackInfo= function(sourceSelector, genre) {
+  SC.get('/tracks', { q: sourceSelector.toLowerCase(), genres: genre }, function(tracks) {
+    console.log(sourceSelector)
+    console.log(genre)
     for (i=0; i <tracks.length; i++) {
       var random_track = Math.floor(Math.random() * tracks.length - 1);
       this.trackTitles.push(tracks[random_track].title);

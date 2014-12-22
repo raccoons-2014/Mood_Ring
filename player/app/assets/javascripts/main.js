@@ -4,7 +4,7 @@ $(document).ready(function(){
     if (typeof(soundManager) != "undefined") {
       soundManager.stopAll();
     };
-    tagPlaylist = new PlayerWidget(this.id);
+    tagPlaylist = new PlayerWidget(this.id, "rap");
     setTimeout(function(){tagPlaylist.streamSong()},100);
   });
 
@@ -13,7 +13,7 @@ $(document).ready(function(){
       soundManager.stopAll();
     };
     e.preventDefault();
-    tagPlaylist = new PlayerWidget(this.id);
+    tagPlaylist = new PlayerWidget(this.id, "country");
     setTimeout(function(){tagPlaylist.streamSong()},100);
 
   });
@@ -23,7 +23,7 @@ $(document).ready(function(){
       soundManager.stopAll();
     };
     e.preventDefault();
-    tagPlaylist = new PlayerWidget(this.id);
+    tagPlaylist = new PlayerWidget(this.id, "metal");
     setTimeout(function(){tagPlaylist.streamSong()},100);
   });
 
@@ -32,7 +32,7 @@ $(document).ready(function(){
       soundManager.stopAll();
     };
     e.preventDefault();
-    tagPlaylist = new PlayerWidget(landing_genre.value);
+    tagPlaylist = new PlayerWidget(landing_genre.value, "punk");
     setTimeout(function(){tagPlaylist.streamSong()},100);
   });
 })
