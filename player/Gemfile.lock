@@ -155,17 +155,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   dotenv-rails
   foreman
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
   jasmine-rails
->>>>>>> changed gems, need to install postgres
-=======
->>>>>>> added rspec gem
-=======
-  jasmine-rails
->>>>>>> changed gems, need to install postgres
   jbuilder (~> 2.0)
   jquery-rails
   pg
