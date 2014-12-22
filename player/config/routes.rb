@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get '/connect' => 'users#new', as: :users
   post '/connect' => 'users#create'
-  get '/disconnect' => 'users#destroyt'
+  get '/disconnect' => 'users#destroy'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
