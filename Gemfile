@@ -39,14 +39,12 @@ group :development, :test do
   gem 'jasmine'
 end
 
-<<<<<<< HEAD:Gemfile
 group :production do
   gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
   gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
 end
-=======
+
 gem 'oauth2'
->>>>>>> added Oauth gemg:player/Gemfile
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
