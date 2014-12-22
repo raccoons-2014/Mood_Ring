@@ -38,6 +38,8 @@ end
 group :development, :test do
   gem 'jasmine'
 end
+
+gem 'oauth2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
