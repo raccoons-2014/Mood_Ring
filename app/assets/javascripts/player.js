@@ -37,7 +37,7 @@ $(document).ready(function(){
   });
 
   $('#connect').on('click', function(){
-  alert("Hello maggie")
+    connectToSoundcloud();
 });
 })
 function PlayerWidget(sourceSelector) {
