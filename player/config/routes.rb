@@ -5,10 +5,6 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
   match "/welcome/play" => "welcome#play", :as => 'play', via: [:get, :post]
-
-  get '/connect' => 'users#new', as: :users
-  post '/connect' => 'users#create'
-  get '/disconnect' => 'users#destroy'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
