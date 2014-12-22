@@ -13,12 +13,12 @@ PlayerWidget.prototype.getTagName= function() {
 
 //get song array
 PlayerWidget.prototype.populateTrackInfo= function(params) {
-  SC.get('/tracks', { tags: params.toLowerCase() }, function(tracks) {
+  SC.get('/tracks', { q: params.toLowerCase(), genres: "spanish" }, function(tracks) {
     console.log(params)
-
     for (i=0; i <tracks.length; i++) {
-      this.trackTitles.push(tracks[i].title);
-      this.trackUrls.push(tracks[i].stream_url);
+      var random_track = Math.floor(Math.random() * tracks.length - 1);
+      this.trackTitles.push(tracks[random_track].title);
+      this.trackUrls.push(tracks[random_track].stream_url);
     };
 
     this.current_track_title = this.trackTitles[0];
