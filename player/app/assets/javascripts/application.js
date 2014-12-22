@@ -15,5 +15,4 @@
 //= require turbolinks
 //= require main
 //= require player
-//= require user
 //= require_tree .
