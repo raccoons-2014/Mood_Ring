@@ -37,7 +37,7 @@ $(document).ready(function(){
   });
 
   $('#connect').on('click', function(){
-  alert("Hello maggie")
+    connectToSoundcloud();
 });
 })
 
@@ -49,6 +49,17 @@ function PlayerWidget(sourceSelector) {
 
 }
 
+function connectToSoundcloud(){
+  SC.initialize({
+    client_id: '"5b91135eafaf701ea414c5fe6b86fdf3"'
+  });
+
+  SC.connect(function() {
+    SC.get('/me', function(me) { 
+      alert('Hello, ' + me.username); 
+    });
+  });
+}
 // find params through input field
 PlayerWidget.prototype.getTagName= function() {
   return this.sourceSelector.value;
