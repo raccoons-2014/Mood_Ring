@@ -1,10 +1,10 @@
 module OauthHelper
   def oauth_consumer
-    raise RuntimeError, "You must set CONSUMER_KEY and CONSUMER_SECRET in your server environment." unless ENV['SOUNDCLOUD_KEY'] && ENV['CONSUMER_SECRET']
+    raise RuntimeError, "You must set SOUNDCLOUD_API and SOUNDCLOUD_SECRET in your server environment." unless ENV['SOUNDCLOUD_API'] && ENV['SOUNDCLOUD_SECRET']
     @consumer ||= OAuth::Consumer.new(
-      ENV['CONSUMER_KEY'],
-      ENV['CONSUMER_SECRET'],
-      :site => "https://api.twitter.com"
+      ENV['SOUNDCLOUD_API'],
+      ENV['SOUNDCLOUD_SECRET'],
+      :site => "amixofpersons.github.io"
     )
   end
 
