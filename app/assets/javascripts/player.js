@@ -37,8 +37,8 @@ $(document).ready(function(){
   });
 
   $('#connect').on('click', function(){
-    connectToSoundcloud();
-});
+  alert("Hello maggie")
+  });
 })
 function PlayerWidget(sourceSelector) {
   this.sourceSelector = sourceSelector;
