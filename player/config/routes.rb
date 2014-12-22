@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   root 'welcome#index'
   match "/welcome/play" => "welcome#play", :as => 'play', via: [:get, :post]
 
+  get '/connect' => 'users#new', as: :users
+  post '/connect' => 'users#create'
+  get '/disconnect' => 'users#destroyt'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
