@@ -35,4 +35,8 @@ $(document).ready(function(){
     tagPlaylist = new PlayerWidget(landing_genre.value);
     setTimeout(function(){tagPlaylist.streamSong()},100);
   });
+
+  $('#connect').on('click', function(){
+    connectToSoundcloud();
+  });
 })
