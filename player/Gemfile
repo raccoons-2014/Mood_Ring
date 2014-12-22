@@ -35,8 +35,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end
 
-group :development, :test do
-  gem 'jasmine'
+group :test, :development do
+  gem 'jasmine-rails'
 end
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
