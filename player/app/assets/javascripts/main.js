@@ -1,10 +1,18 @@
 $(document).ready(function(){
+  var genre_choice = ""
+  $('button.genre').click(function(e){
+      e.preventDefault();
+      genre_choice = this.id
+      $('#genre-page').hide();
+      $('#mood-page').show();
+  });
+
   $('#happy').click(function(e){
     e.preventDefault();
     if (typeof(soundManager) != "undefined") {
       soundManager.stopAll();
     };
-    tagPlaylist = new PlayerWidget(this.id, "rap");
+    tagPlaylist = new PlayerWidget(this.id, genre_choice);
     setTimeout(function(){tagPlaylist.streamSong()},100);
   });
 
@@ -13,7 +21,7 @@ $(document).ready(function(){
       soundManager.stopAll();
     };
     e.preventDefault();
-    tagPlaylist = new PlayerWidget(this.id, "country");
+    tagPlaylist = new PlayerWidget(this.id, genre_choice);
     setTimeout(function(){tagPlaylist.streamSong()},100);
 
   });
@@ -23,7 +31,7 @@ $(document).ready(function(){
       soundManager.stopAll();
     };
     e.preventDefault();
-    tagPlaylist = new PlayerWidget(this.id, "metal");
+    tagPlaylist = new PlayerWidget(this.id, genre_choice);
     setTimeout(function(){tagPlaylist.streamSong()},100);
   });
 
@@ -32,7 +40,7 @@ $(document).ready(function(){
       soundManager.stopAll();
     };
     e.preventDefault();
-    tagPlaylist = new PlayerWidget(landing_genre.value, "punk");
+    tagPlaylist = new PlayerWidget(landing_genre.value, genre_choice);
     setTimeout(function(){tagPlaylist.streamSong()},100);
   });
 })
