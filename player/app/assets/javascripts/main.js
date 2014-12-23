@@ -37,7 +37,6 @@ $(document).ready(function(){
   });
 
   $('#connect').on('click', function(){
-    alert("Hello maggie")
-    // connectToSoundcloud();
+    connectToSoundcloud();
   });
 })
