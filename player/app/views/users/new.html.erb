@@ -1,6 +1,6 @@
-<div class = 'playlist'>
+<div id = 'playlist'>
 <%= form_tag( '/new', remote: true, method: "get") do %>
-    <%= label_tag(:user_name, "User name") %>
+    <%= label_tag(:user_name, "Name") %>
     <%= text_field_tag(:user_name) %>
     <%= label_tag(:password, "Password") %>
     <%= password_field(:password, "Password") %>

@@ -36,7 +36,8 @@ $(document).ready(function(){
     setTimeout(function(){tagPlaylist.streamSong()},100);
   });
 
-  $('.playlist input[type=submit]').on('click', function(){
-    alert('hello maggie')
+  $('#connect').on('click', function(){
+    alert("Hello maggie")
+    // connectToSoundcloud();
   });
 })
