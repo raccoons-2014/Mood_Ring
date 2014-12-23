@@ -5,9 +5,7 @@ class UsersController < ApplicationController
   	render :new
   end
 
-  def create
-  end
-
-  def destroy
+  def connect
+  	redirect_to CLIENT.authorize_url()
   end
 end
