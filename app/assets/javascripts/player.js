@@ -13,11 +13,13 @@ PlayerWidget.prototype.getTagName= function() {
 
 //get song array
 PlayerWidget.prototype.populateTrackInfo= function(sourceSelector, genre) {
-  SC.get('/tracks', { q: sourceSelector.toLowerCase(), genres: genre }, function(tracks) {
+  SC.get('/tracks', { q: sourceSelector.toLowerCase(), genres: genre, duration: {from: 180000 } }, function(tracks) {
     for (i = 0; i < tracks.length; i++) {
       var random_track = Math.floor(Math.random() * (tracks.length - 1));
-      this.trackTitles.push(tracks[random_track].title);
-      this.trackUrls.push(tracks[random_track].stream_url);
+      if (tracks[random_track].playback_count > 15000){
+        this.trackTitles.push(tracks[random_track].title);
+        this.trackUrls.push(tracks[random_track].stream_url);
+      };
     };
 
     this.current_track_title = this.trackTitles[0];
