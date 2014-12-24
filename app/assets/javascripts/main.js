@@ -1,6 +1,12 @@
 $(document).ready(function(){
+  genre_choice = ""
+  $('button.genre').click(function(e){
+      genre_choice = this.id
+      $('#genre-page').hide();
+      $('#mood-page').show();
+  });
+
   $('#happy').click(function(e){
-    e.preventDefault();
     if (typeof(soundManager) != "undefined") {
       soundManager.stopAll();
     };
@@ -12,7 +18,6 @@ $(document).ready(function(){
     if (typeof(soundManager) != "undefined") {
       soundManager.stopAll();
     };
-    e.preventDefault();
     tagPlaylist = new PlayerWidget(this.id);
     setTimeout(function(){tagPlaylist.streamSong()},100);
 
@@ -22,7 +27,6 @@ $(document).ready(function(){
       if (typeof(soundManager) != "undefined") {
       soundManager.stopAll();
     };
-    e.preventDefault();
     tagPlaylist = new PlayerWidget(this.id);
     setTimeout(function(){tagPlaylist.streamSong()},100);
   });
@@ -31,8 +35,7 @@ $(document).ready(function(){
     if (typeof(soundManager) != "undefined") {
       soundManager.stopAll();
     };
-    e.preventDefault();
-    tagPlaylist = new PlayerWidget(landing_genre.value);
+    tagPlaylist = new PlayerWidget(mood_input.value);
     setTimeout(function(){tagPlaylist.streamSong()},100);
   });
 })
