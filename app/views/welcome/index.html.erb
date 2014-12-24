@@ -1,23 +1,36 @@
-<h1>What mood of music are you feeling?</h1>
-
-<div id="genre_form", class = "search">
-  <%= form_tag( root_path, remote: true, method: "get") do %>
-    <%= label_tag(:landing_genre, "I'm feeling..") %>
-    <%= text_field_tag(:landing_genre) %>
-    <%= submit_tag("Listen") %>
-  <% end %>
+<div id="genre-page">
+  <h1>Select a genre to begin</h1>
+  <div class="genre-container">
+    <button class="genre" id="rap">rap</button>
+    <button class="genre" id="rock">rock</button><br>
+    <button class="genre" id="punk">punk</button>
+    <button class="genre" id="country">country</button>
+    <button class="genre" id="jazz">jazz</button>
+  </div>
 </div>
 
-<div id="playlist">
-  <h1>Choose or enter a mood</h1>
-</div>
+<div id="mood-page">
+  <h1>What mood of music are you feeling?</h1>
 
-<div class="container">
-  <button class='btn' id = "play">play</button>
-  <button class='btn' id = "pause">pause</button><br>
-  <button class="emotion" id="happy">Happy</button>
-  <button class="emotion" id="sad">Sad</button>
-  <button class="emotion" id="angry">Angry</button>
-</div>
+  <div id="genre_form", class = "search">
+    <%= form_tag( root_path, remote: true, method: "get") do %>
+      <%= label_tag(:mood_input, "I'm feeling..") %>
+      <%= text_field_tag(:mood_input) %>
+      <%= submit_tag("Listen") %>
+    <% end %>
+  </div>
+
+  <div id="playlist">
+    <h1>Choose or enter a mood</h1>
+  </div>
+
+  <div class="container">
+    <button class='btn' id = "play">play</button>
+    <button class='btn' id = "pause">pause</button><br>
+    <button class="emotion" id="happy">Happy</button>
+    <button class="emotion" id="sad">Sad</button>
+    <button class="emotion" id="angry">Angry</button>
+  </div>
+</div>iv>
 
 
