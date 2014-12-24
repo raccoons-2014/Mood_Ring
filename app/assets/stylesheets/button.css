@@ -1,4 +1,4 @@
-.btn, .emotion, .genre {
+/*.btn, .emotion {
   background:#f7c956;
   background:-moz-linear-gradient(top,#f7c956 0%,#e8b551 100%);
   background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#f7c956),color-stop(100%,#e8b551));
@@ -16,7 +16,7 @@
   -webkit-border-radius:5px;
   border:1px solid #e8b551;
   margin: 15px;
-}
+}*/
 
 #sad {
   background: #660099;

@@ -14,8 +14,8 @@
 
   <div id="genre_form", class = "search">
     <%= form_tag( root_path, remote: true, method: "get") do %>
-      <%= label_tag(:landing_genre, "I'm feeling..") %>
-      <%= text_field_tag(:landing_genre) %>
+      <%= label_tag(:mood_input, "I'm feeling..") %>
+      <%= text_field_tag(:mood_input) %>
       <%= submit_tag("Listen") %>
     <% end %>
   </div>

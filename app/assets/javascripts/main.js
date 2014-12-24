@@ -35,7 +35,7 @@ $(document).ready(function(){
     if (typeof(soundManager) != "undefined") {
       soundManager.stopAll();
     };
-    tagPlaylist = new PlayerWidget(landing_genre.value, genre_choice);
+    tagPlaylist = new PlayerWidget(mood_input.value, genre_choice);
     setTimeout(function(){tagPlaylist.streamSong()},100);
   });
 })
