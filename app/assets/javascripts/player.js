@@ -1,6 +1,6 @@
 function PlayerWidget(sourceSelector, genre) {
   this.sourceSelector = sourceSelector;
-  this.genre = genre;
+  this.genre = genre_choice;
   this.trackUrls = [];
   this.trackTitles = [];
   this.populateTrackInfo(this.sourceSelector, this.genre);
