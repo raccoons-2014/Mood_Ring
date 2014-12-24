@@ -1,0 +1,383 @@
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 368ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+Started GET "/specs?reporters=console&spec" for 127.0.0.1 at 2014-12-21 08:51:53 -0500
+Processing by JasmineRails::SpecRunnerController#index as HTML
+  Parameters: {"reporters"=>"console", "spec"=>nil}
+  Rendered /Users/Maggie1/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/jasmine-rails-0.10.5/app/views/jasmine_rails/spec_runner/index.html.erb within layouts/jasmine_rails/spec_runner (0.9ms)
+Compiling jasmine.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.css
+Compiling jasmine-specs.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.css
+Compiling jasmine.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.js
+Compiling jasmine-html.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-html.js
+Compiling json2.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/json2.js
+Compiling boot.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/boot.js
+Compiling jasmine-console-shims.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-shims.js
+Compiling jasmine-console-reporter.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-reporter.js
+Compiling jasmine-specs.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.js
+Completed 200 OK in 434ms (Views: 427.1ms | ActiveRecord: 0.0ms)
+Started GET "/specs?reporters=console&spec" for 127.0.0.1 at 2014-12-21 08:52:16 -0500
+Processing by JasmineRails::SpecRunnerController#index as HTML
+  Parameters: {"reporters"=>"console", "spec"=>nil}
+  Rendered /Users/Maggie1/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/jasmine-rails-0.10.5/app/views/jasmine_rails/spec_runner/index.html.erb within layouts/jasmine_rails/spec_runner (0.8ms)
+Compiling jasmine.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.css
+Compiling jasmine-specs.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.css
+Compiling jasmine.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.js
+Compiling jasmine-html.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-html.js
+Compiling json2.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/json2.js
+Compiling boot.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/boot.js
+Compiling jasmine-console-shims.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-shims.js
+Compiling jasmine-console-reporter.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-reporter.js
+Compiling jasmine-specs.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.js
+Completed 200 OK in 58ms (Views: 51.2ms | ActiveRecord: 0.0ms)
+Started GET "/specs?reporters=console&spec" for 127.0.0.1 at 2014-12-21 08:52:38 -0500
+Processing by JasmineRails::SpecRunnerController#index as HTML
+  Parameters: {"reporters"=>"console", "spec"=>nil}
+  Rendered /Users/Maggie1/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/jasmine-rails-0.10.5/app/views/jasmine_rails/spec_runner/index.html.erb within layouts/jasmine_rails/spec_runner (0.8ms)
+Compiling jasmine.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.css
+Compiling jasmine-specs.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.css
+Compiling jasmine.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.js
+Compiling jasmine-html.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-html.js
+Compiling json2.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/json2.js
+Compiling boot.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/boot.js
+Compiling jasmine-console-shims.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-shims.js
+Compiling jasmine-console-reporter.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-reporter.js
+Compiling jasmine-specs.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.js
+Completed 200 OK in 67ms (Views: 60.1ms | ActiveRecord: 0.0ms)
+Started GET "/specs?reporters=console&spec" for 127.0.0.1 at 2014-12-21 11:38:57 -0500
+Processing by JasmineRails::SpecRunnerController#index as HTML
+  Parameters: {"reporters"=>"console", "spec"=>nil}
+  Rendered /Users/Maggie1/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/jasmine-rails-0.10.5/app/views/jasmine_rails/spec_runner/index.html.erb within layouts/jasmine_rails/spec_runner (0.8ms)
+Compiling jasmine.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.css
+Compiling jasmine-specs.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.css
+Compiling jasmine.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.js
+Compiling jasmine-html.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-html.js
+Compiling json2.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/json2.js
+Compiling boot.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/boot.js
+Compiling jasmine-console-shims.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-shims.js
+Compiling jasmine-console-reporter.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-reporter.js
+Compiling jasmine-specs.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.js
+Completed 200 OK in 66ms (Views: 59.1ms | ActiveRecord: 0.0ms)
+Started GET "/specs?reporters=console&spec" for 127.0.0.1 at 2014-12-21 11:39:41 -0500
+Processing by JasmineRails::SpecRunnerController#index as HTML
+  Parameters: {"reporters"=>"console", "spec"=>nil}
+  Rendered /Users/Maggie1/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/jasmine-rails-0.10.5/app/views/jasmine_rails/spec_runner/index.html.erb within layouts/jasmine_rails/spec_runner (0.7ms)
+Compiling jasmine.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.css
+Compiling jasmine-specs.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.css
+Compiling jasmine.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.js
+Compiling jasmine-html.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-html.js
+Compiling json2.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/json2.js
+Compiling boot.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/boot.js
+Compiling jasmine-console-shims.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-shims.js
+Compiling jasmine-console-reporter.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-reporter.js
+Compiling jasmine-specs.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.js
+Completed 200 OK in 69ms (Views: 60.5ms | ActiveRecord: 0.0ms)
+Started GET "/specs?reporters=console&spec" for 127.0.0.1 at 2014-12-21 11:40:20 -0500
+Processing by JasmineRails::SpecRunnerController#index as HTML
+  Parameters: {"reporters"=>"console", "spec"=>nil}
+  Rendered /Users/Maggie1/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/jasmine-rails-0.10.5/app/views/jasmine_rails/spec_runner/index.html.erb within layouts/jasmine_rails/spec_runner (1.1ms)
+Compiling jasmine.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.css
+Compiling jasmine-specs.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.css
+Compiling jasmine.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.js
+Compiling jasmine-html.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-html.js
+Compiling json2.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/json2.js
+Compiling boot.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/boot.js
+Compiling jasmine-console-shims.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-shims.js
+Compiling jasmine-console-reporter.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-reporter.js
+Compiling jasmine-specs.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.js
+Completed 200 OK in 71ms (Views: 64.0ms | ActiveRecord: 0.0ms)
+Started GET "/specs?reporters=console&spec" for 127.0.0.1 at 2014-12-21 11:43:25 -0500
+Processing by JasmineRails::SpecRunnerController#index as HTML
+  Parameters: {"reporters"=>"console", "spec"=>nil}
+  Rendered /Users/Maggie1/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/jasmine-rails-0.10.5/app/views/jasmine_rails/spec_runner/index.html.erb within layouts/jasmine_rails/spec_runner (0.9ms)
+Compiling jasmine.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.css
+Compiling jasmine-specs.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.css
+Compiling jasmine.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.js
+Compiling jasmine-html.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-html.js
+Compiling json2.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/json2.js
+Compiling boot.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/boot.js
+Compiling jasmine-console-shims.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-shims.js
+Compiling jasmine-console-reporter.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-reporter.js
+Compiling jasmine-specs.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.js
+Completed 200 OK in 71ms (Views: 64.1ms | ActiveRecord: 0.0ms)
+Started GET "/specs?reporters=console&spec" for 127.0.0.1 at 2014-12-21 11:48:50 -0500
+Processing by JasmineRails::SpecRunnerController#index as HTML
+  Parameters: {"reporters"=>"console", "spec"=>nil}
+  Rendered /Users/Maggie1/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/jasmine-rails-0.10.5/app/views/jasmine_rails/spec_runner/index.html.erb within layouts/jasmine_rails/spec_runner (0.8ms)
+Compiling jasmine.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.css
+Compiling jasmine-specs.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.css
+Compiling jasmine.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.js
+Compiling jasmine-html.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-html.js
+Compiling json2.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/json2.js
+Compiling boot.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/boot.js
+Compiling jasmine-console-shims.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-shims.js
+Compiling jasmine-console-reporter.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-reporter.js
+Compiling jasmine-specs.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.js
+Completed 200 OK in 66ms (Views: 59.0ms | ActiveRecord: 0.0ms)
+Started GET "/specs?reporters=console&spec" for 127.0.0.1 at 2014-12-21 11:50:02 -0500
+Processing by JasmineRails::SpecRunnerController#index as HTML
+  Parameters: {"reporters"=>"console", "spec"=>nil}
+  Rendered /Users/Maggie1/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/jasmine-rails-0.10.5/app/views/jasmine_rails/spec_runner/index.html.erb within layouts/jasmine_rails/spec_runner (0.7ms)
+Compiling jasmine.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.css
+Compiling jasmine-specs.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.css
+Compiling jasmine.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.js
+Compiling jasmine-html.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-html.js
+Compiling json2.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/json2.js
+Compiling boot.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/boot.js
+Compiling jasmine-console-shims.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-shims.js
+Compiling jasmine-console-reporter.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-reporter.js
+Compiling jasmine-specs.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.js
+Completed 200 OK in 68ms (Views: 60.4ms | ActiveRecord: 0.0ms)
+Started GET "/specs?reporters=console&spec" for 127.0.0.1 at 2014-12-21 11:50:23 -0500
+Processing by JasmineRails::SpecRunnerController#index as HTML
+  Parameters: {"reporters"=>"console", "spec"=>nil}
+  Rendered /Users/Maggie1/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/jasmine-rails-0.10.5/app/views/jasmine_rails/spec_runner/index.html.erb within layouts/jasmine_rails/spec_runner (0.7ms)
+Compiling jasmine.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.css
+Compiling jasmine-specs.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.css
+Compiling jasmine.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.js
+Compiling jasmine-html.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-html.js
+Compiling json2.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/json2.js
+Compiling boot.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/boot.js
+Compiling jasmine-console-shims.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-shims.js
+Compiling jasmine-console-reporter.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-reporter.js
+Compiling jasmine-specs.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.js
+Completed 200 OK in 70ms (Views: 62.8ms | ActiveRecord: 0.0ms)
+Started GET "/specs?reporters=console&spec" for 127.0.0.1 at 2014-12-21 11:50:54 -0500
+Processing by JasmineRails::SpecRunnerController#index as HTML
+  Parameters: {"reporters"=>"console", "spec"=>nil}
+  Rendered /Users/Maggie1/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/jasmine-rails-0.10.5/app/views/jasmine_rails/spec_runner/index.html.erb within layouts/jasmine_rails/spec_runner (0.9ms)
+Compiling jasmine.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.css
+Compiling jasmine-specs.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.css
+Compiling jasmine.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.js
+Compiling jasmine-html.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-html.js
+Compiling json2.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/json2.js
+Compiling boot.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/boot.js
+Compiling jasmine-console-shims.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-shims.js
+Compiling jasmine-console-reporter.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-reporter.js
+Compiling jasmine-specs.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.js
+Completed 200 OK in 68ms (Views: 61.9ms | ActiveRecord: 0.0ms)
+Started GET "/specs?reporters=console&spec" for 127.0.0.1 at 2014-12-21 11:51:05 -0500
+Processing by JasmineRails::SpecRunnerController#index as HTML
+  Parameters: {"reporters"=>"console", "spec"=>nil}
+  Rendered /Users/Maggie1/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/jasmine-rails-0.10.5/app/views/jasmine_rails/spec_runner/index.html.erb within layouts/jasmine_rails/spec_runner (0.8ms)
+Compiling jasmine.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.css
+Compiling jasmine-specs.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.css
+Compiling jasmine.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.js
+Compiling jasmine-html.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-html.js
+Compiling json2.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/json2.js
+Compiling boot.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/boot.js
+Compiling jasmine-console-shims.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-shims.js
+Compiling jasmine-console-reporter.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-reporter.js
+Compiling jasmine-specs.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.js
+Completed 200 OK in 66ms (Views: 59.1ms | ActiveRecord: 0.0ms)
+Started GET "/specs?reporters=console&spec" for 127.0.0.1 at 2014-12-21 11:51:34 -0500
+Processing by JasmineRails::SpecRunnerController#index as HTML
+  Parameters: {"reporters"=>"console", "spec"=>nil}
+  Rendered /Users/Maggie1/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/jasmine-rails-0.10.5/app/views/jasmine_rails/spec_runner/index.html.erb within layouts/jasmine_rails/spec_runner (0.9ms)
+Compiling jasmine.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.css
+Compiling jasmine-specs.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.css
+Compiling jasmine.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.js
+Compiling jasmine-html.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-html.js
+Compiling json2.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/json2.js
+Compiling boot.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/boot.js
+Compiling jasmine-console-shims.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-shims.js
+Compiling jasmine-console-reporter.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-reporter.js
+Compiling jasmine-specs.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.js
+Completed 200 OK in 68ms (Views: 61.1ms | ActiveRecord: 0.0ms)
+Started GET "/specs?reporters=console&spec" for 127.0.0.1 at 2014-12-21 11:51:59 -0500
+Processing by JasmineRails::SpecRunnerController#index as HTML
+  Parameters: {"reporters"=>"console", "spec"=>nil}
+  Rendered /Users/Maggie1/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/jasmine-rails-0.10.5/app/views/jasmine_rails/spec_runner/index.html.erb within layouts/jasmine_rails/spec_runner (0.7ms)
+Compiling jasmine.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.css
+Compiling jasmine-specs.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.css
+Compiling jasmine.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.js
+Compiling jasmine-html.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-html.js
+Compiling json2.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/json2.js
+Compiling boot.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/boot.js
+Compiling jasmine-console-shims.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-shims.js
+Compiling jasmine-console-reporter.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-reporter.js
+Compiling jasmine-specs.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.js
+Completed 200 OK in 71ms (Views: 63.8ms | ActiveRecord: 0.0ms)
+Started GET "/specs?reporters=console&spec" for 127.0.0.1 at 2014-12-21 11:52:51 -0500
+Processing by JasmineRails::SpecRunnerController#index as HTML
+  Parameters: {"reporters"=>"console", "spec"=>nil}
+  Rendered /Users/Maggie1/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/jasmine-rails-0.10.5/app/views/jasmine_rails/spec_runner/index.html.erb within layouts/jasmine_rails/spec_runner (0.8ms)
+Compiling jasmine.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.css
+Compiling jasmine-specs.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.css
+Compiling jasmine.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.js
+Compiling jasmine-html.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-html.js
+Compiling json2.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/json2.js
+Compiling boot.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/boot.js
+Compiling jasmine-console-shims.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-shims.js
+Compiling jasmine-console-reporter.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-reporter.js
+Compiling jasmine-specs.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.js
+Completed 200 OK in 67ms (Views: 59.8ms | ActiveRecord: 0.0ms)
+Started GET "/specs?reporters=console&spec" for 127.0.0.1 at 2014-12-21 11:54:08 -0500
+Processing by JasmineRails::SpecRunnerController#index as HTML
+  Parameters: {"reporters"=>"console", "spec"=>nil}
+  Rendered /Users/Maggie1/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/jasmine-rails-0.10.5/app/views/jasmine_rails/spec_runner/index.html.erb within layouts/jasmine_rails/spec_runner (0.8ms)
+Compiling jasmine.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.css
+Compiling jasmine-specs.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.css
+Compiling jasmine.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.js
+Compiling jasmine-html.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-html.js
+Compiling json2.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/json2.js
+Compiling boot.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/boot.js
+Compiling jasmine-console-shims.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-shims.js
+Compiling jasmine-console-reporter.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-reporter.js
+Compiling jasmine-specs.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.js
+Completed 200 OK in 66ms (Views: 58.6ms | ActiveRecord: 0.0ms)
+Started GET "/specs?reporters=console&spec" for 127.0.0.1 at 2014-12-21 11:54:36 -0500
+Processing by JasmineRails::SpecRunnerController#index as HTML
+  Parameters: {"reporters"=>"console", "spec"=>nil}
+  Rendered /Users/Maggie1/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/jasmine-rails-0.10.5/app/views/jasmine_rails/spec_runner/index.html.erb within layouts/jasmine_rails/spec_runner (1.0ms)
+Compiling jasmine.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.css
+Compiling jasmine-specs.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.css
+Compiling jasmine.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.js
+Compiling jasmine-html.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-html.js
+Compiling json2.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/json2.js
+Compiling boot.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/boot.js
+Compiling jasmine-console-shims.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-shims.js
+Compiling jasmine-console-reporter.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-reporter.js
+Compiling jasmine-specs.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.js
+Completed 200 OK in 65ms (Views: 58.0ms | ActiveRecord: 0.0ms)
+Started GET "/specs?reporters=console&spec" for 127.0.0.1 at 2014-12-21 11:55:18 -0500
+Processing by JasmineRails::SpecRunnerController#index as HTML
+  Parameters: {"reporters"=>"console", "spec"=>nil}
+  Rendered /Users/Maggie1/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/jasmine-rails-0.10.5/app/views/jasmine_rails/spec_runner/index.html.erb within layouts/jasmine_rails/spec_runner (0.7ms)
+Compiling jasmine.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.css
+Compiling jasmine-specs.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.css
+Compiling jasmine.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.js
+Compiling jasmine-html.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-html.js
+Compiling json2.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/json2.js
+Compiling boot.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/boot.js
+Compiling jasmine-console-shims.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-shims.js
+Compiling jasmine-console-reporter.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-reporter.js
+Compiling jasmine-specs.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.js
+Completed 200 OK in 70ms (Views: 63.8ms | ActiveRecord: 0.0ms)
+Started GET "/specs?reporters=console&spec" for 127.0.0.1 at 2014-12-21 11:55:51 -0500
+Processing by JasmineRails::SpecRunnerController#index as HTML
+  Parameters: {"reporters"=>"console", "spec"=>nil}
+  Rendered /Users/Maggie1/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/jasmine-rails-0.10.5/app/views/jasmine_rails/spec_runner/index.html.erb within layouts/jasmine_rails/spec_runner (0.7ms)
+Compiling jasmine.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.css
+Compiling jasmine-specs.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.css
+Compiling jasmine.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.js
+Compiling jasmine-html.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-html.js
+Compiling json2.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/json2.js
+Compiling boot.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/boot.js
+Compiling jasmine-console-shims.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-shims.js
+Compiling jasmine-console-reporter.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-reporter.js
+Compiling jasmine-specs.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.js
+Completed 200 OK in 77ms (Views: 70.2ms | ActiveRecord: 0.0ms)
+Started GET "/specs?reporters=console&spec" for 127.0.0.1 at 2014-12-21 11:56:17 -0500
+Processing by JasmineRails::SpecRunnerController#index as HTML
+  Parameters: {"reporters"=>"console", "spec"=>nil}
+  Rendered /Users/Maggie1/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/jasmine-rails-0.10.5/app/views/jasmine_rails/spec_runner/index.html.erb within layouts/jasmine_rails/spec_runner (0.7ms)
+Compiling jasmine.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.css
+Compiling jasmine-specs.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.css
+Compiling jasmine.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.js
+Compiling jasmine-html.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-html.js
+Compiling json2.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/json2.js
+Compiling boot.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/boot.js
+Compiling jasmine-console-shims.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-shims.js
+Compiling jasmine-console-reporter.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-reporter.js
+Compiling jasmine-specs.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.js
+Completed 200 OK in 71ms (Views: 64.2ms | ActiveRecord: 0.0ms)
+Started GET "/specs?reporters=console&spec" for 127.0.0.1 at 2014-12-21 11:56:46 -0500
+Processing by JasmineRails::SpecRunnerController#index as HTML
+  Parameters: {"reporters"=>"console", "spec"=>nil}
+  Rendered /Users/Maggie1/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/jasmine-rails-0.10.5/app/views/jasmine_rails/spec_runner/index.html.erb within layouts/jasmine_rails/spec_runner (0.9ms)
+Compiling jasmine.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.css
+Compiling jasmine-specs.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.css
+Compiling jasmine.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.js
+Compiling jasmine-html.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-html.js
+Compiling json2.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/json2.js
+Compiling boot.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/boot.js
+Compiling jasmine-console-shims.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-shims.js
+Compiling jasmine-console-reporter.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-reporter.js
+Compiling jasmine-specs.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.js
+Completed 200 OK in 68ms (Views: 60.7ms | ActiveRecord: 0.0ms)
+Started GET "/specs?reporters=console&spec" for 127.0.0.1 at 2014-12-21 11:57:40 -0500
+Processing by JasmineRails::SpecRunnerController#index as HTML
+  Parameters: {"reporters"=>"console", "spec"=>nil}
+  Rendered /Users/Maggie1/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/jasmine-rails-0.10.5/app/views/jasmine_rails/spec_runner/index.html.erb within layouts/jasmine_rails/spec_runner (0.8ms)
+Compiling jasmine.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.css
+Compiling jasmine-specs.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.css
+Compiling jasmine.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.js
+Compiling jasmine-html.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-html.js
+Compiling json2.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/json2.js
+Compiling boot.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/boot.js
+Compiling jasmine-console-shims.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-shims.js
+Compiling jasmine-console-reporter.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-reporter.js
+Compiling jasmine-specs.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.js
+Completed 200 OK in 63ms (Views: 56.0ms | ActiveRecord: 0.0ms)
+Started GET "/specs?reporters=console&spec" for 127.0.0.1 at 2014-12-21 11:58:08 -0500
+Processing by JasmineRails::SpecRunnerController#index as HTML
+  Parameters: {"reporters"=>"console", "spec"=>nil}
+  Rendered /Users/Maggie1/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/jasmine-rails-0.10.5/app/views/jasmine_rails/spec_runner/index.html.erb within layouts/jasmine_rails/spec_runner (0.8ms)
+Compiling jasmine.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.css
+Compiling jasmine-specs.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.css
+Compiling jasmine.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.js
+Compiling jasmine-html.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-html.js
+Compiling json2.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/json2.js
+Compiling boot.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/boot.js
+Compiling jasmine-console-shims.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-shims.js
+Compiling jasmine-console-reporter.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-reporter.js
+Compiling jasmine-specs.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.js
+Completed 200 OK in 69ms (Views: 63.0ms | ActiveRecord: 0.0ms)
+Started GET "/specs?reporters=console&spec" for 127.0.0.1 at 2014-12-21 11:59:23 -0500
+Processing by JasmineRails::SpecRunnerController#index as HTML
+  Parameters: {"reporters"=>"console", "spec"=>nil}
+  Rendered /Users/Maggie1/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/jasmine-rails-0.10.5/app/views/jasmine_rails/spec_runner/index.html.erb within layouts/jasmine_rails/spec_runner (0.7ms)
+Compiling jasmine.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.css
+Compiling jasmine-specs.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.css
+Compiling jasmine.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.js
+Compiling jasmine-html.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-html.js
+Compiling json2.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/json2.js
+Compiling boot.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/boot.js
+Compiling jasmine-console-shims.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-shims.js
+Compiling jasmine-console-reporter.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-reporter.js
+Compiling jasmine-specs.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.js
+Completed 200 OK in 56ms (Views: 49.8ms | ActiveRecord: 0.0ms)
+Started GET "/specs?reporters=console&spec" for 127.0.0.1 at 2014-12-21 15:08:26 -0500
+Processing by JasmineRails::SpecRunnerController#index as HTML
+  Parameters: {"reporters"=>"console", "spec"=>nil}
+  Rendered /Users/Maggie1/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/jasmine-rails-0.10.5/app/views/jasmine_rails/spec_runner/index.html.erb within layouts/jasmine_rails/spec_runner (1.2ms)
+Compiling jasmine.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.css
+Compiling jasmine-specs.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.css
+Compiling jasmine.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.js
+Compiling jasmine-html.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-html.js
+Compiling json2.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/json2.js
+Compiling boot.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/boot.js
+Compiling jasmine-console-shims.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-shims.js
+Compiling jasmine-console-reporter.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-reporter.js
+Compiling jasmine-specs.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.js
+Completed 200 OK in 101ms (Views: 93.5ms | ActiveRecord: 0.0ms)
+Started GET "/specs?reporters=console&spec" for 127.0.0.1 at 2014-12-21 15:16:38 -0500
+Processing by JasmineRails::SpecRunnerController#index as HTML
+  Parameters: {"reporters"=>"console", "spec"=>nil}
+  Rendered /Users/Maggie1/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/jasmine-rails-0.10.5/app/views/jasmine_rails/spec_runner/index.html.erb within layouts/jasmine_rails/spec_runner (0.8ms)
+Compiling jasmine.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.css
+Compiling jasmine-specs.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.css
+Compiling jasmine.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.js
+Compiling jasmine-html.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-html.js
+Compiling json2.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/json2.js
+Compiling boot.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/boot.js
+Compiling jasmine-console-shims.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-shims.js
+Compiling jasmine-console-reporter.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-reporter.js
+Compiling jasmine-specs.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.js
+Completed 200 OK in 66ms (Views: 59.4ms | ActiveRecord: 0.0ms)
+Started GET "/specs?reporters=console&spec" for 127.0.0.1 at 2014-12-21 15:43:18 -0500
+Processing by JasmineRails::SpecRunnerController#index as HTML
+  Parameters: {"reporters"=>"console", "spec"=>nil}
+  Rendered /Users/Maggie1/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/jasmine-rails-0.10.5/app/views/jasmine_rails/spec_runner/index.html.erb within layouts/jasmine_rails/spec_runner (0.8ms)
+Compiling jasmine.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.css
+Compiling jasmine-specs.css to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.css
+Compiling jasmine.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine.js
+Compiling jasmine-html.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-html.js
+Compiling json2.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/json2.js
+Compiling boot.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/boot.js
+Compiling jasmine-console-shims.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-shims.js
+Compiling jasmine-console-reporter.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-console-reporter.js
+Compiling jasmine-specs.js to /Users/Maggie1/Desktop/Mood_Ring/player/tmp/jasmine/assets/jasmine-specs.js
+Completed 200 OK in 72ms (Views: 65.0ms | ActiveRecord: 0.0ms)
