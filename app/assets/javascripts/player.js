@@ -16,8 +16,8 @@ PlayerWidget.prototype.populateTrackInfo= function(sourceSelector, genre) {
   SC.get('/tracks', { q: sourceSelector.toLowerCase(), genres: genre }, function(tracks) {
     console.log(sourceSelector)
     console.log(genre)
-    for (i=0; i <tracks.length; i++) {
-      var random_track = Math.floor(Math.random() * tracks.length - 1);
+    for (i = 0; i < tracks.length; i++) {
+      var random_track = Math.floor(Math.random() * (tracks.length - 1));
       this.trackTitles.push(tracks[random_track].title);
       this.trackUrls.push(tracks[random_track].stream_url);
     };
