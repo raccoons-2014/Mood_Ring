@@ -11,14 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141222145932) do
+ActiveRecord::Schema.define(version: 20141226213855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "users", force: true do |t|
-    t.string   "oauth_token"
-    t.string   "oauth_secret"
+    t.integer  "soundcloud_user_id"
+    t.string   "soundcloud_username"
+    t.string   "soundcloud_access_token"
+    t.string   "soundcloud_refresh_token"
+    t.datetime "soundcloud_expires_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

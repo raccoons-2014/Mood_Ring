@@ -3,14 +3,14 @@ class UsersController < ApplicationController
 		redirect_to CLIENT.authorize_url(:display => "popup")
 	end
 
-	def connected
+  def connected
 	  if params[:error].nil?
 		CLIENT.exchange_token(:code => params[:code])
 
-		login_as User.find_or_create_by_soundcloud_user_id({
-		  :soundcloud_user_id = user.id
-		  :soundcloud_username = user.name
-		})
+		login(User.find_or_create_by_soundcloud_user_id({
+		  :soundcloud_user_id => user.id,
+		  :soundcloud_username => user.name
+		}))
 
     	current_user.update_attributes!({
           :soundcloud_access_token  => soundcloud_client.access_token,
