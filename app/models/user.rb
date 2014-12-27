@@ -6,18 +6,11 @@ class User < ActiveRecord::Base
     options = {
       :client_id     => SOUNDCLOUD_CLIENT_ID,
       :client_secret => SOUNDCLOUD_CLIENT_SECRET,
-    }.merge(options)
-
-    Soundcloud.new(options)
-  end
-  
-  
-  def soundcloud_client(options={})
-    options= {
       :expires_at    => soundcloud_expires_at,
       :access_token  => soundcloud_access_token,
       :refresh_token => soundcloud_refresh_token
-    }.merge(options)
+    }
+    Soundcloud.new(options)
     
     client = self.class.soundcloud_client(options)
     
