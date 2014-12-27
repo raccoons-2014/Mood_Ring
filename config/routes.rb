@@ -7,10 +7,10 @@ Rails.application.routes.draw do
   match "/welcome/play" => "welcome#play", :as => 'play', via: [:get, :post]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
-  get '/soundcloud-callback' => 'users#connect', as: :soundcloud_connect
-  get '/soundcloud-connectd' => 'users#connected', as: :soundcloud_connected
+  get '/soundcloud-callback' => 'users#connect'
+  get '/soundcloud-connectd' => 'users#connected'
 
-  get '/soundcloud-disconnect' => 'users#disconnect', as: :soundcloud_disconnect
+  get '/soundcloud-disconnect' => 'users#disconnect'
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
