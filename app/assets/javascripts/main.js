@@ -1,11 +1,11 @@
 $(document).ready(function(){
   genre_choice = ""
   tracknames = [];
-  jQuery.ajaxSettings.traditional = true; 
+  jQuery.ajaxSettings.traditional = true;
   var apiKey = 'Y8IIRKVUCI9ZLESEU';
 
   function populateTrackList(tracks){
-    for (i = 0; i < tracks.length; i++) { 
+    for (i = 0; i < tracks.length; i++) {
       tracknames.push( tracks[i].artist_name + " " + tracks[i].title );
     }
   };
@@ -16,29 +16,12 @@ $(document).ready(function(){
       $('#mood-page').show();
   });
 
-  $('#happy').click(function(e){
+  $('button.emotion').click(function(e){
+    tracknames = [];
     if (typeof(soundManager) != "undefined") {
       soundManager.stopAll();
     };
-    tagPlaylist = new PlayerWidget(this.id);
-    setTimeout(function(){tagPlaylist.streamSong()},100);
-  });
-
-  $('#sad').click(function(e){
-    if (typeof(soundManager) != "undefined") {
-      soundManager.stopAll();
-    };
-    tagPlaylist = new PlayerWidget(this.id);
-    setTimeout(function(){tagPlaylist.streamSong()},100);
-
-  });
-
-  $('#angry').click(function(e){
-      if (typeof(soundManager) != "undefined") {
-      soundManager.stopAll();
-    };
-    tagPlaylist = new PlayerWidget(this.id);
-    setTimeout(function(){tagPlaylist.streamSong()},100);
+    getEchoNestTracks(this.id)
   });
 
   $('#mood_form').submit(function(e){
@@ -46,9 +29,6 @@ $(document).ready(function(){
       soundManager.stopAll();
     };
     getEchoNestTracks(mood_input.value)
-    currTrack = tracknames[0];
-    playSong(currTrack);
-    setTimeout(function(){tagPlaylist.streamSong()},100);
   });
 
   $('#connect').on('click', function(){

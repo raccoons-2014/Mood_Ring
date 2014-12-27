@@ -8,9 +8,11 @@ function PlayerWidget(track) {
 
 //get song array
 PlayerWidget.prototype.populateTrackInfo= function(track) {
-  SC.get('/tracks', { title: track }, function(tracks) {
-    this.current_track_title = track[0].title;
-    this.current_track = track[0].stream_url;
+  console.log("THIS TRACK: " + track)
+  SC.get('/tracks', { q: track }, function(tracks) {
+    console.log("TRACKS IN PLAYER:" + tracks[0])
+    this.current_track_title = tracks[0].title;
+    this.current_track = tracks[0].stream_url;
         $("#playlist").html(" <h1> Now playing: <br> " + this.current_track_title + " </h1>");
   }.bind(this));
 
