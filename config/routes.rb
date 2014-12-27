@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   get '/soundcloud-callback' => 'users#connect'
-  get '/soundcloud-connectd' => 'users#connected'
+  get '/soundcloud-connected' => 'users#connected'
 
   get '/soundcloud-disconnect' => 'users#disconnect'
   # Example of named route that can be invoked with purchase_url(id: product.id)
