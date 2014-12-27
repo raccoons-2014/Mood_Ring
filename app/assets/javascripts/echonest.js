@@ -11,7 +11,6 @@ function populateTrackList(tracks){
 function playSong(song) {
   tagPlaylist = new PlayerWidget(song);
   setTimeout(function(){tagPlaylist.streamSong()},100);
-    $("#test").text(song);
   };
 
 
@@ -31,7 +30,6 @@ function getEchoNestTracks(mood) {
       function(data) {
       })
       .success(function(data){
-        console.log("SUCCESS")
         var tracks = data.response.songs;
         for (i = 0; i < tracks.length; i++) {
           console.log(tracks[i].artist_name)
@@ -41,9 +39,6 @@ function getEchoNestTracks(mood) {
         console.log(tracknames)
         setTimeout(function(){tagPlaylist.streamSong()},100);
       })
-      .error(function() {
-        console.log('ERROR');
-      });
  }
 
 

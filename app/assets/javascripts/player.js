@@ -10,7 +10,6 @@ function PlayerWidget(track) {
 PlayerWidget.prototype.populateTrackInfo= function(track) {
   console.log("THIS TRACK: " + track)
   SC.get('/tracks', { q: track }, function(tracks) {
-    console.log("TRACKS IN PLAYER:" + tracks[0])
     this.current_track_title = tracks[0].title;
     this.current_track = tracks[0].stream_url;
         $("#playlist").html(" <h1> Now playing: <br> " + this.current_track_title + " </h1>");
