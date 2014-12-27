@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 	end
 
   def connected
-	  if params[:error].nil?
+	  if current_user
 		CLIENT.exchange_token(:code => params[:code])
 
 		login(User.find_or_create_by_soundcloud_user_id({
