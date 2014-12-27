@@ -1,41 +1,33 @@
 $(document).ready(function(){
   genre_choice = ""
+  tracknames = [];
+  jQuery.ajaxSettings.traditional = true;
+  var apiKey = 'Y8IIRKVUCI9ZLESEU';
+
+  function populateTrackList(tracks){
+    for (i = 0; i < tracks.length; i++) {
+      tracknames.push( tracks[i].artist_name + " " + tracks[i].title );
+    }
+  };
+
   $('button.genre').click(function(e){
       genre_choice = this.id
       $('#genre-page').hide();
       $('#mood-page').show();
   });
 
-  $('#happy').click(function(e){
+  $('button.emotion').click(function(e){
+    tracknames = [];
     if (typeof(soundManager) != "undefined") {
       soundManager.stopAll();
     };
-    tagPlaylist = new PlayerWidget(this.id);
-    setTimeout(function(){tagPlaylist.streamSong()},100);
+    getEchoNestTracks(this.id)
   });
 
-  $('#sad').click(function(e){
+  $('#mood_form').submit(function(e){
     if (typeof(soundManager) != "undefined") {
       soundManager.stopAll();
     };
-    tagPlaylist = new PlayerWidget(this.id);
-    setTimeout(function(){tagPlaylist.streamSong()},100);
-
-  });
-
-  $('#angry').click(function(e){
-      if (typeof(soundManager) != "undefined") {
-      soundManager.stopAll();
-    };
-    tagPlaylist = new PlayerWidget(this.id);
-    setTimeout(function(){tagPlaylist.streamSong()},100);
-  });
-
-  $('#genre_form').submit(function(e){
-    if (typeof(soundManager) != "undefined") {
-      soundManager.stopAll();
-    };
-    tagPlaylist = new PlayerWidget(mood_input.value);
-    setTimeout(function(){tagPlaylist.streamSong()},100);
+    getEchoNestTracks(mood_input.value)
   });
 })

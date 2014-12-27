@@ -1,27 +1,18 @@
-function PlayerWidget(sourceSelector, genre) {
-  this.sourceSelector = sourceSelector;
-  this.genre = genre_choice;
+function PlayerWidget(track) {
+  this.track = track;
   this.trackUrls = [];
   this.trackTitles = [];
-  this.populateTrackInfo(this.sourceSelector, this.genre);
+  this.populateTrackInfo(this.track);
 }
 
-// find params through input field
-PlayerWidget.prototype.getTagName= function() {
-  return this.sourceSelector.value;
-}
 
 //get song array
-PlayerWidget.prototype.populateTrackInfo= function(sourceSelector, genre) {
-  SC.get('/tracks', { q: sourceSelector.toLowerCase(), genres: genre }, function(tracks) {
-    for (i = 0; i < tracks.length; i++) {
-      var random_track = Math.floor(Math.random() * (tracks.length - 1));
-      this.trackTitles.push(tracks[random_track].title);
-      this.trackUrls.push(tracks[random_track].stream_url);
-    };
-
-    this.current_track_title = this.trackTitles[0];
-    this.current_track = this.trackUrls[0];
+PlayerWidget.prototype.populateTrackInfo= function(track) {
+  console.log("THIS TRACK: " + track)
+  SC.get('/tracks', { q: track }, function(tracks) {
+    console.log("TRACKS IN PLAYER:" + tracks[0])
+    this.current_track_title = tracks[0].title;
+    this.current_track = tracks[0].stream_url;
         $("#playlist").html(" <h1> Now playing: <br> " + this.current_track_title + " </h1>");
   }.bind(this));
 
