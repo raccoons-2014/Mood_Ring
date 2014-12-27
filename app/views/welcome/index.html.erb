@@ -15,7 +15,7 @@
 <div id="mood-page">
   <h1>What mood of music are you feeling?</h1>
 
-  <div id="genre_form", class = "search">
+  <div id="mood_form", class = "search">
     <%= form_tag( root_path, remote: true, method: "get") do %>
       <%= label_tag(:mood_input, "I'm feeling..") %>
       <%= text_field_tag(:mood_input) %>
