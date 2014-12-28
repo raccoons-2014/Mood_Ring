@@ -12,7 +12,7 @@ $(document).ready(function(){
     };
     getEchoNestTracks(this.id)
     setTimeout(function(){tagPlaylist.setCurrentTrack();},1000);
-    setTimeout(function(){tagPlaylist.streamSong()},100);
+    setTimeout(function(){tagPlaylist.streamSong()},1000);
   });
 
   $('#mood_form').submit(function(e){
@@ -21,6 +21,6 @@ $(document).ready(function(){
     };
     getEchoNestTracks(mood_input.value)
     setTimeout(function(){tagPlaylist.setCurrentTrack();},1000);
-    setTimeout(function(){tagPlaylist.streamSong()},100);
+    setTimeout(function(){tagPlaylist.streamSong()},1000);
   });
 })
