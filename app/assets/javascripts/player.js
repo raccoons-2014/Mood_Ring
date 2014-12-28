@@ -1,18 +1,22 @@
-function PlayerWidget(track) {
-  this.track = track;
+function PlayerWidget(tracklist) {
+  this.tracklist = tracklist;
+  this.current_track_title = ""
+  this.current_track = ""
   this.trackUrls = [];
   this.trackTitles = [];
-  this.populateTrackInfo(this.track);
+  this.populateTrackInfo(this.tracklist);
 }
 
-
 //get song array
-PlayerWidget.prototype.populateTrackInfo= function(track) {
-  console.log("THIS TRACK: " + track)
-  SC.get('/tracks', { q: track }, function(tracks) {
-    this.current_track_title = tracks[0].title;
-    this.current_track = tracks[0].stream_url;
-    $("#playlist").html(" <h1> Now playing: <br> " + this.current_track_title + " </h1>");
+PlayerWidget.prototype.populateTrackInfo= function(tracklist) {
+  for (i = 0; i < tracklist.length; i++) {
+    SC.get('/tracks', { q: tracklist[i] }, function(tracks) {
+      this.trackUrls.push(tracks[0].title)
+      this.trackTitles.push(tracks[0].stream_url)
+  }
+  this.current_track_title = this.trackTitles.shift();
+  this.current_track = this.trackUrls.shift();
+  $("#playlist").html(" <h1> Now playing: <br> " + this.current_track_title + " </h1>");
   }.bind(this));
 };
 
@@ -27,7 +31,7 @@ PlayerWidget.prototype.resetCurrentTrack = function() {
 PlayerWidget.prototype.streamSong = function() {
   console.log("In streamSong, current track is " + this.current_track)
   console.log(this)
-  
+
   //general play functions ... add next button
   SC.stream(this.current_track, function(sound){
     sound.play();
@@ -37,7 +41,7 @@ PlayerWidget.prototype.streamSong = function() {
         soundManager
         this.resetCurrentTrack();
         this.streamSong();//play that next song
-      };
+      }
     });
   }),
   $('#pause').click(function(event){
