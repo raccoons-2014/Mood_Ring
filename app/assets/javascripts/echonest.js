@@ -21,7 +21,9 @@ function getEchoNestTracks(mood) {
     'artist_min_hotttnesss': "0.5",
     'style': genre_choice,
     'format': 'json',
-    'description': mood,
+    'mood': mood,
+    'description' : genre_choice,
+    'description' : mood,
     'type':'artist-description'
   };
   $.getJSON(url, args,
