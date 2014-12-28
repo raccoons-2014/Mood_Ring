@@ -12,24 +12,24 @@ PlayerWidget.prototype.populateTrackInfo= function(track) {
   SC.get('/tracks', { q: track }, function(tracks) {
     this.current_track_title = tracks[0].title;
     this.current_track = tracks[0].stream_url;
-        $("#playlist").html(" <h1> Now playing: <br> " + this.current_track_title + " </h1>");
+    $("#playlist").html(" <h1> Now playing: <br> " + this.current_track_title + " </h1>");
   }.bind(this));
-
-}
+};
 
 PlayerWidget.prototype.resetCurrentTrack = function() {
 //move throughout array
-this.trackTitles.shift();
-this.current_track_title = this.trackTitles[0];
-this.trackUrls.shift();
-this.current_track= this.trackUrls[0];
-}
+  this.trackTitles.shift();
+  this.current_track_title = this.trackTitles[0];
+  this.trackUrls.shift();
+  this.current_track = this.trackUrls[0];
+};
 
 PlayerWidget.prototype.streamSong = function() {
   console.log("In streamSong, current track is " + this.current_track)
   console.log(this)
+  
   //general play functions ... add next button
-  SC.stream(tagPlaylist.current_track, function(sound){
+  SC.stream(this.current_track, function(sound){
     sound.play();
   $('#play').click(function(event) {
     sound.resume({
@@ -37,7 +37,7 @@ PlayerWidget.prototype.streamSong = function() {
         soundManager
         this.resetCurrentTrack();
         this.streamSong();//play that next song
-      }
+      };
     });
   }),
   $('#pause').click(function(event){

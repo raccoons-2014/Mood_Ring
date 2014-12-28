@@ -1,21 +1,17 @@
 $(document).ready(function(){
-  genre_choice = ""
-  tracknames = [];
-  
-
+ 
   $('button.genre').click(function(e){
-      genre_choice = this.id
-      $('#genre-page').hide();
-      $('#mood-page').show();
+    genre_choice = this.id
+    $('#genre-page').hide();
+    $('#mood-page').show();
   });
 
   $('button.emotion').click(function(e){
-    tracknames = [];
     if (typeof(soundManager) != "undefined") {
       soundManager.stopAll();
     };
     getEchoNestTracks(this.id)
- 
+    setTimeout(function(){tagPlaylist.streamSong()},100);
 
   });
 
@@ -24,6 +20,6 @@ $(document).ready(function(){
       soundManager.stopAll();
     };
     getEchoNestTracks(mood_input.value)
-   
+    setTimeout(function(){tagPlaylist.streamSong()},100);
   });
 })
