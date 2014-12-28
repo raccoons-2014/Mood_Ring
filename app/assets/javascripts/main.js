@@ -12,7 +12,7 @@ $(document).ready(function(){
       soundManager.stopAll();
     };
     getEchoNestTracks(this.id)
-    setTimeout(function(){tagPlaylist.setCurrentTrack();},100);
+    setTimeout(function(){tagPlaylist.setCurrentTrack();},1000);
     setTimeout(function(){tagPlaylist.streamSong()},100);
   });
 
@@ -21,7 +21,7 @@ $(document).ready(function(){
       soundManager.stopAll();
     };
     getEchoNestTracks(mood_input.value)
-    setTimeout(function(){tagPlaylist.setCurrentTrack();},100);
+    setTimeout(function(){tagPlaylist.setCurrentTrack();},1000);
     setTimeout(function(){tagPlaylist.streamSong()},100);
   });
 })
