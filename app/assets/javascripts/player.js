@@ -26,8 +26,10 @@ this.current_track= this.trackUrls[0];
 }
 
 PlayerWidget.prototype.streamSong = function() {
+  console.log("In streamSong, current track is " + this.current_track)
+  console.log(this)
   //general play functions ... add next button
-  SC.stream(this.current_track, function(sound){
+  SC.stream(tagPlaylist.current_track, function(sound){
     sound.play();
   $('#play').click(function(event) {
     sound.resume({
