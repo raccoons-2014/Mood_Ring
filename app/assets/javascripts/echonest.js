@@ -3,7 +3,7 @@ var apiKey = 'Y8IIRKVUCI9ZLESEU';
 
 
 function populateTrackList(tracks){
-  for (i = 0; i < tracks.length; i++) {
+  for (var i = 0; i < tracks.length; i++) {
     tracknames.push( tracks[i].artist_name + " " + tracks[i].title );
   }
 };
@@ -30,7 +30,7 @@ function getEchoNestTracks(mood) {
     .success(function(data){
       var tracks = data.response.songs;
       tracknames = [];
-      for (i = 0; i < tracks.length; i++) {
+      for (var i = 0; i < tracks.length; i++) {
         console.log(tracks[i].artist_name)
         tracknames.push( tracks[i].artist_name + " " + tracks[i].title );
       };
