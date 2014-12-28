@@ -1,20 +1,19 @@
 $(document).ready(function(){
-  genre_choice = ""
-  tracknames = [];
+
 
 
   $('button.genre').click(function(e){
-      genre_choice = this.id
-      $('#genre-page').hide();
-      $('#mood-page').show();
+    genre_choice = this.id
+    $('#genre-page').hide();
+    $('#mood-page').show();
   });
 
   $('button.emotion').click(function(e){
-    tracknames = [];
     if (typeof(soundManager) != "undefined") {
       soundManager.stopAll();
     };
     getEchoNestTracks(this.id)
+    setTimeout(function(){tagPlaylist.streamSong()},100);
   });
 
   $('#mood_form').submit(function(e){
@@ -26,6 +25,7 @@ $(document).ready(function(){
 
   $('#connect').on('click', function(){
     connectToSoundcloud();
+    setTimeout(function(){tagPlaylist.streamSong()},100);
   });
 })
 
