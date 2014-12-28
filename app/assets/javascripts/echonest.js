@@ -8,8 +8,8 @@ function populateTrackList(tracks){
   }
 };
 
-function playSong(song) {
-  tagPlaylist = new PlayerWidget(song);
+function fillTracklist(tracks) {
+  tagPlaylist = new PlayerWidget(tracks);
 };
 
 function getEchoNestTracks(mood) {
@@ -34,8 +34,8 @@ function getEchoNestTracks(mood) {
         console.log(tracks[i].artist_name)
         tracknames.push( tracks[i].artist_name + " " + tracks[i].title );
       };
-      playSong(tracknames[0])
       console.log(tracknames)
+      fillTracklist(tracknames)
     })
  }
 
