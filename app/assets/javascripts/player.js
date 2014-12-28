@@ -1,43 +1,44 @@
-function PlayerWidget(sourceSelector, genre) {
-  this.sourceSelector = sourceSelector;
-  this.genre = genre_choice;
+function PlayerWidget(tracklist) {
+  this.tracklist = tracklist;
+  this.current_track_title = "";
+  this.current_track_url = "";
   this.trackUrls = [];
   this.trackTitles = [];
-  this.populateTrackInfo(this.sourceSelector, this.genre);
-}
-
-// find params through input field
-PlayerWidget.prototype.getTagName= function() {
-  return this.sourceSelector.value;
-}
+  this.populateTrackInfo(this.tracklist);
+  }
 
 //get song array
-PlayerWidget.prototype.populateTrackInfo= function(sourceSelector, genre) {
-  SC.get('/tracks', { q: sourceSelector.toLowerCase(), genres: genre }, function(tracks) {
-    for (i = 0; i < tracks.length; i++) {
-      var random_track = Math.floor(Math.random() * (tracks.length - 1));
-      this.trackTitles.push(tracks[random_track].title);
-      this.trackUrls.push(tracks[random_track].stream_url);
-    };
+PlayerWidget.prototype.populateTrackInfo = function(tracklist) {
+  for (var i = 0; i < tracklist.length; i++) {
+    SC.get('/tracks', { q: tracklist[i] }, function(tracks) {
+      if (tracks[0].hasOwnProperty('stream_url') ){
+        this.trackUrls.push(tracks[0].stream_url);
+        this.trackTitles.push(tracks[0].title);
+      };
+    }.bind(this));
+  };
+};
 
-    this.current_track_title = this.trackTitles[0];
-    this.current_track = this.trackUrls[0];
-        $("#playlist").html(" <h1> Now playing: <br> " + this.current_track_title + " </h1>");
-  }.bind(this));
-
-}
+PlayerWidget.prototype.setCurrentTrack = function() {
+  this.current_track_title = this.trackTitles.shift();
+  this.current_track_url = this.trackUrls.shift();
+  $("#playlist").html(" <h1> Now playing: <br> " + this.current_track_title + " </h1>");
+};
 
 PlayerWidget.prototype.resetCurrentTrack = function() {
 //move throughout array
-this.trackTitles.shift();
-this.current_track_title = this.trackTitles[0];
-this.trackUrls.shift();
-this.current_track= this.trackUrls[0];
-}
+  this.trackTitles.shift();
+  this.current_track_title = this.trackTitles[0];
+  this.trackUrls.shift();
+  this.current_track_url = this.trackUrls[0];
+};
 
 PlayerWidget.prototype.streamSong = function() {
+  console.log("In streamSong, current track is " + this.current_track)
+  console.log(this)
+
   //general play functions ... add next button
-  SC.stream(this.current_track, function(sound){
+  SC.stream(this.current_track_url, function(sound){
     sound.play();
   $('#play').click(function(event) {
     sound.resume({

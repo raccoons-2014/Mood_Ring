@@ -1,41 +1,26 @@
 $(document).ready(function(){
-  genre_choice = ""
+
   $('button.genre').click(function(e){
-      genre_choice = this.id
-      $('#genre-page').hide();
-      $('#mood-page').show();
+    genre_choice = this.id
+    $('#genre-page').hide();
+    $('#mood-page').show();
   });
 
-  $('#happy').click(function(e){
+  $('button.emotion').click(function(e){
     if (typeof(soundManager) != "undefined") {
       soundManager.stopAll();
     };
-    tagPlaylist = new PlayerWidget(this.id);
-    setTimeout(function(){tagPlaylist.streamSong()},100);
+    getEchoNestTracks(this.id)
+    setTimeout(function(){tagPlaylist.setCurrentTrack();},1000);
+    setTimeout(function(){tagPlaylist.streamSong()},1000);
   });
 
-  $('#sad').click(function(e){
+  $('#mood_form').submit(function(e){
     if (typeof(soundManager) != "undefined") {
       soundManager.stopAll();
     };
-    tagPlaylist = new PlayerWidget(this.id);
-    setTimeout(function(){tagPlaylist.streamSong()},100);
-
-  });
-
-  $('#angry').click(function(e){
-      if (typeof(soundManager) != "undefined") {
-      soundManager.stopAll();
-    };
-    tagPlaylist = new PlayerWidget(this.id);
-    setTimeout(function(){tagPlaylist.streamSong()},100);
-  });
-
-  $('#genre_form').submit(function(e){
-    if (typeof(soundManager) != "undefined") {
-      soundManager.stopAll();
-    };
-    tagPlaylist = new PlayerWidget(mood_input.value);
-    setTimeout(function(){tagPlaylist.streamSong()},100);
+    getEchoNestTracks(mood_input.value)
+    setTimeout(function(){tagPlaylist.setCurrentTrack();},1000);
+    setTimeout(function(){tagPlaylist.streamSong()},1000);
   });
 })
