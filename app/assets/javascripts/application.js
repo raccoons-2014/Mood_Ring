@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require underscore
 //= require turbolinks
 //= require main
 //= require player
+//= require echonest
 //= require_tree .
