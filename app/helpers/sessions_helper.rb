@@ -5,8 +5,8 @@ module SessionsHelper
   end
 
   def logged_in?
-    !!current_user
-  end
+    !!@current_user
+  end  
 
   def logout
     session.delete(:current_user_id)

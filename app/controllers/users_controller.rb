@@ -17,12 +17,17 @@ class UsersController < ApplicationController
         })
       end
     redirect_to root_path
+    puts "****************************"
+      p @current_user
+      p logged_in?
   end
-  
+
   def disconnect
     logout
     redirect_to root_path
-
+    puts "((((((((((((((((((((("
+      p @current_user
+      p logged_in?
   end
   
 private

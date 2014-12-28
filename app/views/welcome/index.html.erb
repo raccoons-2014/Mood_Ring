@@ -1,11 +1,5 @@
 <h1>What mood of music are you feeling?</h1>
 
-  <% if @current_user %>
-  <button class = 'btn' id = 'connect' onclick= "location.href = '/soundcloud-disconnect'">Disconnect</button>
-  <% else %>
-  <button class = 'btn' id = 'connect' onclick= "location.href = '/soundcloud-callback'">Connect</button>
-  <% end %>
-
 <div id="genre_form", class = "search">
   <%= form_tag( root_path, remote: true, method: "get") do %>
     <%= label_tag(:landing_genre, "I'm feeling..") %>
