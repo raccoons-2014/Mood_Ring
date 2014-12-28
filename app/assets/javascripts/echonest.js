@@ -2,11 +2,11 @@ jQuery.ajaxSettings.traditional = true;
 var apiKey = 'Y8IIRKVUCI9ZLESEU';
 
 
-function populateTrackList(tracks){
-  for (var i = 0; i < tracks.length; i++) {
-    tracknames.push( tracks[i].artist_name + " " + tracks[i].title );
-  }
-};
+// function populateTrackList(tracks){
+//   for (var i = 0; i < tracks.length; i++) {
+//     tracknames.push( tracks[i].artist_name + " " + tracks[i].title );
+//   }
+// };
 
 function fillTracklist(tracks) {
   tagPlaylist = new PlayerWidget(tracks);
