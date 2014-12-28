@@ -16,6 +16,9 @@ class UsersController < ApplicationController
           :soundcloud_expires_at    => soundcloud_client.expires_at,
       })
     end
+    puts "*********************"
+    p @current_user
+    p logged_in?
     redirect_to root_path
   end
 
