@@ -38,4 +38,8 @@ $(document).ready(function(){
     tagPlaylist = new PlayerWidget(mood_input.value);
     setTimeout(function(){tagPlaylist.streamSong()},100);
   });
+
+  $('#connect').on('click', function(){
+    connectToSoundcloud();
+  });
 })

@@ -5,10 +5,12 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
   match "/welcome/play" => "welcome#play", :as => 'play', via: [:get, :post]
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
+  get '/soundcloud-callback' => 'users#connect'
+  get '/soundcloud-connected' => 'users#connected'
 
+  get '/soundcloud-disconnect' => 'users#disconnect'
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
