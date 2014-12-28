@@ -1,26 +1,29 @@
 function PlayerWidget(tracklist) {
   this.tracklist = tracklist;
-  this.current_track_title = ""
-  this.current_track = ""
+  this.current_track_title = "";
+  this.current_track = "";
   this.trackUrls = [];
   this.trackTitles = [];
   this.populateTrackInfo(this.tracklist);
-}
+  }
 
 //get song array
 PlayerWidget.prototype.populateTrackInfo = function(tracklist) {
   for (var i = 0; i < tracklist.length; i++) {
     SC.get('/tracks', { q: tracklist[i] }, function(tracks) {
-      console.log("1 -- " +this)
-      this.trackUrls.push(tracks[0].title)
-      this.trackTitles.push(tracks[0].stream_url)
+      if (tracks[0].hasOwnProperty('stream_url') ){
+        this.trackUrls.push(tracks[0].stream_url);
+        this.trackTitles.push(tracks[0].title);
+      };
     }.bind(this));
   };
-    console.log("2 -- " + this)
-    this.current_track_title = this.trackTitles.shift();
-    this.current_track = this.trackUrls.shift();
-    $("#playlist").html(" <h1> Now playing: <br> " + this.current_track_title + " </h1>");
-  };
+};
+
+PlayerWidget.prototype.setCurrentTrack = function() {
+  this.current_track_title = this.trackTitles.shift();
+  this.current_track = this.trackUrls.shift();
+  $("#playlist").html(" <h1> Now playing: <br> " + this.current_track_title + " </h1>");
+};
 
 PlayerWidget.prototype.resetCurrentTrack = function() {
 //move throughout array
