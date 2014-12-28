@@ -4,15 +4,11 @@ class User < ActiveRecord::Base
   #but for some strange reason it returns an error saying that the client id
   #and secret are undefined?
 
-  SOUNDCLOUD_CLIENT_ID     = "5b91135eafaf701ea414c5fe6b86fdf3"
-  SOUNDCLOUD_CLIENT_SECRET = "a51b5d3050edbbd343780cd99d3cb469"
-
-
   def self.soundcloud_client(options={})
     #defining soundcloud id and secret for the class User
     options = {
-      :client_id     => SOUNDCLOUD_CLIENT_ID,
-      :client_secret => SOUNDCLOUD_CLIENT_SECRET,
+      :client_id     => CLIENT.client_id,
+      :client_secret => CLIENT.client_secret,
     }.merge(options)
 
     Soundcloud.new(options)
