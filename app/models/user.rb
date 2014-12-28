@@ -1,8 +1,5 @@
 class User < ActiveRecord::Base
-
-  #current problem: hardcoded client id and secret. I tried using ENV earlier,
-  #but for some strange reason it returns an error saying that the client id
-  #and secret are undefined?
+  validates :soundcloud_user_id, presence: true, uniqueness: true
 
   def self.soundcloud_client(options={})
     #defining soundcloud id and secret for the class User
