@@ -34,6 +34,9 @@ PlayerWidget.prototype.resetCurrentTrack = function() {
 };
 
 PlayerWidget.prototype.streamSong = function() {
+  console.log("In streamSong, current track is " + this.current_track)
+  console.log(this)
+
   //general play functions ... add next button
   SC.stream(this.current_track_url, function(sound){
     sound.play();
