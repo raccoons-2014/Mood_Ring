@@ -1,4 +1,4 @@
-module SessionsHelper
+module UsersHelper
   def login(user)
     @current_user = user
     session[:current_user_id] = user.try(:id)

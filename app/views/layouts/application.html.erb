@@ -18,7 +18,7 @@
 </head>
 <body>
 
-  <% if logged_in? %>
+  <% if logged_in? == true %>
     <button class = 'btn' id = 'connect' onclick= "location.href = '/soundcloud-disconnect'">Disconnect</button>
   <% else %>
     <button class = 'btn' id = 'connect' onclick= "location.href = '/soundcloud-callback'">Connect</button>
