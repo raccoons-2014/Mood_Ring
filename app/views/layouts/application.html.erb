@@ -18,8 +18,11 @@
 </head>
 <body>
 
-  <button class = 'btn' onclick= "location.href = '/soundcloud-callback'">Connect</button> |
-  <button class = 'btn' onclick="location.href = '/soundcloud-disconnect'">Disconnect</button>
+  <% if current_user %>
+    <button class = 'btn' onclick="location.href = '/soundcloud-disconnect'">Disconnect</button>
+  <% else %>
+    <button class = 'btn' onclick= "location.href = '/soundcloud-callback'">Connect</button> 
+  <% end %>
 
   <%= yield %>
 

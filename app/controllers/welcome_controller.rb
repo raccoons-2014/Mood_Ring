@@ -4,6 +4,5 @@ class WelcomeController < ApplicationController
     render :index
     puts "++++++++++++++++++++++++++++"
     p @current_user
-    p logged_in?
   end
 end
