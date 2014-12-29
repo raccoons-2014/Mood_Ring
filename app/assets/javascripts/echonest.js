@@ -10,13 +10,12 @@ function getEchoNestTracks(mood) {
   var args = {
     'api_key' : apiKey,
     'song_type': "studio",
+    'max_speechiness' : 0.4,
     'song_min_hotttnesss': "0.5",
     'artist_min_hotttnesss': "0.5",
-    'style': genre_choice,
+    'style' : mood + '^2',
     'format': 'json',
-    'mood': mood,
     'description' : genre_choice,
-    'description' : mood,
     'type':'artist-description'
   };
   $.getJSON(url, args,
@@ -28,8 +27,7 @@ function getEchoNestTracks(mood) {
       for (var i = 0; i < tracks.length; i++) {
         tracknames.push( tracks[i].artist_name + " " + tracks[i].title );
       };
-      fillTracklist(tracknames)
+      fillTracklist(tracknames);
     })
  }
-
 
