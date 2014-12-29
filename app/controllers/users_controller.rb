@@ -4,9 +4,7 @@ class UsersController < ApplicationController
 	end
 
   def connected
-
 	  if params[:error].nil?
-
       soundcloud_client.exchange_token(:code => params[:code])
       user = soundcloud_client.get("/me")
 
@@ -17,10 +15,7 @@ class UsersController < ApplicationController
           :soundcloud_refresh_token => soundcloud_client.refresh_token,
           :soundcloud_expires_at    => soundcloud_client.expires_at,
       })
-      puts "********************"
-      p user
     end
-
     redirect_to root_path
   end
 
