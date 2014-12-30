@@ -10,10 +10,11 @@ function getEchoNestTracks(mood) {
   var args = {
     'api_key' : apiKey,
     'song_type': "studio",
-    'max_speechiness' : 0.4,
-    'song_min_hotttnesss': "0.5",
-    'artist_min_hotttnesss': "0.5",
-    'style' : mood + '^2',
+    'max_speechiness' : '0.4',
+    'song_min_hotttnesss': '0.4',
+    'artist_min_hotttnesss': '0.3',
+    'style' : mood + '^3',
+    'mood' : mood + '^3',
     'format': 'json',
     'description' : genre_choice,
     'type':'artist-description'
