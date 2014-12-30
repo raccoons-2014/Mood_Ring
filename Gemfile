@@ -45,7 +45,7 @@ group :production do
   gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
 end
 
-gem 'oauth2'
+gem 'capybara'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
