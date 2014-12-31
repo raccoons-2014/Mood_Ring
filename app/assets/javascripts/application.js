@@ -13,10 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require underscore
-//= require three.min
 //= require turbolinks
+//= require three.min
 //= require main
 //= require player
 //= require echonest
-//= require three
 //= require_tree .

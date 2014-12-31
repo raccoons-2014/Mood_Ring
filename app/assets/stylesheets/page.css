@@ -1,8 +1,8 @@
-html{
+/*html{
   background: url('http://www.strangebeaver.com/wp-content/uploads/2013/02/wpw26/9.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-}
+}*/
 
 h1{
   text-align: center;
@@ -49,4 +49,9 @@ p{
 
 #mood-page {
   display: none;
+}
+
+#three {
+  height: 500px;
+  width: 1920px;
 }
