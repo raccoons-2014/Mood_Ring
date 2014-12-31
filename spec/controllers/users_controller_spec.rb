@@ -9,13 +9,6 @@ describe UsersController, :type => :controller do
   	end
   end
 
-  context "once you connect with soundcloud" do 
-    xit "should redirect you back to the index page" do 
-      get :connected
-      expect(response).to have_http_status(:redirect)
-    end
-  end
-
   context "after you click the disconnect button" do 
     it "should redirect you back to the welcome page" do 
       get :disconnect 

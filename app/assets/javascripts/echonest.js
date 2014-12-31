@@ -3,6 +3,7 @@ var apiKey = 'Y8IIRKVUCI9ZLESEU';
 
 function fillTracklist(tracks) {
   tagPlaylist = new PlayerWidget(tracks);
+  console.log(tagPlaylist)
 };
 
 function getEchoNestTracks(mood) {
