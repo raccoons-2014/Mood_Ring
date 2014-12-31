@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+ $('#three').append(renderer.domElement)
+
   $('button.genre').click(function(e){
     genre_choice = this.id
     $('#genre-page').hide();
