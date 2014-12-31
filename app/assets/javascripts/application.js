@@ -13,9 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require underscore
-//= require three.min
 //= require turbolinks
 //= require three.min
+
 //= require StereoEffect
 //= require helvetiker_regular.typeface
 //= require Detector
@@ -34,5 +34,4 @@
 //= require audio
 //= require sounds
 //= require echonest
-//= require three
 //= require_tree .
