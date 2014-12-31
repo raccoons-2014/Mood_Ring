@@ -11,3 +11,6 @@ CLIENT = SoundCloud.new({
   :client_secret => ENV['SOUNDCLOUD_SECRET']
 })
 
+@spec = {:clientID => ENV['GRACENOTE_ID'], :clientTag => ENV['GRACENOTE_CLIENT_TAG']}
+@obj = Gracenote.new(@spec)
+@obj.registerUser

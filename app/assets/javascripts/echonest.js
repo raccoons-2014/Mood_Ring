@@ -9,14 +9,14 @@ function getEchoNestTracks(mood) {
   var url = 'http://developer.echonest.com/api/v4/playlist/static';
   var args = {
     'api_key' : apiKey,
+    'results' : 100,
     'song_type': "studio",
-    'song_min_hotttnesss': "0.5",
-    'artist_min_hotttnesss': "0.5",
-    'style': genre_choice,
+    'song_min_hotttnesss': "0.4",
+    'artist_min_hotttnesss': "0.4",
+    'style': mood + "^2",
     'format': 'json',
-    'mood': mood,
-    'description' : genre_choice,
-    'description' : mood,
+    'mood': mood + "^2",
+    'description' : mood + "^2",
     'type':'artist-description'
   };
   $.getJSON(url, args,

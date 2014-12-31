@@ -4,7 +4,9 @@ function PlayerWidget(tracklist) {
   this.current_track_url = "";
   this.trackUrls = [];
   this.trackTitles = [];
+  this.trackGenres = [];
   this.populateTrackInfo(this.tracklist);
+
   }
 
 //get song array
@@ -12,8 +14,13 @@ PlayerWidget.prototype.populateTrackInfo = function(tracklist) {
   for (var i = 0; i < tracklist.length; i++) {
     SC.get('/tracks', { q: tracklist[i] }, function(tracks) {
       if (tracks[0].hasOwnProperty('stream_url') ){
+        console.log("***********")
+        console.log(tracks[0].title)
+        console.log(tracks[0].genre)
+        console.log(tracks[0].tag_list)
         this.trackUrls.push(tracks[0].stream_url);
         this.trackTitles.push(tracks[0].title);
+        this.trackGenres.push(tracks[0].genre);
       };
     }.bind(this));
   };
