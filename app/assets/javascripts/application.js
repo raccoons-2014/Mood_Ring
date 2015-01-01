@@ -15,7 +15,6 @@
 //= require underscore
 //= require turbolinks
 //= require three.min
-
 //= require StereoEffect
 //= require helvetiker_regular.typeface
 //= require Detector
