@@ -1,5 +1,7 @@
 
-      if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+
+
+if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
 
       var container;
 
@@ -17,9 +19,7 @@
 
       document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 
-      // init();
-      animate();
-
+ 
       function init() {
 
         container = document.createElement( 'div' );
@@ -32,8 +32,8 @@
 
         var geometry = new THREE.SphereGeometry( 100, 32, 16 );
 
-        var path = "Mood_Ring/app/assets/images/criminal-impact_";
-        var format = '.tga';
+        var path = "/assets/iceflats_";
+        var format = '.jpg';
         var urls = [
           path + 'bk' + format, path + 'dn' + format,
           path + 'ft' + format, path + 'lf' + format,
@@ -137,8 +137,6 @@
         effect.render( scene, camera );
 
       }
-
-
 
 
 

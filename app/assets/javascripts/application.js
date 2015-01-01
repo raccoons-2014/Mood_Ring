@@ -15,8 +15,8 @@
 //= require underscore
 //= require turbolinks
 //= require three.min
-//= require Detector
 //= require StereoEffect
+//= require Detector
 //= require main
 //= require player
 //= require echonest
