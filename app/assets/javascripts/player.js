@@ -26,11 +26,7 @@ PlayerWidget.prototype.setCurrentTrack = function() {
   this.current_track_title = this.trackTitles.shift();
   this.current_track_url = this.trackUrls.shift();
   this.current_track_id = this.trackIds.shift();
-<<<<<<< HEAD
   $("#playlist").html(" <h1> Now playing: <br> " + this.current_track_title + " </h1>");
-=======
-  $("#playlist").html(" <h1> Now playing: <br> " + this.current_track_title + " </h1> <button id='fav'>Favorite</button>");
->>>>>>> adding favorite button - wip
 };
 
 PlayerWidget.prototype.resetCurrentTrack = function() {
