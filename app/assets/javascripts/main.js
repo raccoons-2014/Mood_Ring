@@ -1,8 +1,7 @@
 $(document).ready(function(){
-init();
-// animate();
-
-
+  
+    init();
+    animate();
 
   $('button.genre').click(function(e){
     genre_choice = this.id
