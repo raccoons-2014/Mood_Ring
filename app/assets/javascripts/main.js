@@ -99,7 +99,6 @@ $(document).ready(function(){
     $('#choose-mood').show();
     $('#enter-song').show();
     })
-
   $('#like').on('click', function(){
     PlayerWidget.favoriteTrack();
   });
