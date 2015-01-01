@@ -2,8 +2,10 @@ function PlayerWidget(tracklist) {
   this.tracklist = tracklist;
   this.current_track_title = "";
   this.current_track_url = "";
+  this.current_track_id = "";
   this.trackUrls = [];
   this.trackTitles = [];
+  this.trackIds = [];
   this.populateTrackInfo(this.tracklist);
   }
 
@@ -14,6 +16,7 @@ PlayerWidget.prototype.populateTrackInfo = function(tracklist) {
       if (tracks[0].hasOwnProperty('stream_url') ){
         this.trackUrls.push(tracks[0].stream_url);
         this.trackTitles.push(tracks[0].title);
+        this.trackIds.push(tracks[0].id);
       };
     }.bind(this));
   };
@@ -22,7 +25,8 @@ PlayerWidget.prototype.populateTrackInfo = function(tracklist) {
 PlayerWidget.prototype.setCurrentTrack = function() {
   this.current_track_title = this.trackTitles.shift();
   this.current_track_url = this.trackUrls.shift();
-  $("#playlist").html(" <h1> Now playing: <br> " + this.current_track_title + " </h1>");
+  this.current_track_id = this.trackIds.shift();
+  $("#playlist").html(" <h1> Now playing: <br> " + this.current_track_title + " </h1> <button id='fav'>Favorite</button>");
 };
 
 PlayerWidget.prototype.resetCurrentTrack = function() {
@@ -58,6 +62,15 @@ PlayerWidget.prototype.nextSongFetch = function() {
   $('#next').click(function(event) {
 
   });
+}
+
+PlayerWidget.prototype.favoriteTrack = function() {
+  SC.connect(function() {
+    // favorite the track with current track id
+    console.log(this.current_track_id)
+    SC.put('/me/favorites/' + this.current_track_id );
+    console.log("favorite success")
+    });
 }
 
 
