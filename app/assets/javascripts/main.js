@@ -99,6 +99,9 @@ $(document).ready(function(){
     $('#choose-mood').show();
     $('#enter-song').show();
     })
+
+  $('#fav').on('click', function(){
+    tagPlaylist.favoriteTrack();
   });
 
   $('.emotion').on("click", function() {
