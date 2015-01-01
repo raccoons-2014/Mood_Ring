@@ -42,7 +42,6 @@ $(document).ready(function(){
   });
 
   $('#fav').on('click', function(){
-    debugger
     tagPlaylist.favoriteTrack();
   });
 
