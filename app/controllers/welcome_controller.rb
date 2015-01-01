@@ -1,5 +1,10 @@
 class WelcomeController < ApplicationController
-  def index
-    render :index
+	
+  def connect 
+  	render :connect
+  end
+  		
+  def player
+    render :player
   end
 end
