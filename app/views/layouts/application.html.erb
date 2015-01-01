@@ -22,3 +22,15 @@
 
 </body>
 </html>
+
+  <% if current_user %>
+    <button class = 'btn' onclick="location.href = '/soundcloud-disconnect'">Disconnect</button>
+  <% else %>
+    <button class = 'btn' onclick= "location.href = '/soundcloud-callback'">Connect</button>
+  <% end %>
+
+  <%= yield %>
+
+</body>
+</html>
+>>>>>>> changed layout, hid genre selector
