@@ -58,7 +58,6 @@ $(document).ready(function(){
     connectToSoundcloud();
   });
 
-<<<<<<< HEAD
   $('#go').click(function(event){
     var $titleSearch = $('#titleSearch').val();
     $('#slide1').hide();
