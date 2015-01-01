@@ -1,6 +1,8 @@
 $(document).ready(function(){
+init();
+// animate();
 
- $('#three').append(renderer.domElement)
+
 
   $('button.genre').click(function(e){
     genre_choice = this.id
