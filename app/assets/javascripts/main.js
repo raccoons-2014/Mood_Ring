@@ -27,4 +27,10 @@ $(document).ready(function(){
   $('#connect').on('click', function(){
     connectToSoundcloud();
   });
+
+  $('#fav').on('click', function(){
+    debugger
+    tagPlaylist.favoriteTrack();
+  });
+
 })
