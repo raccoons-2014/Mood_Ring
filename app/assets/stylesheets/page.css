@@ -52,16 +52,11 @@ p{
 }
 
 #genre-page {
-  display: block;
-}
-
-#mood-page {
   display: none;
 }
 
-
-#three {
-  height: 700;
-  width: 2000;
+#mood-page {
+  display: block;
 }
 
+>>>>>>> changed layout, hid genre selector
