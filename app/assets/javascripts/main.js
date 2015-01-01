@@ -3,7 +3,6 @@ $(document).ready(function(){
     init();
     animate();
 
-
   $('button.genre').click(function(e){
     genre_choice = this.id
     $('#genre-page').hide();
