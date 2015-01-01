@@ -84,6 +84,5 @@ $(document).ready(function(){
       $('#submit').empty();
     })
   });
-
 })
 
