@@ -56,6 +56,7 @@ $(document).ready(function(){
     connectToSoundcloud();
   });
 
+<<<<<<< HEAD
   $('#go').click(function(event){
     $('#songList').empty();
     $('#moodDropdown').empty();
@@ -66,6 +67,12 @@ $(document).ready(function(){
     });
     $('#moodDropdown').append("<select id = 'dropDownList'><option value='sad'>Sad</option><option value='happy'>Happy</option><option value='angry'>Angry</option><option value='F DA POLICE'>F DA POLICE</option></select>");
   })
+=======
+  $('#fav').on('click', function(){
+    debugger
+    tagPlaylist.favoriteTrack();
+  });
+>>>>>>> adding favorite button - wip
 
   $('#ajax').on("click", function(event){
     event.preventDefault();
