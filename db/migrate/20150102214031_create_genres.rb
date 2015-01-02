@@ -1,7 +1,7 @@
 class CreateGenres < ActiveRecord::Migration
   def change
     create_table :genres do |t|
-      t.string   :type, default: "Unknown"
+      t.string   :kind, default: "Unknown"
 
       t.timestamps
     end
