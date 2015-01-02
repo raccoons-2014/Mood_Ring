@@ -88,14 +88,6 @@
         container = document.createElement( 'div' );
         $('#three').append( container );
 
-        // var info = document.createElement( 'div' );
-        // info.style.position = 'absolute';
-        // info.style.top = '10px';
-        // info.style.width = '100%';
-        // info.style.textAlign = 'center';
-        // info.innerHTML = '';
-        // container.appendChild( info );
-
         // CAMERA
 
         camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 2000 );
@@ -161,9 +153,6 @@
 
         text = new THREE.Mesh( text3d, material );
 
-        // Potentially, we can extract the vertices or faces of the text to generate particles too.
-        // Geo > Vertices > Position
-
         text.position.x = centerOffset;
         text.position.y = 130;
         text.position.z = -50;
@@ -173,7 +162,7 @@
 
         group.add( text );
 
-        // Create particle objects for Three.js
+        // Create particle objects
 
         var particlesLength = 70000;
 
@@ -244,44 +233,18 @@
 
         };
 
-        // PARAMETERS
-
-        // Steadycounter
-        // Life
-        // Opacity
-        // Hue Speed
-        // Movement Speed
-
         function generateSprite() {
 
           var canvas = document.createElement( 'canvas' );
-          canvas.width = 128;
-          canvas.height = 128;
+          canvas.width = 200;
+          canvas.height = 200;
 
           var context = canvas.getContext( '2d' );
-
-
-          // Just a square, doesnt work too bad with blur pp.
-          // context.fillStyle = "white";
-          // context.strokeStyle = "white";
-          // context.fillRect(0, 0, 63, 63) ;
-
-          // Heart Shapes are not too pretty here
-          // var x = 4, y = 0;
-          // context.save();
-          // context.scale(8, 8); // Scale so canvas render can redraw within bounds
-          // context.beginPath();
-          // context.bezierCurveTo( x + 2.5, y + 2.5, x + 2.0, y, x, y );
-          // context.bezierCurveTo( x - 3.0, y, x - 3.0, y + 3.5,x - 3.0,y + 3.5 );
-          // context.bezierCurveTo( x - 3.0, y + 5.5, x - 1.0, y + 7.7, x + 2.5, y + 9.5 );
-          // context.bezierCurveTo( x + 6.0, y + 7.7, x + 8.0, y + 5.5, x + 8.0, y + 3.5 );
-          // context.bezierCurveTo( x + 8.0, y + 3.5, x + 8.0, y, x + 5.0, y );
-          // context.bezierCurveTo( x + 3.5, y, x + 2.5, y + 2.5, x + 2.5, y + 2.5 );
 
           context.beginPath();
           context.arc( 64, 64, 60, 0, Math.PI * 2, false) ;
 
-          context.lineWidth = 0.5; //0.05
+          context.lineWidth = 0.5;
           context.stroke();
           context.restore();
 
@@ -338,7 +301,6 @@
         particleCloud.y = 800;
 
 
-
         var x = 0, y = 0;
 
         ringShape = new THREE.Shape();
@@ -365,14 +327,8 @@
 
           if ( target ) {
 
-            // console.log(target,particles.vertices[target]);
-            // values_size[target]
-            // values_color[target]
-
             hue += 0.0003 * delta;
             if ( hue > 1 ) hue -= 1;
-
-            // TODO Create a PointOnShape Action/Zone in the particle engine
 
             timeOnShapePath += 0.00035 * delta;
             if ( timeOnShapePath > 1 ) timeOnShapePath -= 1;
@@ -382,7 +338,6 @@
             emitterpos.x = pointOnShape.x * 5 - 100;
             emitterpos.y = -pointOnShape.y * 5 + 400;
 
-            // pointLight.position.copy( emitterpos );
             pointLight.position.x = emitterpos.x;
             pointLight.position.y = emitterpos.y;
             pointLight.position.z = 100;
@@ -392,7 +347,6 @@
             values_color[ target ].setHSL( hue, 0.6, 0.1 );
 
             pointLight.color.setHSL( hue, 0.8, 0.5 );
-
 
           };
 
@@ -412,6 +366,7 @@
             // Mark particle system as available by returning to pool
 
             Pool.add( particle.target );
+            // particleCloud.remove(particle.target);
 
           }
 
@@ -458,26 +413,9 @@
         // POST PROCESSING
 
         var effectFocus = new THREE.ShaderPass( THREE.FocusShader );
-
         var effectCopy = new THREE.ShaderPass( THREE.CopyShader );
-        effectFilm = new THREE.FilmPass( 0.5, 0.25, 2048, false );
 
-        var shaderBlur = THREE.TriangleBlurShader;
-        effectBlurX = new THREE.ShaderPass( shaderBlur, 'texture' );
-        effectBlurY = new THREE.ShaderPass( shaderBlur, 'texture' );
 
-        var radius = 15;
-        var blurAmountX = radius / window.innerWidth;
-        var blurAmountY = radius / window.innerHeight;
-
-        hblur = new THREE.ShaderPass( THREE.HorizontalBlurShader );
-        vblur = new THREE.ShaderPass( THREE.VerticalBlurShader);
-
-        hblur.uniforms[ 'h' ].value =  1 / window.innerWidth;
-        vblur.uniforms[ 'v' ].value =  1 / window.innerHeight;
-
-        effectBlurX.uniforms[ 'delta' ].value = new THREE.Vector2( blurAmountX, 0 );
-        effectBlurY.uniforms[ 'delta' ].value = new THREE.Vector2( 0, blurAmountY );
 
         effectFocus.uniforms[ 'sampleDistance' ].value = 0.99; //0.94
         effectFocus.uniforms[ 'waveFactor' ].value = 0.003;  //0.00125
@@ -486,19 +424,10 @@
 
         composer = new THREE.EffectComposer( renderer );
         composer.addPass( renderScene );
-        composer.addPass( hblur );
-        composer.addPass( vblur );
-        // composer.addPass( effectBlurX );
-        // composer.addPass( effectBlurY );
-        // composer.addPass( effectCopy );
-        // composer.addPass( effectFocus );
-        // composer.addPass( effectFilm );
+        composer.addPass( effectCopy );
+        composer.addPass( effectFocus );
 
-        vblur.renderToScreen = true;
-        effectBlurY.renderToScreen = true;
         effectFocus.renderToScreen = true;
-        effectCopy.renderToScreen = true;
-        effectFilm.renderToScreen = true;
 
         document.addEventListener( 'mousedown', onDocumentMouseDown, false );
         document.addEventListener( 'touchstart', onDocumentTouchStart, false );
@@ -519,18 +448,6 @@
         camera.updateProjectionMatrix();
 
         renderer.setSize( window.innerWidth, window.innerHeight );
-
-        //
-
-        hblur.uniforms[ 'h' ].value =  1 / window.innerWidth;
-        vblur.uniforms[ 'v' ].value =  1 / window.innerHeight;
-
-        var radius = 15;
-        var blurAmountX = radius / window.innerWidth;
-        var blurAmountY = radius / window.innerHeight;
-
-        effectBlurX.uniforms[ 'delta' ].value = new THREE.Vector2( blurAmountX, 0 );
-        effectBlurY.uniforms[ 'delta' ].value = new THREE.Vector2( 0, blurAmountY );
 
         composer.reset();
 
@@ -616,14 +533,10 @@
         attributes.size.needsUpdate = true;
         attributes.pcolor.needsUpdate = true;
 
-        // Pretty cool effect if you enable this
-        // particleCloud.rotation.y += 0.05;
-
         group.rotation.y += ( targetRotation - group.rotation.y ) * 0.05;
 
         renderer.clear();
 
-        // renderer.render( scene, camera );
         composer.render( 0.1 );
 
       }
