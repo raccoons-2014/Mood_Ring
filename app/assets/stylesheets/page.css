@@ -52,11 +52,11 @@ p{
 }
 
 #genre-page {
-  display: none;
+  display: block;
 }
 
 #mood-page {
-  display: block;
+  display: none;
 }
 
 >>>>>>> changed layout, hid genre selector
