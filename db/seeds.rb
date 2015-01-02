@@ -5,3 +5,18 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'faker'
+
+10.times do (Genre.create(type: Faker::Lorem.word))
+end
+
+10.times do (Mood.create(feeling: Faker::Hacker.adjective))
+end
+
+20.times do (Song.create(title: Faker::Hacker.noun,
+						 artist: Faker::Name.name, 
+						 stream_url: Faker::Internet.url, 
+						 album_art: Faker::Avatar.image,
+						 genre: rand(1..10),
+						 mood: rand(1..10)))
+end

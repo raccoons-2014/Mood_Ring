@@ -46,6 +46,8 @@ group :production do
 end
 
 gem 'oauth2'
+
+gem 'faker'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
