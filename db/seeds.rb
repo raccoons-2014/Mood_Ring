@@ -7,16 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'faker'
 
-10.times do (Genre.create(kind: Faker::Lorem.word))
-end
-
-10.times do (Mood.create(feeling: Faker::Lorem.word))
-end
 
 20.times do (Song.create(title: Faker::Lorem.sentence,
 						 artist: Faker::Name.name, 
 						 stream_url: Faker::Internet.url, 
 						 album_art: Faker::Avatar.image,
-						 genre_id: rand(1..10),
-						 mood_id: rand(1..10)))
+						 genre: Faker::Lorem.word,
+						 mood: Faker::Lorem.word))
 end
