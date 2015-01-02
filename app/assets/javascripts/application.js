@@ -24,14 +24,9 @@
 //= require CopyShader
 //= require EffectComposer
 //= require FocusShader
-//= require FilmShader
-//= require FilmPass
-//= require HorizontalBlurShader
 //= require MaskPass
 //= require RenderPass
 //= require ShaderPass
-//= require TriangleBlurShader
-//= require VerticalBlurShader
 //= require stats.min
 //= require main
 //= require player
