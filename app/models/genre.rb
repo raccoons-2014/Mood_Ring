@@ -1,5 +1,5 @@
 class Genre < ActiveRecord::Base
-  validates :name, uniqueness: true, presence: true
+  validates :type, uniqueness: true, presence: true
 
-  belongs_to :songs
+  belongs_to :song
 end
