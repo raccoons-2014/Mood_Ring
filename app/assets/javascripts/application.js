@@ -19,5 +19,7 @@
 //= require Detector
 //= require main
 //= require player
+//= require audio
+//= require sounds
 //= require echonest
 //= require_tree .
