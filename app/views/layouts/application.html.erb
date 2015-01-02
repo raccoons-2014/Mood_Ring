@@ -75,7 +75,7 @@
 
       var delta = 1, clock = new THREE.Clock();
 
-      var heartShape, particleCloud, sparksEmitter, emitterPos;
+      var ringShape, particleCloud, sparksEmitter, emitterPos;
       var _rotation = 0;
       var timeOnShapePath = 0;
 
@@ -118,7 +118,7 @@
 
         // TEXT
 
-        var theText = "mood ring";
+        var theText = "";
 
         // Get text from hash
 
@@ -317,8 +317,8 @@
 
         particleCloud = new THREE.PointCloud( particles, shaderMaterial );
 
-        particleCloud.dynamic = true;
-        // particleCloud.sortParticles = true;
+        // particleCloud.dynamic = true;
+        particleCloud.sortParticles = true;
 
         var vertices = particleCloud.geometry.vertices;
         var values_size = attributes.size.value;
@@ -338,24 +338,12 @@
         particleCloud.y = 800;
 
 
-        // Create Particle Systems
-
-        // EMITTER STUFF
-
-        // Heart
 
         var x = 0, y = 0;
 
-        heartShape = new THREE.Shape();
-
-        heartShape.moveTo( x + 25, y + 25 );
-        heartShape.bezierCurveTo( x + 25, y + 25, x + 20, y, x, y );
-        heartShape.bezierCurveTo( x - 30, y, x - 30, y + 35,x - 30,y + 35 );
-        heartShape.bezierCurveTo( x - 30, y + 55, x - 10, y + 77, x + 25, y + 95 );
-        heartShape.bezierCurveTo( x + 60, y + 77, x + 80, y + 55, x + 80, y + 35 );
-        heartShape.bezierCurveTo( x + 80, y + 35, x + 80, y, x + 50, y );
-        heartShape.bezierCurveTo( x + 35, y, x + 25, y + 25, x + 25, y + 25 );
-
+        ringShape = new THREE.Shape();
+        ringShape.moveTo( x , y + 25);
+        ringShape.arc(15, 25, 55, 0, Math.PI * 2, false);
 
         var hue = 0;
 
@@ -389,7 +377,7 @@
             timeOnShapePath += 0.00035 * delta;
             if ( timeOnShapePath > 1 ) timeOnShapePath -= 1;
 
-            var pointOnShape = heartShape.getPointAt( timeOnShapePath );
+            var pointOnShape = ringShape.getPointAt( timeOnShapePath );
 
             emitterpos.x = pointOnShape.x * 5 - 100;
             emitterpos.y = -pointOnShape.y * 5 + 400;
