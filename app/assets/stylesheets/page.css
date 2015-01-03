@@ -55,5 +55,10 @@ p{
   padding: 2%;
 }
 
+#disconnect {
+  position: absolute;
+  right: 15px;
+}
+
 
 
