@@ -54,3 +54,8 @@ p{
   background-color: rgb(36, 38, 42);
   padding: 2%;
 }
+
+#disconnect {
+  position: absolute;
+  right: 15px;
+}
