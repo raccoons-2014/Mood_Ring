@@ -5,7 +5,7 @@ $(document).ready(function(){
 
   $('#options').click(function(e) {
     $('#options').hide();
-    $('#mood-page').css("display", "block")
+    $('#mood-page').show();
   });
 
   $('#close').click(function(e) {
