@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 html{
   background-color: black;
 }
+=======
+/*html{
+  background: url('http://www.strangebeaver.com/wp-content/uploads/2013/02/wpw26/9.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}*/
+>>>>>>> cca8c5cb4f6f2585df79c1b5b7dc8e9d4767090b
 
 h1, h3 {
   text-align: center;
@@ -55,10 +63,13 @@ p{
   padding: 2%;
 }
 
+<<<<<<< HEAD
 #disconnect {
   position: absolute;
   right: 15px;
 }
 
 
+=======
+>>>>>>> cca8c5cb4f6f2585df79c1b5b7dc8e9d4767090b
 

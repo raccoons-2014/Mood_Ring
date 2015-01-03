@@ -3,6 +3,7 @@ $(document).ready(function(){
     init();
     animate();
 
+<<<<<<< HEAD
   $('#options').click(function(e) {
     $('#options').hide();
     $('#mood-page').css("display", "block")
@@ -13,6 +14,8 @@ $(document).ready(function(){
     $('#options').show();
   });
 
+=======
+>>>>>>> cca8c5cb4f6f2585df79c1b5b7dc8e9d4767090b
   $('button.genre').click(function(e){
     genre_choice = this.id
     $('#genre-page').hide();

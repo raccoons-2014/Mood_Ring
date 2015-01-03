@@ -27,8 +27,14 @@
 //= require MaskPass
 //= require RenderPass
 //= require ShaderPass
+<<<<<<< HEAD
+=======
+//= require stats.min
+>>>>>>> cca8c5cb4f6f2585df79c1b5b7dc8e9d4767090b
 //= require main
 //= require particle_ring
 //= require player
+//= require audio
+//= require sounds
 //= require echonest
 //= require_tree .
