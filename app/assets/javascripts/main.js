@@ -1,5 +1,18 @@
 $(document).ready(function(){
 
+    init();
+    animate();
+
+  $('#options').click(function(e) {
+    $('#options').hide();
+    $('#mood-page').css("display", "block")
+  });
+
+  $('#close').click(function(e) {
+    $('#mood-page').hide();
+    $('#options').show();
+  });
+
   $('button.genre').click(function(e){
     genre_choice = this.id
     $('#genre-page').hide();

@@ -1,14 +1,12 @@
 html{
-  background: url('http://www.strangebeaver.com/wp-content/uploads/2013/02/wpw26/9.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: black;
 }
 
-h1{
+h1, h3 {
   text-align: center;
   margin: 0 auto;
   font-family: 'Telex', sans-serif;
-  color: white;
+  color: black;
 }
 
 .form{
@@ -32,11 +30,10 @@ h1{
 }
 
 #playlist{
-  background-image: url('http://www.gadgetmac.com/picture/ipad_air_wallpaper_retina_background_b.jpg%3FpictureId%3D18906287');
-  width:600px;
-  height:auto;
-  margin:50px auto 0;
-  padding:50px;
+  background-color: rgb(36, 38, 42);
+  width: 100%;
+  height: 10%;
+  padding: 1%;
 }
 
 #connect-page{
@@ -44,17 +41,21 @@ h1{
   width:600px;
   height:auto;
   margin:50px auto 0;
-  padding:50px;
+  padding:25px;
 }
 
 p{
   font-family: 'Telex', sans-serif;
 }
 
-#genre-page {
-  display: block;
-}
 
 #mood-page {
   display: none;
+  background-color: rgb(36, 38, 42);
+  padding: 2%;
+}
+
+#disconnect {
+  position: absolute;
+  right: 15px;
 }
