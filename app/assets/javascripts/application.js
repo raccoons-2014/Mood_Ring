@@ -27,8 +27,8 @@
 //= require MaskPass
 //= require RenderPass
 //= require ShaderPass
-//= require stats.min
 //= require main
+//= require particle_ring
 //= require player
 //= require audio
 //= require sounds
