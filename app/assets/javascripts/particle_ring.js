@@ -185,10 +185,11 @@ function init() {
 
 
   var x = 0, y = 0;
+  ringSize = 35
 
   ringShape = new THREE.Shape();
   ringShape.moveTo( x , y + 25);
-  ringShape.arc(15, 25, 35, 0, Math.PI * 2, false);
+  ringShape.arc(15, 25, ringSize, 0, Math.PI * 2, false);
 
   var hue = 0;
 
