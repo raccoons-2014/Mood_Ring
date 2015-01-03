@@ -1,38 +1,12 @@
-<button class = 'btn' onclick="location.href = '/soundcloud-disconnect'">Disconnect</button>
+<a href='/soundcloud-disconnect' class='btn' id="disconnect">Disconnect</a>
+<a href="#" id="options">Choose Mood</a>
 
-<div id="genre-page">
-  <h1>Select a genre to begin</h1>
-  <div class="genre-container">
-    <button class="genre" id="electronic">electronic</button>
-    <button class="genre" id="pop">pop</button><br>
-    <button class="genre" id="dance">dance</button>
-    <button class="genre" id="classical">classical</button>
-    <button class="genre" id="hip-hop">Hip Hop</button>
-    <button class="genre" id="alternative-rock">Alternative Rock</button><br>
-    <button class="genre" id="punk">punk</button>
-    <button class="genre" id="jazz">jazz</button>
-  </div>
-</div>
-
-<div id="mood-page">
+<div id="mood-page"   >
   <h1>What mood of music are you feeling?</h1>
-
-  <div id="mood_form", class = "search">
-    <%= form_tag( root_path, remote: true, method: "get") do %>
-      <%= label_tag(:mood_input, "I'm feeling..") %>
-      <%= text_field_tag(:mood_input) %>
-      <%= submit_tag("Listen") %>
-    <% end %>
-  </div>
-
-
-  <div id="playlist">
-    <h1>Choose or enter a mood</h1>
-  </div>
-
+  <a href="#" id="close">close</a>
   <div class="container">
-    <button class='btn' id = "play">play</button>
-    <button class='btn' id = "pause">pause</button><br>
+    <button class="btn" id="play">play</button>
+    <button class="btn" id="pause">pause</button><br>
     <button class="emotion" id="upbeat">Happy</button>
     <button class="emotion" id="melancholy">Melancholy</button>
     <button class="emotion" id="excited">Excited</button>
@@ -41,4 +15,8 @@
   </div>
 </div>
 
+<div id="three"></div>
 
+<div id="playlist">
+  <h3>Track playing will show here</h3>
+</div>
