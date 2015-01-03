@@ -1,4 +1,8 @@
+<% if current_user %>
 <button class = 'btn' onclick="location.href = '/soundcloud-disconnect'">Disconnect</button>
+<% else %>
+<button class = 'btn' onclick="location.href = '/soundcloud-callback'">Connect with Soundcloud</button>
+<% end %>
 
 <div id="genre-page">
   <h1>Select a genre to begin</h1>
