@@ -5,6 +5,7 @@ function PlayerWidget(tracklist) {
   this.trackUrls = [];
   this.trackTitles = [];
   this.populateTrackInfo(this.tracklist);
+  that = this;
   }
 
 //get song array
@@ -26,7 +27,6 @@ PlayerWidget.prototype.setCurrentTrack = function() {
 };
 
 PlayerWidget.prototype.resetCurrentTrack = function() {
-//move throughout array
   this.trackTitles.shift();
   this.current_track_title = this.trackTitles[0];
   this.trackUrls.shift();
@@ -34,32 +34,28 @@ PlayerWidget.prototype.resetCurrentTrack = function() {
 };
 
 PlayerWidget.prototype.streamSong = function() {
-  //general play functions ... add next button
   SC.stream(this.current_track_url, function(sound){
     sound.play();
-  $('#play').click(function(event) {
-    sound.resume({
-      onfinish: function(){
-        soundManager
-        this.resetCurrentTrack();
-        this.streamSong();//play that next song
-      }
+    $('#play').click(function(event) {
+      sound.resume({
+        onfinish: function(){
+          soundManager.stopAll();
+          that.resetCurrentTrack();
+          that.streamSong();//play that next song
+        }
+      });
+    }),
+    $('#pause').click(function(event){
+      sound.pause();
     });
-  }),
-  $('#pause').click(function(event){
-    sound.pause();
-  });
-});
-}
-
-PlayerWidget.prototype.nextSongFetch = function() {
-//get next song once first one finishes
-//returns
-  $('#next').click(function(event) {
-
+    $('#next').click(function(event) {
+      soundManager.stopAll();
+      that.setCurrentTrack();
+      that.streamSong();
+    });
   });
 }
 
 
- //on submit get paramter, then fetchsongArrary, them stream songs, then play next, repeat
+
 
