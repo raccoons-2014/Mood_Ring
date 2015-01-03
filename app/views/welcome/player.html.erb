@@ -1,4 +1,3 @@
-<a href='/soundcloud-disconnect' class='btn' id="disconnect">Disconnect</a>
 <a href="#" id="options">Choose Mood</a>
 
 <div id="mood-page"   >
@@ -19,4 +18,9 @@
 
 <div id="playlist">
   <h3>Track playing will show here</h3>
+  <% if current_user %>
+    <img src = '/assets/soundcloud.png' onclick="location.href = '/soundcloud-disconnect'" id = "soundcloud" title="Disconnect from Soundcloud">
+  <% else %>
+    <img src = '/assets/soundcloud.png' onclick="location.href = '/soundcloud-callback'" id= "soundcloud" title="Connect to Soundcloud">
+  <% end %>
 </div>

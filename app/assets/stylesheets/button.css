@@ -58,3 +58,8 @@
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
+
+#soundcloud{
+  cursor: pointer;
+  margin: 0px 90% 0%;
+}

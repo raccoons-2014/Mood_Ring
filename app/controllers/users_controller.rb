@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       })
     end
     session[:user_id] = user.id
-    redirect_to player_path
+    redirect_to root_path
   end
 
   def disconnect
