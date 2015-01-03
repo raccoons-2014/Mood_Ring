@@ -109,59 +109,16 @@
         pointLight.position.set( 0, 0, 0 );
         scene.add( pointLight );
 
-        // TEXT
-
-        var theText = "";
-
-        // Get text from hash
-
-        var hash = document.location.hash.substr( 1 );
-
-        if ( hash.length !== 0 ) {
-
-          theText = hash;
-
-        }
 
         var material = new THREE.MeshFaceMaterial( [
           new THREE.MeshLambertMaterial( { color: 0xffffff, shading: THREE.FlatShading, opacity: 0.95 } ),
           new THREE.MeshLambertMaterial( { color: 0xffffff } )
         ] );
 
-        var text3d = new THREE.TextGeometry( theText, {
 
-          size: 70,
-          height: 25,
-          curveSegments: 4,
-          font: "helvetiker",
-
-          bevelEnabled: true,
-          bevelThickness: 2,
-          bevelSize: 2,
-
-          material: 0,
-          extrudeMaterial: 1
-
-        });
-
-        text3d.computeVertexNormals();
-        text3d.computeBoundingBox();
-
-        var centerOffset = -0.5 * ( text3d.boundingBox.max.x - text3d.boundingBox.min.x );
 
         group = new THREE.Group();
         scene.add( group );
-
-        text = new THREE.Mesh( text3d, material );
-
-        text.position.x = centerOffset;
-        text.position.y = 130;
-        text.position.z = -50;
-
-        text.rotation.x = 0;
-        text.rotation.y = Math.PI * 2;
-
-        group.add( text );
 
         // Create particle objects
 
@@ -523,8 +480,6 @@
 
       }
 
-
-
       function render() {
 
         delta = speed * clock.getDelta();
@@ -553,10 +508,8 @@
 
   <% if current_user %>
     <button class = 'btn' onclick="location.href = '/soundcloud-disconnect'">Disconnect</button>
-  <% else %>
-    <button class = 'btn' onclick= "location.href = '/soundcloud-callback'">Connect</button>
   <% end %>
-  <div id="three"></div>
+
   <%= yield %>
 
 </body>

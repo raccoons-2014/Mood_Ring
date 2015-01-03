@@ -14,25 +14,12 @@
   </div>
 </div>
 
-<div id="mood-page">
+<div id="mood-page" class="display">
   <h1>What mood of music are you feeling?</h1>
 
-  <div id="mood_form", class = "search">
-    <%= form_tag( root_path, remote: true, method: "get") do %>
-      <%= label_tag(:mood_input, "I'm feeling..") %>
-      <%= text_field_tag(:mood_input) %>
-      <%= submit_tag("Listen") %>
-    <% end %>
-  </div>
-
-
-  <div id="playlist">
-    <h1>Choose or enter a mood</h1>
-  </div>
-
   <div class="container">
-    <button class='btn' id = "play">play</button>
-    <button class='btn' id = "pause">pause</button><br>
+    <button class="btn" id="play">play</button>
+    <button class="btn" id="pause">pause</button><br>
     <button class="emotion" id="upbeat">Happy</button>
     <button class="emotion" id="melancholy">Melancholy</button>
     <button class="emotion" id="excited">Excited</button>
@@ -41,3 +28,8 @@
   </div>
 </div>
 
+  <div id="three"></div>
+
+  <div id="playlist">
+    <h1></h1>
+  </div>
