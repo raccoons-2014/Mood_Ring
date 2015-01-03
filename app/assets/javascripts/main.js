@@ -8,7 +8,7 @@ $(document).ready(function(){
     $('#mood-page').css("display", "block")
   });
 
-    $('#close').click(function(e) {
+  $('#close').click(function(e) {
     $('#mood-page').hide();
     $('#options').show();
   });
