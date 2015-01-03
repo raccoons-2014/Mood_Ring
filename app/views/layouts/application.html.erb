@@ -17,8 +17,6 @@
   </script>
 
   <script type="x-shader/x-vertex" id="vertexshader">
-<<<<<<< HEAD
-=======
 
         attribute float size;
         attribute vec3 pcolor;
@@ -34,22 +32,6 @@
           gl_PointSize = size * ( 200.0 / length( mvPosition.xyz ) );
 
           gl_Position = projectionMatrix * mvPosition;
-
-        }
-
-      </script>
-
-      <script type="x-shader/x-fragment" id="fragmentshader">
-
-        uniform sampler2D texture;
-
-        varying vec3 vColor;
-
-        void main() {
-
-          vec4 outColor = texture2D( texture, gl_PointCoord );
-
-          gl_FragColor = outColor * vec4( vColor, 1.0 );
 
         }
 
