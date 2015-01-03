@@ -5,13 +5,3 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-require 'faker'
-
-
-20.times do (Song.create(title: Faker::Lorem.sentence,
-						 artist: Faker::Name.name, 
-						 stream_url: Faker::Internet.url, 
-						 album_art: Faker::Avatar.image,
-						 genre: Faker::Lorem.word,
-						 mood: Faker::Lorem.word))
-end
