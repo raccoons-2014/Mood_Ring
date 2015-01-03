@@ -1,8 +1,6 @@
-<<<<<<< HEAD:app/views/welcome/player.html.erb
-=======
 
+<button class = 'btn' onclick="location.href = '/soundcloud-disconnect'">Disconnect</button>
 
->>>>>>> added vendor js, working heart particle animation:app/views/welcome/index.html.erb
 <div id="genre-page">
   <h1>Select a genre to begin</h1>
   <div class="genre-container">
@@ -17,10 +15,21 @@
   </div>
 </div>
 
-
-
 <div id="mood-page">
   <h1>What mood of music are you feeling?</h1>
+
+  <div id="mood_form", class = "search">
+    <%= form_tag( root_path, remote: true, method: "get") do %>
+      <%= label_tag(:mood_input, "I'm feeling..") %>
+      <%= text_field_tag(:mood_input) %>
+      <%= submit_tag("Listen") %>
+    <% end %>
+  </div>
+
+
+  <div id="playlist">
+    <h1>Choose or enter a mood</h1>
+  </div>
 
   <div class="container">
     <button class='btn' id = "play">play</button>
@@ -33,7 +42,3 @@
   </div>
 </div>
 
-
-<div id="playlist">
-  <h1></h1>
-</div>
