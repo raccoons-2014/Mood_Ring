@@ -292,7 +292,7 @@
         sparksEmitter.addAction( new SPARKS.Age() );
         sparksEmitter.addAction( new SPARKS.Accelerate( 0, 0, -50 ) );
         sparksEmitter.addAction( new SPARKS.Move() );
-        sparksEmitter.addAction( new SPARKS.RandomDrift( 90, 100, 2000 ) );
+        // sparksEmitter.addAction( new SPARKS.RandomDrift( 90, 100, 2000 ) );
 
 
         sparksEmitter.addCallback( "created", onParticleCreated );
@@ -412,7 +412,6 @@
         requestAnimationFrame( animate );
 
         render();
-        stats.update();
 
       }
 
