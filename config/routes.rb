@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#connect'
+  root 'welcome#player'
 
   match '/player' => 'welcome#player', via: [:get]
   match "/welcome/play" => "welcome#play", :as => 'play', via: [:get, :post]

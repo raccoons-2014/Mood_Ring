@@ -1,9 +1,9 @@
 class WelcomeController < ApplicationController
-	
-  def connect 
+
+  def connect
   	render :connect
   end
-  		
+
   def player
   	if current_user
       render :player
@@ -11,4 +11,5 @@ class WelcomeController < ApplicationController
   	  redirect_to root_path
   	end
   end
+
 end
