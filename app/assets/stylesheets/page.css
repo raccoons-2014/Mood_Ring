@@ -1,34 +1,17 @@
 html{
   background-color: black;
+  font-family: 'Telex', sans-serif;
+}
+
+a {
+  text-decoration: none;
 }
 
 h1, h3 {
   text-align: center;
   margin: 0 auto;
-  font-family: 'Telex', sans-serif;
   color: black;
 }
-
-.form{
-  margin-left: 50px;
-  margin: 0 auto;
-}
-
-.label{
-  background-color: white;
-  border-radius: 15%;
-  text-align: center;
-  width: auto;
-  display: block;
-}
-
-.container, #genre-page {
-  margin-left: auto;
-  margin-right: auto;
-  width: 60%;
-  text-align: center;
-}
-
 
 #playlist{
   background-color: rgb(36, 38, 42);
@@ -38,18 +21,9 @@ h1, h3 {
 }
 
 
-p{
-  font-family: 'Telex', sans-serif;
-}
-
-
-#mood-page {
+#slides div {
+  width: 100%;
   display: none;
   background-color: rgb(36, 38, 42);
   padding: 2%;
-}
-
-#disconnect {
-  position: absolute;
-  right: 15px;
 }
