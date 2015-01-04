@@ -15,6 +15,7 @@ Visualizer.prototype.setUpSource = function (song_url) {
   source = this.context.createMediaElementSource(audio);
   source.connect(this.context.destination);
   source.connect(this.analyser);
+  source.mediaElement.play();
 
 }
 

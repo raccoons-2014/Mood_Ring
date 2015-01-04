@@ -5,6 +5,7 @@ var group, text, plane;
 var speed = 50;
 
 var pointLight;
+var pointLight2;
 
 var targetRotation = 0;
 var targetRotationOnMouseDown = 0;
@@ -22,7 +23,6 @@ var _rotation = 0;
 var timeOnShapePath = 0;
 
 var composer;
-var effectBlurX, effectBlurY, hblur, vblur;
 
 
 function init() {
@@ -49,6 +49,11 @@ function init() {
   pointLight = new THREE.PointLight( 0xffffff, 2, 300 );
   pointLight.position.set( 0, 0, 0 );
   scene.add( pointLight );
+
+  pointLight2 = new THREE.PointLight( 0xffffff, 2, 300 );
+  pointLight2.position.set( 0, 0, 0 );
+  scene.add( pointLight2 );
+
 
 
   var material = new THREE.MeshFaceMaterial( [
@@ -176,7 +181,7 @@ function init() {
 
   for( var v = 0; v < vertices.length; v ++ ) {
     values_size[ v ] = 50;
-    values_color[ v ] = new THREE.Color( 0x000000 );
+    values_color[ v ] = new THREE.Color( 0x000000  );
     particles.vertices[ v ].set( Number.POSITIVE_INFINITY, Number.POSITIVE_INFINITY, Number.POSITIVE_INFINITY );
   }
 
@@ -184,12 +189,14 @@ function init() {
   particleCloud.y = 800;
 
 
-  var x = 0, y = 0;
-  ringSize = 35
-
   ringShape = new THREE.Shape();
-  ringShape.moveTo( x , y + 25);
-  ringShape.arc(15, 25, ringSize, 0, Math.PI * 2, false);
+  ringShape.moveTo( 0 , 25);
+  ringShape.arc(15, 25, 35, 0, Math.PI * 2, false);
+  curve = ringShape.curves[0];
+
+  ringShape2 = new THREE.Shape();
+  ringShape2.moveTo( 0 , 25);
+  ringShape2.arc(15, 25, 20, 0, Math.PI * 2, false);
 
   var hue = 0;
 
@@ -221,17 +228,23 @@ function init() {
 
       emitterpos.x = pointOnShape.x * 5 - 100;
       emitterpos.y = -pointOnShape.y * 5 + 400;
+      emitterpos2.x = pointOnShape.x * 5 - 100;
+      emitterpos2.y = -pointOnShape.y * 5 + 400;
 
       pointLight.position.x = emitterpos.x;
       pointLight.position.y = emitterpos.y;
       pointLight.position.z = 100;
+
+      pointLight2.position.x = emitterpos2.x;
+      pointLight2.position.y = emitterpos2.y;
+      pointLight2.position.z = 100;
 
       particles.vertices[ target ] = p.position;
 
       values_color[ target ].setHSL( hue, 0.6, 0.1 );
 
       pointLight.color.setHSL( hue, 0.8, 0.5 );
-
+      pointLight2.color.setHSL( hue, 0.8, 0.5 );
     };
 
   };
@@ -258,6 +271,7 @@ function init() {
   sparksEmitter = new SPARKS.Emitter( new SPARKS.SteadyCounter( 500 ) );
 
   emitterpos = new THREE.Vector3( 0, 0, 0 );
+  emitterpos2 = new THREE.Vector3( 0, 0, 0 );
 
   sparksEmitter.addInitializer( new SPARKS.Position( new SPARKS.PointZone( emitterpos ) ) );
   sparksEmitter.addInitializer( new SPARKS.Lifetime( 1, 15 ));
@@ -278,7 +292,8 @@ function init() {
 
   // End Particles
 
-  renderer = new THREE.WebGLRenderer();
+  // renderer = new THREE.WebGLRenderer();
+  renderer = new THREE.WebGLRenderer( { clearColor: 0xff0000, clearAlpha: 1 } );
   renderer.setSize( window.innerWidth, window.innerHeight );
 
   container.appendChild( renderer.domElement );
@@ -336,7 +351,7 @@ function onDocumentMouseDown( event ) {
   targetRotationOnMouseDown = targetRotation;
 
   if ( sparksEmitter.isRunning() ) {
-
+    //if you'd like the animation to stop when mouse is clicked
     // sparksEmitter.stop();
 
   } else {
@@ -385,6 +400,14 @@ function animate() {
 
 requestAnimationFrame( animate );
 
+if (viz.getFrequencyData() < 1 ){
+  curve.xRadius = 35;
+  curve.yRadius = 35;
+}else{
+  curve.xRadius = viz.getFrequencyData();
+  curve.yRadius = viz.getFrequencyData();
+}
+
 render();
 
 }
@@ -399,7 +422,11 @@ attributes.size.needsUpdate = true;
 attributes.pcolor.needsUpdate = true;
 
 group.rotation.y += ( targetRotation - group.rotation.y ) * 0.05;
-
+// if (viz.getFrequencyData() > 90){
+//     renderer.setClearColor( 0xCC66FF, 1 );
+//   }else{
+//     renderer.setClearColor( 0x000000, 1 );
+//   }
 renderer.clear();
 
 composer.render( 0.1 );
