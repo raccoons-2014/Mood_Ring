@@ -5,6 +5,9 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.8'
 gem 'echonest-ruby-api'
 
+gem 'omniauth', '~> 1.2'
+gem 'omniauth-auth0', '~> 1.1'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -43,6 +46,7 @@ end
 group :production do
   gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
   gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+  gem 'rails_12factor'
 end
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
