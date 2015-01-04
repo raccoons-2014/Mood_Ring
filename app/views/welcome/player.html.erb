@@ -25,7 +25,14 @@
 <div id="three"></div>
 
 <div id="playlist">
-  <h3>Track playing will show here</h3>
+
+  <h3><marquee behavior="scroll" direction="left">Track playing will be displayed here</marquee></h3>
+
+  <audio id="audio" controls="controls">
+      <source id="mp3Source" type="audio/mp3"></source>
+      Your browser does not support the audio format.
+  </audio>
+
   <% if current_user %>
     <img src = '/assets/soundcloud.png' onclick="location.href = '/soundcloud-disconnect'" id = "soundcloud" title="Disconnect from Soundcloud">
   <% else %>
@@ -34,7 +41,4 @@
 </div>
 
 <!-- <canvas class = "visualizer"></canvas> -->
-<audio id="audio" controls="controls">
-    <source id="mp3Source" type="audio/mp3"></source>
-    Your browser does not support the audio format.
-</audio>
+
