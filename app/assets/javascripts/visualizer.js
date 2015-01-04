@@ -1,4 +1,4 @@
-rm function Visualizer(song_url) {
+function Visualizer(song_url) {
 this.context = new webkitAudioContext();
 this.analyser = this.context.createAnalyser();
      this.analyser.fftSize = 2048;
