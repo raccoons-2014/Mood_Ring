@@ -5,6 +5,7 @@ require File.expand_path('../application', __FILE__)
 Rails.application.initialize!
 
 SONG = Echonest::Song.new(ENV['ECHONEST_API_KEY'])
+ARTIST = Echonest::Artist.new(ENV['ECHONEST_API_KEY'])
 
 CLIENT = SoundCloud.new({
   :client_id     => ENV['SOUNDCLOUD_API'],
