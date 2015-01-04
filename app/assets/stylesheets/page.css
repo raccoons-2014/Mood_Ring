@@ -29,6 +29,7 @@ h1, h3 {
   text-align: center;
 }
 
+
 #playlist{
   background-color: rgb(36, 38, 42);
   width: 100%;
@@ -36,14 +37,6 @@ h1, h3 {
   padding: 1%;
 }
 
-#connect-page{
-  background-image: url('http://www.gadgetmac.com/picture/ipad_air_wallpaper_retina_background_b.jpg%3FpictureId%3D18906287');
-  width:600px;
-  height:auto;
-  margin:50px auto 0;
-  padding:50px;
-  text-align: center;
-}
 
 p{
   font-family: 'Telex', sans-serif;

@@ -1,6 +1,5 @@
 <a href="#" id="options">Choose Mood</a>
-
-<div id="mood-page"   >
+<div id="mood-page">
   <h1>What mood of music are you feeling?</h1>
   <a href="#" id="close">close</a>
   <div class="container">
@@ -24,3 +23,9 @@
     <img src = '/assets/soundcloud.png' onclick="location.href = '/soundcloud-callback'" id= "soundcloud" title="Connect to Soundcloud">
   <% end %>
 </div>
+
+<!-- <canvas class = "visualizer"></canvas> -->
+<audio id="audio" controls="controls">
+    <source id="mp3Source" type="audio/mp3"></source>
+    Your browser does not support the audio format.
+</audio>
