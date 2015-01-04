@@ -57,6 +57,7 @@ $(document).ready(function(){
   });
 
   $('#go').click(function(event){
+
     $('#songList').empty();
     $('#moodDropdown').empty();
     SC.get('/tracks', {q: $('#text').val()}, function(tracks) {
@@ -88,5 +89,15 @@ $(document).ready(function(){
       console.log("done");
     })
   });
+
+    $('#ajax').empty();
+    SC.get('/tracks', {q: $('#text').val()}, function(tracks) {
+      for (i = 0; i < tracks.length; i++) {
+        $('#ajax').append("<input type='radio' name='song' value =" + tracks[i].title + ">" + tracks[i].title + "<br>");
+      }
+    });
+    $('#enter').append("<select><option value='sad'>Sad</option><option value='happy'>Happy</option><option value='angry'>Angry</option><option value='F DA POLICE'>F DA POLICE</option></select>");
+    $('#enter').append("<button id = 'yeehaw'>Enter</button>")
+  })
 
 })

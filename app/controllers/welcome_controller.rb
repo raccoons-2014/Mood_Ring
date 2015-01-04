@@ -1,5 +1,8 @@
 class WelcomeController < ApplicationController
+<<<<<<< HEAD
 
+=======
+>>>>>>> list and mood dropdown implemented
   def connect
   	render :connect
   end
