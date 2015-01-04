@@ -289,18 +289,6 @@ function init() {
   sparksEmitter.addCallback( "created", onParticleCreated );
   sparksEmitter.addCallback( "dead", onParticleDead );
   sparksEmitter.start();
-<<<<<<< HEAD
-
-  // End Particles
-
-  // renderer = new THREE.WebGLRenderer();
-  renderer = new THREE.WebGLRenderer( { clearColor: 0xff0000, clearAlpha: 1 } );
-  renderer.setSize( window.innerWidth, window.innerHeight );
-
-  container.appendChild( renderer.domElement );
-
-  // POST PROCESSING
-=======
 
   // End Particles
 
@@ -314,13 +302,9 @@ function init() {
 
   var effectFocus = new THREE.ShaderPass( THREE.FocusShader );
   var effectCopy = new THREE.ShaderPass( THREE.CopyShader );
->>>>>>> ed4a7be000bea758ca0c79e2b1a3d662451a875a
-
-  var effectFocus = new THREE.ShaderPass( THREE.FocusShader );
-  var effectCopy = new THREE.ShaderPass( THREE.CopyShader );
 
 
-<<<<<<< HEAD
+
 
   effectFocus.uniforms[ 'sampleDistance' ].value = 0.99; //0.94
   effectFocus.uniforms[ 'waveFactor' ].value = 0.003;  //0.00125
@@ -338,24 +322,6 @@ function init() {
   document.addEventListener( 'touchstart', onDocumentTouchStart, false );
   document.addEventListener( 'touchmove', onDocumentTouchMove, false );
 
-=======
-  effectFocus.uniforms[ 'sampleDistance' ].value = 0.99; //0.94
-  effectFocus.uniforms[ 'waveFactor' ].value = 0.003;  //0.00125
-
-  var renderScene = new THREE.RenderPass( scene, camera );
-
-  composer = new THREE.EffectComposer( renderer );
-  composer.addPass( renderScene );
-  composer.addPass( effectCopy );
-  composer.addPass( effectFocus );
-
-  effectFocus.renderToScreen = true;
-
-  document.addEventListener( 'mousedown', onDocumentMouseDown, false );
-  document.addEventListener( 'touchstart', onDocumentTouchStart, false );
-  document.addEventListener( 'touchmove', onDocumentTouchMove, false );
-
->>>>>>> ed4a7be000bea758ca0c79e2b1a3d662451a875a
   window.addEventListener( 'resize', onWindowResize, false );
 
 }
@@ -379,8 +345,6 @@ document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 
 
 function onDocumentMouseDown( event ) {
-<<<<<<< HEAD
-
   event.preventDefault();
 
   mouseXOnMouseDown = event.clientX - windowHalfX;
@@ -392,20 +356,6 @@ function onDocumentMouseDown( event ) {
 
   } else {
 
-=======
-
-  event.preventDefault();
-
-  mouseXOnMouseDown = event.clientX - windowHalfX;
-  targetRotationOnMouseDown = targetRotation;
-
-  if ( sparksEmitter.isRunning() ) {
-    //if you'd like the animation to stop when mouse is clicked
-    // sparksEmitter.stop();
-
-  } else {
-
->>>>>>> ed4a7be000bea758ca0c79e2b1a3d662451a875a
     sparksEmitter.start();
 
   }
@@ -449,17 +399,6 @@ function onDocumentTouchMove( event ) {
 function animate() {
 
 requestAnimationFrame( animate );
-<<<<<<< HEAD
-
-// if (viz.getFrequencyData() < 1 ){
-//   curve.xRadius = 35;
-//   curve.yRadius = 35;
-// }else{
-//   curve.xRadius = viz.getFrequencyData();
-//   curve.yRadius = viz.getFrequencyData();
-// }
-
-=======
 
 if (viz.getFrequencyData() < 1 ){
   curve.xRadius = 35;
@@ -469,7 +408,6 @@ if (viz.getFrequencyData() < 1 ){
   curve.yRadius = viz.getFrequencyData();
 }
 
->>>>>>> ed4a7be000bea758ca0c79e2b1a3d662451a875a
 render();
 
 }
@@ -484,14 +422,11 @@ attributes.size.needsUpdate = true;
 attributes.pcolor.needsUpdate = true;
 
 group.rotation.y += ( targetRotation - group.rotation.y ) * 0.05;
-<<<<<<< HEAD
 // if (viz.getFrequencyData() > 90){
 //     renderer.setClearColor( 0xCC66FF, 1 );
 //   }else{
 //     renderer.setClearColor( 0x000000, 1 );
 //   }
-=======
->>>>>>> ed4a7be000bea758ca0c79e2b1a3d662451a875a
 renderer.clear();
 
 composer.render( 0.1 );
