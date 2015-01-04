@@ -24,11 +24,11 @@ class UsersController < ApplicationController
     logout
     redirect_to root_path
   end
-  
+
 private
-  
+
   def soundcloud_client
     return @soundcloud_client if @soundcloud_client
-    @soundcloud_client = User.soundcloud_client(:redirect_uri  => soundcloud_connected_url)
+    @soundcloud_client = User.soundcloud_client(:redirect_uri  => http://moodringradio.herokuapp.com/soundcloud-connected)
   end
 end
