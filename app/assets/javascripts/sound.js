@@ -61,10 +61,6 @@ HEIGHT = canvas.height = window.innerHeight;
   //find average
   total=total/bufferLength;
 
-  // for(var i = 0; i < bufferLength; i++) {
-  //   var radius = dataArray[i] *2;
-  // };
-
   canvasCtx.beginPath();
 
   canvasCtx.arc(centerWidth,centerHeight,total,0,2*Math.PI);
@@ -76,11 +72,3 @@ HEIGHT = canvas.height = window.innerHeight;
 draw();
 
 };
-
-
-
-// $(document).ready(soundMain);
-
-
-
-
