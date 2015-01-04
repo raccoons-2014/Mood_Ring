@@ -1,8 +1,12 @@
 <a href="#" id="options">Choose Mood</a>
-<div id="mood-page">
-  <h1>What mood of music are you feeling?</h1>
-  <a href="#" id="close">close</a>
-  <div class="container">
+<div class="mood-page" id="slides" >
+  <div id="slide1">
+    <a href="#" id="hide">hide</a>
+    <h1>What mood of music are you feeling?</h1>
+    <a href="#" id="next-slide">click for next slide</a>
+  </div>
+
+  <div class="" id="slide2">
     <button class="btn" id="play">play</button>
     <button class="btn" id="pause">pause</button><br>
     <button class="emotion" id="upbeat">Happy</button>
@@ -11,12 +15,24 @@
     <button class="emotion" id="chill">Chill</button>
     <button class="emotion" id="unhappy">Angry</button>
   </div>
+
+  <div id="slide3">
+    <h1>THIRD SLIDE TEST</h1>
+    <a href="#" id="finish">finish</a>
+  </div>
 </div>
 
 <div id="three"></div>
 
 <div id="playlist">
-  <h3>Track playing will show here</h3>
+
+  <h3><marquee behavior="scroll" direction="left">Track playing will be displayed here</marquee></h3>
+
+  <audio id="audio" controls="controls">
+      <source id="mp3Source" type="audio/mp3"></source>
+      Your browser does not support the audio format.
+  </audio>
+
   <% if current_user %>
     <img src = '/assets/soundcloud.png' onclick="location.href = '/soundcloud-disconnect'" id = "soundcloud" title="Disconnect from Soundcloud">
   <% else %>
@@ -25,7 +41,4 @@
 </div>
 
 <!-- <canvas class = "visualizer"></canvas> -->
-<audio id="audio" controls="controls">
-    <source id="mp3Source" type="audio/mp3"></source>
-    Your browser does not support the audio format.
-</audio>
+

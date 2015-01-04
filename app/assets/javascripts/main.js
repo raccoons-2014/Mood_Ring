@@ -4,28 +4,28 @@ $(document).ready(function(){
     animate();
 
   $('#options').click(function(e) {
+    $('#slide1').show();
     $('#options').hide();
-    $('#mood-page').show();
   });
 
-  $('#close').click(function(e) {
-    $('#mood-page').hide();
+  $('#hide').click(function(e) {
+    $('#slide1').hide();
+    $('#slide3').hide();
     $('#options').show();
   });
 
-  $('button.genre').click(function(e){
-    genre_choice = this.id
-    $('#genre-page').hide();
-    $('#mood-page').show();
+  $('#finish').click(function(e) {
+    $('#slide3').hide();
+    $('#options').show();
   });
+  $('#next-slide').click(function(e) {
+    $('#slide1').hide();
+    $('#slide2').show();
+  })
 
   $('button.emotion').click(function(e){
-    if (typeof(soundManager) != "undefined") {
-      soundManager.stopAll();
-    };
-    getEchoNestTracks(this.id)
-    setTimeout(function(){tagPlaylist.setCurrentTrack();},1000);
-    setTimeout(function(){tagPlaylist.streamSong()},1000);
+    $('#slide2').hide();
+    $('#slide3').show();
   });
 
   $('#mood_form').submit(function(e){
@@ -40,4 +40,6 @@ $(document).ready(function(){
   $('#connect').on('click', function(){
     connectToSoundcloud();
   });
+
+
 })
