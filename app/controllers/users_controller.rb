@@ -32,6 +32,6 @@ private
     #for local host
     # @soundcloud_client = User.soundcloud_client(:redirect_uri  => soundcloud_connected_url)
     #for heroku
-    @soundcloud_client = User.soundcloud_client(:redirect_uri  => 'http://moodringradio.herokuapp.com/callback.html')
+    @soundcloud_client = User.soundcloud_client(:redirect_uri  => 'http://moodringradio.herokuapp.com/soundcloud-callback')
   end
 end
