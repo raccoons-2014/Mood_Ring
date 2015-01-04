@@ -29,6 +29,9 @@ private
 
   def soundcloud_client
     return @soundcloud_client if @soundcloud_client
-    @soundcloud_client = User.soundcloud_client(:redirect_uri  => soundcloud_connected_url)
+    #for local host
+    # @soundcloud_client = User.soundcloud_client(:redirect_uri  => soundcloud_connected_url)
+    #for heroku
+    @soundcloud_client = User.soundcloud_client(:redirect_uri  => 'http://moodringradio.herokuapp.com/callback.html')
   end
 end
