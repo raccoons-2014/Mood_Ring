@@ -26,3 +26,8 @@ h1, h3 {
   background-color: rgb(36, 38, 42);
   padding: 2%;
 }
+
+#soundcloud{
+  cursor: pointer;
+  margin: 0px 90% 0%;
+}
