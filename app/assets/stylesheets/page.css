@@ -44,21 +44,39 @@ h1 {
 
 #soundcloud{
   cursor: pointer;
-  margin: 0px 90% 0%;
+  margin: 0px 0% 0%;
+  float:right;
+  margin-right: 20px;
 }
 
 .player-control {
-  margin:0.1%;
+  margin:5%;
+}
+
+#play, #pause {
+  position:absolute;
+  margin-left: 10px
+}
+
+#play {
+  visibility: hidden;
+}
+
+#next {
+  float:right;
+  margin-right: 20px;
 }
 
 #all-controls {
   float:left;
-
+  width:100px;
+  margin-top: 10px;
 }
 
-marquee {
- width:70%;
+h3 {
+ width:80%;
  left: 10%;
  color: white;
- text-align: center;
+ position:absolute;
+ margin-top:0.8%;
 }
