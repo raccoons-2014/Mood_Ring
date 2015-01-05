@@ -419,11 +419,6 @@ attributes.size.needsUpdate = true;
 attributes.pcolor.needsUpdate = true;
 
 group.rotation.y += ( targetRotation - group.rotation.y ) * 0.05;
-// if (viz.getFrequencyData() > 90){
-//     renderer.setClearColor( 0xCC66FF, 1 );
-//   }else{
-//     renderer.setClearColor( 0x000000, 1 );
-//   }
 renderer.clear();
 
 composer.render( 0.1 );

@@ -67,6 +67,10 @@ h1 {
   margin:5%;
 }
 
+.mood-control {
+  margin-top: 30%;
+}
+
 #play, #pause {
   position:absolute;
   margin-left: 10px
@@ -82,30 +86,31 @@ h1 {
 }
 
 .emotion, .ajax {
-background: #330099;
-color: #fff;
-height: 70px;
-min-width: 260px;
-line-height: 24px;
-font-size: 16px;
+  background: #330099;
+  color: #fff;
+  height: 70px;
+  min-width: 260px;
+  line-height: 24px;
+  font-size: 16px;
 }
+
 button {
-border: none;
-font-family: inherit;
-font-size: inherit;
-color: inherit;
-background: none;
-padding: 25px 80px;
-display: inline-block;
-margin: 15px 30px;
-text-transform: uppercase;
-letter-spacing: 1px;
-font-weight: 700;
-outline: none;
-position: relative;
--webkit-transition: all 0.3s;
--moz-transition: all 0.3s;
-transition: all 0.3s;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  padding: 25px 80px;
+  display: inline-block;
+  margin: 15px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 #mood-selection {
@@ -141,5 +146,4 @@ li {
   padding-right: 1%;
   text-align: left;
   list-style: none;
-
 }
