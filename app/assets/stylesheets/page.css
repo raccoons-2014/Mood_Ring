@@ -32,6 +32,7 @@ h1, h3 {
   margin: 0px 90% 0%;
 }
 
+<<<<<<< HEAD
 
 .emotion {
 background: #330099;
@@ -76,4 +77,8 @@ transition: all 0.3s;
 #choose-mood {
   position: absolute;
   left: 15px;
+}
+
+#like{
+  cursor: pointer;
 }
