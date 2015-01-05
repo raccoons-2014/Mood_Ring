@@ -56,7 +56,7 @@ $(document).ready(function(){
         $('#songList').append("<li><label><input type='radio' name='song' value =" + tracks[i].stream_url + ">" + tracks[i].title + "</label></li>");
       }
     });
-    $('#moodDropdown').append("<select id = 'dropDownList'><option value='sad'>Sad</option><option value='happy'>Happy</option><option value='angry'>Angry</option><option value='F DA POLICE'>F DA POLICE</option></select>");
+    $('#moodDropdown').append("<select id = 'dropDownList'><option value='sad'>Sad</option><option value='happy'>Happy</option><option value='angry'>Angry</option><option value='F DA POLICE'>F DA POLICE</option></select><");
   })
 
   // $('#ajax').on("click", function(event){
@@ -66,10 +66,12 @@ $(document).ready(function(){
     var title = $("#songList input[name='song']:checked").parent().text();
     // var mood = $('#moodDropdown option:selected').text();
     var mood = $(this).text();
+    var artist = "none"
+    console.log(mood)
 
     $.ajax ({
       url: 'songs/create',
-      data: {title: title, stream_url: stream_url, mood: mood},
+      data: {title: title, stream_url: stream_url, mood: mood, artist: artist},
       dataType: "json",
       type: "POST"
     }).done(function() {
