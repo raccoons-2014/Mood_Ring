@@ -62,18 +62,17 @@ $(document).ready(function(){
        $('#slide1').hide();
       $('#slide2').show();
       $('#songList').show();
-      SC.get('/tracks', {q: $titleSearch}, function(tracks) {
-        for (var i = 0; i < 9; i++) {
-          if (tracks[i].stream_url != 'undefined'){
-            $('#songList').append("<li><a href='#' class='song' id =" + tracks[i].stream_url + ">" + tracks[i].title +  "</a></li>");
-          }else{
-            i = i - 1;
-          };
-        };
-      });
 
-    };
-  })
+      SC.get('/tracks', {q: $titleSearch}, function(tracks) {
+        var tenTracks = Array.prototype.slice.call(tracks, 0, 9);
+        tenTracks.forEach(function(track) {
+          if (typeof(track.stream_url) == "undefined") return;
+          $('#songList')
+            .append("<li><a href='#' class='song' id =" + track.stream_url + ">" + track.title +  "</a></li>");
+        });
+      });
+    }
+  });
 
   $('#songList').on( "click", ".song", function(event){
     event.preventDefault();
