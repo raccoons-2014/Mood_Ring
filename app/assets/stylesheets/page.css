@@ -16,7 +16,6 @@ a {
 h1 {
   text-align: center;
   margin: 0 auto;
-  color: black;
   color: #330099;
 }
 
@@ -35,6 +34,15 @@ h1 {
   width: 100%;
   display: none;
   padding: 2%;
+  color: #330099;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#songList {
+  position: absolute;
+  text-align: center;
+  margin: 0 auto;
 }
 
 #three {
@@ -109,7 +117,7 @@ transition: all 0.3s;
   right: 15px;
 }
 
-#choose-mood {
+#choose-mood, #hide {
   position: absolute;
   left: 15px;
 }
@@ -126,5 +134,13 @@ h3 {
  color: white;
  position:absolute;
  margin-top:0.8%;
+
+
+li {
+  padding-right: 1%;
+  text-align: left;
+  list-style: none;
+
+}
 
 

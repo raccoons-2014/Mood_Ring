@@ -11,26 +11,26 @@
 </div>
 
 <div id="slides" >
+
   <div id="slide1">
-    <a href="#" id="hide">hide</a>
-    <h1>FIRST SLIDE TEST</h1>
-    <a href="#" id="submit">Submit form</a>
+    <a href="#" id="hide">X</a>
+    <h1>Enter a song to add to the database</h1>
+    <form id = "input"><textarea id="text" ></textarea></form>
+    <button id = "go">Search</button>
   </div>
 
   <div class="" id="slide2">
-    <h1>SECOND SLIDE TEST</h1>
-    <a href="#" id="next-slide">click for next slide</a>
-    <button class="emotion" id="upbeat">Happy</button>
-    <button class="emotion" id="melancholy">Melancholy</button>
-    <button class="emotion" id="excited">Excited</button>
-    <button class="emotion" id="chill">Chill</button>
-    <button class="emotion" id="unhappy">Angry</button>
+    <h1>Choose a song to add</h1>
+    <div id = 'songList'></div>
+    <div id='song-submit'><button id='song-submit' >Enter</button></div>
   </div>
 
   <div id="slide3">
-    <h1>THIRD SLIDE TEST</h1>
-    <a href="#" id="finish">finish</a>
+    <h1>What mood describes this song?</h1>
+    <div id = 'moodDropdown'></div>
+    <div id = 'submit'><button id='ajax'>Enter</button></div>
   </div>
+
 </div>
 
 <div id="three"></div>
@@ -39,6 +39,7 @@
 
   <!-- <marquee behavior = "scroll" direction ="left" id = "track-title"> -->     <h3>Track playing will be displayed here</h3>
  <!--  </marquee> -->
+
 
   <div id="all-controls">
     <a id="play" href="#">
@@ -57,6 +58,7 @@
   <% else %>
     <img src = '/assets/soundcloudd.png' onclick="location.href = '/soundcloud-callback'" id= "soundcloud" title="Connect to Soundcloud">
   <% end %>
+
 </div>
   <div>
   <form id = "input">
@@ -74,4 +76,5 @@
   <div id = 'submit'>
     <button id='ajax'>Enter</button>
   </div>
+
 </div>
