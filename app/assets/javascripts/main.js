@@ -58,8 +58,8 @@ $(document).ready(function(){
 <<<<<<< HEAD
 =======
 
-  $('#fav').on('click', function(){
-    tagPlaylist.favoriteTrack();
+  $('#like').on('click', function(){
+    PlayerWidget.favoriteTrack();
   });
 
 >>>>>>> adding favorite button - wip
