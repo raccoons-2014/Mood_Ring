@@ -127,7 +127,10 @@ $(document).ready(function(){
     }).done(function(response){
       console.log(response);
     })
-
   })
+  
+  $('#like').on('click', function(){
+    tagPlaylist.favoriteTrack();
+  });
 })
 

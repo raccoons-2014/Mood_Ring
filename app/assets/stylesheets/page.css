@@ -66,6 +66,7 @@ h1 {
   margin-top: 30%;
 }
 
+<<<<<<< HEAD
 #play, #pause {
   position:absolute;
   margin-left: 10px
@@ -81,6 +82,9 @@ h1 {
 }
 
 .emotion, .ajax {
+=======
+.emotion {
+>>>>>>> 21256e8f697b9e2413e690c4dd8defacb2276778
 background: #330099;
 height: 70px;
 min-width: 260px;
