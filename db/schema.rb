@@ -25,8 +25,8 @@ ActiveRecord::Schema.define(version: 20150102193258) do
   end
 
   create_table "users", force: true do |t|
-    t.integer  "soundcloud_user_id"
-    t.string   "soundcloud_username"
+    t.integer  "soundcloud_user_id",       null: false
+    t.string   "soundcloud_username",      null: false
     t.string   "soundcloud_access_token"
     t.string   "soundcloud_refresh_token"
     t.datetime "soundcloud_expires_at"
