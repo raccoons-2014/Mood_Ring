@@ -45,13 +45,14 @@ $(document).ready(function(){
   });
 
   $('#go').click(function(event){
+    var $titleSearch = $('#titleSearch').val();
     $('#slide1').hide();
     $('#slide2').show();
     $('#songList').show();
     $('#song-submit').show();
     $('#submit').show();
     $('#moodDropdown').show();
-    SC.get('/tracks', {q: $('#text').val()}, function(tracks) {
+    SC.get('/tracks', {q: $titleSearch}, function(tracks) {
       for (i = 0; i < 9; i++) {
         $('#songList').append("<li><label><input type='radio' name='song' value =" + tracks[i].stream_url + ">" + tracks[i].title + "</label></li>");
       }
