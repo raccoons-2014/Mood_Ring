@@ -70,7 +70,7 @@ $(document).ready(function(){
 
     $.ajax ({
       url: 'songs/create',
-      data: {title: title, stream_url: stream_url, mood: mood, artist: artist},
+      data: {title: title, stream_url: stream_url, mood: mood},
       dataType: "json",
       type: "POST"
     }).done(function() {
