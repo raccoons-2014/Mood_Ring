@@ -172,7 +172,6 @@ function init() {
 
   particleCloud = new THREE.PointCloud( particles, shaderMaterial );
 
-      // particleCloud.dynamic = true;
   particleCloud.sortParticles = true;
 
   var vertices = particleCloud.geometry.vertices;
@@ -274,7 +273,7 @@ function init() {
   emitterpos2 = new THREE.Vector3( 0, 0, 0 );
 
   sparksEmitter.addInitializer( new SPARKS.Position( new SPARKS.PointZone( emitterpos ) ) );
-  sparksEmitter.addInitializer( new SPARKS.Lifetime( 1, 15 ));
+  sparksEmitter.addInitializer( new SPARKS.Lifetime( 1, 8 ));
   sparksEmitter.addInitializer( new SPARKS.Target( null, setTargetParticle ) );
 
 

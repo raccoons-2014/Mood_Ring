@@ -15,16 +15,14 @@
   <div id="slide1">
     <a href="#" id="hide">X</a>
     <h1>Enter a song to add to the database</h1>
-    <form id = "input">
+    <form id = "input" method = "get">
       <input id="titleSearch" type="text"/>
      </form>
-    <button id = "go">Search</button>
   </div>
 
   <div class="" id="slide2">
     <h1>Choose a song to add</h1>
     <div id = 'songList'></div>
-    <div id='song-submit'><button id='song-submit' >Enter</button></div>
   </div>
 
   <div id="slide3">
@@ -47,6 +45,8 @@
 
 
 <div id="all-controls">
+  <a href="#" id="stop-animation">Stop Visualizer</a>
+  <a href="#" id="start-animation">Start Visualizer</a>
   <a id="play" href="#">
     <img class = "player-control" src='/assets/play-24.png'>
   </a>
