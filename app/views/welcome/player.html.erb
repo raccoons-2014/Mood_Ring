@@ -20,6 +20,11 @@
   <div class="" id="slide2">
     <h1>SECOND SLIDE TEST</h1>
     <a href="#" id="next-slide">click for next slide</a>
+    <button class="emotion" id="upbeat">Happy</button>
+    <button class="emotion" id="melancholy">Melancholy</button>
+    <button class="emotion" id="excited">Excited</button>
+    <button class="emotion" id="chill">Chill</button>
+    <button class="emotion" id="unhappy">Angry</button>
   </div>
 
   <div id="slide3">
@@ -32,17 +37,25 @@
 
 <div id="playlist">
 
-  <h3><marquee behavior="scroll" direction="left">Track playing will be displayed here</marquee></h3>
+  <!-- <marquee behavior = "scroll" direction ="left" id = "track-title"> -->     <h3>Track playing will be displayed here</h3>
+ <!--  </marquee> -->
 
-  <audio id="audio" controls="controls">
-      <source id="mp3Source" type="audio/mp3"></source>
-      Your browser does not support the audio format.
-  </audio>
+  <div id="all-controls">
+    <a id="play" href="#">
+      <img class = "player-control" src='/assets/play-24.png'>
+    </a>
+    <a id="pause"  href = "#">
+      <img class = "player-control" src = "/assets/pause-24.png">
+    </a>
+    <a id="next"  href = "#">
+      <img class = "player-control" src = "/assets/arrow-31-24.png">
+    </a>
+  </div>
 
   <% if current_user %>
-    <img src = '/assets/soundcloud.png' onclick="location.href = '/soundcloud-disconnect'" id = "soundcloud" title="Disconnect from Soundcloud">
+    <img src = '/assets/soundcloudd.png' onclick="location.href = '/soundcloud-disconnect'" id = "soundcloud" title="Disconnect from Soundcloud">
   <% else %>
-    <img src = '/assets/soundcloud.png' onclick="location.href = '/soundcloud-callback'" id= "soundcloud" title="Connect to Soundcloud">
+    <img src = '/assets/soundcloudd.png' onclick="location.href = '/soundcloud-callback'" id= "soundcloud" title="Connect to Soundcloud">
   <% end %>
 
   <div>
