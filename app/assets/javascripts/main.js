@@ -42,12 +42,6 @@ $(document).ready(function(){
     $('#enter-song').show();
   });
 
-  $('#finish').click(function() {
-    $('#slide3').hide();
-    $('#enter-song').show();
-    $('#choose-mood').show();
-  });
-
   $('button.emotion').click(function(){
     $('#mood-selection').hide();
     $('#choose-mood').show();
@@ -58,22 +52,22 @@ $(document).ready(function(){
     connectToSoundcloud();
   });
 
-  $('#go').click(function(event){
-    var $titleSearch = $('#titleSearch').val();
-    $('#slide1').hide();
-    $('#slide2').show();
-    $('#songList').show();
-    $('#song-submit').show();
-    $('#submit').show();
-    SC.get('/tracks', {q: $titleSearch}, function(tracks) {
-      for (var i = 0; i < 9; i++) {
-        if (tracks[i].stream_url != 'undefined'){
-          $('#songList').append("<li><a href='#' class='song' id =" + tracks[i].stream_url + ">" + tracks[i].title +  "</a></li>");
-        }else{
-          i = i - 1;
-        }
-      }
-    });
+  $('#titleSearch').keydown(function(e) {
+    if (e.keyCode == 13) {
+      var $titleSearch = $('#titleSearch').val();
+      $('#slide1').hide();
+      $('#slide2').show();
+      $('#songList').show();
+      SC.get('/tracks', {q: $titleSearch}, function(tracks) {
+        for (var i = 0; i < 9; i++) {
+          if (tracks[i].stream_url != 'undefined'){
+            $('#songList').append("<li><a href='#' class='song' id =" + tracks[i].stream_url + ">" + tracks[i].title +  "</a></li>");
+          }else{
+            i = i - 1;
+          };
+        };
+      });
+    };
   })
 
   $('#songList').on( "click", ".song", function(event){
