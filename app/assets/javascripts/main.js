@@ -23,24 +23,42 @@ $(document).ready(function(){
     setTimeout(function(){tagPlaylist.setCurrentTrack();},1000);
     setTimeout(function(){tagPlaylist.streamSong()},1000);
   });
-
+  var ajax = $('#ajax')[0]
   $('#connect').on('click', function(){
     connectToSoundcloud();
   });
 
   $('#go').click(function(event){
-    $('#ajax').empty();
+    $('#songList').empty();
+    $('#moodDropdown').empty();
     SC.get('/tracks', {q: $('#text').val()}, function(tracks) {
       for (i = 0; i < tracks.length; i++) {
-        $('#ajax').append("<input type='radio' name='song' value =" + tracks[i].title + ">" + tracks[i].title + "<br>");
+        $('#songList').append("<label><input type='radio' name='song' value =" + tracks[i].stream_url + ">" + tracks[i].title + "</label><br>");
       }
     });
-    $('#enter').append("<select><option value='sad'>Sad</option><option value='happy'>Happy</option><option value='angry'>Angry</option><option value='F DA POLICE'>F DA POLICE</option></select>");
-    $('#enter').append("<button id = 'yeehaw'>Enter</button>")
+    $('#moodDropdown').append("<select id = 'dropDownList'><option value='sad'>Sad</option><option value='happy'>Happy</option><option value='angry'>Angry</option><option value='F DA POLICE'>F DA POLICE</option></select>");
   })
 
-  $('#yeehaw').click(function(event){
+  $('#ajax').on("click", function(event){
+    event.preventDefault();
+    var stream_url = $("#songList input[name='song']:checked")[0].value;
+    var title = $("#songList input[name='song']:checked").parent().text();
+    var mood = $('#moodDropdown option:selected').text();
+    console.log(stream_url);
+    console.log(title);
+    console.log(mood);
 
-  })
+    $.ajax ({
+      url: 'songs/create',
+      data: {title: title, stream_url: stream_url, mood: mood},
+      dataType: "json",
+      type: "POST"
+    }).done(function() {
+      $('#songList').empty();
+      $('#moodDropdown').empty();
+      $('#submit').empty();
+      console.log("done");
+    })
+  });
 
 })

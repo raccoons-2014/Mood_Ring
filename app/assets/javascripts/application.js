@@ -17,4 +17,5 @@
 //= require main
 //= require player
 //= require echonest
+//= require seeding
 //= require_tree .
