@@ -60,7 +60,6 @@ $(document).ready(function(){
     // $('#moodDropdown').append("<select id = 'dropDownList'><option value='sad'>Sad</option><option value='happy'>Happy</option><option value='angry'>Angry</option><option value='F DA POLICE'>F DA POLICE</option></select>");
   })
 
-  // $('#ajax').on("click", function(event){
   $('.ajax').on("click", function(event){
     event.preventDefault();
     var stream_url = $("#songList input[name='song']:checked")[0].value;
