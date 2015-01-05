@@ -73,10 +73,11 @@ $(document).ready(function(){
     data: {title: title, stream_url: stream_url, mood: mood},
     type: "POST"
   }).done(function() {
-    $('#slide3').hide();
     $('#songList').empty();
-    $('#submit').empty();
+    // $('#submit').empty();
     $('#slide3').hide();
+    $('#choose-mood').show();
+    $('#enter-song').show();
   })
 });
 
