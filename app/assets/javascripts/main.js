@@ -1,11 +1,13 @@
 function audioPlay(trackPlaylist) {
-    viz = new AudioController(trackPlaylist)
+    viz = new AudioController(trackPlaylist);
     init();
     animate();
 }
 
 
 $(document).ready(function(){
+
+  sourceCreated = false;
 
   $('#stop-animation').click(function() {
     event.preventDefault();
@@ -99,13 +101,19 @@ $(document).ready(function(){
   });
 
   $('.emotion').on("click", function() {
+
     $.ajax ({
       url: 'songs/index',
       type: "GET",
       dataType: "json",
       data: {mood: $(this)[0].id}
     }).done(function(response){
-      audioPlay(response);
+      if (sourceCreated === true) {
+        viz.getNewTracks(response);
+      } else {
+        audioPlay(response);
+        sourceCreated = true;
+      }
     })
 
   })
