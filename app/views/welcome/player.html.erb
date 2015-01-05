@@ -24,22 +24,26 @@
 
 <div id="playlist">
 
-  <marquee behavior = "scroll" direction ="left" id = "track-title"><h3>Track playing will be displayed here</h3></marquee>
+  <!-- <marquee behavior = "scroll" direction ="left" id = "track-title"> -->     <h3>Track playing will be displayed here</h3>
+ <!--  </marquee> -->
 
-<!--   <audio id="audio" controls="controls">
-      <source id="mp3Source" type="audio/mp3"></source>
-      Your browser does not support the audio format.
-  </audio> -->
   <div id="all-controls">
-  <a id="play" href="#"><img class = "player-control" src='/assets/play-24.png'></a>
-  <a id="pause"  href = "#"><img class = "player-control" src = "/assets/pause-24.png"></a>
-  <a id="next"  href = "#"><img class = "player-control" src = "/assets/arrow-31-24.png"></a>
-</div>
+    <a id="play" href="#">
+      <img class = "player-control" src='/assets/play-24.png'>
+    </a>
+    <a id="pause"  href = "#">
+      <img class = "player-control" src = "/assets/pause-24.png">
+    </a>
+    <a id="next"  href = "#">
+      <img class = "player-control" src = "/assets/arrow-31-24.png">
+    </a>
+  </div>
+
 
   <% if current_user %>
-    <img src = '/assets/soundcloud.png' onclick="location.href = '/soundcloud-disconnect'" id = "soundcloud" title="Disconnect from Soundcloud">
+    <img src = '/assets/soundcloudd.png' onclick="location.href = '/soundcloud-disconnect'" id = "soundcloud" title="Disconnect from Soundcloud">
   <% else %>
-    <img src = '/assets/soundcloud.png' onclick="location.href = '/soundcloud-callback'" id= "soundcloud" title="Connect to Soundcloud">
+    <img src = '/assets/soundcloudd.png' onclick="location.href = '/soundcloud-callback'" id= "soundcloud" title="Connect to Soundcloud">
   <% end %>
 </div>
 
