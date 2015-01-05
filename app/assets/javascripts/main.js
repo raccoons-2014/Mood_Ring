@@ -28,12 +28,6 @@ $(document).ready(function(){
     $('#choose-mood').show();
   });
 
-  $('#song-submit').click(function() {
-    $('#slide2').hide();
-    $('#slide3').show();
-
-  });
-
   $('button.emotion').click(function(){
     $('#mood-selection').hide();
     $('#choose-mood').show();
@@ -66,26 +60,25 @@ $(document).ready(function(){
     event.preventDefault();
     stream_url = $(this).attr('id')
     title = $(this).text();
-    console.log(stream_url)
+    $('#slide2').hide();
+    $('#slide3').show();
   });
-
 
   $('.ajax').on("click", function(event){
     event.preventDefault();
-    console.log(stream_url)
     var mood = $(this).text();
 
-    $.ajax ({
-      url: 'songs/create',
-      data: {title: title, stream_url: stream_url, mood: mood},
-      type: "POST"
-    }).done(function() {
-      $('#slide3').hide();
-      $('#songList').empty();
-      $('#submit').empty();
-      $('#slide3').hide();
-    })
-  });
+  $.ajax ({
+    url: 'songs/create',
+    data: {title: title, stream_url: stream_url, mood: mood},
+    type: "POST"
+  }).done(function() {
+    $('#slide3').hide();
+    $('#songList').empty();
+    $('#submit').empty();
+    $('#slide3').hide();
+  })
+});
 
 })
 
