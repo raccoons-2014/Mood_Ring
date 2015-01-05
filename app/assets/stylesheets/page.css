@@ -27,8 +27,6 @@ h1, h3 {
   color: #330099;
   text-align: center;
   margin: 0 auto;
-
-
 }
 form {
    -webkit-user-modify: read-write;
@@ -46,17 +44,13 @@ form {
 }
 
 
-.emotion {
+.emotion, .ajax {
 background: #330099;
 color: #fff;
 height: 70px;
 min-width: 260px;
 line-height: 24px;
 font-size: 16px;
-overflow: hidden;
--webkit-backface-visibility: hidden;
--moz-backface-visibility: hidden;
-backface-visibility: hidden;
 }
 button {
 border: none;

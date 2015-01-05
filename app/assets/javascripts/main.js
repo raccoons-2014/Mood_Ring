@@ -31,6 +31,7 @@ $(document).ready(function(){
   $('#song-submit').click(function() {
     $('#slide2').hide();
     $('#slide3').show();
+
   });
 
   $('button.emotion').click(function(){
@@ -39,15 +40,6 @@ $(document).ready(function(){
     $('#enter-song').show();
   });
 
-  $('#mood_form').submit(function(e){
-    if (typeof(soundManager) != "undefined") {
-      soundManager.stopAll();
-    };
-    getEchoNestTracks(mood_input.value)
-    setTimeout(function(){tagPlaylist.setCurrentTrack();},1000);
-    setTimeout(function(){tagPlaylist.streamSong()},1000);
-  });
-  var ajax = $('#ajax')[0]
   $('#connect').on('click', function(){
     connectToSoundcloud();
   });
@@ -59,8 +51,6 @@ $(document).ready(function(){
     $('#song-submit').show();
     $('#submit').show();
     $('#moodDropdown').show();
-    $('#songList').empty();
-    $('#moodDropdown').empty();
     SC.get('/tracks', {q: $('#text').val()}, function(tracks) {
       for (i = 0; i < 9; i++) {
         $('#songList').append("<li><label><input type='radio' name='song' value =" + tracks[i].stream_url + ">" + tracks[i].title + "</label></li>");
@@ -69,11 +59,13 @@ $(document).ready(function(){
     $('#moodDropdown').append("<select id = 'dropDownList'><option value='sad'>Sad</option><option value='happy'>Happy</option><option value='angry'>Angry</option><option value='F DA POLICE'>F DA POLICE</option></select>");
   })
 
-  $('#ajax').on("click", function(event){
+  // $('#ajax').on("click", function(event){
+  $('.ajax').on("click", function(event){
     event.preventDefault();
     var stream_url = $("#songList input[name='song']:checked")[0].value;
     var title = $("#songList input[name='song']:checked").parent().text();
-    var mood = $('#moodDropdown option:selected').text();
+    // var mood = $('#moodDropdown option:selected').text();
+    var mood = $(this).text();
 
     $.ajax ({
       url: 'songs/create',
@@ -84,6 +76,8 @@ $(document).ready(function(){
       $('#songList').empty();
       $('#moodDropdown').empty();
       $('#submit').empty();
+      $('#slide3').hide();
+
     })
   });
 
