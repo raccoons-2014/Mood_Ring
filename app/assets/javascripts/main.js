@@ -54,6 +54,15 @@ $(document).ready(function(){
     $('#enter-song').show();
   });
 
+  $('#mood_form').submit(function(e){
+    if (typeof(soundManager) != "undefined") {
+      soundManager.stopAll();
+    };
+    getEchoNestTracks(mood_input.value)
+    setTimeout(function(){tagPlaylist.setCurrentTrack();},1000);
+    setTimeout(function(){tagPlaylist.streamSong()},1000);
+  });
+  var ajax = $('#ajax')[0]
   $('#connect').on('click', function(){
     connectToSoundcloud();
   });
@@ -75,6 +84,10 @@ $(document).ready(function(){
       }
     });
   })
+
+  $('#like').on('click', function(){
+    PlayerWidget.favoriteTrack();
+  });
 
   $('#songList').on( "click", ".song", function(event){
     event.preventDefault();
@@ -101,6 +114,10 @@ $(document).ready(function(){
     })
   });
 
+  $('#like').on('click', function(){
+    tagPlaylist.favoriteTrack();
+  });
+
   $('.emotion').on("click", function() {
     $.ajax ({
       url: 'songs/index',
@@ -110,8 +127,10 @@ $(document).ready(function(){
     }).done(function(response){
       console.log(response);
     })
-
   })
-
+  
+  $('#like').on('click', function(){
+    tagPlaylist.favoriteTrack();
+  });
 })
 

@@ -34,7 +34,6 @@
     <button class="ajax" id="chill">Chill</button>
     <button class="ajax" id="unhappy">Angry</button>
   </div>
-
 </div>
 
 <div id="three"></div>
@@ -42,8 +41,6 @@
 <div id="playlist">
 
 <h3>Track playing will be displayed here</h3>
-
-
 
 <div id="all-controls">
   <a href="#" id="stop-animation">Stop Visualizer</a>
@@ -57,11 +54,29 @@
   <a id="next"  href = "#">
     <img class = "player-control" src = "/assets/arrow-31-24.png">
   </a>
+
+  <img src = '/assets/pixelheart.png' id = 'like' title = "Like">
+
+  <img src = '/assets/pixelheart.png' id = 'like' title = "Like">
+
+  <% if current_user %>
+    <img src = '/assets/soundcloud.png' onclick="location.href = '/soundcloud-disconnect'" id = "soundcloud" title="Disconnect from Soundcloud">
+  <% else %>
+    <img src = '/assets/soundcloud.png' onclick="location.href = '/soundcloud-callback'" id= "soundcloud" title="Connect to Soundcloud">
+  <% end %>
+  <div>
+  <form id = "input">
+    <textarea id="text"></textarea>
+  </form>
+  <button id = "go">Search</button>
 </div>
 
-<% if current_user %>
-  <img src = '/assets/soundcloudd.png' onclick="location.href = '/soundcloud-disconnect'" id = "soundcloud" title="Disconnect from Soundcloud">
-<% else %>
-  <img src = '/assets/soundcloudd.png' onclick="location.href = '/soundcloud-callback'" id= "soundcloud" title="Connect to Soundcloud">
-<% end %>
-
+<div id = 'songList'>
+</div>
+<div>
+  <div id = 'moodDropdown'>
+  </div>
+  <div id = 'submit'>
+    <button id='ajax'>Enter</button>
+  </div>
+</div>
