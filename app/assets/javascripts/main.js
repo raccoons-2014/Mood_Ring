@@ -1,7 +1,12 @@
-$(document).ready(function(){
-    viz = new AudioController()
+function audioPlay(trackPlaylist) {
+    viz = new AudioController(trackPlaylist)
     init();
     animate();
+}
+
+
+$(document).ready(function(){
+
 
   $('#choose-mood').click(function() {
     $('#mood-selection').show();
@@ -86,7 +91,7 @@ $(document).ready(function(){
       dataType: "json",
       data: {mood: $(this)[0].id}
     }).done(function(response){
-      console.log(response);
+      audioPlay(response);
     })
 
   })
