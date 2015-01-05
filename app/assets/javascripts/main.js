@@ -51,7 +51,7 @@ $(document).ready(function(){
     setTimeout(function(){tagPlaylist.setCurrentTrack();},1000);
     setTimeout(function(){tagPlaylist.streamSong()},1000);
   });
-  var ajax = $('#ajax')[0]
+
   $('#connect').on('click', function(){
     connectToSoundcloud();
   });
@@ -68,7 +68,6 @@ $(document).ready(function(){
   })
 
   $('#ajax').on("click", function(event){
-    event.preventDefault();
     var stream_url = $("#songList input[name='song']:checked")[0].value;
     var title = $("#songList input[name='song']:checked").parent().text();
     var mood = $('#moodDropdown option:selected').text();
@@ -84,6 +83,19 @@ $(document).ready(function(){
       $('#submit').empty();
     })
   });
+
+  $('.emotion').click(function(){
+    var mood = this.id;
+    $.ajax({
+      url: '/songs/index',
+      data: {mood: mood},
+      dataType: "json",
+      type: "GET",
+      success: function(data){
+        console.log(data);
+      }
+    })
+  })
 
 })
 

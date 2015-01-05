@@ -25,4 +25,11 @@ class SongsController < ApplicationController
     end
   end
 
+  def index
+    @songs = Song.where(mood: params[:mood]).all
+    respond_to do |format|
+      format.html
+      format.json {render json: @songs}
+    end
+  end
 end

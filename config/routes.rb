@@ -13,4 +13,6 @@ Rails.application.routes.draw do
 
   post '/songs/create' => 'songs#create'
 
+  get '/songs/index' => 'songs#index'
+
 end
