@@ -22,7 +22,7 @@ function AudioController(tracks) {
 AudioController.prototype.grabPlaylist = function() {
   _.shuffle(this.trackObjects);
  for(var i = 0; i < this.trackObjects.length; i++) {
-  this.trackPlaylist.push(this.trackObjects[i].stream_url + "/stream?client_id=c751293c35f7cb00b48ee6383ea84aa6");
+  this.trackPlaylist.push(this.trackObjects[i].stream_url + "?client_id=c751293c35f7cb00b48ee6383ea84aa6");
   this.trackTitles.push(this.trackObjects[i].title);
  }
 };
