@@ -67,6 +67,10 @@ h1 {
   margin:5%;
 }
 
+.mood-control {
+  margin-top: 30%;
+}
+
 #play, #pause {
   position:absolute;
   margin-left: 10px
