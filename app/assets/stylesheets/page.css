@@ -1,22 +1,23 @@
 html{
   overflow:hidden;
   background-color: black;
+  color: white;
   font-family: 'Telex', sans-serif;
 
 }
 
 body {
-  margin:0;
+  margin: 0;
 }
 
 a {
+  color: white;
   text-decoration: none;
 }
 
 h1 {
   text-align: center;
   margin: 0 auto;
-  color: #330099;
 }
 
 #playlist{
@@ -31,16 +32,10 @@ h1 {
 }
 
 #slides div {
+  background-color: rgba(40, 40, 40, 0.3);
   width: 100%;
   display: none;
   padding: 2%;
-  color: #330099;
-  text-align: center;
-  margin: 0 auto;
-}
-
-#songList {
-  position: absolute;
   text-align: center;
   margin: 0 auto;
 }
@@ -86,12 +81,11 @@ h1 {
 }
 
 .emotion, .ajax {
-  background: #330099;
-  color: #fff;
-  height: 70px;
-  min-width: 260px;
-  line-height: 24px;
-  font-size: 16px;
+background: #330099;
+height: 70px;
+min-width: 260px;
+line-height: 24px;
+font-size: 16px;
 }
 
 button {
@@ -136,7 +130,6 @@ button {
 h3 {
  width:80%;
  left: 10%;
- color: white;
  position:absolute;
  margin-top:0.8%;
 }

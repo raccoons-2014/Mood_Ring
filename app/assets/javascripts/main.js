@@ -78,8 +78,8 @@ $(document).ready(function(){
     $('#slide3').hide();
     $('#choose-mood').show();
     $('#enter-song').show();
-  })
-});
+    })
+  });
 
   $('.emotion').on("click", function() {
     $.ajax ({
