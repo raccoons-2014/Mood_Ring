@@ -3,29 +3,44 @@ $(document).ready(function(){
     init();
     animate();
 
-  $('#options').click(function(e) {
+  $('#choose-mood').click(function(e) {
+    $('#mood-selection').show();
+    $('#choose-mood').hide();
+    $('#enter-song').hide();
+  });
+
+  $('#enter-song').click(function(e) {
     $('#slide1').show();
-    $('#options').hide();
+    $('#choose-mood').hide();
+    $('#enter-song').hide();
   });
 
   $('#hide').click(function(e) {
     $('#slide1').hide();
     $('#slide3').hide();
-    $('#options').show();
+    $('#enter-song').show();
   });
 
   $('#finish').click(function(e) {
     $('#slide3').hide();
-    $('#options').show();
+    $('#enter-song').show();
+    $('#choose-mood').show();
   });
+
   $('#next-slide').click(function(e) {
+    $('#slide2').hide();
+    $('#slide3').show();
+  });
+
+  $('#submit').click(function(e) {
     $('#slide1').hide();
     $('#slide2').show();
   })
 
   $('button.emotion').click(function(e){
-    $('#slide2').hide();
-    $('#slide3').show();
+    $('#mood-selection').hide();
+    $('#choose-mood').show();
+    $('#enter-song').show();
   });
 
   $('#mood_form').submit(function(e){
