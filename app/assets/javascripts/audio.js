@@ -1,16 +1,17 @@
 //to control player and visualizer at the same time
-
-function AudioController() {
-  this.trackPlaylist = ['https://api.soundcloud.com/tracks/146159376/stream?client_id=c751293c35f7cb00b48ee6383ea84aa6','https://api.soundcloud.com/tracks/96379023/stream?client_id=c751293c35f7cb00b48ee6383ea84aa6', 'https://api.soundcloud.com/tracks/120682891/stream?client_id=c751293c35f7cb00b48ee6383ea84aa6'];
+//'https://api.soundcloud.com/tracks/146159376/stream?client_id=c751293c35f7cb00b48ee6383ea84aa6','https://api.soundcloud.com/tracks/96379023/stream?client_id=c751293c35f7cb00b48ee6383ea84aa6', 'https://api.soundcloud.com/tracks/120682891/stream?client_id=c751293c35f7cb00b48ee6383ea84aa6'
+function AudioController(tracks) {
+  this.trackObjects = tracks
+  this.trackPlaylist = [];
   this.trackTitles = [];
   this.trackCount = this.trackPlaylist.length;
   this.trackNumber = 0;
-
+  this.grabPlaylist();
   // Vizualizer / Music Analyzer
   this.context = new webkitAudioContext();
   song = new Audio();
   this.analyser = this.context.createAnalyser();
-       this.analyser.fftSize = 2048;
+  this.analyser.fftSize = 2048;
   this.setUpSource(this.trackPlaylist[this.trackNumber]);
   this.bufferLength = this.analyser.frequencyBinCount;
   this.dataArray = new Uint8Array(this.bufferLength);
@@ -20,9 +21,11 @@ function AudioController() {
 }
 
 AudioController.prototype.grabPlaylist = function() {
-//do ActiveRecord query gram stream URLs from db and
-//populate track info
-// also populate track info aka title and maybe url to access favorites?
+  _.shuffle(this.trackObjects);
+ for(var i = 0; i < this.trackObjects.length; i++) {
+  this.trackPlaylist.push(this.trackObjects[i].stream_url + "/stream?client_id=c751293c35f7cb00b48ee6383ea84aa6");
+  this.trackTitles.push(this.trackObjects[i].title);
+ }
 };
 
 AudioController.prototype.setNextTrack = function() {
