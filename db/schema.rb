@@ -17,12 +17,9 @@ ActiveRecord::Schema.define(version: 20150102193258) do
   enable_extension "plpgsql"
 
   create_table "songs", force: true do |t|
-    t.string   "title",                          null: false
-    t.string   "artist",                         null: false
-    t.string   "stream_url",                     null: false
-    t.string   "album_art",                      null: false
-    t.string   "genre",      default: "Unknown"
-    t.string   "mood",                           null: false
+    t.string   "title",      null: false
+    t.string   "stream_url", null: false
+    t.string   "mood",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
