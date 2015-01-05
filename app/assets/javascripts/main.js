@@ -74,7 +74,6 @@ $(document).ready(function(){
       data: {title: title, stream_url: stream_url, mood: mood},
       type: "POST"
     }).done(function() {
-      console.log("IT WORKS")
       $('#slide3').hide();
       $('#songList').empty();
       $('#moodDropdown').empty();
