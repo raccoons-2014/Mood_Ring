@@ -5,7 +5,6 @@ class WelcomeController < ApplicationController
   end
 
   def player
-
   	# if current_user
       # render :player
   	# else
