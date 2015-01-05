@@ -38,9 +38,6 @@ h1 {
   text-align: center;
   margin: 0 auto;
 }
-form {
-   -webkit-user-modify: read-write;
-}
 
 #songList {
   position: absolute;
@@ -55,7 +52,7 @@ form {
 }
 
 #three {
-  z-index:3000;
+  z-index:-10;
 }
 
 
