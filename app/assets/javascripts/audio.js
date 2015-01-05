@@ -1,10 +1,9 @@
 //to control player and visualizer at the same time
 //'https://api.soundcloud.com/tracks/146159376/stream?client_id=c751293c35f7cb00b48ee6383ea84aa6','https://api.soundcloud.com/tracks/96379023/stream?client_id=c751293c35f7cb00b48ee6383ea84aa6', 'https://api.soundcloud.com/tracks/120682891/stream?client_id=c751293c35f7cb00b48ee6383ea84aa6'
 function AudioController(tracks) {
-  this.trackObjects = tracks
+  this.trackObjects = tracks;
   this.trackPlaylist = [];
   this.trackTitles = [];
-  this.trackCount = this.trackPlaylist.length;
   this.trackNumber = 0;
   this.grabPlaylist();
   // Vizualizer / Music Analyzer
@@ -29,7 +28,7 @@ AudioController.prototype.grabPlaylist = function() {
 };
 
 AudioController.prototype.setNextTrack = function() {
-    this.trackNumber = (this.trackNumber + 1)% this.trackCount;
+    this.trackNumber = (this.trackNumber + 1)% this.trackPlaylist.length;
     song.src = this.trackPlaylist[this.trackNumber];
     source.mediaElement.play();
 };
