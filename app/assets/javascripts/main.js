@@ -51,7 +51,6 @@ $(document).ready(function(){
     setTimeout(function(){tagPlaylist.setCurrentTrack();},1000);
     setTimeout(function(){tagPlaylist.streamSong()},1000);
   });
-
   var ajax = $('#ajax')[0]
   $('#connect').on('click', function(){
     connectToSoundcloud();
@@ -84,6 +83,7 @@ $(document).ready(function(){
       $('#moodDropdown').empty();
       $('#submit').empty();
     })
+  });
 
   $('#like').on('click', function(){
     tagPlaylist.favoriteTrack();
