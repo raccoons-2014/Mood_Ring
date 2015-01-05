@@ -20,21 +20,15 @@ function AudioController() {
 }
 
 AudioController.prototype.grabPlaylist = function() {
-//do AvticeRecord query gram stream URLs from db and
+//do ActiveRecord query gram stream URLs from db and
 //populate track info
 // also populate track info aka title and maybe url to access favorites?
 };
 
 AudioController.prototype.setNextTrack = function() {
-  if ((this.trackNumber+1) < this.trackCount) {
-    this.trackNumber++;
+    this.trackNumber = (this.trackNumber + 1)% this.trackCount;
     song.src = this.trackPlaylist[this.trackNumber];
     source.mediaElement.play();
-  } else{
-    this.trackNumber = 0;
-    song.src = this.trackPlaylist[this.trackNumber];
-    source.mediaElement.play();
-  }
 };
 
 AudioController.prototype.setUpSource = function (song_url) {
@@ -43,6 +37,7 @@ AudioController.prototype.setUpSource = function (song_url) {
   source.connect(this.context.destination);
   source.connect(this.analyser);
   source.mediaElement.play();
+  song.addEventListener('ended', this.setNextTrack.bind(this));
 
 }
 
