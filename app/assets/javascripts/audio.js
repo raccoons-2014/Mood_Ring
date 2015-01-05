@@ -82,10 +82,15 @@ AudioController.prototype.getFrequencyData = function() {
 AudioController.prototype.playerControls = function () {
 $("#play").click(function(){
    source.mediaElement.play();
+   $("#play").css("visibility", "hidden");
+   $("#pause").css("visibility", "visible");
 });
 
 $("#pause").click(function(){
    source.mediaElement.pause();
+    $("#pause").css("visibility", "hidden");
+    $("#play").css("visibility", "visible");
+
 });
 
 $("#next").click(function(){
