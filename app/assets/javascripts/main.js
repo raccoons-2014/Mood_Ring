@@ -3,36 +3,37 @@ $(document).ready(function(){
     init();
     animate();
 
-  $('#choose-mood').click(function(e) {
+  $('#choose-mood').click(function() {
     $('#mood-selection').show();
     $('#choose-mood').hide();
     $('#enter-song').hide();
   });
 
-  $('#enter-song').click(function(e) {
+  $('#enter-song').click(function() {
     $('#slide1').show();
     $('#choose-mood').hide();
     $('#enter-song').hide();
   });
 
-  $('#hide').click(function(e) {
+  $('#hide').click(function() {
     $('#slide1').hide();
     $('#slide3').hide();
+    $('#choose-mood').show();
     $('#enter-song').show();
   });
 
-  $('#finish').click(function(e) {
+  $('#finish').click(function() {
     $('#slide3').hide();
     $('#enter-song').show();
     $('#choose-mood').show();
   });
 
-  $('#song-submit').click(function(e) {
+  $('#song-submit').click(function() {
     $('#slide2').hide();
     $('#slide3').show();
   });
 
-  $('button.emotion').click(function(e){
+  $('button.emotion').click(function(){
     $('#mood-selection').hide();
     $('#choose-mood').show();
     $('#enter-song').show();
