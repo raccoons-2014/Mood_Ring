@@ -10,7 +10,7 @@ $(document).ready(function(){
   });
 
   $('#enter-song').click(function() {
-    $('#slide1').show();
+    $('#slide1').slideDown("slow");
     $('#choose-mood').hide();
     $('#enter-song').hide();
   });
