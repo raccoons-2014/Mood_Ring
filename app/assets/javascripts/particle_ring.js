@@ -289,7 +289,6 @@ function init() {
   sparksEmitter.addCallback( "created", onParticleCreated );
   sparksEmitter.addCallback( "dead", onParticleDead );
   sparksEmitter.start();
-
   // End Particles
 
   // renderer = new THREE.WebGLRenderer();
@@ -321,7 +320,6 @@ function init() {
   document.addEventListener( 'mousedown', onDocumentMouseDown, false );
   document.addEventListener( 'touchstart', onDocumentTouchStart, false );
   document.addEventListener( 'touchmove', onDocumentTouchMove, false );
-
   window.addEventListener( 'resize', onWindowResize, false );
 
 }
