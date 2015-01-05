@@ -31,6 +31,7 @@ AudioController.prototype.setNextTrack = function() {
     this.trackNumber = (this.trackNumber + 1)% this.trackPlaylist.length;
     song.src = this.trackPlaylist[this.trackNumber];
     source.mediaElement.play();
+    $('#track-title').html(this.trackTitles[this.trackNumber]);
 };
 
 AudioController.prototype.setUpSource = function (song_url) {
@@ -39,6 +40,7 @@ AudioController.prototype.setUpSource = function (song_url) {
   source.connect(this.context.destination);
   source.connect(this.analyser);
   source.mediaElement.play();
+  $('#track-title').html(this.trackTitles[this.trackNumber]);
   song.addEventListener('ended', this.setNextTrack.bind(this));
 
 }
