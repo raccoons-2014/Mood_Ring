@@ -75,6 +75,9 @@ $(document).ready(function(){
       }
     });
   })
+  $('#like').on('click', function(){
+    PlayerWidget.favoriteTrack();
+  });
 
   $('#songList').on( "click", ".song", function(event){
     event.preventDefault();
