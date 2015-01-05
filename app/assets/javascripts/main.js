@@ -72,9 +72,10 @@ $(document).ready(function(){
     $.ajax ({
       url: 'songs/create',
       data: {title: title, stream_url: stream_url, mood: mood},
-      dataType: "json",
       type: "POST"
     }).done(function() {
+      console.log("IT WORKS")
+      $('#slide3').hide();
       $('#songList').empty();
       $('#moodDropdown').empty();
       $('#submit').empty();
