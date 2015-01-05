@@ -65,20 +65,15 @@ PlayerWidget.prototype.nextSongFetch = function() {
 }
 
 PlayerWidget.prototype.favoriteTrack = function() {
-<<<<<<< HEAD
-<<<<<<< HEAD
+  $('#like').on('click', function(){
   console.log("in favoriteTrack")
-=======
->>>>>>> adding favorite button - wip
-=======
-  console.log("in favoriteTrack")
->>>>>>> moved button to welcome view - wip
   SC.connect(function() {
     // favorite the track with current track id
     console.log(this.current_track_id)
     SC.put('/me/favorites/' + this.current_track_id );
     console.log("favorite success")
     });
+  })
 }
 
 
