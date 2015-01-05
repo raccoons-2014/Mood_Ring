@@ -109,10 +109,8 @@ $(document).ready(function(){
       data: {mood: $(this)[0].id}
     }).done(function(response){
       if (sourceCreated === true) {
-        console.log("if")
         viz.getNewTracks(response);
       } else {
-        console.log('else')
         audioPlay(response);
         sourceCreated = true;
       }
