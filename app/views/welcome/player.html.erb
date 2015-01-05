@@ -16,9 +16,8 @@
     <a href="#" id="hide">X</a>
     <h1>Enter a song to add to the database</h1>
     <form id = "input">
-      <input type="text"/>
-     <!--  <textarea id="text" ></textarea> -->
-   </form>
+        <input type="text"/>
+     </form>
     <button id = "go">Search</button>
   </div>
 
@@ -35,8 +34,6 @@
     <button class="ajax" id="excited">Excited</button>
     <button class="ajax" id="chill">Chill</button>
     <button class="ajax" id="unhappy">Angry</button>
-<!--     <div id = 'moodDropdown'></div>
-    <div id = 'submit'><button id='ajax'>Enter</button></div> -->
   </div>
 
 </div>
@@ -49,21 +46,21 @@
 
 
 
-  <div id="all-controls">
-    <a id="play" href="#">
-      <img class = "player-control" src='/assets/play-24.png'>
-    </a>
-    <a id="pause"  href = "#">
-      <img class = "player-control" src = "/assets/pause-24.png">
-    </a>
-    <a id="next"  href = "#">
-      <img class = "player-control" src = "/assets/arrow-31-24.png">
-    </a>
-  </div>
+<div id="all-controls">
+  <a id="play" href="#">
+    <img class = "player-control" src='/assets/play-24.png'>
+  </a>
+  <a id="pause"  href = "#">
+    <img class = "player-control" src = "/assets/pause-24.png">
+  </a>
+  <a id="next"  href = "#">
+    <img class = "player-control" src = "/assets/arrow-31-24.png">
+  </a>
+</div>
 
-  <% if current_user %>
-    <img src = '/assets/soundcloudd.png' onclick="location.href = '/soundcloud-disconnect'" id = "soundcloud" title="Disconnect from Soundcloud">
-  <% else %>
-    <img src = '/assets/soundcloudd.png' onclick="location.href = '/soundcloud-callback'" id= "soundcloud" title="Connect to Soundcloud">
-  <% end %>
+<% if current_user %>
+  <img src = '/assets/soundcloudd.png' onclick="location.href = '/soundcloud-disconnect'" id = "soundcloud" title="Disconnect from Soundcloud">
+<% else %>
+  <img src = '/assets/soundcloudd.png' onclick="location.href = '/soundcloud-callback'" id= "soundcloud" title="Connect to Soundcloud">
+<% end %>
 
