@@ -40,6 +40,15 @@ h1 {
 }
 form {
    -webkit-user-modify: read-write;
+<<<<<<< HEAD
+=======
+}
+
+#songList {
+  position: absolute;
+  text-align: center;
+  margin: 0 auto;
+>>>>>>> 2067646e11841651bdcce86d07aeaf656c28c034
 }
 
 #songList {
@@ -64,6 +73,7 @@ form {
   margin:5%;
 }
 
+<<<<<<< HEAD
 #play, #pause {
   position:absolute;
   margin-left: 10px
@@ -80,6 +90,8 @@ form {
 
 
 
+=======
+>>>>>>> 2067646e11841651bdcce86d07aeaf656c28c034
 .emotion, .ajax {
 background: #330099;
 color: #fff;
@@ -141,5 +153,3 @@ li {
   list-style: none;
 
 }
-
-
