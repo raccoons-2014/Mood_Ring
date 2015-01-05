@@ -5,7 +5,12 @@ class WelcomeController < ApplicationController
   end
 
   def player
-    render :player
+
+  	# if current_user
+      # render :player
+  	# else
+  	#   redirect_to root_path
+  	# end
   end
 
 end
