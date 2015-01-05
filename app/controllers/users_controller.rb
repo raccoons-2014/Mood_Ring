@@ -3,6 +3,10 @@ class UsersController < ApplicationController
 		redirect_to soundcloud_client.authorize_url
 	end
 
+  # It is weird to have an action called connected.  Actions are as the name
+  # implies, actions, which means, "verbs."  So, connect, OK, or 'delete' OK,
+  # but `emotionally_satisfied`.  Not crazy about the name, but seems good.
+
   def connected
 	  if params[:error].nil?
       soundcloud_client.exchange_token(:code => params[:code])

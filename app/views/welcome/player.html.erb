@@ -1,3 +1,9 @@
+  <script>
+  SC.initialize({
+    client_id: "5b91135eafaf701ea414c5fe6b86fdf3", 
+    redirect_uri: 'http://moodringradio.herokuapp.com/soundcloud-connected'
+  });
+  </script>
 <a href="#" id="enter-song"><img class="mood-control" src="/assets/search-12-32.png"></a>
 <a href="#" id="choose-mood"><h1>Choose a mood</h1></a>
 
@@ -51,6 +57,7 @@
     <img class = "player-control" src='/assets/play-24.png'>
   </a>
   <a id="pause"  href = "#">
+  <%# rails has img_tag helper.... %>
     <img class = "player-control" src = "/assets/pause-24.png">
   </a>
   <a id="next"  href = "#">
@@ -59,6 +66,7 @@
 </div>
 
 <% if current_user %>
+  <%# rails has img_tag helper.... %>
   <img src = '/assets/soundcloudd.png' onclick="location.href = '/soundcloud-disconnect'" id = "soundcloud" title="Disconnect from Soundcloud">
 <% else %>
   <img src = '/assets/soundcloudd.png' onclick="location.href = '/soundcloud-callback'" id= "soundcloud" title="Connect to Soundcloud">
