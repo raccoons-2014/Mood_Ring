@@ -68,13 +68,14 @@ $(document).ready(function(){
     event.preventDefault();
     var stream_url = $("#songList input[name='song']:checked")[0].value;
     var title = $("#songList input[name='song']:checked").parent().text();
-    var mood = $(this).text();
+    var mood = $(this)[0].id;
 
 
     $.ajax ({
       url: 'songs/create',
       data: {title: title, stream_url: stream_url, mood: mood},
-      type: "POST"
+      type: "POST",
+      dataType: "json"
     }).done(function() {
       $('#slide3').hide();
       $('#songList').empty();
