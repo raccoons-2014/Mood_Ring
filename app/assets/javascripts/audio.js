@@ -19,6 +19,17 @@ function AudioController(tracks) {
   this.playerControls();
 }
 
+AudioController.prototype.getNewTracks = function(newTracks) {
+  this.trackPlaylist = [];
+  this.trackTitles = [];
+  this.trackObjects = newTracks;
+  this.trackNumber = 0;
+  this.grabPlaylist();
+  song.src = this.trackPlaylist[this.trackNumber];
+  source.mediaElement.play();
+  $('#track-title').html(this.trackTitles[this.trackNumber]);
+};
+
 AudioController.prototype.grabPlaylist = function() {
   _.shuffle(this.trackObjects);
  for(var i = 0; i < this.trackObjects.length; i++) {
@@ -79,3 +90,4 @@ $("#next").click(function(){
 AudioController.prototype.progressBar = function() {
 //self explanatory
 }
+
