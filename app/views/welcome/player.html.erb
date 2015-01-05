@@ -1,0 +1,66 @@
+<a href="#" id="enter-song"><img class="mood-control" src="/assets/search-12-32.png"></a>
+<a href="#" id="choose-mood"><h1>Choose a mood</h1></a>
+
+<div id="mood-selection">
+  <h1>How are you feeling?</h1>
+  <button class="emotion" id="Happy"> <span> Happy </span>  </button>
+  <button class="emotion" id="Melancholy">Melancholy</button>
+  <button class="emotion" id="Excited">Excited</button>
+  <button class="emotion" id="Chill">Chill</button>
+  <button class="emotion" id="Angry">Angry</button>
+</div>
+
+<div id="slides" >
+
+  <div id="slide1">
+    <a href="#" id="hide">X</a>
+    <h1>Enter a song to add to the database</h1>
+    <form id = "input" method = "get">
+      <input id="titleSearch" type="text"/>
+     </form>
+  </div>
+
+  <div class="" id="slide2">
+    <h1>Choose a song to add</h1>
+    <div id = 'songList'></div>
+  </div>
+
+  <div id="slide3">
+    <h1>What mood describes this song?</h1>
+    <button class="ajax" id="Happy"> <span> Happy </span>  </button>
+    <button class="ajax" id="Melancholy">Melancholy</button>
+    <button class="ajax" id="Excited">Excited</button>
+    <button class="ajax" id="Chill">Chill</button>
+    <button class="ajax" id="Angry">Angry</button>
+  </div>
+
+</div>
+
+<div id="three"></div>
+
+<div id="playlist">
+
+<h3 id= "track-title"></h3>
+
+
+
+<div id="all-controls">
+<!--   <a href="#" id="stop-animation">Stop Visualizer</a>
+  <a href="#" id="start-animation">Start Visualizer</a> -->
+  <a id="play" href="#">
+    <img class = "player-control" src='/assets/play-24.png'>
+  </a>
+  <a id="pause"  href = "#">
+    <img class = "player-control" src = "/assets/pause-24.png">
+  </a>
+  <a id="next"  href = "#">
+    <img class = "player-control" src = "/assets/arrow-31-24.png">
+  </a>
+</div>
+
+<% if current_user %>
+  <img src = '/assets/soundcloudd.png' onclick="location.href = '/soundcloud-disconnect'" id = "soundcloud" title="Disconnect from Soundcloud">
+<% else %>
+  <img src = '/assets/soundcloudd.png' onclick="location.href = '/soundcloud-callback'" id= "soundcloud" title="Connect to Soundcloud">
+<% end %>
+
