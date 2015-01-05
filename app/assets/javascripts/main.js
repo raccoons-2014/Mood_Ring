@@ -3,75 +3,70 @@ $(document).ready(function(){
     init();
     animate();
 
-  $('#choose-mood').click(function(e) {
+  $('#choose-mood').click(function() {
     $('#mood-selection').show();
     $('#choose-mood').hide();
     $('#enter-song').hide();
   });
 
-  $('#enter-song').click(function(e) {
+  $('#enter-song').click(function() {
     $('#slide1').show();
     $('#choose-mood').hide();
     $('#enter-song').hide();
   });
 
-  $('#hide').click(function(e) {
+  $('#hide').click(function() {
     $('#slide1').hide();
     $('#slide3').hide();
+    $('#choose-mood').show();
     $('#enter-song').show();
   });
 
-  $('#finish').click(function(e) {
+  $('#finish').click(function() {
     $('#slide3').hide();
     $('#enter-song').show();
     $('#choose-mood').show();
   });
 
-  $('#next-slide').click(function(e) {
+  $('#song-submit').click(function() {
     $('#slide2').hide();
     $('#slide3').show();
+
   });
 
-  $('#submit').click(function(e) {
-    $('#slide1').hide();
-    $('#slide2').show();
-  })
-
-  $('button.emotion').click(function(e){
+  $('button.emotion').click(function(){
     $('#mood-selection').hide();
     $('#choose-mood').show();
     $('#enter-song').show();
   });
 
-  $('#mood_form').submit(function(e){
-    if (typeof(soundManager) != "undefined") {
-      soundManager.stopAll();
-    };
-    getEchoNestTracks(mood_input.value)
-    setTimeout(function(){tagPlaylist.setCurrentTrack();},1000);
-    setTimeout(function(){tagPlaylist.streamSong()},1000);
-  });
-  var ajax = $('#ajax')[0]
   $('#connect').on('click', function(){
     connectToSoundcloud();
   });
 
   $('#go').click(function(event){
-    $('#songList').empty();
-    $('#moodDropdown').empty();
+    $('#slide1').hide();
+    $('#slide2').show();
+    $('#songList').show();
+    $('#song-submit').show();
+    $('#submit').show();
+    $('#moodDropdown').show();
     SC.get('/tracks', {q: $('#text').val()}, function(tracks) {
-      for (i = 0; i < tracks.length; i++) {
-        $('#songList').append("<label><input type='radio' name='song' value =" + tracks[i].stream_url + ">" + tracks[i].title + "</label><br>");
+      for (i = 0; i < 9; i++) {
+        $('#songList').append("<li><label><input type='radio' name='song' value =" + tracks[i].stream_url + ">" + tracks[i].title + "</label></li>");
       }
     });
-    $('#moodDropdown').append("<select id = 'dropDownList'><option value='sad'>Sad</option><option value='happy'>Happy</option><option value='angry'>Angry</option><option value='F DA POLICE'>F DA POLICE</option></select>");
+    // $('#moodDropdown').append("<select id = 'dropDownList'><option value='sad'>Sad</option><option value='happy'>Happy</option><option value='angry'>Angry</option><option value='F DA POLICE'>F DA POLICE</option></select>");
   })
 
-  $('#ajax').on("click", function(event){
+  // $('#ajax').on("click", function(event){
+  $('.ajax').on("click", function(event){
     event.preventDefault();
     var stream_url = $("#songList input[name='song']:checked")[0].value;
     var title = $("#songList input[name='song']:checked").parent().text();
-    var mood = $('#moodDropdown option:selected').text();
+    // var mood = $('#moodDropdown option:selected').text();
+    var mood = $(this).text();
+    var artist = "none"
 
     $.ajax ({
       url: 'songs/create',
@@ -82,6 +77,8 @@ $(document).ready(function(){
       $('#songList').empty();
       $('#moodDropdown').empty();
       $('#submit').empty();
+      $('#slide3').hide();
+
     })
   });
 

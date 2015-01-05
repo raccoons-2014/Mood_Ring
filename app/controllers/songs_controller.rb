@@ -21,6 +21,7 @@ class SongsController < ApplicationController
       }
       format.js {
         @song.save
+        redirect_to root_path
       }
     end
   end
