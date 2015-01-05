@@ -3,6 +3,26 @@ $(document).ready(function(){
     init();
     animate();
 
+  $('#stop-animation').click(function() {
+  event.preventDefault();
+  if ( sparksEmitter.isRunning() ) {
+    sparksEmitter.stop();
+    $('#stop-animation').hide();
+    $('#start-animation').show()
+  }
+
+});
+
+  $('#start-animation').click(function() {
+  event.preventDefault();
+  if ( sparksEmitter.isRunning() == false) {
+    sparksEmitter.start();
+    $('#stop-animation').show();
+    $('#start-animation').hide();
+  }
+
+});
+
   $('#choose-mood').click(function() {
     $('#mood-selection').show();
     $('#choose-mood').hide();
