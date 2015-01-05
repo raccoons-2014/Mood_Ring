@@ -55,12 +55,8 @@ $(document).ready(function(){
   $('#connect').on('click', function(){
     connectToSoundcloud();
   });
-<<<<<<< HEAD
-=======
 
   $('#like').on('click', function(){
     PlayerWidget.favoriteTrack();
   });
-
->>>>>>> adding favorite button - wip
 })
