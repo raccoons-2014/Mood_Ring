@@ -12,10 +12,8 @@ function getEchoNestTracks(mood) {
     'song_type': "studio",
     'song_min_hotttnesss': "0.5",
     'artist_min_hotttnesss': "0.5",
-    'style': genre_choice,
     'format': 'json',
     'mood': mood,
-    'description' : genre_choice,
     'description' : mood,
     'type':'artist-description'
   };

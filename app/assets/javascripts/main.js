@@ -41,8 +41,8 @@ $(document).ready(function(){
     connectToSoundcloud();
   });
 
-  $('#fav').on('click', function(){
-    tagPlaylist.favoriteTrack();
+  $('#like').on('click', function(){
+    PlayerWidget.favoriteTrack();
   });
 
 })
