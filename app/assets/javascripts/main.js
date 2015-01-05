@@ -100,8 +100,8 @@ $(document).ready(function(){
     $('#enter-song').show();
     })
 
-  $('#fav').on('click', function(){
-    tagPlaylist.favoriteTrack();
+  $('#like').on('click', function(){
+    PlayerWidget.favoriteTrack();
   });
 
   $('.emotion').on("click", function() {
