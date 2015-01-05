@@ -7,8 +7,6 @@
   </div>
 
   <div class="" id="slide2">
-    <button class="btn" id="play">play</button>
-    <button class="btn" id="pause">pause</button><br>
     <button class="emotion" id="upbeat">Happy</button>
     <button class="emotion" id="melancholy">Melancholy</button>
     <button class="emotion" id="excited">Excited</button>
@@ -26,12 +24,17 @@
 
 <div id="playlist">
 
-  <h3><marquee behavior = "scroll" direction ="left" id = "track-title">Track playing will be displayed here</marquee></h3>
+  <marquee behavior = "scroll" direction ="left" id = "track-title"><h3>Track playing will be displayed here</h3></marquee>
 
-  <audio id="audio" controls="controls">
+<!--   <audio id="audio" controls="controls">
       <source id="mp3Source" type="audio/mp3"></source>
       Your browser does not support the audio format.
-  </audio>
+  </audio> -->
+  <div id="all-controls">
+  <a id="play" href="#"><img class = "player-control" src='/assets/play-24.png'></a>
+  <a id="pause"  href = "#"><img class = "player-control" src = "/assets/pause-24.png"></a>
+  <a id="next"  href = "#"><img class = "player-control" src = "/assets/arrow-31-24.png"></a>
+</div>
 
   <% if current_user %>
     <img src = '/assets/soundcloud.png' onclick="location.href = '/soundcloud-disconnect'" id = "soundcloud" title="Disconnect from Soundcloud">
