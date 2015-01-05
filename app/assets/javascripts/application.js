@@ -30,5 +30,5 @@
 //= require main
 //= require particle_ring
 //= require player
-//= require echonest
+//= require audio
 //= require_tree .
