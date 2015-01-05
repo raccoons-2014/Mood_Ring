@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    viz = new AudioController('https://api.soundcloud.com/tracks/184210017/stream?client_id=c751293c35f7cb00b48ee6383ea84aa6')
+    viz = new AudioController()
     init();
     animate();
 
