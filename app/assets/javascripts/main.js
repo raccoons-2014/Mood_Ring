@@ -69,7 +69,7 @@ $(document).ready(function(){
     var stream_url = $("#songList input[name='song']:checked")[0].value;
     var title = $("#songList input[name='song']:checked").parent().text();
     var mood = $(this).text();
-    var artist = "none"
+
 
     $.ajax ({
       url: 'songs/create',
