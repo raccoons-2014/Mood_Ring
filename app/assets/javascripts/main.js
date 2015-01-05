@@ -10,7 +10,7 @@ $(document).ready(function(){
   });
 
   $('#enter-song').click(function() {
-    $('#slide1').slideDown("slow");
+    $('#slide1').show();
     $('#choose-mood').hide();
     $('#enter-song').hide();
   });
@@ -82,6 +82,18 @@ $(document).ready(function(){
 
     })
   });
+
+  $('.emotion').on("click", function() {
+    $.ajax ({
+      url: 'songs/index',
+      type: "GET",
+      dataType: "json",
+      data: {mood: $(this)[0].id}
+    }).done(function(response){
+      console.log(response);
+    })
+
+  })
 
 })
 
