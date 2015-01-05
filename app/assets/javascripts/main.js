@@ -27,15 +27,10 @@ $(document).ready(function(){
     $('#choose-mood').show();
   });
 
-  $('#next-slide').click(function(e) {
+  $('#song-submit').click(function(e) {
     $('#slide2').hide();
     $('#slide3').show();
   });
-
-  $('#submit').click(function(e) {
-    $('#slide1').hide();
-    $('#slide2').show();
-  })
 
   $('button.emotion').click(function(e){
     $('#mood-selection').hide();
@@ -57,11 +52,17 @@ $(document).ready(function(){
   });
 
   $('#go').click(function(event){
+    $('#slide1').hide();
+    $('#slide2').show();
+    $('#songList').show();
+    $('#song-submit').show();
+    $('#submit').show();
+    $('#moodDropdown').show();
     $('#songList').empty();
     $('#moodDropdown').empty();
     SC.get('/tracks', {q: $('#text').val()}, function(tracks) {
-      for (i = 0; i < tracks.length; i++) {
-        $('#songList').append("<label><input type='radio' name='song' value =" + tracks[i].stream_url + ">" + tracks[i].title + "</label><br>");
+      for (i = 0; i < 9; i++) {
+        $('#songList').append("<li><label><input type='radio' name='song' value =" + tracks[i].stream_url + ">" + tracks[i].title + "</label></li>");
       }
     });
     $('#moodDropdown').append("<select id = 'dropDownList'><option value='sad'>Sad</option><option value='happy'>Happy</option><option value='angry'>Angry</option><option value='F DA POLICE'>F DA POLICE</option></select>");

@@ -11,21 +11,26 @@
 </div>
 
 <div id="slides" >
+
   <div id="slide1">
-    <a href="#" id="hide">hide</a>
-    <h1>FIRST SLIDE TEST</h1>
-    <a href="#" id="submit">Submit form</a>
+    <a href="#" id="hide">X</a>
+    <h1>Enter a song to add to the database</h1>
+    <form id = "input"><textarea id="text" ></textarea></form>
+    <button id = "go">Search</button>
   </div>
 
   <div class="" id="slide2">
-    <h1>SECOND SLIDE TEST</h1>
-    <a href="#" id="next-slide">click for next slide</a>
+    <h1>Choose a song to add</h1>
+    <div id = 'songList'></div>
+    <div id='song-submit'><button id='song-submit' >Enter</button></div>
   </div>
 
   <div id="slide3">
-    <h1>THIRD SLIDE TEST</h1>
-    <a href="#" id="finish">finish</a>
+    <h1>What mood describes this song?</h1>
+    <div id = 'moodDropdown'></div>
+    <div id = 'submit'><button id='ajax'>Enter</button></div>
   </div>
+
 </div>
 
 <div id="three"></div>
@@ -34,10 +39,6 @@
 
   <h3><marquee behavior="scroll" direction="left">Track playing will be displayed here</marquee></h3>
 
-  <audio id="audio" controls="controls">
-      <source id="mp3Source" type="audio/mp3"></source>
-      Your browser does not support the audio format.
-  </audio>
 
   <% if current_user %>
     <img src = '/assets/soundcloud.png' onclick="location.href = '/soundcloud-disconnect'" id = "soundcloud" title="Disconnect from Soundcloud">
@@ -45,20 +46,4 @@
     <img src = '/assets/soundcloud.png' onclick="location.href = '/soundcloud-callback'" id= "soundcloud" title="Connect to Soundcloud">
   <% end %>
 
-  <div>
-  <form id = "input">
-    <textarea id="text"></textarea>
-  </form>
-  <button id = "go">Search</button>
-</div>
-
-<div id = 'songList'>
-</div>
-
-<div>
-  <div id = 'moodDropdown'>
-  </div>
-  <div id = 'submit'>
-    <button id='ajax'>Enter</button>
-  </div>
 </div>
