@@ -57,14 +57,12 @@ $(document).ready(function(){
         $('#songList').append("<li><label><input type='radio' name='song' value =" + tracks[i].stream_url + ">" + tracks[i].title + "</label></li>");
       }
     });
-    // $('#moodDropdown').append("<select id = 'dropDownList'><option value='sad'>Sad</option><option value='happy'>Happy</option><option value='angry'>Angry</option><option value='F DA POLICE'>F DA POLICE</option></select>");
   })
 
   $('.ajax').on("click", function(event){
     event.preventDefault();
     var stream_url = $("#songList input[name='song']:checked")[0].value;
     var title = $("#songList input[name='song']:checked").parent().text();
-    // var mood = $('#moodDropdown option:selected').text();
     var mood = $(this).text();
     var artist = "none"
 
@@ -78,7 +76,6 @@ $(document).ready(function(){
       $('#moodDropdown').empty();
       $('#submit').empty();
       $('#slide3').hide();
-
     })
   });
 
