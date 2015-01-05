@@ -43,8 +43,6 @@
 
 <h3>Track playing will be displayed here</h3>
 
-
-
 <div id="all-controls">
   <a href="#" id="stop-animation">Stop Visualizer</a>
   <a href="#" id="start-animation">Start Visualizer</a>
@@ -57,12 +55,11 @@
   <a id="next"  href = "#">
     <img class = "player-control" src = "/assets/arrow-31-24.png">
   </a>
+
+  <img src = '/assets/pixelheart.png' onclick = "location.href = '/you/likes'" id = 'like' title = "Like">
+  <% if current_user %>
+    <img src = '/assets/soundcloud.png' onclick="location.href = '/soundcloud-disconnect'" id = "soundcloud" title="Disconnect from Soundcloud">
+  <% else %>
+    <img src = '/assets/soundcloud.png' onclick="location.href = '/soundcloud-callback'" id= "soundcloud" title="Connect to Soundcloud">
+  <% end %>
 </div>
-
-<% if current_user %>
-  <img src = '/assets/soundcloudd.png' onclick="location.href = '/soundcloud-disconnect'" id = "soundcloud" title="Disconnect from Soundcloud">
-<% else %>
-  <img src = '/assets/soundcloudd.png' onclick="location.href = '/soundcloud-callback'" id= "soundcloud" title="Connect to Soundcloud">
-<% end %>
-
-

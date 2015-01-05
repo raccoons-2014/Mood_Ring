@@ -142,5 +142,8 @@ li {
 
 #start-animation {
   display: none;
+}
 
+#like{
+  cursor: pointer;
 }
