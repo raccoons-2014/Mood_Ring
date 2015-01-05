@@ -20,14 +20,23 @@ h1 {
 }
 
 #playlist{
+<<<<<<< HEAD
   background-color: rgba(40, 40, 40, 0.3);
+=======
+  background-color: rgb(36, 38, 42);
+>>>>>>> 0104d128de6b8a2246f615b77c6c0227ca94bcec
   bottom: 0;
   z-index:1;
   position:absolute;
   width: 100%;
+<<<<<<< HEAD
   height: 5%;
   padding: 0.4%;
   margin: 0;
+=======
+  height: 6%;
+  padding: 1%;
+>>>>>>> 0104d128de6b8a2246f615b77c6c0227ca94bcec
 }
 
 #slides div {
@@ -79,4 +88,4 @@ h3 {
  color: white;
  position:absolute;
  margin-top:0.8%;
-}
+
