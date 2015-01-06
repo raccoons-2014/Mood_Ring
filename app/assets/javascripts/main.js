@@ -5,51 +5,59 @@ function audioPlay(trackPlaylist) {
 }
 
 $(document).ready(function(){
+  var $stopAnimation = $('#stop-animation');
+  var $startAnimation = $('#start-animation');
+  var $inputSong = $('#inputSong');
+  var $addSong = $('#addSong');
+  var $songMood = $('#songMood');
+  var $chooseMood = $('#chooseMood');
+  var $moodSelection = $('#moodSelection');
+  var $enterSong = $('#enterSong');
 
   sourceCreated = false;
 
-  $('#stop-animation').click(function() {
+  $stopAnimation.click(function() {
     event.preventDefault();
     if ( sparksEmitter.isRunning() ) {
       sparksEmitter.stop();
-      $('#stop-animation').hide();
-      $('#start-animation').show()
+      $stopAnimation.hide();
+      $startAnimation.show()
     }
 
   });
 
-  $('#start-animation').click(function() {
+  $startAnimation.click(function() {
     event.preventDefault();
     if ( sparksEmitter.isRunning() == false) {
       sparksEmitter.start();
-      $('#stop-animation').show();
-      $('#start-animation').hide();
+      $stopAnimation.show();
+      $startAnimation.hide();
     }
   });
 
-  $('#choose-mood').click(function() {
-    $('#mood-selection').show();
-    $('#choose-mood').hide();
-    $('#enter-song').hide();
+  $chooseMood.click(function() {
+    $moodSelection.show();
+    $chooseMood.hide();
+    $enterSong.hide();
   });
 
-  $('#enter-song').click(function() {
-    $('#slide1').show();
-    $('#choose-mood').hide();
-    $('#enter-song').hide();
+  $enterSong.click(function() {
+    $inputSong.show();
+    $chooseMood.hide();
+    $enterSong.hide();
   });
 
   $('#hide').click(function() {
-    $('#slide1').hide();
-    $('#slide3').hide();
-    $('#choose-mood').show();
-    $('#enter-song').show();
+    $inputSong.hide();
+    $songMood.hide();
+    $chooseMood.show();
+    $enterSong.show();
   });
 
   $('button.emotion').click(function(){
-    $('#mood-selection').hide();
-    $('#choose-mood').show();
-    $('#enter-song').show();
+    $moodSelection.hide();
+    $chooseMood.show();
+    $enterSong.show();
   });
 
   $('#connect').on('click', function(){
@@ -60,8 +68,8 @@ $(document).ready(function(){
     if (e.keyCode == 13) {
       e.preventDefault();
       var $titleSearch = $('#titleSearch').val();
-       $('#slide1').hide();
-      $('#slide2').show();
+      $inputSong.hide();
+      $addSong.show();
       $('#songList').show();
 
       SC.get('/tracks', {q: $titleSearch}, function(tracks) {
@@ -79,11 +87,11 @@ $(document).ready(function(){
     event.preventDefault();
     stream_url = $(this).attr('id')
     title = $(this).text();
-    $('#slide2').hide();
-    $('#slide3').show();
+    $addSong.hide();
+    $songMood.show();
   });
 
-  $('.ajax').on("click", function(event){
+  $('.moodChoice').on("click", function(event){
     event.preventDefault();
     var mood = $(this)[0].id;
 
@@ -93,9 +101,9 @@ $(document).ready(function(){
       type: "POST"
     }).done(function() {
         $('#songList').empty();
-        $('#slide3').hide();
-        $('#choose-mood').show();
-        $('#enter-song').show();
+        $songMood.hide();
+        $chooseMood.show();
+        $enterSong.show();
 
         $.ajax ({
           url: 'songs/index',
