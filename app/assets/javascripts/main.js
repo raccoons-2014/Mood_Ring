@@ -4,7 +4,6 @@ function audioPlay(trackPlaylist) {
     animate();
 }
 
-
 $(document).ready(function(){
 
   sourceCreated = false;
@@ -97,6 +96,24 @@ $(document).ready(function(){
         $('#slide3').hide();
         $('#choose-mood').show();
         $('#enter-song').show();
+
+        $.ajax ({
+          url: 'songs/index',
+          type: "GET",
+          dataType: "json",
+          data: {mood: mood}
+        }).done(function(response){
+          if (sourceCreated === true) {
+            debugger
+            response.unshift({stream_url: stream_url, title: title})
+            viz.getNewTracks(response)
+          } else {
+            response.unshift({stream_url: stream_url, title: title})
+            audioPlay(response);
+            sourceCreated = true;
+          }
+        })
+
       })
   });
 
