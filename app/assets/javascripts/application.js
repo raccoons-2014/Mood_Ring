@@ -17,8 +17,10 @@
 //= require three.min
 //= require StereoEffect
 //= require helvetiker_regular.typeface
+//= require Detector
 //= require Sparks
 //= require tween.min
+//= require BloomPass
 //= require CopyShader
 //= require EffectComposer
 //= require FocusShader
