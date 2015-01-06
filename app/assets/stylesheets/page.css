@@ -31,6 +31,14 @@ h1 {
   margin: 0;
 }
 
+#progressBar {
+  background-color: rgb(211, 203, 203);
+  width: 0px;
+
+   height:3px;
+}
+
+
 #slides div {
   background-color: rgba(40, 40, 40, 0.3);
   width: 100%;
