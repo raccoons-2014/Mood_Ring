@@ -47,12 +47,6 @@ $(document).ready(function(){
     }
   });
 
-  // $chooseMood.click(function() {
-  //   $moodSelection.show();
-  //   $chooseMood.hide();
-  //   $enterSong.hide();
-  // });
-
   $enterSong.click(function() {
     $inputSong.show();
     $chooseMood.hide();
