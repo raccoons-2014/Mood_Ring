@@ -312,6 +312,7 @@ li {
 }
 
 .modal {
-  right: -10px;
-  width: 35%px;
+  top: 20% !important;
+  margin-left: -30% !important ;
+  width: 35%;
 }
