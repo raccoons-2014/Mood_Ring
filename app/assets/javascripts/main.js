@@ -124,7 +124,7 @@ $(document).ready(function(){
   $('.moodChoice').on("click", function(event){
     event.preventDefault();
     var mood = $(this)[0].id;
-
+    getDisplay('welcome/player');
     $.ajax ({
       url: 'songs/create',
       data: {title: title, stream_url: stream_url, mood: mood},
