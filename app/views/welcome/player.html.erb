@@ -1,5 +1,5 @@
 <a href="#" id="enterSong"><%= image_submit_tag("search-12-32.png", class: "mood-control") %></a>
-<a href="#" id="chooseMood"><h1>Choose a mood</h1></a>
+<a href="/welcome/ring" id="chooseMood" rel="modal:open"><h1>Choose a mood</h1></a>
 
 <div id="moodSelection">
   <h1>How are you feeling?</h1>
@@ -10,31 +10,7 @@
   <button class="emotion" id="Angry">Angry</button>
 </div>
 
-<div id="slides" >
-
-  <div id="inputSong">
-    <a href="#" id="hide">X</a>
-    <h1>Enter a song to add to the database</h1>
-    <form id = "input" method = "get">
-      <input id="titleSearch" type="text"/>
-     </form>
-  </div>
-
-  <div class="" id="addSong">
-    <h1>Choose a song to add</h1>
-    <div id = 'songList'></div>
-  </div>
-
-  <div id="songMood">
-    <h1>What mood describes this song?</h1>
-    <button class="moodChoice" id="Happy"> <span> Happy </span></button>
-    <button class="moodChoice" id="Melancholy">Melancholy</button>
-    <button class="moodChoice" id="Excited">Excited</button>
-    <button class="moodChoice" id="Chill">Chill</button>
-    <button class="moodChoice" id="Angry">Angry</button>
-  </div>
-
-</div>
+<%= render(:partial => 'slides') %>
 
 <div id="three"></div>
 
