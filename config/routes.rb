@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   root 'welcome#player'
 
-  match "/welcome/play" => "welcome#play", :as => 'play', via: [:get, :post]
+  # get "welcome/play" => "welcome#play"
+  get "welcome/greet" => "welcome#greet"
 
   get '/soundcloud-callback' => 'users#connect'
   get '/soundcloud-connected' => 'users#connected'

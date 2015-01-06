@@ -4,8 +4,20 @@ function audioPlay(trackPlaylist) {
     animate();
 }
 
+function mainDisplay() {
+
+   $.ajax ({
+    url: 'welcome/greet',
+    type: "GET"
+  }).done(function(d) {
+   $("#three").html(d)
+    })
+
+  }
 
 $(document).ready(function(){
+
+  mainDisplay();
 
   $('#stop-animation').click(function() {
     event.preventDefault();
@@ -107,6 +119,7 @@ $(document).ready(function(){
       data: {mood: $(this)[0].id}
     }).done(function(response){
       audioPlay(response);
+      $("#homepage").hide()
     })
 
   })
