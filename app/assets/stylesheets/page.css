@@ -281,7 +281,7 @@ li {
   border-radius: 50%;
   border: 1px solid white;
   position: absolute;
-  top: 20%;
+/*  top: 20%;*/
   left: 35%;
   box-shadow:
     inset 0 0 50px #fff,
@@ -309,4 +309,9 @@ li {
 
 .glowing-ring:hover {
   transform: scale(1.4);
+}
+
+.modal {
+  right: -10px;
+  width: 35%px;
 }
