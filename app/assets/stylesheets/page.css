@@ -144,8 +144,14 @@ li {
   display: none;
 }
 
+.glowing-ring {
+  position: absolute;
+  border-radius: 50%;
+    width: 20%;
+    height: 20%;
+}
 
-.glowing-ring#happy {
+.glowing-ring.happy {
     top: -10%;
     right: 40%;
     color: #f0f;
@@ -161,8 +167,8 @@ li {
 
 }
 
-.glowing-ring#angry {
-   right: 0%;
+.glowing-ring.angry {
+  right: 0%;
   bottom: 15%;
   color: #cc3333;
   box-shadow:
@@ -176,7 +182,8 @@ li {
         10px 0 80px #cc3333;
 
 }
-.glowing-ring#chill {
+
+.glowing-ring.chill {
   left: -2%;
     top: 15%;
     color: #66cc99;
@@ -191,7 +198,8 @@ li {
         10px 0 80px  #66cc99;
 
 }
-.glowing-ring#melancholy {
+
+.glowing-ring.melancholy {
     top: 15%;
   right: -2%;
   color: #0ff;
@@ -205,7 +213,8 @@ li {
         -10px 0 80px #0ff,
         10px 0 80px #0ff;
 }
-.glowing-ring#excited {
+
+.glowing-ring.excited {
     left: 0%;
     bottom: 15%;
     color: #FF6;
@@ -221,7 +230,7 @@ li {
 
 }
 
-.glowing-ring#sleepy {
+.glowing-ring.sleepy {
    right: 40%;
   bottom: -10%;
   color: #333399;
@@ -236,12 +245,7 @@ li {
         10px 0 80px #333399;
 
 }
-.glowing-ring {
-  position: absolute;
-  border-radius: 50%;
-    width: 20%;
-    height: 20%;
-}
+
 #big-ring {
   height: 500px;
   width: 500px;
