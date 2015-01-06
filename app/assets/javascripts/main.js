@@ -170,11 +170,11 @@ $(document).ready(function(){
       dataType: "json",
       data: {mood: clickedMood }
     }).done(function(response){
-      audioPlay(response);
       if (sourceCreated === true) {
         viz.getNewTracks(response);
       } else {
         response = _.shuffle(response);
+        audioPlay(response);
         sourceCreated = true;
       }
     })
