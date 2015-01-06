@@ -290,7 +290,6 @@ function init() {
   sparksEmitter.start();
   // End Particles
 
-  // renderer = new THREE.WebGLRenderer();
   renderer = new THREE.WebGLRenderer( { clearColor: 0xff0000, clearAlpha: 1 } );
   renderer.setSize( window.innerWidth, window.innerHeight );
 
@@ -316,8 +315,6 @@ function init() {
 
   effectFocus.renderToScreen = true;
 
-  document.addEventListener( 'touchstart', onDocumentTouchStart, false );
-  document.addEventListener( 'touchmove', onDocumentTouchMove, false );
   window.addEventListener( 'resize', onWindowResize, false );
 
 }
@@ -340,55 +337,11 @@ function onWindowResize() {
 document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 
 
-function onDocumentMouseDown( event ) {
-  event.preventDefault();
-
-  mouseXOnMouseDown = event.clientX - windowHalfX;
-  targetRotationOnMouseDown = targetRotation;
-
-  if ( sparksEmitter.isRunning() ) {
-    //if you'd like the animation to stop when mouse is clicked
-    // sparksEmitter.stop();
-
-  } else {
-
-    sparksEmitter.start();
-
-  }
-
-}
-
 function onDocumentMouseMove( event ) {
 
   mouseX = event.clientX - windowHalfX;
 
   targetRotation = targetRotationOnMouseDown + ( mouseX - mouseXOnMouseDown ) * 0.001;
-
-}
-
-function onDocumentTouchStart( event ) {
-
-  if ( event.touches.length === 1 ) {
-
-    event.preventDefault();
-
-    mouseXOnMouseDown = event.touches[ 0 ].pageX - windowHalfX;
-    targetRotationOnMouseDown = targetRotation;
-
-  }
-
-}
-
-function onDocumentTouchMove( event ) {
-
-  if ( event.touches.length === 1 ) {
-
-    event.preventDefault();
-
-    mouseX = event.touches[ 0 ].pageX - windowHalfX;
-    targetRotation = targetRotationOnMouseDown + ( mouseX - mouseXOnMouseDown ) * 0.05;
-
-  }
 
 }
 
@@ -418,7 +371,7 @@ attributes.size.needsUpdate = true;
 attributes.pcolor.needsUpdate = true;
 
 group.rotation.y += ( targetRotation - group.rotation.y ) * 0.05;
-renderer.clear();
+// renderer.clear();
 
 composer.render( 0.1 );
 
