@@ -1,37 +1,34 @@
 class UsersController < ApplicationController
 	def connect
-		redirect_to soundcloud_client.authorize_url
+		redirect_to soundcloud_login
 	end
 
   def connected
 	  if params[:error].nil?
-      soundcloud_client.exchange_token(:code => params[:code])
-      user = soundcloud_client.get("/me")
+      CLIENT.exchange_token(:code => params[:code])
+      user = CLIENT.get("/me")
 
       login(User.find_or_create_by(soundcloud_user_id: user.id, soundcloud_username: user.username))
 
     	user.update_attributes!({
-          :soundcloud_access_token  => soundcloud_client.access_token,
-          :soundcloud_refresh_token => soundcloud_client.refresh_token,
-          :soundcloud_expires_at    => soundcloud_client.expires_at,
+          :soundcloud_access_token  => CLIENT.access_token,
+          :soundcloud_refresh_token => CLIENT.refresh_token,
+          :soundcloud_expires_at    => CLIENT.expires_at,
       })
     end
     session[:user_id] = user.id
-    redirect_to root_path
+    redirect_to welcome_player_path
   end
 
   def disconnect
     logout
-    redirect_to root_path
+    redirect_to welcome_player_path
   end
 
 private
 
-  def soundcloud_client
-    return @soundcloud_client if @soundcloud_client
-    #for local host
-    @soundcloud_client = User.soundcloud_client(:redirect_uri  => soundcloud_connected_url)
-    #for heroku
-    # @soundcloud_client = User.soundcloud_client(:redirect_uri  => 'http://moodringradio.herokuapp.com/soundcloud-callback')
+    # return @soundcloud_client if @soundcloud_client
+  def soundcloud_login
+      soundcloud_login = CLIENT.authorize_url(redirect_uri: soundcloud_connected_url)
   end
 end
