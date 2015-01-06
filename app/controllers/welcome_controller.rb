@@ -4,4 +4,8 @@ class WelcomeController < ApplicationController
     render :player
   end
 
+  def greet
+    render :homepage
+  end
+
 end
