@@ -93,11 +93,16 @@ $(document).ready(function(){
         tenTracks.forEach(function(track) {
           if (typeof(track.stream_url) == "undefined") return;
           $('#songList')
-            .append("<li><a href='#' class='song' id =" + track.stream_url + ">" + track.title +  "</a><a href='#' class='preview' id='" + track.stream_url + "'>preview</a></li>");
+            .append("<li><ul class ='fetchedSongs'><li><img src ='/assets/play-3-16.png' class='preview' id='" + track.stream_url + "'></li><li><img src ='/assets/stop-3-16.png' class='pauseReview'></li><li><a href='#' class='song' id =" + track.stream_url + ">" + track.title +  "</a></li></ul></li>");
         });
       });
     }
   });
+
+  $('#songList').on("click", ".pauseReview", function(event){
+    event.preventDefault();
+    source.mediaElement.pause();
+  })
 
   $('#songList').on("click", ".preview", function(event){
     event.preventDefault();
