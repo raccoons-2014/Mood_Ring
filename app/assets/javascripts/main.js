@@ -77,7 +77,7 @@ $(document).ready(function(){
         tenTracks.forEach(function(track) {
           if (typeof(track.stream_url) == "undefined") return;
           $('#songList')
-            .append("<li><a href='#' class='song' id =" + track.stream_url + ">" + track.title +  "</a><a href='#' class='preview' id='" + track.stream_url + "'>preview</a></li>");
+            .append("<li><a href='#' class='song' id =" + track.stream_url + ">" + track.title +  "</a><a href='#' class='preview' id='" + track.id + "'>preview</a></li>");
         });
       });
     }
@@ -85,9 +85,7 @@ $(document).ready(function(){
 
   $('#songList').on("click", ".preview", function(event){
     event.preventDefault();
-    var streamUrl = $(this).attr('id');
-    debugger
-    SC.get('/tracks', {stream_url: streamUrl}, function(tracks) {
+    SC.get('/tracks', {id: $(this).attr('id')}, function(tracks) {
       console.log(tracks);
     })
   })

@@ -21,11 +21,4 @@ class SongsController < ApplicationController
     end
   end
 
-  def preview
-    song = SONG.where(title: params[:title])
-    respond_to do |format|
-      format.js {render :json => song}
-    end
-  end
-
 end
