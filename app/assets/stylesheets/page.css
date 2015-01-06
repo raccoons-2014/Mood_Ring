@@ -20,6 +20,14 @@ h1 {
   margin: 0 auto;
 }
 
+.preview:hover {
+  transform: scale(1.4);
+}
+
+.pauseReview:hover {
+  transform: scale(1.4);
+}
+
 #playlist{
   background-color: rgba(40, 40, 40, 0.3);
   bottom: 0;
@@ -146,6 +154,10 @@ li {
   padding-right: 1%;
   text-align: left;
   list-style: none;
+}
+
+.fetchedSongs {
+
 }
 
 .fetchedSongs li {

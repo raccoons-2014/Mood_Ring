@@ -93,7 +93,7 @@ $(document).ready(function(){
         tenTracks.forEach(function(track) {
           if (typeof(track.stream_url) == "undefined") return;
           $('#songList')
-            .append("<li><ul class ='fetchedSongs'><li><img src ='/assets/play-3-16.png' class='preview' id='" + track.stream_url + "'></li><li><img src ='/assets/stop-3-16.png' class='pauseReview'></li><li><a href='#' class='song' id =" + track.stream_url + ">" + track.title +  "</a></li></ul></li>");
+            .append("<li><ul class ='fetchedSongs'><li><img src ='/assets/play-3-16.png' class='preview' id='" + track.stream_url + "'></li><li><img src ='/assets/stop-3-16.png' class='pauseReview' id='" + track.id + "'></li><li><a href='#' class='song' id =" + track.stream_url + ">" + track.title +  "</a></li></ul></li>");
         });
       });
     }
@@ -101,6 +101,8 @@ $(document).ready(function(){
 
   $('#songList').on("click", ".pauseReview", function(event){
     event.preventDefault();
+    $(this).css("visibility", "hidden");
+    $(this).closest("li").prev().find("img").css("visibility", "visible");
     $("#pause").css("visibility", "hidden");
     $("#play").css("visibility", "visible");
     source.mediaElement.pause();
@@ -108,6 +110,16 @@ $(document).ready(function(){
 
   $('#songList').on("click", ".preview", function(event){
     event.preventDefault();
+    var pauseButtons = document.getElementsByClassName('pauseReview');
+    for (i=0; i < pauseButtons.length; i++){
+      pauseButtons[i].style.visibility = 'hidden';
+    };
+    var previewButtons = document.getElementsByClassName('preview');
+    for (i=0; i < previewButtons.length; i++){
+      previewButtons[i].style.visibility = 'visible';
+    };
+    $(this).css("visibility", "hidden");
+    $(this).closest("li").next().find("img").css("visibility", "visible");
     $("#play").css("visibility", "hidden");
     $("#pause").css("visibility", "visible");
     $('#track-title').html("Preview");
