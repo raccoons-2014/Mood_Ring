@@ -4,6 +4,17 @@ function audioPlay(trackPlaylist) {
     animate();
 }
 
+function getDisplay(url) {
+
+   $.ajax ({
+    url: url,
+    type: "GET"
+  }).done(function(response) {
+   $("body").html(response)
+    })
+
+  }
+
 $(document).ready(function(){
   var $stopAnimation = $('#stop-animation');
   var $startAnimation = $('#start-animation');
@@ -13,6 +24,7 @@ $(document).ready(function(){
   var $chooseMood = $('#chooseMood');
   var $moodSelection = $('#moodSelection');
   var $enterSong = $('#enterSong');
+
 
   sourceCreated = false;
 
@@ -65,6 +77,9 @@ $(document).ready(function(){
   });
 
   $('#titleSearch').keydown(function(e) {
+    SC.initialize({
+    client_id: "5b91135eafaf701ea414c5fe6b86fdf3",
+    });
     if (e.keyCode == 13) {
       e.preventDefault();
       var $titleSearch = $('#titleSearch').val();
@@ -72,7 +87,8 @@ $(document).ready(function(){
       $addSong.show();
       $('#songList').show();
 
-      SC.get('/tracks', {q: $titleSearch}, function(tracks) {
+      SC.get('/tracks', { q: $titleSearch }, function(tracks) {
+
         var tenTracks = Array.prototype.slice.call(tracks, 0, 9);
         tenTracks.forEach(function(track) {
           if (typeof(track.stream_url) == "undefined") return;
@@ -140,24 +156,23 @@ $(document).ready(function(){
       })
   });
 
-  $('.emotion').on("click", function() {
-
+  $('body').on("click", ".glowing-ring", function() {
+    var clickedMood = $(this).data( "mood" );
+    getDisplay('welcome/player');
     $.ajax ({
       url: 'songs/index',
       type: "GET",
       dataType: "json",
-      data: {mood: $(this)[0].id}
+      data: {mood: clickedMood }
     }).done(function(response){
+      audioPlay(response);
       if (sourceCreated === true) {
         viz.getNewTracks(response);
       } else {
         response = _.shuffle(response);
-        audioPlay(response);
         sourceCreated = true;
       }
     })
-
   })
-
 })
 
