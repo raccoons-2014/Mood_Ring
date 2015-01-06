@@ -101,6 +101,7 @@ $(document).ready(function(){
 
   $('#songList').on("click", ".preview", function(event){
     event.preventDefault();
+    $('#track-title').html("Preview");
     var streamUrl = this.id;
     var streamUrlPlay = this.id + "?client_id=c751293c35f7cb00b48ee6383ea84aa6";
 
