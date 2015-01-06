@@ -80,7 +80,7 @@ h1 {
   margin-right: 20px;
 }
 
-.emotion, .ajax {
+.emotion, .moodChoice {
 background: #330099;
 height: 70px;
 min-width: 260px;
@@ -107,16 +107,16 @@ button {
   transition: all 0.3s;
 }
 
-#mood-selection {
+#moodSelection {
   display: none;
 }
 
-#enter-song {
+#enterSong {
   position: absolute;
   right: 15px;
 }
 
-#choose-mood, #hide {
+#chooseMood, #hide {
   position: absolute;
   left: 15px;
 }
