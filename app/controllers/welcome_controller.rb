@@ -6,9 +6,6 @@ class WelcomeController < ApplicationController
 
   def greet
     render :homepage
-    # respond_to do |format|
-    #   format.html { render :partial => 'homepage' }
-    # end
   end
 
 end
