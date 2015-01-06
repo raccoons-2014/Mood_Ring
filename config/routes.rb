@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   root 'welcome#player'
 
-  # get "welcome/play" => "welcome#play"
   get "welcome/greet" => "welcome#greet"
 
   get '/soundcloud-callback' => 'users#connect'
