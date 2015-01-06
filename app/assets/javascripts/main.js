@@ -101,11 +101,15 @@ $(document).ready(function(){
 
   $('#songList').on("click", ".pauseReview", function(event){
     event.preventDefault();
+    $("#pause").css("visibility", "hidden");
+    $("#play").css("visibility", "visible");
     source.mediaElement.pause();
   })
 
   $('#songList').on("click", ".preview", function(event){
     event.preventDefault();
+    $("#play").css("visibility", "hidden");
+    $("#pause").css("visibility", "visible");
     $('#track-title').html("Preview");
     var streamUrl = this.id;
     var streamUrlPlay = this.id + "?client_id=c751293c35f7cb00b48ee6383ea84aa6";
