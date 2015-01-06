@@ -17,7 +17,6 @@ function getDisplay(url) {
 
 $(document).ready(function(){
 
-  getDisplay('welcome/greet');
 
   sourceCreated = false;
 
@@ -131,26 +130,24 @@ $(document).ready(function(){
       })
   });
 
-  $('.emotion').on("click", function() {
-
+  $('body').on("click", ".glowing-ring", function() {
+    var clickedMood = $(this).data( "mood" );
+    getDisplay('welcome/player');
     $.ajax ({
       url: 'songs/index',
       type: "GET",
       dataType: "json",
-      data: {mood: $(this)[0].id}
+      data: {mood: clickedMood }
     }).done(function(response){
       audioPlay(response);
-      $("#homepage").hide()
       if (sourceCreated === true) {
         viz.getNewTracks(response);
       } else {
         response = _.shuffle(response);
-        audioPlay(response);
+        // audioPlay(response);
         sourceCreated = true;
       }
     })
-
   })
-
 })
 

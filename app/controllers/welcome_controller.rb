@@ -5,10 +5,10 @@ class WelcomeController < ApplicationController
   end
 
   def greet
-    respond_to do |format|
-      format.html { render :partial => 'homepage' } # index.html.erb
-      # format.json { render json: @results, :callback => params[:callback] }
-    end
+    render :homepage
+    # respond_to do |format|
+    #   format.html { render :partial => 'homepage' }
+    # end
   end
 
 end
