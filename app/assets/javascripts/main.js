@@ -69,6 +69,9 @@ $(document).ready(function(){
   });
 
   $('#titleSearch').keydown(function(e) {
+    SC.initialize({
+    client_id: "5b91135eafaf701ea414c5fe6b86fdf3",
+    });
     if (e.keyCode == 13) {
       e.preventDefault();
       var $titleSearch = $('#titleSearch').val();
@@ -76,7 +79,8 @@ $(document).ready(function(){
       $('#slide2').show();
       $('#songList').show();
 
-      SC.get('/tracks', {q: $titleSearch}, function(tracks) {
+      SC.get('/tracks', { q: $titleSearch }, function(tracks) {
+
         var tenTracks = Array.prototype.slice.call(tracks, 0, 9);
         tenTracks.forEach(function(track) {
           if (typeof(track.stream_url) == "undefined") return;
