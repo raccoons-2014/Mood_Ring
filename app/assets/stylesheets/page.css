@@ -320,3 +320,7 @@ li {
   margin-left: -30% !important ;
   width: 35%;
 }
+
+#mood-popup {
+  display: none;
+}

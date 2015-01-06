@@ -1,7 +1,11 @@
 function audioPlay(trackPlaylist) {
-    viz = new AudioController(trackPlaylist);
-    init();
-    animate();
+    if (typeof(viz) == "undefined") {
+      viz = new AudioController(trackPlaylist);
+      init();
+      animate();
+    }
+
+
 }
 
 function getDisplay(url) {
@@ -14,6 +18,8 @@ function getDisplay(url) {
     })
 
   }
+
+
 
 $(document).ready(function(){
   var $stopAnimation = $('#stop-animation');
@@ -52,6 +58,12 @@ $(document).ready(function(){
     $chooseMood.hide();
     $enterSong.hide();
   });
+
+   $("body").on("click", '#chooseMood', function(){
+    console.log("this is rrrr")
+    $('#mood-popup').show();
+  })
+
 
   $('#hide').click(function() {
     $inputSong.hide();
@@ -161,9 +173,11 @@ $(document).ready(function(){
       })
   });
 
-  $('body').on("click", ".glowing-ring", function() {
+  $('body').on("click", ".glowing-ring", function(e) {
+    e.preventDefault();
+     $('#mood-popup').hide();
     var clickedMood = $(this).data( "mood" );
-    getDisplay('welcome/player');
+    if (sourceCreated === false) getDisplay('welcome/player');
     $.ajax ({
       url: 'songs/index',
       type: "GET",
@@ -172,6 +186,7 @@ $(document).ready(function(){
     }).done(function(response){
       if (sourceCreated === true) {
         viz.getNewTracks(response);
+        audioPlay(response)
       } else {
         response = _.shuffle(response);
         audioPlay(response);
