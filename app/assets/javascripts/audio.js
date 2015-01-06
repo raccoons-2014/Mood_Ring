@@ -17,11 +17,34 @@ function AudioController(tracks) {
   averageFrequency = 1;
 
   this.playerControls();
+  this.progress;
+    song.addEventListener("timeupdate", progressBar, false);
 }
 
+AudioController.prototype.getNewTracks = function(newTracks) {
+  this.trackPlaylist = [];
+  this.trackTitles = [];
+  this.trackObjects = newTracks;
+  this.trackNumber = 0;
+  this.grabPlaylist();
+  song.src = this.trackPlaylist[this.trackNumber];
+  source.mediaElement.play();
+  $('#track-title').html(this.trackTitles[this.trackNumber]);
+};
+
+
+AudioController.prototype.playNewSong = function(streamUrl, trackTitle, moodPlaylist) {
+  this.trackObjects = moodPlaylist;
+  this.grabPlaylist();
+  this.trackPlaylist;
+  song.src = (streamUrl+ "?client_id=c751293c35f7cb00b48ee6383ea84aa6");
+  $('#track-title').html(trackTitle);
+  source.mediaElement.play();
+  song.addEventListener('ended', this.getNewTracks(moodPlaylist).bind(this));
+};
+
 AudioController.prototype.grabPlaylist = function() {
-  _.shuffle(this.trackObjects);
- for(var i = 0; i < this.trackObjects.length; i++) {
+  for(var i = 0; i < this.trackObjects.length; i++) {
   this.trackPlaylist.push(this.trackObjects[i].stream_url + "?client_id=c751293c35f7cb00b48ee6383ea84aa6");
   this.trackTitles.push(this.trackObjects[i].title);
  }
@@ -56,26 +79,31 @@ AudioController.prototype.getFrequencyData = function() {
 }
 
 AudioController.prototype.playerControls = function () {
-$("#play").click(function(){
-   source.mediaElement.play();
-   $("#play").css("visibility", "hidden");
-   $("#pause").css("visibility", "visible");
-});
+  $("#play").click(function(){
+     source.mediaElement.play();
+     $("#play").css("visibility", "hidden");
+     $("#pause").css("visibility", "visible");
+  });
 
-$("#pause").click(function(){
-   source.mediaElement.pause();
-    $("#pause").css("visibility", "hidden");
-    $("#play").css("visibility", "visible");
+  $("#pause").click(function(){
+     source.mediaElement.pause();
+      $("#pause").css("visibility", "hidden");
+      $("#play").css("visibility", "visible");
 
-});
+  });
 
-$("#next").click(function(){
-  console.log("next");
-  this.setNextTrack();
-}.bind(this));
+  $("#next").click(function(){
+    this.setNextTrack();
+  }.bind(this));
 
 };
 
 AudioController.prototype.progressBar = function() {
-//self explanatory
+  var progressBarWidth = document.getElementById('playlist').offsetWidth;
+  var factor = progressBarWidth/song.duration;
+  if (song.currentTime > 0 ) {
+   var width = song.currentTime * factor;
+  }
+  $("#progressBar").css("width", width);
 }
+

@@ -4,4 +4,12 @@ class WelcomeController < ApplicationController
     render :player
   end
 
+  def ring
+    render :partial => "ring"
+  end
+
+  def greet
+    render :homepage
+  end
+
 end

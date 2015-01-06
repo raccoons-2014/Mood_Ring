@@ -1,54 +1,69 @@
 function audioPlay(trackPlaylist) {
-    viz = new AudioController(trackPlaylist)
+    viz = new AudioController(trackPlaylist);
     init();
     animate();
 }
 
+function getDisplay(url) {
+
+   $.ajax ({
+    url: url,
+    type: "GET"
+  }).done(function(response) {
+   $("body").html(response)
+    })
+
+  }
 
 $(document).ready(function(){
+  var $stopAnimation = $('#stop-animation');
+  var $startAnimation = $('#start-animation');
+  var $inputSong = $('#inputSong');
+  var $addSong = $('#addSong');
+  var $songMood = $('#songMood');
+  var $chooseMood = $('#chooseMood');
+  var $moodSelection = $('#moodSelection');
+  var $enterSong = $('#enterSong');
 
-  $('#stop-animation').click(function() {
+
+  sourceCreated = false;
+
+  $stopAnimation.click(function() {
     event.preventDefault();
     if ( sparksEmitter.isRunning() ) {
       sparksEmitter.stop();
-      $('#stop-animation').hide();
-      $('#start-animation').show()
+      $stopAnimation.hide();
+      $startAnimation.show()
     }
 
   });
 
-  $('#start-animation').click(function() {
+  $startAnimation.click(function() {
     event.preventDefault();
     if ( sparksEmitter.isRunning() == false) {
       sparksEmitter.start();
-      $('#stop-animation').show();
-      $('#start-animation').hide();
+      $stopAnimation.show();
+      $startAnimation.hide();
     }
   });
 
-  $('#choose-mood').click(function() {
-    $('#mood-selection').show();
-    $('#choose-mood').hide();
-    $('#enter-song').hide();
-  });
-
-  $('#enter-song').click(function() {
-    $('#slide1').show();
-    $('#choose-mood').hide();
-    $('#enter-song').hide();
+  $enterSong.click(function() {
+    $inputSong.show();
+    $chooseMood.hide();
+    $enterSong.hide();
   });
 
   $('#hide').click(function() {
-    $('#slide1').hide();
-    $('#slide3').hide();
-    $('#choose-mood').show();
-    $('#enter-song').show();
+    $inputSong.hide();
+    $songMood.hide();
+    $chooseMood.show();
+    $enterSong.show();
   });
 
   $('button.emotion').click(function(){
-    $('#mood-selection').hide();
-    $('#choose-mood').show();
-    $('#enter-song').show();
+    $moodSelection.hide();
+    $chooseMood.show();
+    $enterSong.show();
   });
 
   $('#connect').on('click', function(){
@@ -56,60 +71,113 @@ $(document).ready(function(){
   });
 
   $('#titleSearch').keydown(function(e) {
+    SC.initialize({
+    client_id: "5b91135eafaf701ea414c5fe6b86fdf3",
+    });
     if (e.keyCode == 13) {
       e.preventDefault();
       var $titleSearch = $('#titleSearch').val();
-       $('#slide1').hide();
-      $('#slide2').show();
+      $inputSong.hide();
+      $addSong.show();
       $('#songList').show();
-      SC.get('/tracks', {q: $titleSearch}, function(tracks) {
-        for (var i = 0; i < 9; i++) {
-          if (tracks[i].stream_url != 'undefined'){
-            $('#songList').append("<li><a href='#' class='song' id =" + tracks[i].stream_url + ">" + tracks[i].title +  "</a></li>");
-          }else{
-            i = i - 1;
-          };
-        };
-      });
 
-    };
+      SC.get('/tracks', { q: $titleSearch }, function(tracks) {
+
+        var tenTracks = Array.prototype.slice.call(tracks, 0, 9);
+        tenTracks.forEach(function(track) {
+          if (typeof(track.stream_url) == "undefined") return;
+          $('#songList')
+            .append("<li><ul class ='fetchedSongs'><li><img src ='/assets/play-3-16.png' class='preview' id='" + track.stream_url + "'></li><li><img src ='/assets/stop-3-16.png' class='pauseReview'></li><li><a href='#' class='song' id =" + track.stream_url + ">" + track.title +  "</a></li></ul></li>");
+        });
+      });
+    }
+  });
+
+  $('#songList').on("click", ".pauseReview", function(event){
+    event.preventDefault();
+    $("#pause").css("visibility", "hidden");
+    $("#play").css("visibility", "visible");
+    source.mediaElement.pause();
+  })
+
+  $('#songList').on("click", ".preview", function(event){
+    event.preventDefault();
+    $("#play").css("visibility", "hidden");
+    $("#pause").css("visibility", "visible");
+    $('#track-title').html("Preview");
+    var streamUrl = this.id;
+    var streamUrlPlay = this.id + "?client_id=c751293c35f7cb00b48ee6383ea84aa6";
+
+     if (sourceCreated === true) {
+        song.src = streamUrlPlay;
+        source.mediaElement.play();
+      } else {
+        audioPlay([{stream_url: streamUrl}]);
+        sourceCreated = true;
+    }
   })
 
   $('#songList').on( "click", ".song", function(event){
     event.preventDefault();
+    source.mediaElement.pause();
     stream_url = $(this).attr('id')
     title = $(this).text();
-    $('#slide2').hide();
-    $('#slide3').show();
+    $addSong.hide();
+    $songMood.show();
   });
 
-  $('.ajax').on("click", function(event){
+  $('.moodChoice').on("click", function(event){
     event.preventDefault();
     var mood = $(this)[0].id;
-
+    getDisplay('welcome/player');
     $.ajax ({
       url: 'songs/create',
       data: {title: title, stream_url: stream_url, mood: mood},
       type: "POST"
     }).done(function() {
         $('#songList').empty();
-        $('#slide3').hide();
-        $('#choose-mood').show();
-        $('#enter-song').show();
+        $songMood.hide();
+        $chooseMood.show();
+        $enterSong.show();
+
+        $.ajax ({
+          url: 'songs/index',
+          type: "GET",
+          dataType: "json",
+          data: {mood: mood}
+        }).done(function(response){
+          if (sourceCreated === true) {
+            response = _.shuffle(response);
+            response.unshift({stream_url: stream_url, title: title})
+            viz.getNewTracks(response)
+          } else {
+            response = _.shuffle(response);
+            response.unshift({stream_url: stream_url, title: title})
+            audioPlay(response);
+            sourceCreated = true;
+          }
+        })
+
       })
   });
 
-  $('.emotion').on("click", function() {
+  $('body').on("click", ".glowing-ring", function() {
+    var clickedMood = $(this).data( "mood" );
+    getDisplay('welcome/player');
     $.ajax ({
       url: 'songs/index',
       type: "GET",
       dataType: "json",
-      data: {mood: $(this)[0].id}
+      data: {mood: clickedMood }
     }).done(function(response){
       audioPlay(response);
+      if (sourceCreated === true) {
+        viz.getNewTracks(response);
+      } else {
+        response = _.shuffle(response);
+        sourceCreated = true;
+      }
     })
-
   })
-
 })
 
