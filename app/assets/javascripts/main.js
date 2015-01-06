@@ -4,20 +4,20 @@ function audioPlay(trackPlaylist) {
     animate();
 }
 
-function mainDisplay() {
+function getDisplay(url) {
 
    $.ajax ({
-    url: 'welcome/greet',
+    url: url,
     type: "GET"
-  }).done(function(d) {
-   $("body").html(d)
+  }).done(function(response) {
+   $("body").html(response)
     })
 
   }
 
 $(document).ready(function(){
 
-  mainDisplay();
+  getDisplay('welcome/greet');
 
   sourceCreated = false;
 
