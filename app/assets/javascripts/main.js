@@ -17,7 +17,7 @@ function mainDisplay() {
 
 $(document).ready(function(){
 
-  // mainDisplay();
+  mainDisplay();
 
   sourceCreated = false;
 
@@ -140,7 +140,7 @@ $(document).ready(function(){
       data: {mood: $(this)[0].id}
     }).done(function(response){
       audioPlay(response);
-      // $("#homepage").hide()
+      $("#homepage").hide()
       if (sourceCreated === true) {
         viz.getNewTracks(response);
       } else {
