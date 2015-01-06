@@ -77,11 +77,20 @@ $(document).ready(function(){
         tenTracks.forEach(function(track) {
           if (typeof(track.stream_url) == "undefined") return;
           $('#songList')
-            .append("<li><a href='#' class='song' id =" + track.stream_url + ">" + track.title +  "</a></li>");
+            .append("<li><a href='#' class='song' id =" + track.stream_url + ">" + track.title +  "</a><a href='#' class='preview' id='" + track.stream_url + "'>preview</a></li>");
         });
       });
     }
   });
+
+  $('#songList').on("click", ".preview", function(event){
+    event.preventDefault();
+    var streamUrl = $(this).attr('id');
+    debugger
+    SC.get('/tracks', {stream_url: streamUrl}, function(tracks) {
+      console.log(tracks);
+    })
+  })
 
   $('#songList').on( "click", ".song", function(event){
     event.preventDefault();
