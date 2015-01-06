@@ -148,7 +148,6 @@ $(document).ready(function(){
         viz.getNewTracks(response);
       } else {
         response = _.shuffle(response);
-        // audioPlay(response);
         sourceCreated = true;
       }
     })
