@@ -10,7 +10,7 @@ function mainDisplay() {
     url: 'welcome/greet',
     type: "GET"
   }).done(function(d) {
-   $("#three").html(d)
+   $("body").html(d)
     })
 
   }
