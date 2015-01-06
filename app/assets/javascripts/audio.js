@@ -36,15 +36,13 @@ AudioController.prototype.playNewSong = function(streamUrl, trackTitle, moodPlay
   this.grabPlaylist();
   this.trackPlaylist;
   song.src = (streamUrl+ "?client_id=c751293c35f7cb00b48ee6383ea84aa6");
-  debugger
   $('#track-title').html(trackTitle);
   source.mediaElement.play();
   song.addEventListener('ended', this.getNewTracks(moodPlaylist).bind(this));
 };
 
 AudioController.prototype.grabPlaylist = function() {
-  _.shuffle(this.trackObjects);
- for(var i = 0; i < this.trackObjects.length; i++) {
+  for(var i = 0; i < this.trackObjects.length; i++) {
   this.trackPlaylist.push(this.trackObjects[i].stream_url + "?client_id=c751293c35f7cb00b48ee6383ea84aa6");
   this.trackTitles.push(this.trackObjects[i].title);
  }

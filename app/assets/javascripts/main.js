@@ -104,10 +104,11 @@ $(document).ready(function(){
           data: {mood: mood}
         }).done(function(response){
           if (sourceCreated === true) {
-            debugger
+            response = _.shuffle(response);
             response.unshift({stream_url: stream_url, title: title})
             viz.getNewTracks(response)
           } else {
+            response = _.shuffle(response);
             response.unshift({stream_url: stream_url, title: title})
             audioPlay(response);
             sourceCreated = true;
@@ -128,6 +129,7 @@ $(document).ready(function(){
       if (sourceCreated === true) {
         viz.getNewTracks(response);
       } else {
+        response = _.shuffle(response);
         audioPlay(response);
         sourceCreated = true;
       }
