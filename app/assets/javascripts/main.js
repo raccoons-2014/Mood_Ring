@@ -4,6 +4,17 @@ function audioPlay(trackPlaylist) {
     animate();
 }
 
+function getDisplay(url) {
+
+   $.ajax ({
+    url: url,
+    type: "GET"
+  }).done(function(response) {
+   $("body").html(response)
+    })
+
+  }
+
 $(document).ready(function(){
   var $stopAnimation = $('#stop-animation');
   var $startAnimation = $('#start-animation');
@@ -13,6 +24,7 @@ $(document).ready(function(){
   var $chooseMood = $('#chooseMood');
   var $moodSelection = $('#moodSelection');
   var $enterSong = $('#enterSong');
+
 
   sourceCreated = false;
 
@@ -65,6 +77,9 @@ $(document).ready(function(){
   });
 
   $('#titleSearch').keydown(function(e) {
+    SC.initialize({
+    client_id: "5b91135eafaf701ea414c5fe6b86fdf3",
+    });
     if (e.keyCode == 13) {
       e.preventDefault();
       var $titleSearch = $('#titleSearch').val();
@@ -72,19 +87,56 @@ $(document).ready(function(){
       $addSong.show();
       $('#songList').show();
 
-      SC.get('/tracks', {q: $titleSearch}, function(tracks) {
+      SC.get('/tracks', { q: $titleSearch }, function(tracks) {
+
         var tenTracks = Array.prototype.slice.call(tracks, 0, 9);
-        tenTracks.forEach(function(track) {
+        tenTracks.forEach( function( track ){
           if (typeof(track.stream_url) == "undefined") return;
-          $('#songList')
-            .append("<li><a href='#' class='song' id =" + track.stream_url + ">" + track.title +  "</a><a href='#' class='preview' id='" + track.stream_url + "'>preview</a></li>");
+          $( '#songList' )
+            .append(" \
+              <li> \
+                <ul class ='fetchedSongs'> \
+                  <li> \
+                    <img src ='/assets/play-3-16.png' class='preview' id='" + track.stream_url + "'> \
+                  </li> \
+                  <li> \
+                    <img src ='/assets/stop-3-16.png' class='pauseReview' id='" + track.id + "'> \
+                  </li> \
+                  <li> \
+                    <a href='#' class='song' id =" + track.stream_url + ">" + track.title +  "</a> \
+                  </li> \
+                </ul> \
+              </li>");
         });
       });
     }
   });
 
-  $('#songList').on("click", ".preview", function(event){
+  $('#songList').on("click", ".pauseReview", function(event){
     event.preventDefault();
+    var myPreview = $(this).parent().prev('li').children('.preview')
+    $(this).toggle(false);
+    myPreview.toggle(true);
+
+    $("#pause").css("visibility", "hidden");
+    $("#play").css("visibility", "visible");
+    source.mediaElement.pause();
+  })
+
+  $('#songList').on("click", ".preview", function(event){
+
+    event.preventDefault();
+
+    var myPause = $(this).parent().next('li').children('.pauseReview')
+    $('.pauseReview').toggle(false);
+    $('.preview').toggle(true);
+    $(this).toggle(false);
+    myPause.toggle(true);
+
+   $("#play").css("visibility", "hidden");
+   $("#pause").css("visibility", "visible");
+
+    $('#track-title').html("Preview");
     var streamUrl = this.id;
     var streamUrlPlay = this.id + "?client_id=c751293c35f7cb00b48ee6383ea84aa6";
 
@@ -140,24 +192,23 @@ $(document).ready(function(){
       })
   });
 
-  $('.emotion').on("click", function() {
-
+  $('body').on("click", ".glowing-ring", function() {
+    var clickedMood = $(this).data( "mood" );
+    getDisplay('welcome/player');
     $.ajax ({
       url: 'songs/index',
       type: "GET",
       dataType: "json",
-      data: {mood: $(this)[0].id}
+      data: {mood: clickedMood }
     }).done(function(response){
+      audioPlay(response);
       if (sourceCreated === true) {
         viz.getNewTracks(response);
       } else {
         response = _.shuffle(response);
-        audioPlay(response);
         sourceCreated = true;
       }
     })
-
   })
-
 })
 

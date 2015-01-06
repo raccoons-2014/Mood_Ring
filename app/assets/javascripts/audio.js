@@ -17,6 +17,8 @@ function AudioController(tracks) {
   averageFrequency = 1;
 
   this.playerControls();
+  this.progress;
+    song.addEventListener("timeupdate", progressBar, false);
 }
 
 AudioController.prototype.getNewTracks = function(newTracks) {
@@ -77,27 +79,31 @@ AudioController.prototype.getFrequencyData = function() {
 }
 
 AudioController.prototype.playerControls = function () {
-$("#play").click(function(){
-   source.mediaElement.play();
-   $("#play").css("visibility", "hidden");
-   $("#pause").css("visibility", "visible");
-});
+  $("#play").click(function(){
+     source.mediaElement.play();
+     $("#play").css("visibility", "hidden");
+     $("#pause").css("visibility", "visible");
+  });
 
-$("#pause").click(function(){
-   source.mediaElement.pause();
-    $("#pause").css("visibility", "hidden");
-    $("#play").css("visibility", "visible");
+  $("#pause").click(function(){
+     source.mediaElement.pause();
+      $("#pause").css("visibility", "hidden");
+      $("#play").css("visibility", "visible");
 
-});
+  });
 
-$("#next").click(function(){
-  console.log("next");
-  this.setNextTrack();
-}.bind(this));
+  $("#next").click(function(){
+    this.setNextTrack();
+  }.bind(this));
 
 };
 
 AudioController.prototype.progressBar = function() {
-//self explanatory
+  var progressBarWidth = document.getElementById('playlist').offsetWidth;
+  var factor = progressBarWidth/song.duration;
+  if (song.currentTime > 0 ) {
+   var width = song.currentTime * factor;
+  }
+  $("#progressBar").css("width", width);
 }
 
