@@ -1,5 +1,5 @@
 function audioPlay(trackPlaylist) {
-    viz = new AudioController(trackPlaylist)
+    viz = new AudioController(trackPlaylist);
     init();
     animate();
 }
@@ -17,7 +17,9 @@ function mainDisplay() {
 
 $(document).ready(function(){
 
-  mainDisplay();
+  // mainDisplay();
+
+  sourceCreated = false;
 
   $('#stop-animation').click(function() {
     event.preventDefault();
@@ -74,18 +76,17 @@ $(document).ready(function(){
        $('#slide1').hide();
       $('#slide2').show();
       $('#songList').show();
-      SC.get('/tracks', {q: $titleSearch}, function(tracks) {
-        for (var i = 0; i < 9; i++) {
-          if (tracks[i].stream_url != 'undefined'){
-            $('#songList').append("<li><a href='#' class='song' id =" + tracks[i].stream_url + ">" + tracks[i].title +  "</a></li>");
-          }else{
-            i = i - 1;
-          };
-        };
-      });
 
-    };
-  })
+      SC.get('/tracks', {q: $titleSearch}, function(tracks) {
+        var tenTracks = Array.prototype.slice.call(tracks, 0, 9);
+        tenTracks.forEach(function(track) {
+          if (typeof(track.stream_url) == "undefined") return;
+          $('#songList')
+            .append("<li><a href='#' class='song' id =" + track.stream_url + ">" + track.title +  "</a></li>");
+        });
+      });
+    }
+  });
 
   $('#songList').on( "click", ".song", function(event){
     event.preventDefault();
@@ -112,6 +113,7 @@ $(document).ready(function(){
   });
 
   $('.emotion').on("click", function() {
+
     $.ajax ({
       url: 'songs/index',
       type: "GET",
@@ -119,7 +121,13 @@ $(document).ready(function(){
       data: {mood: $(this)[0].id}
     }).done(function(response){
       audioPlay(response);
-      $("#homepage").hide()
+      // $("#homepage").hide()
+      if (sourceCreated === true) {
+        viz.getNewTracks(response);
+      } else {
+        audioPlay(response);
+        sourceCreated = true;
+      }
     })
 
   })
