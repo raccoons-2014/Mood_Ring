@@ -125,6 +125,7 @@ $(document).ready(function(){
 
   $('#songList').on( "click", ".song", function(event){
     event.preventDefault();
+    source.mediaElement.pause();
     stream_url = $(this).attr('id')
     title = $(this).text();
     $addSong.hide();
