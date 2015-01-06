@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root 'welcome#greet'
-
+  get 'welcome/ring' => "welcome#ring"
   get "welcome/player" => "welcome#player"
 
   get '/soundcloud-callback' => 'users#connect'
@@ -16,3 +16,4 @@ Rails.application.routes.draw do
   get '/songs/index' => 'songs#index'
 
 end
+
