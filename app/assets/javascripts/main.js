@@ -93,14 +93,24 @@ $(document).ready(function(){
         tenTracks.forEach(function(track) {
           if (typeof(track.stream_url) == "undefined") return;
           $('#songList')
-            .append("<li><a href='#' class='song' id =" + track.stream_url + ">" + track.title +  "</a><a href='#' class='preview' id='" + track.stream_url + "'>preview</a></li>");
+            .append("<li><ul class ='fetchedSongs'><li><img src ='/assets/play-3-16.png' class='preview' id='" + track.stream_url + "'></li><li><img src ='/assets/stop-3-16.png' class='pauseReview'></li><li><a href='#' class='song' id =" + track.stream_url + ">" + track.title +  "</a></li></ul></li>");
         });
       });
     }
   });
 
+  $('#songList').on("click", ".pauseReview", function(event){
+    event.preventDefault();
+    $("#pause").css("visibility", "hidden");
+    $("#play").css("visibility", "visible");
+    source.mediaElement.pause();
+  })
+
   $('#songList').on("click", ".preview", function(event){
     event.preventDefault();
+    $("#play").css("visibility", "hidden");
+    $("#pause").css("visibility", "visible");
+    $('#track-title').html("Preview");
     var streamUrl = this.id;
     var streamUrlPlay = this.id + "?client_id=c751293c35f7cb00b48ee6383ea84aa6";
 
