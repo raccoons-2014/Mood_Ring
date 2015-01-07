@@ -24,14 +24,4 @@ ActiveRecord::Schema.define(version: 20150102193258) do
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
-    t.integer  "soundcloud_user_id",       null: false
-    t.string   "soundcloud_username",      null: false
-    t.string   "soundcloud_access_token"
-    t.string   "soundcloud_refresh_token"
-    t.datetime "soundcloud_expires_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
 end
