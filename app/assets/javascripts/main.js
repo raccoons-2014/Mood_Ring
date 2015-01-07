@@ -11,6 +11,10 @@ $(document).ready(function(){
   $('#chooseMood').hide();
   $playlist.hide();
   $enterSong.hide();
+<<<<<<< HEAD
+=======
+  var timer;
+>>>>>>> fadein/out for search and playbar implemented
 
 
   bringUpCreateSlideTwo = function() {
@@ -45,10 +49,6 @@ $(document).ready(function(){
   init();
   animate();
 
-  hoverToggling($enterSong);
-  hoverToggling($playlist);
-  hoverToggling($chooseMood);
-
  $(document).mousemove(function() {
     $('body').css({'cursor' : 'auto'});
     $playlist.fadeIn('slow');
@@ -65,6 +65,5 @@ $(document).ready(function(){
       $('body').css({'cursor' : 'none'});
     }, 2000);
   })
-
 });
 

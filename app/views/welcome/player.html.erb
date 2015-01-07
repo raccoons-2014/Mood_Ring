@@ -1,0 +1,60 @@
+<div id="moodSelection">
+  <h1>How are you feeling?</h1>
+  <button class="emotion" id="Happy">Happy</button>
+  <button class="emotion" id="Melancholy">Melancholy</button>
+  <button class="emotion" id="Excited">Excited</button>
+  <button class="emotion" id="Chill">Chill</button>
+  <button class="emotion" id="Angry">Angry</button>
+</div>
+
+<div id="slides" >
+
+  <div class="slide" id="inputSong">
+    <a href="#" id="hide">X</a>
+    <h1>Enter a song to add to the database</h1>
+    <form id = "input" method = "get">
+      <input id="titleSearch" type="text"/>
+     </form>
+  </div>
+
+  <div class="slide" id="addSong">
+    <h1>Choose a song to add</h1>
+    <div id = 'songList'></div>
+  </div>
+
+  <div class="slide" id="songMood">
+    <h1>What mood describes this song?</h1>
+    <button class="moodChoice" id="Happy">Happy</button>
+    <button class="moodChoice" id="Melancholy">Melancholy</button>
+    <button class="moodChoice" id="Excited">Excited</button>
+    <button class="moodChoice" id="Chill">Chill</button>
+    <button class="moodChoice" id="Angry">Angry</button>
+  </div>
+
+</div>
+
+<div id="three"></div>
+
+<div id="playlist">
+  <div id="progressBar"></div>
+
+<h3 id= "track-title"></h3>
+
+<div id="all-controls">
+  <a id="play" href="#">
+    <%= image_submit_tag("play-24.png", class: "player-control") %>
+  </a>
+  <a id="pause"  href = "#">
+    <%= image_submit_tag("pause-24.png", class: "player-control") %>
+  </a>
+  <a id="next"  href = "#">
+    <%= image_submit_tag("arrow-31-24.png", class: "player-control") %>
+  </a>
+</div>
+
+<% if current_user %>
+  <a href = '/soundcloud-disconnect'><%= image_submit_tag("soundcloudd.png", id: 'soundcloud', title: "Logout")%></a>
+<% else %>
+ <a href = '/soundcloud-callback'><%= image_submit_tag("soundcloudd.png", id: 'soundcloud', title: "Login")%></a>
+<% end %>
+
