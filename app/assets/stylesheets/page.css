@@ -149,6 +149,7 @@ button {
   float:left;
   width:100px;
   margin-top: 10px;
+  display: none;
 }
 
 h3 {
@@ -338,3 +339,4 @@ li {
 #mood-popup {
   display: none;
 }
+

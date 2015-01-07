@@ -23,6 +23,8 @@ $(document).ready(function(){
     $('#chooseMood').show();
   }
 
+
+
   $('#chooseMood').click(function() {
     Slides.show('big-ring');
     bringUpSearchButton();

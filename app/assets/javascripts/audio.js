@@ -5,7 +5,6 @@ function AudioController(tracks) {
   this.trackNumber = 0;
   this.grabPlaylist();
   song = new Audio();
-
   this.playerControls();
   this.glowingRing();
   this.progress;
@@ -56,32 +55,38 @@ AudioController.prototype.setUpSource = function (song_url) {
   $('#track-title').html(this.trackTitles[this.trackNumber]);
 }
 
+AudioController.prototype.displayControls = function() {
+    $("#all-controls").show()
+  }
 
 
 AudioController.prototype.playerControls = function () {
-  $("#play").click(function(){
-   song.play();
-   $("#play").hide();
-   $("#pause").show();
-  }.bind(this));
 
-  $("#pause").click(function(){
-    song.pause();
-    $("#pause").hide();
-    $("#play").show();
-  }.bind(this));
-
-  $("#next").click(function(){
-    this.setNextTrack();
+    $("#play").click(function(){
+     song.play();
      $("#play").hide();
      $("#pause").show();
-  }.bind(this));
-};
+    }.bind(this));
+
+    $("#pause").click(function(){
+      song.pause();
+      $("#pause").hide();
+      $("#play").show();
+    }.bind(this));
+
+    $("#next").click(function(){
+      this.setNextTrack();
+       $("#play").hide();
+       $("#pause").show();
+    }.bind(this));
+  };
+
 
 AudioController.prototype.glowingRing = function() {
   var glowplayer = this;
   $('.glowing-ring').click(function(e) {
     e.preventDefault();
+    glowplayer.displayControls();
     Slides.show('chooseMood');
     bringUpSearchButton();
     var clickedMood = $(this).data("mood");
