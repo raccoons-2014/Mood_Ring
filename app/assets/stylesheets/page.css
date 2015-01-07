@@ -80,7 +80,7 @@ h1 {
 }
 
 #play {
-  visibility: hidden;
+  display:none;
 }
 
 #next {
@@ -330,5 +330,5 @@ li {
 }
 
 #visualizer {
-  
+
 }
