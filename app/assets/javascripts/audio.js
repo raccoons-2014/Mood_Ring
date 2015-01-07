@@ -127,6 +127,8 @@ $(document).ready(function() {
       Promise.resolve().then(function() {
         return MoodDb.getSong(mood);
       }).then(function(response) {
+        response = _.shuffle(response);
+        response.unshift({stream_url: stream_url, title: title})
         player.getNewTracks(response);
       })
       // if (sourceCreated === true) {
