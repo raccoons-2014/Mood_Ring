@@ -5,7 +5,7 @@ var group, text, plane;
 var speed = 50;
 
 var pointLight;
-var pointLight2;
+
 
 var targetRotation = 0;
 var targetRotationOnMouseDown = 0;
@@ -49,11 +49,6 @@ function init() {
   pointLight = new THREE.PointLight( 0xffffff, 2, 300 );
   pointLight.position.set( 0, 0, 0 );
   scene.add( pointLight );
-
-  pointLight2 = new THREE.PointLight( 0xffffff, 2, 300 );
-  pointLight2.position.set( 0, 0, 0 );
-  scene.add( pointLight2 );
-
 
 
   var material = new THREE.MeshFaceMaterial( [
@@ -193,10 +188,6 @@ function init() {
   ringShape.arc(15, 25, 35, 0, Math.PI * 2, false);
   curve = ringShape.curves[0];
 
-  ringShape2 = new THREE.Shape();
-  ringShape2.moveTo( 0 , 25);
-  ringShape2.arc(15, 25, 20, 0, Math.PI * 2, false);
-
   var hue = 0;
 
   var setTargetParticle = function() {
@@ -227,23 +218,16 @@ function init() {
 
       emitterpos.x = pointOnShape.x * 5 - 100;
       emitterpos.y = -pointOnShape.y * 5 + 400;
-      emitterpos2.x = pointOnShape.x * 5 - 100;
-      emitterpos2.y = -pointOnShape.y * 5 + 400;
 
       pointLight.position.x = emitterpos.x;
       pointLight.position.y = emitterpos.y;
       pointLight.position.z = 100;
-
-      pointLight2.position.x = emitterpos2.x;
-      pointLight2.position.y = emitterpos2.y;
-      pointLight2.position.z = 100;
 
       particles.vertices[ target ] = p.position;
 
       values_color[ target ].setHSL( hue, 0.6, 0.1 );
 
       pointLight.color.setHSL( hue, 0.8, 0.5 );
-      pointLight2.color.setHSL( hue, 0.8, 0.5 );
     };
 
   };
@@ -263,14 +247,10 @@ function init() {
     }
   };
 
-  var engineLoopUpdate = function() {
-  };
-
 
   sparksEmitter = new SPARKS.Emitter( new SPARKS.SteadyCounter( 500 ) );
 
   emitterpos = new THREE.Vector3( 0, 0, 0 );
-  emitterpos2 = new THREE.Vector3( 0, 0, 0 );
 
   sparksEmitter.addInitializer( new SPARKS.Position( new SPARKS.PointZone( emitterpos ) ) );
   sparksEmitter.addInitializer( new SPARKS.Lifetime( 1, 8 ));
@@ -300,8 +280,6 @@ function init() {
 
   var effectFocus = new THREE.ShaderPass( THREE.FocusShader );
   var effectCopy = new THREE.ShaderPass( THREE.CopyShader );
-
-
 
 
   effectFocus.uniforms[ 'sampleDistance' ].value = 0.99; //0.94
