@@ -58,6 +58,14 @@ h1 {
   display:none;
 }
 
+.preview:hover {
+  transform: scale(1.4);
+}
+
+.pauseReview:hover {
+  transform: scale(1.4);
+}
+
 #three {
   z-index:-10;
 }
