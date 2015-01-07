@@ -14,6 +14,10 @@ $(document).ready(function(){
     bringUpSearchButton();
   });
 
+  $('#toFirstSlide').click(function() {
+    Slides.show('inputSong');
+  })
+
   $('#titleSearch').keydown(function(e) {
     SC.initialize({
       client_id: "5b91135eafaf701ea414c5fe6b86fdf3",
