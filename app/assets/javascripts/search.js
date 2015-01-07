@@ -18,6 +18,10 @@ $(document).ready(function(){
     Slides.show('inputSong');
   })
 
+  $('#toSecondSlide').click(function() {
+    Slides.show('addSong');
+  })
+
   $('#titleSearch').keydown(function(e) {
     $('#songList').html("");
     SC.initialize({
