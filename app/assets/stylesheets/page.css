@@ -157,13 +157,28 @@ button {
   outline: none;
 }
 
-#chooseMood, #hide {
+#chooseMood, .hide {
   position: absolute;
   left: 15px;
 }
-#hide img{
+
+.hide img{
   left: 15px;
   position:absolute;
+}
+
+.goBack {
+  position: absolute;
+  left: 235px;
+}
+
+.goBack img{
+  left: 235px;
+  position:absolute;
+}
+
+.exitGoBack {
+  display:absolute;
 }
 
 #all-controls {
