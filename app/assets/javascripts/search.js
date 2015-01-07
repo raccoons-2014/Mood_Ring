@@ -52,14 +52,14 @@ $(document).ready(function(){
     $('#track-title').html("Preview");
     var streamUrl = this.id;
     var streamUrlPlay = this.id + "?client_id=c751293c35f7cb00b48ee6383ea84aa6";
-
-     if (sourceCreated === true) {
-        song.src = streamUrlPlay;
-        source.mediaElement.play();
-      } else {
-        audioPlay([{stream_url: streamUrl}]);
-        sourceCreated = true;
-    }
+    player.getNewTracks([{stream_url: streamUrl}]);
+    //  if (sourceCreated === true) {
+    //     song.src = streamUrlPlay;
+    //     source.mediaElement.play();
+    //   } else {
+    //     audioPlay([{stream_url: streamUrl}]);
+    //     sourceCreated = true;
+    // }
   })
 
   $('#songList').on( "click", ".song", function(event){
