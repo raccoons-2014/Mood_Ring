@@ -64,11 +64,14 @@ $(document).ready(function(){
 
   $('#songList').on( "click", ".song", function(event){
     event.preventDefault();
-    source.mediaElement.pause();
+    song.pause();
     stream_url = $(this).attr('id')
     title = $(this).text();
-    $addSong.hide();
-    $songMood.show();
+    // $addSong.hide();
+    // $songMood.show();
+    Slides.show('songMood');
   });
+
+
 
 });

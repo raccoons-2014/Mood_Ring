@@ -119,18 +119,19 @@ $(document).ready(function() {
       // $chooseMood.show();
       // $enterSong.show();
 
-      return MoodDb.getSong(mood);
+      return MoodDb.addSong(title, stream_url, mood);
     }).then(function(response){
-      if (sourceCreated === true) {
-        response = _.shuffle(response);
-        response.unshift({stream_url: stream_url, title: title})
-        viz.getNewTracks(response)
-      } else {
-        response = _.shuffle(response);
-        response.unshift({stream_url: stream_url, title: title})
-        audioPlay(response);
-        sourceCreated = true;
-      }
+
+      // if (sourceCreated === true) {
+      //   response = _.shuffle(response);
+      //   response.unshift({stream_url: stream_url, title: title})
+      //   viz.getNewTracks(response)
+      // } else {
+      //   response = _.shuffle(response);
+      //   response.unshift({stream_url: stream_url, title: title})
+      //   audioPlay(response);
+      //   sourceCreated = true;
+      // }
     }).catch(function(error) {
       // TODO: Error handling
     });
