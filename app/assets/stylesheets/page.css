@@ -37,6 +37,13 @@ h1 {
    height:3px;
 }
 
+.slide {
+    -webkit-transform: translatez(0);
+    -moz-transform: translatez(0);
+    -ms-transform: translatez(0);
+    -o-transform: translatez(0);
+    transform: translatez(0);
+}
 
 #slides div {
   background-color: rgba(40, 40, 40, 0.3);
@@ -313,6 +320,7 @@ li {
   top: 20%;
   left: 35%;
   }
+
 
 
 input[type="text"] {
