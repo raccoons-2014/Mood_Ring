@@ -10,7 +10,6 @@ function AudioController(tracks) {
   this.glowingRing();
   this.progress;
   song.addEventListener("timeupdate", progressBar, false);
-  // song.addEventListener('ended', this.getNewTracks(this.track).bind(this));
   song.addEventListener('ended', this.setNextTrack.bind(this));
   this.animate();
 }
