@@ -8,7 +8,7 @@ $(document).ready(function(){
   var $inputSong = $('#inputSong');
   var $enterSong = $('#enterSong');
 
-  $('#hide').click(function() {
+  $('.hide').click(function() {
     $('.slide').hide();
     bringUpChooseMood();
     bringUpSearchButton();
