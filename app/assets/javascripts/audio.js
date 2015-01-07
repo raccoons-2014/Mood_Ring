@@ -1,8 +1,3 @@
-// TODO: fix references to "song" to be "song"
-
-
-//to control player and visualizer at the same time
-//'https://api.soundcloud.com/tracks/146159376/stream?client_id=c751293c35f7cb00b48ee6383ea84aa6','https://api.soundcloud.com/tracks/96379023/stream?client_id=c751293c35f7cb00b48ee6383ea84aa6', 'https://api.soundcloud.com/tracks/120682891/stream?client_id=c751293c35f7cb00b48ee6383ea84aa6'
 function AudioController(tracks) {
   this.trackObjects = tracks;
   this.trackPlaylist = [];
