@@ -22,16 +22,16 @@ Song.create(title: "NeYo - Mad", stream_url: "https://api.soundcloud.com/tracks/
 Song.create(title: "how to never stop being sad", stream_url: "https://api.soundcloud.com/tracks/71204300/stream", mood: 'Sad')
 
 #Angry
-Song.create(title:, stream_url:, mood: 'Angry')
-Song.create(title:, stream_url:, mood: 'Angry')
-Song.create(title:, stream_url:, mood: 'Angry')
+Song.create(title: "Three Days Grace - I Hate Everything About You", stream_url: "https://api.soundcloud.com/tracks/181267250/stream", mood: 'Angry')
+Song.create(title: "Steven Universe - Synchronize/Sugilite", stream_url: "https://api.soundcloud.com/tracks/165861330/stream", mood: 'Angry')
+Song.create(title: "Andrew W.K - Ready to Die", stream_url: "https://api.soundcloud.com/tracks/45572256/stream", mood: 'Angry')
 
 #Excited
-Song.create(title:, stream_url:, mood: 'Excited')
-Song.create(title:, stream_url:, mood: 'Excited')
-Song.create(title:, stream_url:, mood: 'Excited')
+Song.create(title: "Zizibum by X-Ray", stream_url: "https://api.soundcloud.com/tracks/25728427/stream", mood: 'Excited')
+Song.create(title: "Pepper Steak - OFF", stream_url: "https://api.soundcloud.com/tracks/75790279/stream", mood: 'Excited')
+Song.create(title: "M.O.O.N. - Hydrogen", stream_url: "https://api.soundcloud.com/tracks/57180067/stream", mood: 'Excited')
 
 #Chill
-Song.create(title:, stream_url:, mood: 'Chill')
-Song.create(title:, stream_url:, mood: 'Chill')
-Song.create(title:, stream_url:, mood: 'Chill')
+Song.create(title: "This ain't no place for a hero!", stream_url: "https://api.soundcloud.com/tracks/163175401/stream", mood: 'Chill')
+Song.create(title: "Paradise - Coldplay (Dubstep Remix)", stream_url: "https://api.soundcloud.com/tracks/50056779/stream", mood: 'Chill')
+Song.create(title: "Snoop Dogg vs The Doors - Riders On the Storm", stream_url: "https://api.soundcloud.com/tracks/307505/stream", mood: 'Chill')
