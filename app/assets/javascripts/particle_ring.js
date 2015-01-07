@@ -382,3 +382,27 @@ composer.render( 0.1 );
 
 }
 
+function ParticleRing(audio) {
+  this.audio = audio;
+  this.context = new webkitAudioContext();
+  
+  this.analyser = this.context.createAnalyser();
+  this.analyser.fftSize = 2048;
+  this.setUpSource(this.trackPlaylist[this.trackNumber]);
+  this.bufferLength = this.analyser.frequencyBinCount;
+  this.dataArray = new Uint8Array(this.bufferLength);
+  averageFrequency = 1;
+
+  this.context = new webkitAudioContext();
+  this.analyser = this.context.createAnalyser();
+
+  this.setupSource();
+  init();
+  animate();
+}
+
+ParticleRing.prototype.setupSource = function() {
+  this.source = this.context.createMediaElementSource(this.song);
+  source.connect(this.context.destination);
+  source.connect(this.analyser);
+};
