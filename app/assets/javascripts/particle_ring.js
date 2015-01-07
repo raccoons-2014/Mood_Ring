@@ -382,11 +382,12 @@ composer.render( 0.1 );
 
 function ParticleRing(audio) {
   this.audio = audio;
+  debugger
   this.context = new webkitAudioContext();
-  
+
   this.analyser = this.context.createAnalyser();
   this.analyser.fftSize = 2048;
-  this.setUpSource(this.trackPlaylist[this.trackNumber]);
+  this.setUpSource(this.audio);
   this.bufferLength = this.analyser.frequencyBinCount;
   this.dataArray = new Uint8Array(this.bufferLength);
   averageFrequency = 1;

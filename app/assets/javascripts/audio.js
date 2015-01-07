@@ -15,13 +15,14 @@ function AudioController(tracks) {
   this.glowingRing();
   this.progress;
   this.song.addEventListener("timeupdate", progressBar, false);
-  this.song.addEventListener('ended', this.getNewTracks(this.track).bind(this));
+  // this.song.addEventListener('ended', this.getNewTracks(this.track).bind(this));
   this.song.addEventListener('ended', this.setNextTrack.bind(this));
   this.animate();
 }
 
 AudioController.prototype.getNewTracks = function(newTracks) {
   this.trackPlaylist = [];
+
   this.trackTitles = [];
   this.trackObjects = newTracks;
   this.trackNumber = 0;
@@ -91,16 +92,17 @@ AudioController.prototype.playerControls = function () {
 };
 
 AudioController.prototype.glowingRing = function() {
-  var player = this;
+  var glowplayer = this;
   $('body').on("click", ".glowing-ring", function(e) {
     e.preventDefault();
-    debugger
+    $('#home').hide();
     $('#mood-popup').hide();
+    $('#visualizer').show();
     var clickedMood = $(this).data("mood");
     MoodDb.getSong(clickedMood)
     .then(function(response){
       response = _.shuffle(response);
-      player.getNewTracks(response);
+      glowplayer.getNewTracks(response);
     });
   });
 }
@@ -138,10 +140,12 @@ $(document).ready(function() {
       return MoodDb.getSong(mood);
     }).then(function(response){
       if (sourceCreated === true) {
+        debugger
         response = _.shuffle(response);
         response.unshift({stream_url: stream_url, title: title})
         viz.getNewTracks(response)
       } else {
+debugger
         response = _.shuffle(response);
         response.unshift({stream_url: stream_url, title: title})
         audioPlay(response);

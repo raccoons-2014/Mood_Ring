@@ -11,10 +11,12 @@ $(document).ready(function(){
 
   $('button.emotion').click(function(){
     Slides.show('chooseMood');
-    
   });
 
-  var player = new AudioController([]);
-  var vizualizer = new ParticleRing(player.song);
-})
+  player = new AudioController([]);
+  umber =3;
+
+
+  vizualizer = new ParticleRing(player.song);
+});
 
