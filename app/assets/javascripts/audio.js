@@ -75,13 +75,17 @@ AudioController.prototype.playerControls = function () {
   $("#play").click(function(){
    this.song.play();
      // TODO: Have a #playpause button that you .toggleClass('playing')
-     $("#play").hide(); // css("visibility", "hidden");
-     $("#pause").show(); //css("visibility", "visible");
+     // $("#play").hide(); // css("visibility", "hidden");
+     // $("#pause").show(); //css("visibility", "visible");
+    $("#pause").css("visibility", "visible");
+    $("#play").css("visibility", "hidden");
    }.bind(this));
 
   $("#pause").click(function(){
 
     this.song.pause();
+    // $("#play").show();
+    // $("#pause").hide();
     $("#pause").css("visibility", "hidden");
     $("#play").css("visibility", "visible");
   }.bind(this));
