@@ -92,6 +92,11 @@ AudioController.prototype.glowingRing = function() {
     var clickedMood = $(this).data("mood");
     MoodDb.getSong(clickedMood)
     .then(function(response){
+      if (typeof(colorWheel) == "undefined") {
+        colorWheel = new ParticleRing();
+        init();
+        animate();
+      }
       response = _.shuffle(response);
       glowplayer.getNewTracks(response);
       bringUpSearchButton();
@@ -128,6 +133,11 @@ $(document).ready(function() {
       Promise.resolve().then(function() {
         return MoodDb.getSong(mood);
       }).then(function(response) {
+        if (typeof(colorWheel) == "undefined") {
+          colorWheel = new ParticleRing();
+          init();
+          animate();
+        }
         response = _.shuffle(response);
         response.unshift({stream_url: stream_url, title: title})
         player.getNewTracks(response);
