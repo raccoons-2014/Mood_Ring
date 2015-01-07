@@ -6,11 +6,12 @@ $(document).ready(function(){
 
 
   $("body").on("click", '#chooseMood', function() {
-    Slides.show('mood-ring');
+    Slides.show('mood-popup');
   });
 
   $('button.emotion').click(function(){
-    Slides.show('base');
+    Slides.show('chooseMood');
+    
   });
 
   var player = new AudioController([]);

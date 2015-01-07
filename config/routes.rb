@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'welcome#greet'
+  root 'welcome#homepage'
   get 'welcome/ring' => "welcome#ring"
   get "welcome/player" => "welcome#player"
 

@@ -359,8 +359,6 @@ if (viz.getFrequencyData() < 1 ){
   curve.yRadius = viz.getFrequencyData();
 }
 
-var width = viz.progressBar();
-$('#progress').css('width', width +' px');
 
 render();
 

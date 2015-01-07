@@ -15,7 +15,7 @@ function AudioController(tracks) {
   this.glowingRing();
   this.progress;
   this.song.addEventListener("timeupdate", progressBar, false);
-  this.song.addEventListener('ended', this.getNewTracks(moodPlaylist).bind(this));
+  this.song.addEventListener('ended', this.getNewTracks(this.track).bind(this));
   this.song.addEventListener('ended', this.setNextTrack.bind(this));
   this.animate();
 }
@@ -80,7 +80,7 @@ AudioController.prototype.playerControls = function () {
    });
 
   $("#pause").click(function(){
-    source.mediaElement.pause();
+    this.song.pause();
     $("#pause").css("visibility", "hidden");
     $("#play").css("visibility", "visible");
   });
@@ -94,6 +94,7 @@ AudioController.prototype.glowingRing = function() {
   var player = this;
   $('body').on("click", ".glowing-ring", function(e) {
     e.preventDefault();
+    debugger
     $('#mood-popup').hide();
     var clickedMood = $(this).data("mood");
     MoodDb.getSong(clickedMood)
