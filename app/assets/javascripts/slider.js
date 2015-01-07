@@ -7,3 +7,4 @@ Slides.show = function(slide) {
       $('#' + slide).show();
     });
 };
+

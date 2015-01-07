@@ -77,30 +77,30 @@ AudioController.prototype.playerControls = function () {
      // TODO: Have a #playpause button that you .toggleClass('playing')
      $("#play").hide(); // css("visibility", "hidden");
      $("#pause").show(); //css("visibility", "visible");
-   });
+   }.bind(this));
 
   $("#pause").click(function(){
+
     this.song.pause();
     $("#pause").css("visibility", "hidden");
     $("#play").css("visibility", "visible");
-  });
+  }.bind(this));
 
   $("#next").click(function(){
     this.setNextTrack();
-  }.bind(this));
+  }.bind(this))
 };
 
 AudioController.prototype.glowingRing = function() {
-  var player = this;
+  var self = this;
   $('body').on("click", ".glowing-ring", function(e) {
     e.preventDefault();
-    debugger
-    $('#mood-popup').hide();
+    Slides.show("visualizer")
     var clickedMood = $(this).data("mood");
     MoodDb.getSong(clickedMood)
     .then(function(response){
       response = _.shuffle(response);
-      player.getNewTracks(response);
+      self.getNewTracks(response);
     });
   });
 }
@@ -128,7 +128,6 @@ $(document).ready(function() {
   $('.moodChoice').on("click", function(event){
     event.preventDefault();
     var mood = this.id;
-    // Slide.show('welcomeplayer') ?
     Promise.resolve().then(function() {
       $('#songList').empty();
       $songMood.hide();

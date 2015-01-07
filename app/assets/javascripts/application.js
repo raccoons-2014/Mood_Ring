@@ -30,7 +30,6 @@
 //= require ShaderPass
 //= require main
 //= require particle_ring
-//= require player
 //= require audio
 //= require mooddb
 //= require search
