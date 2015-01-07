@@ -122,11 +122,11 @@ function init() {
 
   function generateSprite() {
 
-    var canvas = document.createElement( 'canvas' );
+    canvas = document.createElement( 'canvas' );
     canvas.width = 180;
     canvas.height = 180;
 
-    var context = canvas.getContext( '2d' );
+    context = canvas.getContext( '2d' );
 
     context.beginPath();
     context.arc( 64, 64, 60, 0, Math.PI * 2, false) ;
@@ -331,7 +331,13 @@ requestAnimationFrame( animate );
 if (colorWheel.getFrequencyData() < 1 ){
   curve.xRadius = 35;
   curve.yRadius = 35;
+
 } else{
+  // makeStarArray()
+  // stars.forEach(function(star) {
+  //           star.drawStar();
+  //         }
+
   curve.xRadius = colorWheel.getFrequencyData();
   curve.yRadius = colorWheel.getFrequencyData();
 }
@@ -384,3 +390,65 @@ ParticleRing.prototype.getFrequencyData = function() {
   averageFrequency = averageFrequency / this.bufferLength;
   return averageFrequency;
 };
+
+
+
+function Star(x, y, starSize, ctx) {
+        this.x = x;
+        this.y = y;
+        this.angle = Math.atan(Math.abs(y)/Math.abs(x));
+        this.starSize = starSize;
+        this.ctx = ctx;
+        this.high = 0;
+    }
+    Star.prototype.drawStar = function() {
+        var distanceFromCentre = Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2));
+
+        // stars as lines
+        var brightness = 200 + Math.min(Math.round(this.high * 5), 55);
+        this.ctx.lineWidth= 0.5 + distanceFromCentre/2000 * Math.max(this.starSize/2, 1);
+        this.ctx.strokeStyle='rgba(' + brightness + ', ' + brightness + ', ' + brightness + ', 1)';
+        this.ctx.beginPath();
+        this.ctx.moveTo(this.x,this.y);
+        var lengthFactor = 1 + Math.min(Math.pow(distanceFromCentre,2)/30000 * Math.pow(audioSource.volume, 2)/6000000, distanceFromCentre);
+        var toX = Math.cos(this.angle) * -lengthFactor;
+        var toY = Math.sin(this.angle) * -lengthFactor;
+        toX *= this.x > 0 ? 1 : -1;
+        toY *= this.y > 0 ? 1 : -1;
+        this.ctx.lineTo(this.x + toX, this.y + toY);
+        this.ctx.stroke();
+        this.ctx.closePath();
+
+        // starfield movement coming towards the camera
+        var speed = lengthFactor/20 * this.starSize;
+        this.high -= Math.max(this.high - 0.0001, 0);
+        if (speed > this.high) {
+            this.high = speed;
+        }
+        var dX = Math.cos(this.angle) * this.high;
+        var dY = Math.sin(this.angle) * this.high;
+        this.x += this.x > 0 ? dX : -dX;
+        this.y += this.y > 0 ? dY : -dY;
+
+        var limitY = canvas.height/2 + 500;
+        var limitX = canvas.width/2 + 500;
+        if ((this.y > limitY || this.y < -limitY) || (this.x > limitX || this.x < -limitX)) {
+            // it has gone off the edge so respawn it somewhere near the middle.
+            this.x = (Math.random() - 0.5) * canvas.width/3;
+            this.y = (Math.random() - 0.5) * canvas.height/3;
+            this.angle = Math.atan(Math.abs(this.y)/Math.abs(this.x));
+        }
+    };
+
+    makeStarArray = function() {
+        var x, y, starSize;
+        stars = [];
+        var limit = 200; // how many stars?
+        for (var i = 0; i < limit; i ++) {
+            x = (Math.random() - 0.5) * window.innerWidth;
+            y = (Math.random() - 0.5) * window.innerHeight;
+            starSize = (Math.random()+0.1)*3;
+            stars.push(new Star(x, y, starSize, colorWheel.context));
+
+        }
+    };
