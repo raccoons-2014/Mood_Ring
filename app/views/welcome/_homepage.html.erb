@@ -9,9 +9,9 @@
 </div>
 
 <div class="slide inputSlides" id="inputSong">
-  <a href="#" id="hide"><img src='/assets/x-mark-3-16.png'></a><br>
-  <h1 >Search Soundcloud</h1>
-  <h3 > to add song to Mood Ring</h3>
+  <a href="#" class="hide"><img src='/assets/x-mark-3-16.png'></a>
+  <h1>Search Soundcloud</h1>
+  <h3> to add song to Mood Ring</h3>
   <form id = "input" method = "get">
   <input id="titleSearch" type="text" placeholder= "song title, artist, tag, etc." autocomplete= 'off'>
   </form>
@@ -19,11 +19,19 @@
 </div>
 
 <div class="slide inputSlides" id="addSong">
+   <ul class="exitGoBack">
+    <li><a href="#" class="hide"><img src='/assets/x-mark-3-16.png'></a></li>
+    <li><a href="#" class="goBack" id="toFirstSlide"><img src='/assets/arrow-58-16.png'></a></li>
+  </ul>
   <h1>Choose a song to add</h1>
   <div id = 'songList'></div>
 </div>
 
 <div class="slide inputSlides" id="songMood">
+   <ul class="exitGoBack">
+    <li><a href="#" class="hide"><img src='/assets/x-mark-3-16.png'></a></li>
+    <li><a href="#" class="goBack" id="toSecondSlide"><img src='/assets/arrow-58-16.png'></a></li>
+  </ul>
   <h1>What mood describes this song?</h1>
   <button class="moodChoice" id="Happy">Happy</button>
   <button class="moodChoice" id="Melancholy">Melancholy</button>

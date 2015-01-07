@@ -8,11 +8,23 @@ $(document).ready(function(){
   var $inputSong = $('#inputSong');
   var $enterSong = $('#enterSong');
 
-  $('#hide').click(function() {
+  $('.hide').click(function() {
     $('.slide').hide();
+    song.pause();
+    $('#track-title').html("");
     bringUpChooseMood();
     bringUpSearchButton();
   });
+
+  $('#toFirstSlide').click(function() {
+    Slides.show('inputSong');
+    song.pause();
+    $('#track-title').html("");
+  })
+
+  $('#toSecondSlide').click(function() {
+    Slides.show('addSong');
+  })
 
   $('#titleSearch').keydown(function(e) {
     $('#songList').html("");

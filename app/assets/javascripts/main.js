@@ -23,15 +23,13 @@ $(document).ready(function(){
   bringUpSearchButton = function() {
     $enterSong.show();
   }
+
   bringUpChooseMood = function() {
     $('#chooseMood').show();
   }
 
-
-
   $('#chooseMood').click(function() {
     Slides.show('big-ring');
-    bringUpSearchButton();
   });
 
   $enterSong.click(function() {
@@ -40,8 +38,6 @@ $(document).ready(function(){
     $('#titleSearch').val('');
 
   });
-
-
 
   player = new AudioController([]);
 
