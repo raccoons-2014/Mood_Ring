@@ -10,6 +10,8 @@ $(document).ready(function(){
 
   $('.hide').click(function() {
     $('.slide').hide();
+    song.pause();
+    $('#track-title').html("");
     bringUpChooseMood();
     bringUpSearchButton();
   });
