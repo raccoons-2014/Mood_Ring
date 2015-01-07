@@ -45,13 +45,6 @@ $(document).ready(function(){
   init();
   animate();
 
-  // $enterSong.hover(function() {
-  //   $(this).fadeIn();
-  //   $(this).toggleClass("hovering")
-  // },
-  // function(){
-  //   $enterSong.toggleClass("hovering")
-  // });
   hoverToggling($enterSong);
   hoverToggling($playlist);
 
@@ -63,12 +56,8 @@ $(document).ready(function(){
       timer = 0;
     };
     timer = setTimeout(function() {
-      if(!$enterSong.hasClass("hovering")) {
-        $enterSong.fadeOut('slow');
-      }
-      if(!$playlist.hasClass("hovering")) {
-        $playlist.fadeOut('slow');
-      }
+      hoverListener($enterSong);
+      hoverListener($playlist);
     }, 2000);
   })
 
