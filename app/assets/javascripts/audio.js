@@ -88,12 +88,13 @@ AudioController.prototype.glowingRing = function() {
     e.preventDefault();
     glowplayer.displayControls();
     Slides.show('chooseMood');
-    bringUpSearchButton();
+
     var clickedMood = $(this).data("mood");
     MoodDb.getSong(clickedMood)
     .then(function(response){
       response = _.shuffle(response);
       glowplayer.getNewTracks(response);
+      bringUpSearchButton();
     });
   });
 }
