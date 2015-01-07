@@ -47,10 +47,13 @@ $(document).ready(function(){
 
   hoverToggling($enterSong);
   hoverToggling($playlist);
+  hoverToggling($chooseMood);
 
  $(document).mousemove(function() {
+    $('body').css({'cursor' : 'auto'});
     $playlist.fadeIn('slow');
-    $enterSong.fadeIn('slow');
+    hoverCrossout($('#big-ring'), $chooseMood);
+    hoverCrossout($(".inputSlides"), $enterSong);
     if (timer) {
       clearTimeout(timer);
       timer = 0;
@@ -58,6 +61,8 @@ $(document).ready(function(){
     timer = setTimeout(function() {
       hoverListener($enterSong);
       hoverListener($playlist);
+      hoverListener($chooseMood);
+      $('body').css({'cursor' : 'none'});
     }, 2000);
   })
 

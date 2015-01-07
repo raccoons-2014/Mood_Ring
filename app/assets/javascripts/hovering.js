@@ -16,4 +16,8 @@ hoverListener = function(element) {
   }
 }
 
-
+hoverCrossout = function(element1, element2) {
+  if (!element1.is(":visible")) {
+    element2.fadeIn("slow");
+  }
+}
