@@ -3,7 +3,6 @@ html{
   background-color: black;
   color: white;
   font-family: 'Telex', sans-serif;
-
 }
 
 body {
@@ -277,6 +276,7 @@ li {
 }
 
 #big-ring {
+  font: normal 18px/normal "Varela", Helvetica, sans-serif;
   height: 500px;
   width: 500px;
   border-radius: 50%;
@@ -316,10 +316,14 @@ li {
 }
 
 #homepage {
-  color: white;
+  /*color: white;*/
+  color: black !important;
   padding-top: 45%;
-  text-shadow: 0 0 60px #fff;
+  text-decoration: normal;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px #fff , 0 0 70px #fff , 0 0 80px #fff , 0 0 100px #fff;
 }
+
 
 .glowing-ring:hover {
   transform: scale(1.4);
