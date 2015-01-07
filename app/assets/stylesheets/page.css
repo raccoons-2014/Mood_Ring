@@ -138,6 +138,9 @@ button {
 
 #chooseMood {
   top: .5em;
+  width: 55px;
+  height: 55px;
+  outline: none;
 }
 
 #chooseMood, #hide {
@@ -327,6 +330,15 @@ li {
 
 .glowing-ring:hover {
   transform: scale(1.4);
+}
+
+#mood-ring{
+  float:left;
+  position:absolute;
+  left: 37%;
+  bottom: 40%;
+  outline: none;
+  cursor: default;
 }
 
 .modal {
