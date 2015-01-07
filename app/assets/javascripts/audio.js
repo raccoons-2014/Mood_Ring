@@ -92,6 +92,8 @@ AudioController.prototype.playerControls = function () {
 
   $("#next").click(function(){
     this.setNextTrack();
+    $("#pause").css("visibility", "visible");
+    $("#play").css("visibility", "hidden");
   }.bind(this))
 };
 
