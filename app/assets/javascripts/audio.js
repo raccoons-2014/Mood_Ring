@@ -125,6 +125,7 @@ $(document).ready(function() {
         response = _.shuffle(response);
         response.unshift({stream_url: stream_url, title: title})
         player.getNewTracks(response);
+        console.log(response);
       })
     })
   });
