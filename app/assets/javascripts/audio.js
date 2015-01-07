@@ -132,12 +132,10 @@ $(document).ready(function() {
       return MoodDb.getSong(mood);
     }).then(function(response){
       if (sourceCreated === true) {
-        debugger
         response = _.shuffle(response);
         response.unshift({stream_url: stream_url, title: title})
         viz.getNewTracks(response)
       } else {
-debugger
         response = _.shuffle(response);
         response.unshift({stream_url: stream_url, title: title})
         audioPlay(response);

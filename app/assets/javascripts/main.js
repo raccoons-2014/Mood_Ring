@@ -14,9 +14,9 @@ $(document).ready(function(){
   });
 
   player = new AudioController([]);
-  umber =3;
 
-
-  visualizer = new ParticleRing();
+  colorWheel = new ParticleRing();
+  init();
+  animate();
 });
 

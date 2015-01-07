@@ -350,13 +350,12 @@ function onDocumentMouseMove( event ) {
 function animate() {
 
 requestAnimationFrame( animate );
-
-if (viz.getFrequencyData() < 1 ){
+if (colorWheel.getFrequencyData() < 1 ){
   curve.xRadius = 35;
   curve.yRadius = 35;
-}else{
-  curve.xRadius = visualizer.getFrequencyData();
-  curve.yRadius = visualizer.getFrequencyData();
+} else{
+  curve.xRadius = colorWheel.getFrequencyData();
+  curve.yRadius = colorWheel.getFrequencyData();
 }
 
 
@@ -382,9 +381,7 @@ composer.render( 0.1 );
 
 function ParticleRing() {
 
-  debugger
   this.context = new webkitAudioContext();
-
   this.analyser = this.context.createAnalyser();
   this.analyser.fftSize = 2048;
   this.setUpSource(song);
@@ -392,11 +389,9 @@ function ParticleRing() {
   this.dataArray = new Uint8Array(this.bufferLength);
   averageFrequency = 1;
 
-  init();
-  animate();
 };
 
-ParticleRing.prototype.setupSource = function(audio) {
+ParticleRing.prototype.setUpSource = function(audio) {
   this.source = this.context.createMediaElementSource(audio);
   this.source.connect(this.context.destination);
   this.source.connect(this.analyser);
