@@ -38,13 +38,21 @@ $(document).ready(function(){
 
   $('#songList').on("click", ".pauseReview", function(event){
     event.preventDefault();
+    var myPreview = $(this).parent().prev('li').children('.preview');
+    $(this).toggle(false);
+    myPreview.toggle(true);
     $("#pause").hide();
     $("#play").show();
-    source.mediaElement.pause();
+    song.pause();
   })
 
   $('#songList').on("click", ".preview", function(event){
     event.preventDefault();
+    var myPause = $(this).parent().next('li').children('.pauseReview');
+    $('.pauseReview').toggle(false);
+    $('.preview').toggle(true);
+    $(this).toggle(false);
+    myPause.toggle(true);
     $("#play").hide();
     $("#pause").show();
     $('#track-title').html("Preview");
