@@ -333,15 +333,6 @@ li {
   transform: scale(1.4);
 }
 
-#mood-ring{
-  float:left;
-  position:absolute;
-  left: 37%;
-  bottom: 40%;
-  outline: none;
-  cursor: default;
-}
-
 .modal {
   top: 20% !important;
   margin-left: -30% !important ;
