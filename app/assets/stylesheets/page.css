@@ -105,10 +105,12 @@ cursor: pointer;
 .emotion, .moodChoice {
 background: rgb(45, 44, 44);
 height: 40px;
-min-width: 220px;
+min-width: 200px;
 line-height: 24px;
 font-size: 16px;
 text-align: center;
+box-shadow: 2px 2px 2px rgba(255,255,255,0.2);
+border-radius: 20px
 }
 
 button {
@@ -117,17 +119,19 @@ button {
   font-size: inherit;
   color: inherit;
   background: none;
-  padding: 25px 80px;
   display: inline-block;
-  margin: 15px 30px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 700;
+  margin: 15px 10px;
+  text-transform: lowercase;
+  letter-spacing: 2px;
   outline: none;
   position: relative;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
+}
+
+.moodChoice:hover {
+  background: rgb(168, 164, 164);
 }
 
 #moodSelection {
