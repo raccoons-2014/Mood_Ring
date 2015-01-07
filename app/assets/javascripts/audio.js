@@ -1,4 +1,4 @@
-// TODO: fix references to "song" to be "this.song"
+// TODO: fix references to "song" to be "song"
 
 
 //to control player and visualizer at the same time
@@ -9,14 +9,14 @@ function AudioController(tracks) {
   this.trackTitles = [];
   this.trackNumber = 0;
   this.grabPlaylist();
-  this.song = new Audio();
+  song = new Audio();
 
   this.playerControls();
   this.glowingRing();
   this.progress;
-  this.song.addEventListener("timeupdate", progressBar, false);
-  // this.song.addEventListener('ended', this.getNewTracks(this.track).bind(this));
-  this.song.addEventListener('ended', this.setNextTrack.bind(this));
+  song.addEventListener("timeupdate", progressBar, false);
+  // song.addEventListener('ended', this.getNewTracks(this.track).bind(this));
+  song.addEventListener('ended', this.setNextTrack.bind(this));
   this.animate();
 }
 
@@ -27,8 +27,8 @@ AudioController.prototype.getNewTracks = function(newTracks) {
   this.trackObjects = newTracks;
   this.trackNumber = 0;
   this.grabPlaylist();
-  this.song.src = this.trackPlaylist[this.trackNumber];
-  this.song.play();
+  song.src = this.trackPlaylist[this.trackNumber];
+  song.play();
   $('#track-title').html(this.trackTitles[this.trackNumber]);
 };
 
@@ -37,9 +37,9 @@ AudioController.prototype.playNewSong = function(streamUrl, trackTitle, moodPlay
   this.trackObjects = moodPlaylist;
   this.grabPlaylist();
   this.trackPlaylist;
-  this.song.src = (streamUrl+ "?client_id=c751293c35f7cb00b48ee6383ea84aa6");
+  song.src = (streamUrl+ "?client_id=c751293c35f7cb00b48ee6383ea84aa6");
   $('#track-title').html(trackTitle);
-  this.song.play();
+  song.play();
 };
 
 AudioController.prototype.grabPlaylist = function() {
@@ -51,37 +51,29 @@ AudioController.prototype.grabPlaylist = function() {
 
 AudioController.prototype.setNextTrack = function() {
   this.trackNumber = (this.trackNumber + 1)% this.trackPlaylist.length;
-  this.song.src = this.trackPlaylist[this.trackNumber];
-  this.song.play();
+  song.src = this.trackPlaylist[this.trackNumber];
+  song.play();
   $('#track-title').html(this.trackTitles[this.trackNumber]);
 };
 
 AudioController.prototype.setUpSource = function (song_url) {
-  this.song.src = song_url;
-  this.song.play();
+  song.src = song_url;
+  song.play();
   $('#track-title').html(this.trackTitles[this.trackNumber]);
 }
 
-AudioController.prototype.getFrequencyData = function() {
-  this.analyser.getByteFrequencyData(this.dataArray);
-  for(var i = 0; i < this.bufferLength; i++) {
-    averageFrequency += this.dataArray[i];
-  };
-  //find average
-  averageFrequency = averageFrequency / this.bufferLength;
-  return averageFrequency;
-}
+
 
 AudioController.prototype.playerControls = function () {
   $("#play").click(function(){
-   this.song.play();
+   song.play();
      // TODO: Have a #playpause button that you .toggleClass('playing')
      $("#play").hide(); // css("visibility", "hidden");
      $("#pause").show(); //css("visibility", "visible");
    }.bind(this));
 
   $("#pause").click(function(){
-    this.song.pause();
+    song.pause();
     $("#pause").hide();
     $("#play").show();
   }.bind(this));
@@ -113,9 +105,9 @@ AudioController.prototype.showMoodSelector = function() {
 
 AudioController.prototype.progressBar = function() {
   var progressBarWidth = document.getElementById('playlist').offsetWidth;
-  var factor = progressBarWidth/this.song.duration;
-  if (this.song.currentTime > 0 ) {
-   var width = this.song.currentTime * factor;
+  var factor = progressBarWidth/song.duration;
+  if (song.currentTime > 0 ) {
+   var width = song.currentTime * factor;
   }
   $("#progressBar").css("width", width);
 };

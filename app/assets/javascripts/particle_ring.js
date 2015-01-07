@@ -355,8 +355,8 @@ if (viz.getFrequencyData() < 1 ){
   curve.xRadius = 35;
   curve.yRadius = 35;
 }else{
-  curve.xRadius = viz.getFrequencyData();
-  curve.yRadius = viz.getFrequencyData();
+  curve.xRadius = visualizer.getFrequencyData();
+  curve.yRadius = visualizer.getFrequencyData();
 }
 
 
@@ -378,30 +378,36 @@ group.rotation.y += ( targetRotation - group.rotation.y ) * 0.05;
 
 composer.render( 0.1 );
 
-}
+};
 
-function ParticleRing(audio) {
-  this.audio = audio;
+function ParticleRing() {
+
   debugger
   this.context = new webkitAudioContext();
 
   this.analyser = this.context.createAnalyser();
   this.analyser.fftSize = 2048;
-  this.setUpSource(this.audio);
+  this.setUpSource(song);
   this.bufferLength = this.analyser.frequencyBinCount;
   this.dataArray = new Uint8Array(this.bufferLength);
   averageFrequency = 1;
 
-  this.context = new webkitAudioContext();
-  this.analyser = this.context.createAnalyser();
-
-  this.setupSource();
   init();
   animate();
-}
+};
 
-ParticleRing.prototype.setupSource = function() {
-  this.source = this.context.createMediaElementSource(this.song);
-  source.connect(this.context.destination);
-  source.connect(this.analyser);
+ParticleRing.prototype.setupSource = function(audio) {
+  this.source = this.context.createMediaElementSource(audio);
+  this.source.connect(this.context.destination);
+  this.source.connect(this.analyser);
+};
+
+ParticleRing.prototype.getFrequencyData = function() {
+  this.analyser.getByteFrequencyData(this.dataArray);
+  for(var i = 0; i < this.bufferLength; i++) {
+    averageFrequency += this.dataArray[i];
+  };
+  //find average
+  averageFrequency = averageFrequency / this.bufferLength;
+  return averageFrequency;
 };

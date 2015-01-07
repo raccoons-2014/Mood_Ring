@@ -17,6 +17,6 @@ $(document).ready(function(){
   umber =3;
 
 
-  vizualizer = new ParticleRing(player.song);
+  visualizer = new ParticleRing();
 });
 
