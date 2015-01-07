@@ -35,4 +35,5 @@
 //= require mooddb
 //= require search
 //= require slider
+//= require hovering
 //= require_tree .
