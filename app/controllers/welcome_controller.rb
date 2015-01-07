@@ -8,8 +8,8 @@ class WelcomeController < ApplicationController
     render :partial => "ring"
   end
 
-  def greet
-    render :homepage
+  def homepage
+    render :index
   end
 
 end
