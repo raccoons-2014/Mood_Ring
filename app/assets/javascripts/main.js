@@ -3,10 +3,16 @@ $(document).ready(function(){
   var $songMood = $('#songMood');
   var $chooseMood = $('#chooseMood');
   var $moodSelection = $('#moodSelection');
+  var $playlist = $('#playlist');
+  var $enterSong = $('#enterSong');
   $('#inputSong').hide();
   $('#addSong').hide();
   $('#songMood').hide();
   $('#chooseMood').hide();
+  $playlist.hide();
+  $enterSong.hide();
+  var timer;
+
 
   bringUpCreateSlideTwo = function() {
     Slides.show('addSong');
@@ -17,7 +23,7 @@ $(document).ready(function(){
   }
 
   bringUpSearchButton = function() {
-    $('#enterSong').show();
+    $enterSong.show();
   }
   bringUpChooseMood = function() {
     $('#chooseMood').show();
@@ -30,7 +36,7 @@ $(document).ready(function(){
     bringUpSearchButton();
   });
 
-  $('#enterSong').click(function() {
+  $enterSong.click(function() {
     Slides.show('inputSong');
   });
 
@@ -39,5 +45,19 @@ $(document).ready(function(){
   colorWheel = new ParticleRing();
   init();
   animate();
+
+ $(document).mousemove(function() {
+    $playlist.fadeIn('slow');
+    $enterSong.fadeIn('slow');
+    if (timer) {
+      clearTimeout(timer);
+      timer = 0;
+    };
+    timer = setTimeout(function() {
+      $enterSong.fadeOut('slow');
+      $playlist.fadeOut('slow');
+    }, 1000);
+
+  })
 });
 
