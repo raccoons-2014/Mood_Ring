@@ -136,6 +136,10 @@ button {
   right: 15px;
 }
 
+#chooseMood {
+  top: .5em;
+}
+
 #chooseMood, #hide {
   position: absolute;
   left: 15px;
