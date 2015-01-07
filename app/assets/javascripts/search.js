@@ -8,10 +8,6 @@ $(document).ready(function(){
   var $inputSong = $('#inputSong');
   var $enterSong = $('#enterSong');
 
-  // $enterSong.click(function() {
-  //   Slides.show('search');
-  // });
-
   $('#hide').click(function() {
     Slides.show('base');
   });
@@ -40,15 +36,15 @@ $(document).ready(function(){
 
   $('#songList').on("click", ".pauseReview", function(event){
     event.preventDefault();
-    $("#pause").css("visibility", "hidden");
-    $("#play").css("visibility", "visible");
+    $("#pause").hide();
+    $("#play").show();
     source.mediaElement.pause();
   })
 
   $('#songList').on("click", ".preview", function(event){
     event.preventDefault();
-    $("#play").css("visibility", "hidden");
-    $("#pause").css("visibility", "visible");
+    $("#play").hide();
+    $("#pause").show();
     $('#track-title').html("Preview");
     var streamUrl = this.id;
     var streamUrlPlay = this.id + "?client_id=c751293c35f7cb00b48ee6383ea84aa6";

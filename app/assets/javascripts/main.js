@@ -6,6 +6,7 @@ $(document).ready(function(){
   $('#inputSong').hide();
   $('#addSong').hide();
   $('#songMood').hide();
+  $('#chooseMood').hide();
 
   bringUpCreateSlideTwo = function() {
     Slides.show('addSong');
@@ -27,11 +28,6 @@ $(document).ready(function(){
   $('#enterSong').click(function() {
     Slides.show('inputSong');
   });
-
-  // $('button .emotion').click(function(){
-  //   Slides.show('chooseMood');
-  //   $('#enterSong').show();
-  // });
 
   player = new AudioController([]);
 
