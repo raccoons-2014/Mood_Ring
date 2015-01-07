@@ -18,6 +18,10 @@ $(document).ready(function(){
     Slides.show('inputSong');
   })
 
+  $('#toSecondSlide').click(function() {
+    Slides.show('addSong');
+  })
+
   $('#titleSearch').keydown(function(e) {
     SC.initialize({
       client_id: "5b91135eafaf701ea414c5fe6b86fdf3",
