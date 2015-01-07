@@ -81,11 +81,9 @@ AudioController.prototype.playerControls = function () {
 
 AudioController.prototype.glowingRing = function() {
   var glowplayer = this;
-  $('body').on("click", ".glowing-ring", function(e) {
+  $('.glowing-ring').click(function(e) {
     e.preventDefault();
-    $('#home').hide();
-    $('#mood-popup').hide();
-    $('#visualizer').show();
+    Slides.show('chooseMood');
     var clickedMood = $(this).data("mood");
     MoodDb.getSong(clickedMood)
     .then(function(response){
@@ -94,10 +92,6 @@ AudioController.prototype.glowingRing = function() {
     });
   });
 }
-
-AudioController.prototype.showMoodSelector = function() {
-  $('#mood-popup').show();
-};
 
 AudioController.prototype.progressBar = function() {
   var progressBarWidth = document.getElementById('playlist').offsetWidth;

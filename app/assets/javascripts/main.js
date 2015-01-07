@@ -5,9 +5,13 @@ $(document).ready(function(){
   var $moodSelection = $('#moodSelection');
 
 
-  $("body").on("click", '#chooseMood', function() {
-    Slides.show('mood-popup');
-  });
+  // $("body").on("click", '#chooseMood', function() {
+  //   Slides.show('mood-popup');
+  // });
+
+  $('#chooseMood').click(function() {
+    Slides.show('big-ring');
+  })
 
   $('button.emotion').click(function(){
     Slides.show('chooseMood');
