@@ -55,6 +55,9 @@ AudioController.prototype.setUpSource = function (song_url) {
   $('#track-title').html(this.trackTitles[this.trackNumber]);
 }
 
+AudioController.prototype.displayControls = function() {
+    $("#all-controls").show()
+  }
 
 
 AudioController.prototype.playerControls = function () {
@@ -83,7 +86,7 @@ AudioController.prototype.glowingRing = function() {
   var glowplayer = this;
   $('.glowing-ring').click(function(e) {
     e.preventDefault();
-    displayControls();
+    glowplayer.displayControls();
     Slides.show('chooseMood');
     bringUpSearchButton();
     var clickedMood = $(this).data("mood");

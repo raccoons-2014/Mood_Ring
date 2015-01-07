@@ -23,9 +23,7 @@ $(document).ready(function(){
     $('#chooseMood').show();
   }
 
-  displayControls = function() {
-    $("#all-controls").show()
-  }
+
 
   $('#chooseMood').click(function() {
     Slides.show('big-ring');
