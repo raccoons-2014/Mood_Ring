@@ -12,9 +12,12 @@ $(document).ready(function(){
   $playlist.hide();
   $enterSong.hide();
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   var timer;
 >>>>>>> fadein/out for search and playbar implemented
+=======
+>>>>>>> searchSong and bottom bar toggle correctly on mouse movement
 
 
   bringUpCreateSlideTwo = function() {
@@ -49,6 +52,10 @@ $(document).ready(function(){
   init();
   animate();
 
+  hoverToggling($enterSong);
+  hoverToggling($playlist);
+  hoverToggling($chooseMood);
+
  $(document).mousemove(function() {
     $('body').css({'cursor' : 'auto'});
     $playlist.fadeIn('slow');
@@ -65,5 +72,6 @@ $(document).ready(function(){
       $('body').css({'cursor' : 'none'});
     }, 2000);
   })
+
 });
 
