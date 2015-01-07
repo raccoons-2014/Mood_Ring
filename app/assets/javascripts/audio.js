@@ -113,12 +113,8 @@ $(document).ready(function() {
   $('.moodChoice').on("click", function(event){
     event.preventDefault();
     var mood = this.id;
-    // Slide.show('welcomeplayer') ?
     Promise.resolve().then(function() {
       $('#songList').empty();
-      // $songMood.hide();
-      // $chooseMood.show();
-      // $enterSong.show();
 
       return MoodDb.addSong(title, stream_url, mood);
     }).then(function(response){
@@ -131,19 +127,7 @@ $(document).ready(function() {
         response.unshift({stream_url: stream_url, title: title})
         player.getNewTracks(response);
       })
-      // if (sourceCreated === true) {
-      //   response = _.shuffle(response);
-      //   response.unshift({stream_url: stream_url, title: title})
-      //   viz.getNewTracks(response)
-      // } else {
-      //   response = _.shuffle(response);
-      //   response.unshift({stream_url: stream_url, title: title})
-      //   audioPlay(response);
-      //   sourceCreated = true;
-      // }
-    }).catch(function(error) {
-      // TODO: Error handling
-    });
+    })
   });
 });
 
