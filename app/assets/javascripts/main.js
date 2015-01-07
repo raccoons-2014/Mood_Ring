@@ -11,14 +11,6 @@ $(document).ready(function(){
   $('#chooseMood').hide();
   $playlist.hide();
   $enterSong.hide();
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  var timer;
->>>>>>> fadein/out for search and playbar implemented
-=======
->>>>>>> searchSong and bottom bar toggle correctly on mouse movement
-
 
   bringUpCreateSlideTwo = function() {
     Slides.show('addSong');
