@@ -19,6 +19,9 @@ $(document).ready(function(){
   bringUpSearchButton = function() {
     $('#enterSong').show();
   }
+  bringUpChooseMood = function() {
+    $('#chooseMood').show();
+  }
 
   $('#chooseMood').click(function() {
     Slides.show('big-ring');

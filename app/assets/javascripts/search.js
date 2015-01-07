@@ -9,7 +9,9 @@ $(document).ready(function(){
   var $enterSong = $('#enterSong');
 
   $('#hide').click(function() {
-    Slides.show('base');
+    $('.slide').hide();
+    bringUpChooseMood();
+    bringUpSearchButton();
   });
 
   $('#titleSearch').keydown(function(e) {
