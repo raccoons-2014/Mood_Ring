@@ -36,6 +36,9 @@ $(document).ready(function(){
 
   $enterSong.click(function() {
     Slides.show('inputSong');
+    $('#search-error').empty();
+    $('#titleSearch').val('');
+
   });
 
 
