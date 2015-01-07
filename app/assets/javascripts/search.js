@@ -30,7 +30,7 @@ $(document).ready(function(){
         tenTracks.forEach(function(track) {
           if (typeof(track.stream_url) == "undefined") return;
           $('#songList')
-            .append("<li><ul class ='fetchedSongs'><li><img src ='/assets/play-3-16.png' class='preview' id='" + track.stream_url + "'></li><li><img src ='/assets/stop-3-16.png' class='pauseReview'></li><li><img class='song' id =" + track.stream_url + " title = " + "'" +track.title +"'" + " src = '/assets/plus-5-16.png'> </li><li><a href='#' >" + track.title +  "</a></li></ul></li>");
+            .append("<li><ul class ='fetchedSongs'><li><img src ='/assets/play-3-16.png' class='preview' id='" + track.stream_url + "'></li><li><img src ='/assets/stop-3-16.png' class='pauseReview'></li><li><img class='song' id =" + track.stream_url + " title = " + '"' +track.title +'"' + " src = '/assets/plus-5-16.png'> </li><li><a href='#' >" + track.title +  "</a></li></ul></li>");
         });
       });
     }
