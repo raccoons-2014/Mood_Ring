@@ -109,7 +109,6 @@ AudioController.prototype.glowingRing = function() {
         var vizualizer = new ParticleRing(player.song);
         console.log(vizualizer)
     }
-
     });
   });
 }

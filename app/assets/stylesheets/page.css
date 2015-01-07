@@ -325,10 +325,10 @@ li {
   display: none;
 }
 
-#home{
-
+/*#home{
+  display: block;
 }
 
 #visualizer {
-  
-}
+  display: none;
+}*/
