@@ -115,9 +115,9 @@ $(document).ready(function() {
     // Slide.show('welcomeplayer') ?
     Promise.resolve().then(function() {
       $('#songList').empty();
-      $songMood.hide();
-      $chooseMood.show();
-      $enterSong.show();
+      // $songMood.hide();
+      // $chooseMood.show();
+      // $enterSong.show();
 
       return MoodDb.getSong(mood);
     }).then(function(response){

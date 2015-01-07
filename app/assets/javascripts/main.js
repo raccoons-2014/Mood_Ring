@@ -3,15 +3,25 @@ $(document).ready(function(){
   var $songMood = $('#songMood');
   var $chooseMood = $('#chooseMood');
   var $moodSelection = $('#moodSelection');
+  $('#inputSong').hide();
+  $('#addSong').hide();
+  $('#songMood').hide();
 
+  bringUpCreateSlideTwo = function() {
+    Slides.show('addSong');
+  }
 
-  // $("body").on("click", '#chooseMood', function() {
-  //   Slides.show('mood-popup');
-  // });
+  bringUpCreateSlideThree = function() {
+    Slides.show('songMood');
+  }
 
   $('#chooseMood').click(function() {
     Slides.show('big-ring');
-  })
+  });
+
+  $('#enterSong').click(function() {
+    Slides.show('inputSong');
+  });
 
   $('button.emotion').click(function(){
     Slides.show('chooseMood');

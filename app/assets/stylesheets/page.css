@@ -278,26 +278,24 @@ li {
         10px 0 80px #fff;
 }
 
-
-#big-ring {
+#inputSong, #addSong, #songMood {
   height: 500px;
   width: 500px;
-  border-radius: 50%;
-  border: 1px solid white;
+/*  border-radius: 50%;
+  border: 1px solid white;*/
   position: absolute;
-/*  top: 20%;*/
+  top: 20%;
   left: 35%;
-  box-shadow:
-    inset 0 0 50px #fff,
-    inset 20px 0 80px #000000,
-    inset -20px 0 80px #000000,
-    inset 20px 0 300px #000000,
-    inset -20px 0 300px #000000,
-    0 0 50px #fff,
-    -10px 0 80px #fff,
-    10px 0 80px #fff;
+ /* box-shadow:
+        inset 0 0 50px #fff,
+        inset 20px 0 80px #000000,
+        inset -20px 0 80px #000000,
+        inset 20px 0 300px #000000,
+        inset -20px 0 300px #000000,
+        0 0 50px #fff,
+        -10px 0 80px #fff,
+        10px 0 80px #fff;*/
 }
-
 
 #mood-text {
   padding-top: 35%;

@@ -1,22 +1,33 @@
 <a href="#" id="enterSong"><%= image_submit_tag("search-12-32.png", class: "mood-control") %></a>
 
-    <div id="big-ring" class="slide">
+<div id="big-ring" class="slide">
+  <h1 id="homepage">mood ring</h1>
+  <div class="glowing-ring happy" data-mood= "Happy"><h3>happy</h3></div></a>
+  <div class="glowing-ring melancholy" data-mood="Melancholy" ><h3>sad</h3></div></a>
+  <div class="glowing-ring excited" data-mood= "Excited" ><h3>excited</h3></div></a>
+  <div class="glowing-ring chill" data-mood= "Chill" ><h3>chill</h3></div></a>
+  <div class="glowing-ring angry" data-mood= "Angry" > <h3>angry</h3></div></a>
+  <div class="glowing-ring sleepy" data-mood= "Sleepy" ><h3>sleepy</h3></div></a>
+</div>
 
-      <h1 id="homepage">mood ring</h1>
+<div class="slide" id="inputSong">
+  <a href="#" id="hide">X</a>
+  <h1>Enter a song to add to the database</h1>
+  <form id = "input" method = "get">
+  <input id="titleSearch" type="text"/>
+  </form>
+</div>
 
-      <div class="glowing-ring happy" data-mood= "Happy">
-      <h3>happy</h3></div></a>
+<div class="slide" id="addSong">
+  <h1>Choose a song to add</h1>
+  <div id = 'songList'></div>
+</div>
 
-      <div class="glowing-ring melancholy" data-mood="Melancholy" ><h3>sad</h3></div></a>
-
-      <div class="glowing-ring excited" data-mood= "Excited" ><h3>excited</h3></div></a>
-
-      <div class="glowing-ring chill" data-mood= "Chill" ><h3>chill</h3></div></a>
-
-      <div class="glowing-ring angry" data-mood= "Angry" > <h3>angry</h3></div></a>
-
-      <div class="glowing-ring sleepy" data-mood= "Sleepy" ><h3>sleepy</h3></div></a>
-
-  </div>
-
-<%= render(:partial => 'slides') %>
+<div class="slide" id="songMood">
+  <h1>What mood describes this song?</h1>
+  <button class="moodChoice" id="Happy">Happy</button>
+  <button class="moodChoice" id="Melancholy">Melancholy</button>
+  <button class="moodChoice" id="Excited">Excited</button>
+  <button class="moodChoice" id="Chill">Chill</button>
+  <button class="moodChoice" id="Angry">Angry</button>
+</div>

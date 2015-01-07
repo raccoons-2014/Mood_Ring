@@ -8,9 +8,9 @@ $(document).ready(function(){
   var $inputSong = $('#inputSong');
   var $enterSong = $('#enterSong');
 
-  $enterSong.click(function() {
-    Slides.show('search');
-  });
+  // $enterSong.click(function() {
+  //   Slides.show('search');
+  // });
 
   $('#hide').click(function() {
     Slides.show('base');
@@ -23,8 +23,7 @@ $(document).ready(function(){
     if (e.keyCode == 13) {
       e.preventDefault();
       var $titleSearch = $('#titleSearch').val();
-      $inputSong.hide();
-      $addSong.show();
+      bringUpCreateSlideTwo();
       $('#songList').show();
 
       SC.get('/tracks', { q: $titleSearch }, function(tracks) {
