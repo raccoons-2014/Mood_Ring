@@ -15,16 +15,22 @@ $(document).ready(function(){
     Slides.show('songMood');
   }
 
+  bringUpSearchButton = function() {
+    $('#enterSong').show();
+  }
+
   $('#chooseMood').click(function() {
     Slides.show('big-ring');
+    bringUpSearchButton();
   });
 
   $('#enterSong').click(function() {
     Slides.show('inputSong');
   });
 
-  $('button.emotion').click(function(){
+  $('button .emotion').click(function(){
     Slides.show('chooseMood');
+    $('#enterSong').show();
   });
 
   player = new AudioController([]);
