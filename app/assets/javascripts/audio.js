@@ -67,10 +67,9 @@ AudioController.prototype.setUpSource = function (song_url) {
 AudioController.prototype.playerControls = function () {
   $("#play").click(function(){
    song.play();
-     // TODO: Have a #playpause button that you .toggleClass('playing')
-     $("#play").hide(); // css("visibility", "hidden");
-     $("#pause").show(); //css("visibility", "visible");
-   }.bind(this));
+   $("#play").hide();
+   $("#pause").show();
+  }.bind(this));
 
   $("#pause").click(function(){
     song.pause();
@@ -80,6 +79,8 @@ AudioController.prototype.playerControls = function () {
 
   $("#next").click(function(){
     this.setNextTrack();
+     $("#play").hide();
+     $("#pause").show();
   }.bind(this));
 };
 
