@@ -49,13 +49,6 @@ $(document).ready(function(){
     var streamUrl = this.id;
     var streamUrlPlay = this.id + "?client_id=c751293c35f7cb00b48ee6383ea84aa6";
     player.getNewTracks([{stream_url: streamUrl}]);
-    //  if (sourceCreated === true) {
-    //     song.src = streamUrlPlay;
-    //     source.mediaElement.play();
-    //   } else {
-    //     audioPlay([{stream_url: streamUrl}]);
-    //     sourceCreated = true;
-    // }
   })
 
   $('#songList').on( "click", ".song", function(event){
@@ -63,8 +56,6 @@ $(document).ready(function(){
     song.pause();
     stream_url = $(this).attr('id')
     title = $(this).text();
-    // $addSong.hide();
-    // $songMood.show();
     Slides.show('songMood');
   });
 
