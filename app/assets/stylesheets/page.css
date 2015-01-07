@@ -136,6 +136,11 @@ button {
   right: 15px;
 }
 
+#enterSong:hover {
+/*  display: block !important;
+  visibility: visible !important;*/
+}
+
 #chooseMood {
   top: .5em;
 }

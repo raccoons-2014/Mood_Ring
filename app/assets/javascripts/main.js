@@ -11,7 +11,6 @@ $(document).ready(function(){
   $('#chooseMood').hide();
   $playlist.hide();
   $enterSong.hide();
-  var timer;
 
 
   bringUpCreateSlideTwo = function() {
@@ -46,6 +45,16 @@ $(document).ready(function(){
   init();
   animate();
 
+  // $enterSong.hover(function() {
+  //   $(this).fadeIn();
+  //   $(this).toggleClass("hovering")
+  // },
+  // function(){
+  //   $enterSong.toggleClass("hovering")
+  // });
+  hoverToggling($enterSong);
+  hoverToggling($playlist);
+
  $(document).mousemove(function() {
     $playlist.fadeIn('slow');
     $enterSong.fadeIn('slow');
@@ -54,10 +63,14 @@ $(document).ready(function(){
       timer = 0;
     };
     timer = setTimeout(function() {
-      $enterSong.fadeOut('slow');
-      $playlist.fadeOut('slow');
-    }, 1000);
-
+      if(!$enterSong.hasClass("hovering")) {
+        $enterSong.fadeOut('slow');
+      }
+      if(!$playlist.hasClass("hovering")) {
+        $playlist.fadeOut('slow');
+      }
+    }, 2000);
   })
+
 });
 
