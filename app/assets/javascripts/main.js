@@ -32,6 +32,8 @@ $(document).ready(function(){
     Slides.show('inputSong');
   });
 
+
+
   player = new AudioController([]);
 
   colorWheel = new ParticleRing();
