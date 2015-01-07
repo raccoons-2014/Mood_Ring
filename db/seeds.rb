@@ -7,9 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 #Sleepy
-Song.create(title: 'Adventure Time - Sleepy Puppies' stream_url: 'https://api.soundcloud.com/tracks/28761782/stream', mood: "Sleepy")
+Song.create(title: 'Adventure Time - Sleepy Puppies', stream_url: 'https://api.soundcloud.com/tracks/28761782/stream', mood: "Sleepy")
 Song.create(title: 'Benjamin Francis Leftwich - Atlas Hands', stream_url: 'https://api.soundcloud.com/tracks/39533372/stream', mood:'Sleepy')
-Song.create(title:, stream_url: '"https://api.soundcloud.com/tracks/120434119/stream"', mood: 'Sleepy')
+Song.create(title: "Atlas - Coldplay", stream_url: "https://api.soundcloud.com/tracks/120434119/stream", mood: 'Sleepy')
 
 #Happy
 Song.create(title: 'Happy - Pharrel william', stream_url: "https://api.soundcloud.com/tracks/144773970/stream", mood: 'Happy')
@@ -17,9 +17,9 @@ Song.create(title: 'Happy - Never Shout Never', stream_url: "https://api.soundcl
 Song.create(title: "I Caught Myself - Paramore", stream_url: "https://api.soundcloud.com/tracks/4486989/stream", mood: 'Happy')
 
 #Sad
-Song.create(title: "Service And Sacrifice", stream_url: "https://api.soundcloud.com/tracks/164353339/stream", mood: 'Sad')
-Song.create(title: "NeYo - Mad", stream_url: "https://api.soundcloud.com/tracks/85986175/stream", mood: 'Sad')
-Song.create(title: "how to never stop being sad", stream_url: "https://api.soundcloud.com/tracks/71204300/stream", mood: 'Sad')
+Song.create(title: "Service And Sacrifice", stream_url: "https://api.soundcloud.com/tracks/164353339/stream", mood: 'Melancholy')
+Song.create(title: "NeYo - Mad", stream_url: "https://api.soundcloud.com/tracks/85986175/stream", mood: 'Melancholy')
+Song.create(title: "how to never stop being sad", stream_url: "https://api.soundcloud.com/tracks/71204300/stream", mood: 'Melancholy')
 
 #Angry
 Song.create(title: "Three Days Grace - I Hate Everything About You", stream_url: "https://api.soundcloud.com/tracks/181267250/stream", mood: 'Angry')
