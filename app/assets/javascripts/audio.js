@@ -1,8 +1,3 @@
-// TODO: fix references to "song" to be "song"
-
-
-//to control player and visualizer at the same time
-//'https://api.soundcloud.com/tracks/146159376/stream?client_id=c751293c35f7cb00b48ee6383ea84aa6','https://api.soundcloud.com/tracks/96379023/stream?client_id=c751293c35f7cb00b48ee6383ea84aa6', 'https://api.soundcloud.com/tracks/120682891/stream?client_id=c751293c35f7cb00b48ee6383ea84aa6'
 function AudioController(tracks) {
   this.trackObjects = tracks;
   this.trackPlaylist = [];
@@ -15,7 +10,6 @@ function AudioController(tracks) {
   this.glowingRing();
   this.progress;
   song.addEventListener("timeupdate", progressBar, false);
-  // song.addEventListener('ended', this.getNewTracks(this.track).bind(this));
   song.addEventListener('ended', this.setNextTrack.bind(this));
   this.animate();
 }
@@ -67,10 +61,9 @@ AudioController.prototype.setUpSource = function (song_url) {
 AudioController.prototype.playerControls = function () {
   $("#play").click(function(){
    song.play();
-     // TODO: Have a #playpause button that you .toggleClass('playing')
-     $("#play").hide(); // css("visibility", "hidden");
-     $("#pause").show(); //css("visibility", "visible");
-   }.bind(this));
+   $("#play").hide();
+   $("#pause").show();
+  }.bind(this));
 
   $("#pause").click(function(){
     song.pause();
@@ -80,16 +73,17 @@ AudioController.prototype.playerControls = function () {
 
   $("#next").click(function(){
     this.setNextTrack();
+     $("#play").hide();
+     $("#pause").show();
   }.bind(this));
 };
 
 AudioController.prototype.glowingRing = function() {
   var glowplayer = this;
-  $('body').on("click", ".glowing-ring", function(e) {
+  $('.glowing-ring').click(function(e) {
     e.preventDefault();
-    $('#home').hide();
-    $('#mood-popup').hide();
-    $('#visualizer').show();
+    Slides.show('chooseMood');
+    bringUpSearchButton();
     var clickedMood = $(this).data("mood");
     MoodDb.getSong(clickedMood)
     .then(function(response){
@@ -98,10 +92,6 @@ AudioController.prototype.glowingRing = function() {
     });
   });
 }
-
-AudioController.prototype.showMoodSelector = function() {
-  $('#mood-popup').show();
-};
 
 AudioController.prototype.progressBar = function() {
   var progressBarWidth = document.getElementById('playlist').offsetWidth;
@@ -122,28 +112,21 @@ $(document).ready(function() {
   $('.moodChoice').on("click", function(event){
     event.preventDefault();
     var mood = this.id;
-    // Slide.show('welcomeplayer') ?
     Promise.resolve().then(function() {
       $('#songList').empty();
-      $songMood.hide();
-      $chooseMood.show();
-      $enterSong.show();
 
-      return MoodDb.getSong(mood);
+      return MoodDb.addSong(title, stream_url, mood);
     }).then(function(response){
-      if (sourceCreated === true) {
+      Slides.show('chooseMood');
+      bringUpSearchButton();
+      Promise.resolve().then(function() {
+        return MoodDb.getSong(mood);
+      }).then(function(response) {
         response = _.shuffle(response);
         response.unshift({stream_url: stream_url, title: title})
-        viz.getNewTracks(response)
-      } else {
-        response = _.shuffle(response);
-        response.unshift({stream_url: stream_url, title: title})
-        audioPlay(response);
-        sourceCreated = true;
-      }
-    }).catch(function(error) {
-      // TODO: Error handling
-    });
+        player.getNewTracks(response);
+      })
+    })
   });
 });
 

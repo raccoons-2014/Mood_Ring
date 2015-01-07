@@ -3,14 +3,33 @@ $(document).ready(function(){
   var $songMood = $('#songMood');
   var $chooseMood = $('#chooseMood');
   var $moodSelection = $('#moodSelection');
+  $('#inputSong').hide();
+  $('#addSong').hide();
+  $('#songMood').hide();
+  $('#chooseMood').hide();
 
+  bringUpCreateSlideTwo = function() {
+    Slides.show('addSong');
+  }
 
-  $("body").on("click", '#chooseMood', function() {
-    Slides.show('mood-popup');
+  bringUpCreateSlideThree = function() {
+    Slides.show('songMood');
+  }
+
+  bringUpSearchButton = function() {
+    $('#enterSong').show();
+  }
+  bringUpChooseMood = function() {
+    $('#chooseMood').show();
+  }
+
+  $('#chooseMood').click(function() {
+    Slides.show('big-ring');
+    bringUpSearchButton();
   });
 
-  $('button.emotion').click(function(){
-    Slides.show('chooseMood');
+  $('#enterSong').click(function() {
+    Slides.show('inputSong');
   });
 
   player = new AudioController([]);

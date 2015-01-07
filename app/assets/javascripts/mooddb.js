@@ -2,7 +2,7 @@ var MoodDb = MoodDb || {};
 
 
 // song {stream_url, title, mood}
-MoodDb.addSong = function(song) {
+MoodDb.addSong = function(title, stream_url, mood) {
   return Promise.resolve($.ajax ({
     url: 'songs/create',
     data: {title: title, stream_url: stream_url, mood: mood},
@@ -20,4 +20,4 @@ MoodDb.getSong = function(mood) {
 };
 //getSongs
 
-//addSongs 
+//addSongs
