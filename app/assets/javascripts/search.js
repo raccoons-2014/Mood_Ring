@@ -16,6 +16,8 @@ $(document).ready(function(){
 
   $('#toFirstSlide').click(function() {
     Slides.show('inputSong');
+    song.pause();
+    $('#track-title').html("");
   })
 
   $('#toSecondSlide').click(function() {
