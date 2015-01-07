@@ -23,22 +23,21 @@ $(document).ready(function(){
   bringUpSearchButton = function() {
     $enterSong.show();
   }
+
   bringUpChooseMood = function() {
     $('#chooseMood').show();
   }
 
-
-
   $('#chooseMood').click(function() {
     Slides.show('big-ring');
-    bringUpSearchButton();
   });
 
   $enterSong.click(function() {
     Slides.show('inputSong');
+    $('#search-error').empty();
+    $('#titleSearch').val('');
+
   });
-
-
 
   player = new AudioController([]);
 
