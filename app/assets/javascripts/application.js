@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require underscore
 //= require turbolinks
+//= require jquery.modal
 //= require three.min
 //= require StereoEffect
 //= require helvetiker_regular.typeface
@@ -31,4 +32,7 @@
 //= require particle_ring
 //= require player
 //= require audio
+//= require mooddb
+//= require search
+//= require slider
 //= require_tree .

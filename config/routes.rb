@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  root 'welcome#player'
-
-  match "/welcome/play" => "welcome#play", :as => 'play', via: [:get, :post]
+  root 'welcome#homepage'
+  get 'welcome/ring' => "welcome#ring"
+  get "welcome/player" => "welcome#player"
 
   get '/soundcloud-callback' => 'users#connect'
   get '/soundcloud-connected' => 'users#connected'
@@ -16,3 +16,4 @@ Rails.application.routes.draw do
   get '/songs/index' => 'songs#index'
 
 end
+

@@ -316,8 +316,6 @@ function init() {
 
   effectFocus.renderToScreen = true;
 
-  document.addEventListener( 'touchstart', onDocumentTouchStart, false );
-  document.addEventListener( 'touchmove', onDocumentTouchMove, false );
   window.addEventListener( 'resize', onWindowResize, false );
 
 }
@@ -340,24 +338,6 @@ function onWindowResize() {
 document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 
 
-function onDocumentMouseDown( event ) {
-  event.preventDefault();
-
-  mouseXOnMouseDown = event.clientX - windowHalfX;
-  targetRotationOnMouseDown = targetRotation;
-
-  if ( sparksEmitter.isRunning() ) {
-    //if you'd like the animation to stop when mouse is clicked
-    // sparksEmitter.stop();
-
-  } else {
-
-    sparksEmitter.start();
-
-  }
-
-}
-
 function onDocumentMouseMove( event ) {
 
   mouseX = event.clientX - windowHalfX;
@@ -366,43 +346,18 @@ function onDocumentMouseMove( event ) {
 
 }
 
-function onDocumentTouchStart( event ) {
-
-  if ( event.touches.length === 1 ) {
-
-    event.preventDefault();
-
-    mouseXOnMouseDown = event.touches[ 0 ].pageX - windowHalfX;
-    targetRotationOnMouseDown = targetRotation;
-
-  }
-
-}
-
-function onDocumentTouchMove( event ) {
-
-  if ( event.touches.length === 1 ) {
-
-    event.preventDefault();
-
-    mouseX = event.touches[ 0 ].pageX - windowHalfX;
-    targetRotation = targetRotationOnMouseDown + ( mouseX - mouseXOnMouseDown ) * 0.05;
-
-  }
-
-}
 
 function animate() {
 
 requestAnimationFrame( animate );
-
-if (viz.getFrequencyData() < 1 ){
+if (colorWheel.getFrequencyData() < 1 ){
   curve.xRadius = 35;
   curve.yRadius = 35;
-}else{
-  curve.xRadius = viz.getFrequencyData();
-  curve.yRadius = viz.getFrequencyData();
+} else{
+  curve.xRadius = colorWheel.getFrequencyData();
+  curve.yRadius = colorWheel.getFrequencyData();
 }
+
 
 render();
 
@@ -418,9 +373,36 @@ attributes.size.needsUpdate = true;
 attributes.pcolor.needsUpdate = true;
 
 group.rotation.y += ( targetRotation - group.rotation.y ) * 0.05;
-renderer.clear();
+// renderer.clear();
 
 composer.render( 0.1 );
 
-}
+};
 
+function ParticleRing() {
+
+  this.context = new webkitAudioContext();
+  this.analyser = this.context.createAnalyser();
+  this.analyser.fftSize = 2048;
+  this.setUpSource(song);
+  this.bufferLength = this.analyser.frequencyBinCount;
+  this.dataArray = new Uint8Array(this.bufferLength);
+  averageFrequency = 1;
+
+};
+
+ParticleRing.prototype.setUpSource = function(audio) {
+  this.source = this.context.createMediaElementSource(audio);
+  this.source.connect(this.context.destination);
+  this.source.connect(this.analyser);
+};
+
+ParticleRing.prototype.getFrequencyData = function() {
+  this.analyser.getByteFrequencyData(this.dataArray);
+  for(var i = 0; i < this.bufferLength; i++) {
+    averageFrequency += this.dataArray[i];
+  };
+  //find average
+  averageFrequency = averageFrequency / this.bufferLength;
+  return averageFrequency;
+};
