@@ -48,22 +48,25 @@ h1 {
 }
 
 #songList {
+
   position: absolute;
   text-align: center;
   margin: 0 auto;
+  width: 95%;
+  height: 80%;
+  overflow: scroll;
 }
 
 .pauseReview {
   display:none;
 }
 
-.preview:hover {
-  transform: scale(1.4);
+.fetchedSongs li img:hover {
+-webkit-filter: invert(100%);
+cursor: pointer;
 }
 
-.pauseReview:hover {
-  transform: scale(1.4);
-}
+
 
 #three {
   z-index:-10;
@@ -100,7 +103,7 @@ h1 {
 }
 
 .emotion, .moodChoice {
-background: #330099;
+background: rgb(45, 44, 44);
 height: 40px;
 min-width: 220px;
 line-height: 24px;
@@ -305,16 +308,7 @@ li {
   position: absolute;
   top: 20%;
   left: 35%;
- /* box-shadow:
-        inset 0 0 50px #fff,
-        inset 20px 0 80px #000000,
-        inset -20px 0 80px #000000,
-        inset 20px 0 300px #000000,
-        inset -20px 0 300px #000000,
-        0 0 50px #fff,
-        -10px 0 80px #fff,
-        10px 0 80px #fff;*/
-}
+  }
 
 
 input[type="text"] {
@@ -335,8 +329,33 @@ input[type="text"].focus {
   outline:none;
 }
 
+
 #inputSong h1  {
   margin: 40px auto 10px auto;
+}
+
+/*scrollbar-face-color: #b46868;*/
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+    color: black;
+    face-color: #b46868;
+
+
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+
+   /* -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);*/
+}
+::-webkit-scrollbar-corner {
+  color:rgba(0,0,0,0);
+}
+
+::-webkit-scrollbar-track {
+   max-height: 300px;
 }
 
 #mood-text {
