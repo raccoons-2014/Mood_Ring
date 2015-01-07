@@ -28,10 +28,10 @@ $(document).ready(function(){
     Slides.show('inputSong');
   });
 
-  $('button .emotion').click(function(){
-    Slides.show('chooseMood');
-    $('#enterSong').show();
-  });
+  // $('button .emotion').click(function(){
+  //   Slides.show('chooseMood');
+  //   $('#enterSong').show();
+  // });
 
   player = new AudioController([]);
 

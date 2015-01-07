@@ -122,7 +122,13 @@ $(document).ready(function() {
 
       return MoodDb.addSong(title, stream_url, mood);
     }).then(function(response){
-
+      Slides.show('chooseMood');
+      bringUpSearchButton();
+      Promise.resolve().then(function() {
+        return MoodDb.getSong(mood);
+      }).then(function(response) {
+        player.getNewTracks(response);
+      })
       // if (sourceCreated === true) {
       //   response = _.shuffle(response);
       //   response.unshift({stream_url: stream_url, title: title})
