@@ -6,15 +6,18 @@ $(document).ready(function(){
 
 
   $("body").on("click", '#chooseMood', function() {
-    Slides.show('mood-popup');
+    $('#mood-popup').show();
+    $chooseMood.hide();
   });
 
   $('button.emotion').click(function(){
     Slides.show('chooseMood');
-    
+
   });
 
   var player = new AudioController([]);
+
   var vizualizer = new ParticleRing(player.song);
+  console.log(vizualizer)
 })
 

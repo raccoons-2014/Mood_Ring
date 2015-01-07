@@ -383,7 +383,7 @@ composer.render( 0.1 );
 function ParticleRing(audio) {
   this.audio = audio;
   this.context = new webkitAudioContext();
-  
+
   this.analyser = this.context.createAnalyser();
   this.analyser.fftSize = 2048;
   this.setUpSource(this.trackPlaylist[this.trackNumber]);
@@ -395,6 +395,7 @@ function ParticleRing(audio) {
   this.analyser = this.context.createAnalyser();
 
   this.setupSource();
+
   init();
   animate();
 }
