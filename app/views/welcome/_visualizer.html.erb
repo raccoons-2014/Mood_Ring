@@ -24,9 +24,3 @@
 
 <!-- Get Powered by soundcloud img
  -->
-<% if current_user %>
-  <a href = '/soundcloud-disconnect'><%= image_submit_tag("soundcloudd.png", id: 'soundcloud', title: "Logout")%></a>
-<% else %>
- <a href = '/soundcloud-callback'><%= image_submit_tag("soundcloudd.png", id: 'soundcloud', title: "Login")%></a>
-<% end %>
-
