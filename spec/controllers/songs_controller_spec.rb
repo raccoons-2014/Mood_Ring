@@ -10,17 +10,3 @@ describe SongsController, :type => :controller do
       expect(songs.all{ |s| s.mood == 'Melancholy'}).to be_truthy
     end
   end
-
-describe "GET /listings.json" do
-  before do
-    get :index, format: :js
-  end
-
-  context 'all songs' do
-    it 'returns the songs' do
-      expect(json.collect{|l| ["title"]}).to include(songs[0].title)
-    end
-    end
-  end
-
-end
