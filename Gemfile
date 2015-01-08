@@ -39,9 +39,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end
 
-group :development, :test do
-  gem 'jasmine'
-end
+gem 'capybara'
 
 group :production do
   gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
