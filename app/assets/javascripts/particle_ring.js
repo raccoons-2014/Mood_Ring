@@ -326,7 +326,7 @@ function onDocumentMouseMove( event ) {
 
 
 function animate() {
-
+camera.setLens(1,2);
 requestAnimationFrame( animate );
 if (colorWheel.getFrequencyData() < 1 ){
   curve.xRadius = 35;
