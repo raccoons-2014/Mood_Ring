@@ -200,7 +200,6 @@ function init() {
   };
 
   var onParticleCreated = function( p ) {
-
     var position = p.position;
     p.target.position = position;
 
@@ -212,7 +211,8 @@ function init() {
       if ( hue > 1 ) hue -= 1;
 
       timeOnShapePath += 0.00035 * delta;
-      if ( timeOnShapePath > 1 ) timeOnShapePath -= 1;
+      //if ( timeOnShapePath > 1 ) timeOnShapePath  1;
+      timeOnShapePath %= 1.0;
 
       var pointOnShape = ringShape.getPointAt( timeOnShapePath );
 
