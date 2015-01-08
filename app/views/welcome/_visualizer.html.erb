@@ -1,10 +1,10 @@
 <div>
-  <a href="#" id="enterSong" class="" title="Search For A Song"><%= image_submit_tag("search-12-32.png", class: "mood-control") %></a>
+  <a href="#" id="enterSong" class="slide" title="Search For A Song"><%= image_submit_tag("search-12-32.png", class: "mood-control") %></a>
 </div>
 
 <div>
   <a href = '#'><%= image_submit_tag('mood_ring.png', id: 'chooseMood', class: 'slide') %></a>
-  
+
 </div>
 
 <div id="three"></div>
@@ -27,11 +27,4 @@
     </a>
   </div>
 
-<!-- Get Powered by soundcloud img
- -->
-<% if current_user %>
-  <a href = '/soundcloud-disconnect'><%= image_submit_tag("soundcloudd.png", id: 'soundcloud', title: "Logout")%></a>
-<% else %>
- <a href = '/soundcloud-callback'><%= image_submit_tag("soundcloudd.png", id: 'soundcloud', title: "Login")%></a>
-<% end %>
-
+<%= image_submit_tag("soundcloudd.png", id: 'soundcloud', title: 'Powered by Soundcloud')%>

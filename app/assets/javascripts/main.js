@@ -41,10 +41,6 @@ $(document).ready(function(){
 
   player = new AudioController([]);
 
-  colorWheel = new ParticleRing();
-  init();
-  animate();
-
   hoverToggling($enterSong);
   hoverToggling($playlist);
   hoverToggling($chooseMood);
