@@ -10,3 +10,4 @@ describe SongsController, :type => :controller do
       expect(songs.all{ |s| s.mood == 'Melancholy'}).to be_truthy
     end
   end
+end
