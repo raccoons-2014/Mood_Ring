@@ -10,6 +10,8 @@ $(document).ready(function(){
 
   $('.hide').click(function() {
     $('.slide').hide();
+    $("#pause").hide();
+    $("#play").show();
     song.pause();
     $('#track-title').html("");
     bringUpChooseMood();
