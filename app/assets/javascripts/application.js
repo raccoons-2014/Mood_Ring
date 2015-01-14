@@ -15,6 +15,7 @@
 //= require underscore
 //= require turbolinks
 //= require jquery.modal
+//= require AudioContextMonkeyPatch
 //= require three.min
 //= require StereoEffect
 //= require helvetiker_regular.typeface
