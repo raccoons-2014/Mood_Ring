@@ -80,7 +80,7 @@ $(document).ready(function(){
     $("#pause").show();
     $('#track-title').html("Preview");
     var streamUrl = this.id;
-    var streamUrlPlay = this.id + "?client_id=e67d17cea5de0deead27fed93e338691";
+    var streamUrlPlay = this.id + "?client_id=c751293c35f7cb00b48ee6383ea84aa6";
     player.getNewTracks([{stream_url: streamUrl}]);
   })
 
