@@ -30,14 +30,14 @@ AudioController.prototype.playNewSong = function(streamUrl, trackTitle, moodPlay
   this.trackObjects = moodPlaylist;
   this.grabPlaylist();
   this.trackPlaylist;
-  song.src = (streamUrl+ "?client_id=c751293c35f7cb00b48ee6383ea84aa6");
+  song.src = (streamUrl+ "?client_id=e67d17cea5de0deead27fed93e338691");
   $('#track-title').html(trackTitle);
   song.play();
 };
 
 AudioController.prototype.grabPlaylist = function() {
   for(var i = 0; i < this.trackObjects.length; i++) {
-    this.trackPlaylist.push(this.trackObjects[i].stream_url + "?client_id=c751293c35f7cb00b48ee6383ea84aa6");
+    this.trackPlaylist.push(this.trackObjects[i].stream_url + "?client_id=e67d17cea5de0deead27fed93e338691");
     this.trackTitles.push(this.trackObjects[i].title);
   }
 };

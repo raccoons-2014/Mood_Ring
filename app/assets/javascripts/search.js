@@ -31,7 +31,7 @@ $(document).ready(function(){
   $('#titleSearch').keydown(function(e) {
     $('#songList').html("");
     SC.initialize({
-      client_id: "5b91135eafaf701ea414c5fe6b86fdf3",
+      client_id: "e67d17cea5de0deead27fed93e338691",
     });
     if (e.keyCode == 13) {
             e.preventDefault();
@@ -78,7 +78,7 @@ $(document).ready(function(){
     $("#pause").show();
     $('#track-title').html("Preview");
     var streamUrl = this.id;
-    var streamUrlPlay = this.id + "?client_id=c751293c35f7cb00b48ee6383ea84aa6";
+    var streamUrlPlay = this.id + "?client_id=e67d17cea5de0deead27fed93e338691";
     player.getNewTracks([{stream_url: streamUrl}]);
   })
 
