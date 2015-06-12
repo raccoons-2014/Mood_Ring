@@ -1,4 +1,4 @@
-function AudioController(tracks) {
+ function AudioController(tracks) {
   this.trackObjects = tracks;
   this.trackPlaylist = [];
   this.trackTitles = [];
@@ -31,6 +31,7 @@ AudioController.prototype.playNewSong = function(streamUrl, trackTitle, moodPlay
   this.grabPlaylist();
   this.trackPlaylist;
   song.src = (streamUrl+ "?client_id=e67d17cea5de0deead27fed93e338691");
+
   $('#track-title').html(trackTitle);
   song.play();
 };

@@ -31,7 +31,8 @@ $(document).ready(function(){
   $('#titleSearch').keydown(function(e) {
     $('#songList').html("");
     SC.initialize({
-      client_id: "e67d17cea5de0deead27fed93e338691",
+      // client_id: "5b91135eafaf701ea414c5fe6b86fdf3",
+        client_id: "e67d17cea5de0deead27fed93e338691",
     });
     if (e.keyCode == 13) {
             e.preventDefault();
