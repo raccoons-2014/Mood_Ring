@@ -5,6 +5,7 @@
   this.trackNumber = 0;
   this.grabPlaylist();
   song = new Audio();
+  song.crossOrigin = "anonymous";
   this.playerControls();
   this.glowingRing();
   this.progress;
