@@ -7,6 +7,8 @@
         }
     });
 
+    $(document).ready(function() {
+
     var $addSong = $('#addSong');
     var $songMood = $('#songMood');
     var $chooseMood = $('#chooseMood');
@@ -49,7 +51,6 @@
 
 
    $(document).mousemove(function() {
-    console.log('main 3');
     $('body').css({'cursor' : 'auto'});
     $playlist.fadeIn('slow');
     hoverCrossout($('#big-ring'), $chooseMood);
@@ -69,5 +70,6 @@
   hoverToggling($enterSong);
   hoverToggling($playlist);
   hoverToggling($chooseMood);
+});
 
 

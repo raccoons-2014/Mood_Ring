@@ -75,7 +75,7 @@ cursor: pointer;
 
 
 
-#three {
+#three, #three div {
   z-index:-10;
 }
 

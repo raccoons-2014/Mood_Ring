@@ -4,7 +4,7 @@ $('.welcome.show').ready(function(){
 
   MoodDb.addSong = function(title, stream_url, mood) {
     return Promise.resolve($.ajax ({
-      url: 'songs/create',
+      url: '../songs/create',
       data: {title: title, stream_url: stream_url, mood: mood},
       type: "POST"
     }));
@@ -19,10 +19,7 @@ $('.welcome.show').ready(function(){
     }));
   };
 
-
-  console.log('ytyug');
   var current_mood = $('.current_mood').data('mood');
-
 
   function AudioController(tracks) {
     this.trackObjects = tracks;
@@ -109,15 +106,11 @@ $('.welcome.show').ready(function(){
       }.bind(this));
     };
 
-  AudioController.prototype.unload = function(tracklist) {
-      SC.delete('/tracks');
-  };
-
   AudioController.prototype.glowingRing = function() {
 
     var glowplayer = this;
-    // glowplayer.displayControls();
-    // Slides.show('chooseMood');
+    glowplayer.displayControls();
+    Slides.show('chooseMood');
 
     MoodDb.getSong(current_mood)
     .then(function(response){
@@ -151,16 +144,11 @@ $('.welcome.show').ready(function(){
 
 player = new AudioController([]);
 
-});
-
-
-$(document).ready(function() {
   $('.moodChoice').on("click", function(event){
     event.preventDefault();
     var mood = this.id;
     Promise.resolve().then(function() {
       $('#songList').empty();
-
       return MoodDb.addSong(title, stream_url, mood);
     }).then(function(response){
       Slides.show('chooseMood');
@@ -180,7 +168,6 @@ $(document).ready(function() {
       })
     })
   });
+
 });
-
-
 
