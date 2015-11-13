@@ -1,51 +1,55 @@
-$(document).ready(function(){
-  var $addSong = $('#addSong');
-  var $songMood = $('#songMood');
-  var $chooseMood = $('#chooseMood');
-  var $moodSelection = $('#moodSelection');
-  var $playlist = $('#playlist');
-  var $enterSong = $('#enterSong');
-  $('#inputSong').hide();
-  $('#addSong').hide();
-  $('#songMood').hide();
-  $('#chooseMood').hide();
-  $playlist.hide();
-  $enterSong.hide();
 
-  bringUpCreateSlideTwo = function() {
-    Slides.show('addSong');
-  }
+    $(document).on('page:change', function () {
+        if ($('body').hasClass('index')) {
+          if (song) {
+            song.src = '';
+          }
+        }
+    });
 
-  bringUpCreateSlideThree = function() {
-    Slides.show('songMood');
-  }
+    var $addSong = $('#addSong');
+    var $songMood = $('#songMood');
+    var $chooseMood = $('#chooseMood');
+    var $moodSelection = $('#moodSelection');
+    var $playlist = $('#playlist');
+    var $enterSong = $('#enterSong');
+    $('#inputSong').hide();
+    $('#addSong').hide();
+    $('#songMood').hide();
+    $('#chooseMood').hide();
+    $playlist.hide();
+    $enterSong.hide();
 
-  bringUpSearchButton = function() {
-    $enterSong.show();
-  }
+    bringUpCreateSlideTwo = function() {
+      Slides.show('addSong');
+    }
 
-  bringUpChooseMood = function() {
-    $('#chooseMood').show();
-  }
+    bringUpCreateSlideThree = function() {
+      Slides.show('songMood');
+    }
 
-  $('#chooseMood').click(function() {
-    Slides.show('big-ring');
-  });
+    bringUpSearchButton = function() {
+      $enterSong.show();
+    }
 
-  $enterSong.click(function() {
-    Slides.show('inputSong');
-    $('#search-error').empty();
-    $('#titleSearch').val('');
+    bringUpChooseMood = function() {
+      $('#chooseMood').show();
+    }
 
-  });
+    $('#chooseMood').click(function() {
+      Slides.show('big-ring');
+    });
 
-  player = new AudioController([]);
+    $enterSong.click(function() {
+      Slides.show('inputSong');
+      $('#search-error').empty();
+      $('#titleSearch').val('');
 
-  hoverToggling($enterSong);
-  hoverToggling($playlist);
-  hoverToggling($chooseMood);
+    });
 
- $(document).mousemove(function() {
+
+   $(document).mousemove(function() {
+    console.log('main 3');
     $('body').css({'cursor' : 'auto'});
     $playlist.fadeIn('slow');
     hoverCrossout($('#big-ring'), $chooseMood);
@@ -60,7 +64,10 @@ $(document).ready(function(){
       hoverListener($chooseMood);
       $('body').css({'cursor' : 'none'});
     }, 2000);
-  })
+  });
 
-});
+  hoverToggling($enterSong);
+  hoverToggling($playlist);
+  hoverToggling($chooseMood);
+
 

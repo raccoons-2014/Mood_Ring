@@ -1,3 +1,4 @@
+
 var container, stats;
 var camera, scene, renderer;
 var group, text, plane;
@@ -326,34 +327,35 @@ function onDocumentMouseMove( event ) {
 
 
 function animate() {
-camera.setLens(1,2);
-requestAnimationFrame( animate );
-if (colorWheel.getFrequencyData() < 1 ){
-  curve.xRadius = 35;
-  curve.yRadius = 35;
-} else{
-  curve.xRadius = colorWheel.getFrequencyData();
-  curve.yRadius = colorWheel.getFrequencyData();
-}
+  camera.setLens(1,2);
+  requestAnimationFrame( animate );
+
+  if (colorWheel.getFrequencyData() < 1 ){
+    curve.xRadius = 35;
+    curve.yRadius = 35;
+  } else{
+    curve.xRadius = colorWheel.getFrequencyData();
+    curve.yRadius = colorWheel.getFrequencyData();
+  }
 
 
-render();
+  render();
 
 }
 
 function render() {
 
-delta = speed * clock.getDelta();
+  delta = speed * clock.getDelta();
 
-particleCloud.geometry.verticesNeedUpdate = true;
+  particleCloud.geometry.verticesNeedUpdate = true;
 
-attributes.size.needsUpdate = true;
-attributes.pcolor.needsUpdate = true;
+  attributes.size.needsUpdate = true;
+  attributes.pcolor.needsUpdate = true;
 
-group.rotation.y += ( targetRotation - group.rotation.y ) * 0.05;
-// renderer.clear();
+  group.rotation.y += ( targetRotation - group.rotation.y ) * 0.05;
+  // renderer.clear();
 
-composer.render( 0.1 );
+  composer.render( 0.1 );
 
 };
 

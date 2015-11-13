@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
+//= require jquery-readyselector
 //= require jquery_ujs
 //= require underscore
 //= require turbolinks

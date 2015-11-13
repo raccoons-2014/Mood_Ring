@@ -1,98 +1,125 @@
- function AudioController(tracks) {
-  this.trackObjects = tracks;
-  this.trackPlaylist = [];
-  this.trackTitles = [];
-  this.trackNumber = 0;
-  this.grabPlaylist();
-  song = new Audio();
-  song.crossOrigin = "anonymous";
-  this.playerControls();
-  this.glowingRing();
-  this.progress;
-  song.addEventListener("timeupdate", progressBar, false);
-  song.addEventListener('ended', this.setNextTrack.bind(this));
-  this.animate();
-}
-
-AudioController.prototype.getNewTracks = function(newTracks) {
-  this.trackPlaylist = [];
-
-  this.trackTitles = [];
-  this.trackObjects = newTracks;
-  this.trackNumber = 0;
-  this.grabPlaylist();
-  song.src = this.trackPlaylist[this.trackNumber];
-  song.play();
-  $('#track-title').html(this.trackTitles[this.trackNumber]);
-};
+$('.welcome.show').ready(function(){
+    var MoodDb = MoodDb || {};
 
 
-AudioController.prototype.playNewSong = function(streamUrl, trackTitle, moodPlaylist) {
-  this.trackObjects = moodPlaylist;
-  this.grabPlaylist();
-  this.trackPlaylist;
-  song.src = (streamUrl+ "?client_id=e67d17cea5de0deead27fed93e338691");
-
-  $('#track-title').html(trackTitle);
-  song.play();
-};
-
-AudioController.prototype.grabPlaylist = function() {
-  for(var i = 0; i < this.trackObjects.length; i++) {
-    this.trackPlaylist.push(this.trackObjects[i].stream_url + "?client_id=e67d17cea5de0deead27fed93e338691");
-    this.trackTitles.push(this.trackObjects[i].title);
-  }
-};
-
-AudioController.prototype.setNextTrack = function() {
-  this.trackNumber = (this.trackNumber + 1)% this.trackPlaylist.length;
-  song.src = this.trackPlaylist[this.trackNumber];
-  song.play();
-  $('#track-title').html(this.trackTitles[this.trackNumber]);
-};
-
-AudioController.prototype.setUpSource = function (song_url) {
-  song.src = song_url;
-  song.play();
-  $('#track-title').html(this.trackTitles[this.trackNumber]);
-}
-
-AudioController.prototype.displayControls = function() {
-    $("#all-controls").show()
+  MoodDb.addSong = function(title, stream_url, mood) {
+    return Promise.resolve($.ajax ({
+      url: 'songs/create',
+      data: {title: title, stream_url: stream_url, mood: mood},
+      type: "POST"
+    }));
   }
 
-
-AudioController.prototype.playerControls = function () {
-
-    $("#play").click(function(){
-     song.play();
-     $("#play").hide();
-     $("#pause").show();
-    }.bind(this));
-
-    $("#pause").click(function(){
-      song.pause();
-      $("#pause").hide();
-      $("#play").show();
-    }.bind(this));
-
-    $("#next").click(function(){
-      this.setNextTrack();
-       $("#play").hide();
-       $("#pause").show();
-    }.bind(this));
+  MoodDb.getSong = function(mood) {
+    return Promise.resolve($.ajax({
+      url: '../songs/index',
+      type: "GET",
+      dataType: "json",
+      data: {mood: mood}
+    }));
   };
 
 
-AudioController.prototype.glowingRing = function() {
-  var glowplayer = this;
-  $('.glowing-ring').click(function(e) {
-    e.preventDefault();
-    glowplayer.displayControls();
-    Slides.show('chooseMood');
+  console.log('ytyug');
+  var current_mood = $('.current_mood').data('mood');
 
-    var clickedMood = $(this).data("mood");
-    MoodDb.getSong(clickedMood)
+
+  function AudioController(tracks) {
+    this.trackObjects = tracks;
+    this.trackPlaylist = [];
+    this.trackTitles = [];
+    this.trackNumber = 0;
+    this.grabPlaylist();
+    song = new Audio();
+    song.crossOrigin = "anonymous";
+    this.playerControls();
+    this.glowingRing();
+    this.progress;
+    song.addEventListener("timeupdate", this.progressBar, false);
+    song.addEventListener('ended', this.setNextTrack.bind(this));
+    this.animate();
+  }
+
+  AudioController.prototype.getNewTracks = function(newTracks) {
+    this.trackPlaylist = [];
+
+    this.trackTitles = [];
+    this.trackObjects = newTracks;
+    this.trackNumber = 0;
+    this.grabPlaylist();
+    song.src = this.trackPlaylist[this.trackNumber];
+    song.play();
+    $('#track-title').html(this.trackTitles[this.trackNumber]);
+  };
+
+
+  AudioController.prototype.playNewSong = function(streamUrl, trackTitle, moodPlaylist) {
+    this.trackObjects = moodPlaylist;
+    this.grabPlaylist();
+    this.trackPlaylist;
+    song.src = (streamUrl+ "?client_id=e67d17cea5de0deead27fed93e338691");
+
+    $('#track-title').html(trackTitle);
+    song.play();
+  };
+
+  AudioController.prototype.grabPlaylist = function() {
+    for(var i = 0; i < this.trackObjects.length; i++) {
+      this.trackPlaylist.push(this.trackObjects[i].stream_url + "?client_id=e67d17cea5de0deead27fed93e338691");
+      this.trackTitles.push(this.trackObjects[i].title);
+    }
+  };
+
+  AudioController.prototype.setNextTrack = function() {
+    this.trackNumber = (this.trackNumber + 1)% this.trackPlaylist.length;
+    song.src = this.trackPlaylist[this.trackNumber];
+    song.play();
+    $('#track-title').html(this.trackTitles[this.trackNumber]);
+  };
+
+  AudioController.prototype.setUpSource = function (song_url) {
+    song.src = song_url;
+    song.play();
+    $('#track-title').html(this.trackTitles[this.trackNumber]);
+  }
+
+  AudioController.prototype.displayControls = function() {
+      $("#all-controls").show()
+    }
+
+
+  AudioController.prototype.playerControls = function () {
+
+      $("#play").click(function(){
+       song.play();
+       $("#play").hide();
+       $("#pause").show();
+      }.bind(this));
+
+      $("#pause").click(function(){
+        song.pause();
+        $("#pause").hide();
+        $("#play").show();
+      }.bind(this));
+
+      $("#next").click(function(){
+        this.setNextTrack();
+         $("#play").hide();
+         $("#pause").show();
+      }.bind(this));
+    };
+
+  AudioController.prototype.unload = function(tracklist) {
+      SC.delete('/tracks');
+  };
+
+  AudioController.prototype.glowingRing = function() {
+
+    var glowplayer = this;
+    // glowplayer.displayControls();
+    // Slides.show('chooseMood');
+
+    MoodDb.getSong(current_mood)
     .then(function(response){
       if (typeof(colorWheel) == "undefined") {
         colorWheel = new ParticleRing();
@@ -103,23 +130,29 @@ AudioController.prototype.glowingRing = function() {
       glowplayer.getNewTracks(response);
       bringUpSearchButton();
     });
-  });
-}
+  };
 
-AudioController.prototype.progressBar = function() {
-  var progressBarWidth = document.getElementById('playlist').offsetWidth;
-  var factor = progressBarWidth/song.duration;
-  if (song.currentTime > 0 ) {
-   var width = song.currentTime * factor;
-  }
-  $("#progressBar").css("width", width);
-};
+  AudioController.prototype.progressBar = function() {
+    if ( $( "#playlist" ).length ) {
+      var progressBarWidth = document.getElementById('playlist').offsetWidth;
+      var factor = progressBarWidth/song.duration;
+      if (song.currentTime > 0 ) {
+      var width = song.currentTime * factor;
+      }
+      $("#progressBar").css("width", width);
+    }
+  };
 
-AudioController.prototype.animate = function() {
-  var width = this.progressBar();
-  $('#progress').css('width', width +' px');
-  window.requestAnimationFrame(this.animate.bind(this));
-};
+  AudioController.prototype.animate = function() {
+    var width = this.progressBar();
+    $('#progress').css('width', width +' px');
+    window.requestAnimationFrame(this.animate.bind(this));
+  };
+
+player = new AudioController([]);
+
+});
+
 
 $(document).ready(function() {
   $('.moodChoice').on("click", function(event){
@@ -148,4 +181,6 @@ $(document).ready(function() {
     })
   });
 });
+
+
 

@@ -1,11 +1,12 @@
+
 <div id="big-ring" class="slide">
   <h1 id = 'homepage'>mood ring</h1>
-  <div class="glowing-ring happy"  data-mood="Happy"><h3 id="mood-text">happy</h3></div></a>
-  <div class="glowing-ring melancholy" data-mood="Melancholy" ><h3 id="mood-text">sad</h3></div></a>
-  <div class="glowing-ring excited"  data-mood="Excited" ><h3 id="mood-text">excited</h3></div></a>
-  <div class="glowing-ring chill" data-mood="Chill" ><h3 id="mood-text">chill</h3></div></a>
-  <div class="glowing-ring angry"  data-mood="Angry" > <h3 id="mood-text">angry</h3></div></a>
-  <div class="glowing-ring sleepy" data-mood="Sleepy" ><h3 id="mood-text">sleepy</h3></div></a>
+  <div class="glowing-ring happy"  data-mood="Happy"><h3 id="mood-text"><%= link_to 'happy', welcome_show_path(:mood => "Happy") %></h3></div></a>
+  <div class="glowing-ring melancholy" data-mood="Melancholy" ><h3 id="mood-text"><%= link_to 'sad', welcome_show_path(:mood => "Sad") %></h3></div></a>
+  <div class="glowing-ring excited"  data-mood="Excited" ><h3 id="mood-text"><%= link_to 'excited', welcome_show_path(:mood => "Excited") %></h3></div></a>
+  <div class="glowing-ring chill" data-mood="Chill" ><h3 id="mood-text"><%= link_to 'chill', welcome_show_path(:mood => "Chill") %></h3></div></a>
+  <div class="glowing-ring angry"  data-mood="Angry" > <h3 id="mood-text"><%= link_to 'angry', welcome_show_path(:mood => "Angry") %></h3></div></a>
+  <div class="glowing-ring sleepy" data-mood="Sleepy" ><h3 id="mood-text"><%= link_to 'sleepy', welcome_show_path(:mood => "Sleepy") %></h3></div></a>
 </div>
 
 <div class="slide inputSlides" id="inputSong">

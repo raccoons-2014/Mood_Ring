@@ -1,11 +1,15 @@
 class WelcomeController < ApplicationController
-	
+
   def ring
     render :partial => "ring"
   end
 
-  def homepage
-    render :index
+  def index
+  end
+
+  def show
+    @mood = params[:mood]
+    render :show
   end
 
 end
