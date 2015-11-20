@@ -1,9 +1,6 @@
 var SCsearch = SCsearch || {};
 
-// TODO: Put SC.initialize here?
-
 $(document).ready(function(){
-  // TODO: ...or put SC.initialize here?
 
   var $inputSong = $('#inputSong');
   var $enterSong = $('#enterSong');

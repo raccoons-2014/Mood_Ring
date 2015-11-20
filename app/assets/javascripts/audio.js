@@ -17,8 +17,8 @@ $('.welcome.show').ready(function(){
       dataType: "json",
       data: {mood: mood}
     }));
-  };
 
+  };
   var current_mood = $('.current_mood').data('mood');
 
   function AudioController(tracks) {
@@ -37,9 +37,24 @@ $('.welcome.show').ready(function(){
     this.animate();
   }
 
+  AudioController.prototype.initPlayer = function(current_mood) {
+    song.src = '';
+    Promise.resolve().then(function() {
+      return MoodDb.getSong(current_mood);
+      }).then(function(response) {
+        colorWheel = new ParticleRing();
+        init();
+        animate();
+        console.log('response:', response);
+        response = _.shuffle(response);
+        response.unshift({stream_url: response.stream_url, title: response.title})
+        this.getNewTracks(response);
+        this.displayControls();
+    });
+  };
+
   AudioController.prototype.getNewTracks = function(newTracks) {
     this.trackPlaylist = [];
-
     this.trackTitles = [];
     this.trackObjects = newTracks;
     this.trackNumber = 0;
@@ -142,7 +157,9 @@ $('.welcome.show').ready(function(){
     window.requestAnimationFrame(this.animate.bind(this));
   };
 
-player = new AudioController([]);
+  player = new AudioController([]) || player;
+  player.initPlayer(current_mood);
+
 
   $('.moodChoice').on("click", function(event){
     event.preventDefault();

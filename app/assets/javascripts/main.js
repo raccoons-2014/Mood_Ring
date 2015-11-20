@@ -1,10 +1,9 @@
 
     $(document).on('page:change', function () {
-        if ($('body').hasClass('index')) {
-          if (song) {
-            song.src = '';
-          }
-        }
+      if (song) {
+        song.src = '';
+      }
+
     });
 
     $(document).ready(function() {
