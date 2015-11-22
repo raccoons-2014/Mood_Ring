@@ -15,9 +15,9 @@
     var $playlist = $('#playlist');
     var $enterSong = $('#enterSong');
     $('#inputSong').hide();
-    $('#addSong').hide();
-    $('#songMood').hide();
-    $('#chooseMood').hide();
+    $addSong.hide();
+    $songMood.hide();
+    $chooseMood.hide();
     $playlist.hide();
     $enterSong.hide();
 
@@ -34,10 +34,10 @@
     }
 
     bringUpChooseMood = function() {
-      $('#chooseMood').show();
+      $chooseMood.show();
     }
 
-    $('#chooseMood').click(function() {
+    $chooseMood.click(function() {
       Slides.show('big-ring');
     });
 

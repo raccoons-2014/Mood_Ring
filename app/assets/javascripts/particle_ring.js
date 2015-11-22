@@ -1,4 +1,3 @@
-
 var container, stats;
 var camera, scene, renderer;
 var group, text, plane;
