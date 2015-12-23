@@ -135,7 +135,7 @@ function init() {
     context.stroke();
     context.restore();
 
-    var gradient = context.createRadialGradient( canvas.width / 2, canvas.height / 2, 0, canvas.width / 2, canvas.height / 2, canvas.width / 2 );
+    var gradient = context.createRadialGradient( canvas.width / 3, canvas.height / 3, 0, canvas.width / 3, canvas.height / 3, canvas.width / 3 );
 
     gradient.addColorStop( 0, 'rgba(255,255,255,1)' );
     gradient.addColorStop( 0.2, 'rgba(255,255,255,1)' );
