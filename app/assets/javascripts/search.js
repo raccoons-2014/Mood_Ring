@@ -41,7 +41,6 @@ $(document).ready(function(){
         } else {
         var tenTracks = Array.prototype.slice.call(tracks, 0, 9);
         tenTracks.forEach(function(track) {
-          console.log('track', track);
           if (typeof(track.stream_url) == "undefined") return;
           $('#songList')
             .append("<li><ul class ='fetchedSongs'><li><img src ='/assets/play-3-16.png' class='preview' id='" + track.stream_url + "'></li><li><img src ='/assets/stop-3-16.png' class='pauseReview'></li><li><img class='song' id =" + track.stream_url + " track_id = " +  track.id + " permalink_url = " + '"' +track.permalink_url +'"'+ " title = " + '"' +track.title +'"' + " src = '/assets/plus-5-16.png'> </li><li><a href='#' >" + track.title +  "</a></li></ul></li>");
@@ -86,7 +85,6 @@ $(document).ready(function(){
     track_id = $(this).attr('track_id');
     title = $(this).attr('title');
     permalink_url = $(this).attr('permalink_url');
-    console.log('thisss:', this);
     Slides.show('songMood');
   });
 });

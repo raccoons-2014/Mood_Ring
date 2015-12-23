@@ -48,7 +48,6 @@ $('.welcome.show').ready(function(){
         response = _.shuffle(response);
         response.unshift({stream_url: response.stream_url, title: response.title});
         this.getNewTracks(response);
-        console.log("initPlayer response: ", response);
         this.displayControls();
     });
   };
@@ -64,7 +63,7 @@ $('.welcome.show').ready(function(){
       "/tracks/" + this.trackObjects[this.trackNumber].track_id,
       function(track, error) {
           if (error) {
-              console.log('error');
+              console.log('error:', error);
               this.setNextTrack();
           } else {
               try {
@@ -154,7 +153,6 @@ $('.welcome.show').ready(function(){
         animate();
       }
       response = _.shuffle(response);
-      console.log('response', response);
       glowplayer.getNewTracks(response);
       bringUpSearchButton();
     });
