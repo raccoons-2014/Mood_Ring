@@ -2,7 +2,7 @@ class SongsController < ApplicationController
   respond_to :html, :js
 
   def create
-    Song.create(title: params[:title], stream_url: params[:stream_url], mood: params[:mood])
+    Song.create(title: params[:title], stream_url: params[:stream_url], mood: params[:mood], track_id: params[:track_id], permalink_url: params[:permalink_url])
     redirect_to root_path
   end
 

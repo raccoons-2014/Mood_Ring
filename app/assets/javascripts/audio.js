@@ -1,11 +1,10 @@
 $('.welcome.show').ready(function(){
-    var MoodDb = MoodDb || {};
+  var MoodDb = MoodDb || {};
 
-
-  MoodDb.addSong = function(title, stream_url, mood) {
+  MoodDb.addSong = function(title, stream_url, mood, track_id, permalink_url) {
     return Promise.resolve($.ajax ({
       url: '../songs/create',
-      data: {title: title, stream_url: stream_url, mood: mood},
+      data: {title: title, stream_url: stream_url, mood: mood, track_id: track_id, permalink_url: permalink_url},
       type: "POST"
     }));
   }
@@ -29,6 +28,7 @@ $('.welcome.show').ready(function(){
     this.grabPlaylist();
     song = new Audio();
     song.crossOrigin = "anonymous";
+    this.previousTime = 0;
     this.playerControls();
     this.glowingRing();
     this.progress;
@@ -45,10 +45,10 @@ $('.welcome.show').ready(function(){
         colorWheel = new ParticleRing();
         init();
         animate();
-        console.log('response:', response);
         response = _.shuffle(response);
-        response.unshift({stream_url: response.stream_url, title: response.title})
+        response.unshift({stream_url: response.stream_url, title: response.title});
         this.getNewTracks(response);
+        console.log("initPlayer response: ", response);
         this.displayControls();
     });
   };
@@ -60,45 +60,64 @@ $('.welcome.show').ready(function(){
     this.trackNumber = 0;
     this.grabPlaylist();
     song.src = this.trackPlaylist[this.trackNumber];
-    song.play();
+    SC.get(
+      "/tracks/" + this.trackObjects[this.trackNumber].track_id,
+      function(track, error) {
+          if (error) {
+              console.log('error');
+              this.setNextTrack();
+          } else {
+              try {
+                  SC.stream(
+                      '/tracks/' + track.id, function() {
+                        song.play();
+                      });
+                } catch (err) {
+                  console.log('error 2:', err);
+                  this.setNextTrack();
+              }
+          }
+      }
+    );
+
     $('#track-title').html(this.trackTitles[this.trackNumber]);
-  };
-
-
-  AudioController.prototype.playNewSong = function(streamUrl, trackTitle, moodPlaylist) {
-    this.trackObjects = moodPlaylist;
-    this.grabPlaylist();
-    this.trackPlaylist;
-    song.src = (streamUrl+ "?client_id=e67d17cea5de0deead27fed93e338691");
-
-    $('#track-title').html(trackTitle);
-    song.play();
   };
 
   AudioController.prototype.grabPlaylist = function() {
     for(var i = 0; i < this.trackObjects.length; i++) {
       this.trackPlaylist.push(this.trackObjects[i].stream_url + "?client_id=e67d17cea5de0deead27fed93e338691");
       this.trackTitles.push(this.trackObjects[i].title);
+
     }
   };
 
   AudioController.prototype.setNextTrack = function() {
     this.trackNumber = (this.trackNumber + 1)% this.trackPlaylist.length;
     song.src = this.trackPlaylist[this.trackNumber];
-    song.play();
-    $('#track-title').html(this.trackTitles[this.trackNumber]);
+    SC.get(
+      "/tracks/" + this.trackObjects[this.trackNumber].track_id,
+      function(track, error) {
+          if (error) {
+              console.log('error 1:', error);
+              this.setNextTrack();
+          } else {
+              try {
+                  SC.stream(
+                      '/tracks/' + track.id, function() {
+                        song.play();
+                      });
+                } catch (err) {
+                  console.log('error 2:', err);
+                  this.setNextTrack();
+              }
+          }
+      }
+    );    $('#track-title').html(this.trackTitles[this.trackNumber]);
   };
-
-  AudioController.prototype.setUpSource = function (song_url) {
-    song.src = song_url;
-    song.play();
-    $('#track-title').html(this.trackTitles[this.trackNumber]);
-  }
 
   AudioController.prototype.displayControls = function() {
       $("#all-controls").show()
     }
-
 
   AudioController.prototype.playerControls = function () {
 
@@ -135,6 +154,7 @@ $('.welcome.show').ready(function(){
         animate();
       }
       response = _.shuffle(response);
+      console.log('response', response);
       glowplayer.getNewTracks(response);
       bringUpSearchButton();
     });
@@ -144,10 +164,11 @@ $('.welcome.show').ready(function(){
     if ( $( "#playlist" ).length ) {
       var progressBarWidth = document.getElementById('playlist').offsetWidth;
       var factor = progressBarWidth/song.duration;
-      if (song.currentTime > 0 ) {
-      var width = song.currentTime * factor;
+      if (song.currentTime > 0 && Math.abs(song.currentTime - this.previousTime ) > 0.25) {
+        var width = song.currentTime * factor;
+        $("#progressBar").css("width", width);
+        this.previousTime = song.currentTime;
       }
-      $("#progressBar").css("width", width);
     }
   };
 
@@ -157,16 +178,13 @@ $('.welcome.show').ready(function(){
     window.requestAnimationFrame(this.animate.bind(this));
   };
 
-  player = new AudioController([]) || player;
-  player.initPlayer(current_mood);
-
 
   $('.moodChoice').on("click", function(event){
     event.preventDefault();
     var mood = this.id;
     Promise.resolve().then(function() {
       $('#songList').empty();
-      return MoodDb.addSong(title, stream_url, mood);
+      return MoodDb.addSong(title, stream_url, mood, track_id, permalink_url);
     }).then(function(response){
       Slides.show('chooseMood');
       bringUpSearchButton();
@@ -179,12 +197,15 @@ $('.welcome.show').ready(function(){
           animate();
         }
         response = _.shuffle(response);
-        response.unshift({stream_url: stream_url, title: title})
+        response.unshift({stream_url: stream_url, title: title, track_id: track_id, permalink_url: permalink_url});
         player.getNewTracks(response);
         player.displayControls();
       })
     })
   });
+
+  player = new AudioController([]) || player;
+  player.initPlayer(current_mood);
 
 });
 
