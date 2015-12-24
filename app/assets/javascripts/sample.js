@@ -55,7 +55,7 @@ var AudioHandler = function() {
     //EVENT HANDLERS
     events.on("update", update);
 
-    audioContext = new window.webkitAudioContext();
+    audioContext = new window.AudioContext();
     analyser = audioContext.createAnalyser();
     analyser.smoothingTimeConstant = 0.8; //0<->1. 0 is no time smoothing
     analyser.fftSize = 1024;

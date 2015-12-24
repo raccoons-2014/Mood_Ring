@@ -360,7 +360,7 @@ function render() {
 
 function ParticleRing() {
 
-  this.context = new webkitAudioContext();
+  this.context = new AudioContext();
   this.analyser = this.context.createAnalyser();
   this.analyser.fftSize = 2048;
   this.setUpSource(song);
