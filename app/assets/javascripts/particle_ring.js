@@ -362,9 +362,11 @@ function ParticleRing() {
 
   this.context = new AudioContext();
   this.analyser = this.context.createAnalyser();
+  console.log('analyser:', this.analyser);
   this.analyser.fftSize = 2048;
   this.setUpSource(song);
   this.bufferLength = this.analyser.frequencyBinCount;
+  console.log('bufferLength:', this.bufferLength);
   this.dataArray = new Uint8Array(this.bufferLength);
   averageFrequency = 1;
 
@@ -374,12 +376,14 @@ ParticleRing.prototype.setUpSource = function(audio) {
   this.source = this.context.createMediaElementSource(audio);
   this.source.connect(this.context.destination);
   this.source.connect(this.analyser);
+  console.log('sources connected');
 };
 
 ParticleRing.prototype.getFrequencyData = function() {
   this.analyser.getByteFrequencyData(this.dataArray);
   for(var i = 0; i < this.bufferLength; i++) {
     averageFrequency += this.dataArray[i];
+    console.log('averageFrequency: ', averageFrequency);
   };
   //find average
   averageFrequency = averageFrequency / this.bufferLength;
