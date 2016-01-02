@@ -312,8 +312,9 @@ function onWindowResize() {
 
 }
 
+//Rotation on mouse movement disabled
 
-document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+// document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 
 
 function onDocumentMouseMove( event ) {
@@ -359,8 +360,18 @@ function render() {
 };
 
 function ParticleRing() {
-
-  this.context = new AudioContext();
+  var contextClass = (window.AudioContext ||
+  window.webkitAudioContext ||
+  window.mozAudioContext ||
+  window.oAudioContext ||
+  window.msAudioContext);
+  if (contextClass) {
+      // Web Audio API is available.
+      this.context = new contextClass();
+  } else {
+      // Web Audio API is not available. Fallback
+      alert('Web Audio API not available');
+  }
   this.analyser = this.context.createAnalyser();
   console.log('analyser:', this.analyser);
   this.analyser.fftSize = 2048;
@@ -383,9 +394,9 @@ ParticleRing.prototype.getFrequencyData = function() {
   this.analyser.getByteFrequencyData(this.dataArray);
   for(var i = 0; i < this.bufferLength; i++) {
     averageFrequency += this.dataArray[i];
-    console.log('averageFrequency: ', averageFrequency);
   };
   //find average
   averageFrequency = averageFrequency / this.bufferLength;
+    console.log('averageFrequency: ', averageFrequency);
   return averageFrequency;
 };
