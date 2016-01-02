@@ -1,5 +1,6 @@
 $('.welcome.show').ready(function(){
   var MoodDb = MoodDb || {};
+  var isMobile = window.matchMedia("only screen and (max-width: 760px)");
 
   MoodDb.addSong = function(title, stream_url, mood, track_id, permalink_url) {
     return Promise.resolve($.ajax ({
@@ -115,34 +116,50 @@ $('.welcome.show').ready(function(){
   };
 
   AudioController.prototype.displayControls = function() {
-      $("#all-controls").show()
-    }
+    $("#all-controls").show()
+  }
 
   AudioController.prototype.playerControls = function () {
 
-      $("#play").click(function(){
-       song.play();
+    $("#play").click(function(){
+     song.play();
+     $("#play").hide();
+     $("#pause").show();
+    }.bind(this));
+
+    $("#pause").click(function(){
+      song.pause();
+      $("#pause").hide();
+      $("#play").show();
+    }.bind(this));
+
+    $("#next").click(function(){
+      this.setNextTrack();
        $("#play").hide();
        $("#pause").show();
-      }.bind(this));
+    }.bind(this));
+  };
 
-      $("#pause").click(function(){
+  AudioController.prototype.mobileControls = function () {
+    $('body').click(function() {
+      if(song.paused) {
+        song.play();
+      } else {
         song.pause();
-        $("#pause").hide();
-        $("#play").show();
-      }.bind(this));
-
-      $("#next").click(function(){
-        this.setNextTrack();
-         $("#play").hide();
-         $("#pause").show();
-      }.bind(this));
-    };
+      }
+    })
+  };
 
   AudioController.prototype.glowingRing = function() {
 
     var glowplayer = this;
-    glowplayer.displayControls();
+
+    if (isMobile.matches) {
+      glowplayer.mobileControls();
+    } else {
+      glowplayer.displayControls();
+    }
+
     Slides.show('chooseMood');
 
     MoodDb.getSong(current_mood)

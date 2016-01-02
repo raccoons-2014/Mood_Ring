@@ -397,6 +397,5 @@ ParticleRing.prototype.getFrequencyData = function() {
   };
   //find average
   averageFrequency = averageFrequency / this.bufferLength;
-    console.log('averageFrequency: ', averageFrequency);
   return averageFrequency;
 };
