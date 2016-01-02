@@ -141,7 +141,7 @@ $('.welcome.show').ready(function(){
   };
 
   AudioController.prototype.mobileControls = function () {
-    $('body').click(function() {
+    $('body').on('touchstart click', function() {
       if(song.paused) {
         song.play();
       } else {
